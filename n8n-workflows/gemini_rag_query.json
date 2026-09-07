@@ -1,0 +1,182 @@
+{
+  "name": "RAG 2 - Chatbot AI Dược Sĩ",
+  "nodes": [
+    {
+      "name": "Webhook Chatbot",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        80,
+        300
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "chatbot",
+        "responseMode": "responseNode"
+      },
+      "id": "3fc38b72-fd77-4c43-8e7a-36294454de47",
+      "typeVersion": 1.1,
+      "webhookId": "cee1a9dc-4c6f-44a3-9443-2851a3a67f2f"
+    },
+    {
+      "name": "Embed câu hỏi",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        320,
+        300
+      ],
+      "parameters": {
+        "jsonBody": "={\n  \"text\": {{ JSON.stringify($json.body.query) }}\n}",
+        "method": "POST",
+        "options": {},
+        "sendBody": true,
+        "specifyBody": "json",
+        "url": "http://pharmacy-ai:8080/api/v1/embed/text"
+      },
+      "id": "8eee0cea-2577-441b-8c58-d5a6a75ce353",
+      "typeVersion": 4.2
+    },
+    {
+      "name": "Lấy chunks từ MongoDB",
+      "type": "n8n-nodes-base.mongoDb",
+      "position": [
+        560,
+        300
+      ],
+      "parameters": {
+        "collection": "rag_documents",
+        "operation": "find",
+        "options": {},
+        "query": "{}"
+      },
+      "credentials": {
+        "mongoDb": {
+          "id": "7YszF4vqaxlGvB0g",
+          "name": "MongoDB Pharmacy"
+        }
+      },
+      "id": "3baa5969-1dd2-4f1b-9723-332b6f0dd804",
+      "typeVersion": 1.1
+    },
+    {
+      "name": "Tìm kiếm tương đồng",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        800,
+        300
+      ],
+      "parameters": {
+        "jsCode": "const queryVector = $('Embed câu hỏi').first().json.embedding.values;\nconst userQuery = $('Webhook Chatbot').first().json.body.query;\n\nfunction cosineSimilarity(a, b) {\n  let dot = 0, nA = 0, nB = 0;\n  const len = Math.min(a.length, b.length);\n  for (let i = 0; i < len; i++) {\n    dot += a[i] * b[i];\n    nA += a[i] * a[i];\n    nB += b[i] * b[i];\n  }\n  if (nA === 0 || nB === 0) return 0;\n  return dot / (Math.sqrt(nA) * Math.sqrt(nB));\n}\n\nconst scored = items\n  .filter(i => i.json.embedding && Array.isArray(i.json.embedding))\n  .map(i => ({\n    text: i.json.text,\n    filename: i.json.metadata ? i.json.metadata.filename : 'unknown',\n    score: cosineSimilarity(queryVector, i.json.embedding)\n  }))\n  .sort((a, b) => b.score - a.score)\n  .slice(0, 5);\n\nconst context = scored.map(d => `[Nguồn: ${d.filename}] ${d.text}`).join('\\n\\n---\\n\\n');\n\nreturn [{\n  json: {\n    query: userQuery,\n    context,\n    sources: scored.map(d => ({ filename: d.filename, score: Math.round(d.score * 1000) / 1000 }))\n  }\n}];"
+      },
+      "id": "a43485e9-75bb-4f4c-8fe0-3d5ac4342d95",
+      "typeVersion": 2
+    },
+    {
+      "name": "Groq trả lời",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1080,
+        300
+      ],
+      "parameters": {
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_GROQ_API_KEY"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "jsonBody": "={\n  \"model\": \"groq/compound-mini\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": {{ JSON.stringify(\"Bạn là Dược sĩ tư vấn AI chuyên nghiệp của nhà thuốc Long Châu. Hãy trả lời câu hỏi của khách hàng bằng tiếng Việt, chuyên nghiệp và thân thiện. Chỉ dựa trên ngữ cảnh được cung cấp. Nếu không có thông tin phù hợp, hãy trả lời rằng bạn chưa có thông tin về vấn đề này.\\n\\nNGỮ CẢNH TÀI LIỆU:\\n\" + $json.context + \"\\n\\nCÂU HỎI KHÁCH HÀNG: \" + $json.query) }}\n    }\n  ],\n  \"temperature\": 0.3,\n  \"max_tokens\": 2048\n}",
+        "method": "POST",
+        "options": {},
+        "sendBody": true,
+        "sendHeaders": true,
+        "specifyBody": "json",
+        "specifyHeaders": "keypair",
+        "url": "https://api.groq.com/openai/v1/chat/completions"
+      },
+      "id": "26537b8e-b0e9-4c3c-a152-0dd2195ee7ad",
+      "typeVersion": 4.2
+    },
+    {
+      "name": "Trả về kết quả",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        1360,
+        300
+      ],
+      "parameters": {
+        "options": {},
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"answer\": {{ JSON.stringify($json.choices ? $json.choices[0].message.content : 'Không thể tạo câu trả lời') }},\n  \"sources\": {{ JSON.stringify($('Tìm kiếm tương đồng').first().json.sources) }}\n}"
+      },
+      "id": "ae08d080-5a6b-49a3-b4f7-e6ac9d784059",
+      "typeVersion": 1.1
+    }
+  ],
+  "connections": {
+    "Embed câu hỏi": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Lấy chunks từ MongoDB",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Groq trả lời": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Trả về kết quả",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Lấy chunks từ MongoDB": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Tìm kiếm tương đồng",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Tìm kiếm tương đồng": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Groq trả lời",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Webhook Chatbot": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Embed câu hỏi",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": true
+}

@@ -1,0 +1,93 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: pharmacy-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    restart: always
+
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: pharmacy-n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_SECURE_COOKIE=false
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./pharmacy-ai/database/input:/data/input:ro
+    restart: always
+
+  pharmacy-ai:
+    build:
+      context: ./pharmacy-ai
+      dockerfile: Dockerfile
+    container_name: pharmacy-ai-backend
+    ports:
+      - "5001:8080"
+    environment:
+      - DATABASE_URL=mongodb://mongodb:27017
+      - DATABASE_NAME=${MONGODB_DATABASE:-pharmacy}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - GROQ_MODEL=${GROQ_MODEL:-llama-3.3-70b-versatile}
+      - COHERE_API_KEY=${COHERE_API_KEY}
+      - MILVUS_URI=${MILVUS_URI}
+      - MILVUS_TOKEN=${MILVUS_TOKEN}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    depends_on:
+      - mongodb
+    restart: always
+
+  pharmacy-admin:
+    build:
+      context: ./pharmacy-admin
+      dockerfile: Dockerfile
+      args:
+        - VITE_BACKEND_API_URL=${VITE_BACKEND_API_URL:-http://localhost:8000}
+        - VITE_LLM_API_URL=${VITE_LLM_API_URL:-http://localhost:5000}
+    container_name: pharmacy-admin-frontend
+    ports:
+      - "8081:80"
+    restart: always
+
+  pharmacy-store:
+    build:
+      context: ./pharmacy-store
+      dockerfile: Dockerfile
+      args:
+        - VITE_BACKEND_API_URL=${VITE_BACKEND_API_URL:-http://localhost:8000}
+        - VITE_LLM_API_URL=${VITE_LLM_API_URL:-http://localhost:5000}
+    container_name: pharmacy-store-frontend
+    ports:
+      - "8082:80"
+    restart: always
+
+  pharmacy-api:
+    build:
+      context: ../pharmacy-api-production
+      dockerfile: Dockerfile
+    container_name: pharmacy-api-laravel
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_CONNECTION=mongodb
+      - DB_HOST=mongodb
+      - DB_PORT=27017
+      - DB_DATABASE=pharmacy_api_v2
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - AI_API_URL=http://pharmacy-ai:8080/api
+    depends_on:
+      - mongodb
+    volumes:
+      - ../pharmacy-api-production:/var/www
+    restart: always
+
+volumes:
+  mongodb_data:
+  n8n_data:
+

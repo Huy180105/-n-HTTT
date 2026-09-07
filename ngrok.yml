@@ -1,0 +1,10 @@
+version: "3"
+
+endpoints:
+  - name: store
+    upstream:
+      url: http://localhost:8082
+    url: https://upcountry-startle-unselfish.ngrok-free.dev
+  - name: admin
+    upstream:
+      url: http://localhost:8081

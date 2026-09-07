@@ -1,0 +1,202 @@
+{
+  "updatedAt": "2026-08-20T02:12:23.673Z",
+  "createdAt": "2026-08-19T15:38:29.484Z",
+  "id": "oqF0OqIjrLhOnU6k",
+  "name": "Gemini RAG 1 - Ingest Documents",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        0,
+        0
+      ],
+      "id": "775924b7-d8bc-4b33-bfca-a1e4e090ab61",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "http://pharmacy-ai:8080/api/v1/documents/input-files",
+        "options": {}
+      },
+      "name": "List Input Files",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        224,
+        0
+      ],
+      "id": "5b931622-06a9-4fbc-a9e6-aa541c94d7aa",
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "jsCode": "const documents = items[0].json.data || [];\nconst output = [];\nconst chunkSize = 800;\nconst overlap = 150;\n\nfor (const doc of documents) {\n  const content = doc.content || '';\n  const filename = doc.filename || 'unknown';\n  const filepath = doc.filepath || 'unknown';\n\n  if (!content) continue;\n\n  let chunkIndex = 0;\n  for (let i = 0; i < content.length; i += (chunkSize - overlap)) {\n    const chunkText = content.substring(i, i + chunkSize).trim();\n    if (chunkText.length > 30) {\n      output.push({\n        json: {\n          text: chunkText,\n          metadata: {\n            filename,\n            filepath,\n            chunk_index: chunkIndex++,\n            created_at: new Date().toISOString()\n          }\n        }\n      });\n    }\n    if (i + chunkSize >= content.length) break;\n  }\n\n  if (content.length > 0 && chunkIndex === 0) {\n    output.push({\n      json: {\n        text: content,\n        metadata: {\n          filename,\n          filepath,\n          chunk_index: 0,\n          created_at: new Date().toISOString()\n        }\n      }\n    });\n  }\n}\n\nreturn output.length ? output : [{ json: { error: 'No readable files returned from backend' } }];"
+      },
+      "name": "Chunk Text",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        464,
+        0
+      ],
+      "id": "4267b79f-bbf4-4119-afd3-81bef9542b38",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://pharmacy-ai:8080/api/v1/embed/text",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { content: { parts: [{ text: $json.text }] } } }}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 1,
+              "batchInterval": 1200
+            }
+          }
+        }
+      },
+      "name": "Local Embedding API",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        704,
+        0
+      ],
+      "id": "c9b2836e-bf69-4268-b51c-e59d46d7fc82",
+      "typeVersion": 4
+    },
+    {
+      "parameters": {
+        "jsCode": "const chunkItems = $('Chunk Text').all();\nconst output = [];\n\nfor (let i = 0; i < items.length; i++) {\n  const embeddingItem = items[i].json;\n  const chunkItem = chunkItems[i]?.json || {};\n  const embedding = embeddingItem.embedding?.values ?? embeddingItem.embedding ?? [];\n  \n  output.push({\n    json: {\n      text: chunkItem.text || '',\n      embedding: embedding,\n      metadata: chunkItem.metadata || {}\n    }\n  });\n}\n\nreturn output;"
+      },
+      "name": "Prepare Data",
+      "type": "n8n-nodes-base.code",
+      "position": [
+        944,
+        0
+      ],
+      "id": "d400acbd-167e-43d3-91c1-5a7b341998e9",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "collection": "rag_documents",
+        "fields": "text,embedding,metadata",
+        "options": {}
+      },
+      "name": "Save to MongoDB",
+      "type": "n8n-nodes-base.mongoDb",
+      "position": [
+        1184,
+        0
+      ],
+      "id": "7904c111-6ef9-47b5-a9e0-e6a82495e7bc",
+      "typeVersion": 1,
+      "credentials": {
+        "mongoDb": {
+          "id": "7YszF4vqaxlGvB0g",
+          "name": "MongoDB Pharmacy"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "List Input Files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Input Files": {
+      "main": [
+        [
+          {
+            "node": "Chunk Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chunk Text": {
+      "main": [
+        [
+          {
+            "node": "Gemini Embedding API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini Embedding API": {
+      "main": [
+        [
+          {
+            "node": "Prepare Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Data": {
+      "main": [
+        [
+          {
+            "node": "Save to MongoDB",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "staticData": null,
+  "meta": null,
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "aa2d72fd-c479-4c89-aa92-c5a55edf8965",
+  "activeVersionId": null,
+  "versionCounter": 6,
+  "triggerCount": 0,
+  "sourceWorkflowId": null,
+  "shared": [
+    {
+      "updatedAt": "2026-08-19T15:38:29.487Z",
+      "createdAt": "2026-08-19T15:38:29.487Z",
+      "role": "workflow:owner",
+      "workflowId": "oqF0OqIjrLhOnU6k",
+      "projectId": "2EuhUAHG5C6MvZfh",
+      "project": {
+        "updatedAt": "2026-08-18T04:50:13.831Z",
+        "createdAt": "2026-08-18T04:49:35.976Z",
+        "id": "2EuhUAHG5C6MvZfh",
+        "name": "Huy qhuy180105@gmail.com <qhuy180105@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "9a8c9315-ed91-4b55-891c-8f0267b02a09"
+      }
+    }
+  ],
+  "tags": [],
+  "activeVersion": null
+}
