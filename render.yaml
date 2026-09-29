@@ -1,0 +1,60 @@
+services:
+  # ----------------------------------------------------
+  # 1. Pharmacy AI Service (Python FastAPI / Flask Backend)
+  # ----------------------------------------------------
+  - type: web
+    name: pharmacy-ai
+    runtime: docker
+    dockerContext: ./pharmacy-ai
+    dockerfilePath: ./pharmacy-ai/Dockerfile
+    region: singapore
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_NAME
+        value: pharmacy
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: COHERE_API_KEY
+        sync: false
+      - key: MILVUS_URI
+        sync: false
+      - key: MILVUS_TOKEN
+        sync: false
+
+  # ----------------------------------------------------
+  # 2. Pharmacy Admin Frontend (React / Vite + Nginx)
+  # ----------------------------------------------------
+  - type: web
+    name: pharmacy-admin
+    runtime: docker
+    dockerContext: ./pharmacy-admin
+    dockerfilePath: ./pharmacy-admin/Dockerfile
+    region: singapore
+    plan: free
+    envVars:
+      - key: VITE_BACKEND_API_URL
+        sync: false
+      - key: VITE_LLM_API_URL
+        sync: false
+
+  # ----------------------------------------------------
+  # 3. Pharmacy Store Frontend (React / Vite + Nginx)
+  # ----------------------------------------------------
+  - type: web
+    name: pharmacy-store
+    runtime: docker
+    dockerContext: ./pharmacy-store
+    dockerfilePath: ./pharmacy-store/Dockerfile
+    region: singapore
+    plan: free
+    envVars:
+      - key: VITE_BACKEND_API_URL
+        sync: false
+      - key: VITE_LLM_API_URL
+        sync: false
