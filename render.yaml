@@ -59,7 +59,7 @@ services:
     plan: free
     envVars:
       - key: VITE_BACKEND_API_URL
-        value: https://pharmacy-api.onrender.com/api
+        value: https://pharmacy-api-6hal.onrender.com/api
       - key: VITE_LLM_API_URL
         value: /ai-api
 
@@ -75,6 +75,6 @@ services:
     plan: free
     envVars:
       - key: VITE_BACKEND_API_URL
-        value: https://pharmacy-api.onrender.com/api
+        value: https://pharmacy-api-6hal.onrender.com/api
       - key: VITE_LLM_API_URL
         value: /ai-api
