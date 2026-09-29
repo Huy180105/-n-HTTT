@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Support\Str;
+use MongoDB\Laravel\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\SoftDeletes;
+
+class Medicine extends Model
+{
+    use SoftDeletes;
+    
+    protected $connection = 'mongodb';
+    protected $collection = 'medicines';
+    public $incrementing = false;
+    protected $keyType = 'string';
+    protected $fillable = [
+        'category_id',
+        'supplier_id',
+        'name',
+        'slug',
+        'thumbnail',
+        'description',
+        'variants',
+        'ratings',
+        'details',
+        'usageguide',
+        'created_by',
+        'deleted_at',
+    ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            if (!$model->id) $model->id = (string) Str::uuid();
+        });
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class, 'supplier_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'medicine_id');
+    }
+}

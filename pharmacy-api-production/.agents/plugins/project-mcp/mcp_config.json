@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "mongodb": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mongodb-mcp-server@latest"
+      ],
+      "env": {
+        "MDB_MCP_CONNECTION_STRING": "mongodb://127.0.0.1:27017/pharmacy_api_v2",
+        "MDB_MCP_READ_ONLY": "false"
+      }
+    },
+    "docker": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@0xshariq/docker-mcp-server@latest"
+      ]
+    },
+    "n8n-community": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-n8n"
+      ],
+      "env": {
+        "N8N_BASE_URL": "http://localhost:5678",
+        "N8N_API_KEY": "<YOUR_N8N_API_KEY>"
+      }
+    }
+
+  }
+}
