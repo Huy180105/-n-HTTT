@@ -22,9 +22,9 @@ interface Props {
 
 export function InvoiceInformationForm({ form, onUserSelect }: Props) {
   return (
-    <Card className="border-emerald-200/50 dark:border-emerald-800/30">
+    <Card className="border-blue-200/50 dark:border-blue-800/30">
       <CardHeader className="pb-3">
-        <CardTitle className="text-sm font-medium text-emerald-700 dark:text-emerald-300 flex items-center gap-2">
+        <CardTitle className="text-sm font-medium text-blue-700 dark:text-cyan-300 flex items-center gap-2">
           <User className="h-4 w-4" />
           Thông tin khách hàng
         </CardTitle>

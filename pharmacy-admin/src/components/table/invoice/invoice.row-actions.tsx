@@ -18,7 +18,7 @@ export function InvoiceRowActions({ row }: InvoiceRowActionsProps) {
       <Button
         variant="ghost"
         size="icon"
-        className="h-8 w-8 p-0 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-full"
+        className="h-8 w-8 p-0 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-full"
         asChild
       >
         <Link to={`${routes.admin.invoiceDetails(row.original.id)}`}>

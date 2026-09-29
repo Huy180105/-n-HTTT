@@ -43,7 +43,7 @@ export function MedicineDetailImage({ imageUrl, imageAlt, discountPercent, stock
         animate={{ scale: 1 }}
         transition={{ type: "spring", stiffness: 200, damping: 10, delay: 0.1 }}
         className={`absolute top-10 right-10 px-3 py-1.5 rounded-full shadow-lg ${stockStatus === StockStatus.IN_STOCK
-          ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white"
+          ? "bg-gradient-to-r from-cyan-500 to-cyan-500 text-white"
           : stockStatus === StockStatus.PRE_ORDER
             ? "bg-gradient-to-r from-amber-500 to-orange-500 text-white"
             : "bg-gradient-to-r from-red-500 to-pink-500 text-white"

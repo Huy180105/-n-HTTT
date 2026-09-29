@@ -61,7 +61,7 @@ export default function ResetPasswordPage() {
       setResetSuccess(true);
       toast.success("Mật khẩu đã được đặt lại thành công!", {
         description: "Bạn có thể đăng nhập với mật khẩu mới.",
-        icon: <CheckCircle className="h-5 w-5 text-green-500" />,
+        icon: <CheckCircle className="h-5 w-5 text-cyan-500" />,
       });
     },
     onError: (err: AxiosError) => {
@@ -114,8 +114,8 @@ export default function ResetPasswordPage() {
     if (passwordStrength <= 20) return "bg-red-500";
     if (passwordStrength <= 40) return "bg-orange-500";
     if (passwordStrength <= 60) return "bg-yellow-500";
-    if (passwordStrength <= 80) return "bg-blue-500";
-    return "bg-green-500";
+    if (passwordStrength <= 80) return "bg-violet-500";
+    return "bg-cyan-500";
   };
 
   const getStrengthLabel = () => {
@@ -148,7 +148,7 @@ export default function ResetPasswordPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-red-100 to-orange-100 dark:from-red-900/60 dark:to-orange-900/60 text-red-600 dark:text-red-400 shadow-md hover:shadow-lg transition-all duration-300">
                 <XCircle className="size-6" />
               </div>
-              <span className="sr-only">Pharmacity Inc.</span>
+              <span className="sr-only">Medicare Inc.</span>
             </Link>
 
             <div className="text-center space-y-4">
@@ -168,7 +168,7 @@ export default function ResetPasswordPage() {
             <div className="space-y-4 w-full max-w-sm">
               <Link to={routes.auth.forgotPassword}>
                 <Button
-                  className="w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium"
+                  className="w-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium"
                 >
                   Yêu cầu đặt lại mật khẩu
                 </Button>
@@ -177,7 +177,7 @@ export default function ResetPasswordPage() {
               <Link to={routes.auth.login}>
                 <Button
                   variant="ghost"
-                  className="w-full text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300"
+                  className="w-full text-violet-600 dark:text-cyan-400 hover:text-violet-700 dark:hover:text-cyan-300"
                 >
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Quay lại đăng nhập
@@ -195,7 +195,7 @@ export default function ResetPasswordPage() {
       <AuthLayout title={"Đặt lại mật khẩu"}>
         <div className="flex flex-col gap-6 relative z-10">
           <div className="flex flex-col items-center gap-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-100 to-teal-100 dark:from-green-900/60 dark:to-teal-900/60 text-green-600 dark:text-green-400 shadow-md">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-violet-100 dark:from-violet-900/60 dark:to-violet-900/60 text-violet-600 dark:text-cyan-400 shadow-md">
               <Loader2 className="size-6 animate-spin" />
             </div>
 
@@ -203,7 +203,7 @@ export default function ResetPasswordPage() {
               <TextAnimate
                 animation="blurInUp"
                 by="character"
-                className="text-2xl font-bold bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400"
+                className="text-2xl font-bold bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 dark:from-cyan-400 dark:to-cyan-400"
               >
                 Đang xác thực...
               </TextAnimate>
@@ -230,7 +230,7 @@ export default function ResetPasswordPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-red-100 to-orange-100 dark:from-red-900/60 dark:to-orange-900/60 text-red-600 dark:text-red-400 shadow-md hover:shadow-lg transition-all duration-300">
                 <XCircle className="size-6" />
               </div>
-              <span className="sr-only">Pharmacity Inc.</span>
+              <span className="sr-only">Medicare Inc.</span>
             </Link>
 
             <div className="text-center space-y-4">
@@ -251,7 +251,7 @@ export default function ResetPasswordPage() {
             <div className="space-y-4 w-full max-w-sm">
               <Link to={routes.auth.forgotPassword}>
                 <Button
-                  className="w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium"
+                  className="w-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium"
                 >
                   Yêu cầu đặt lại mật khẩu
                 </Button>
@@ -260,7 +260,7 @@ export default function ResetPasswordPage() {
               <Link to={routes.auth.login}>
                 <Button
                   variant="ghost"
-                  className="w-full text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300"
+                  className="w-full text-violet-600 dark:text-cyan-400 hover:text-violet-700 dark:hover:text-cyan-300"
                 >
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Quay lại đăng nhập
@@ -282,10 +282,10 @@ export default function ResetPasswordPage() {
               to={routes.store.root}
               className="flex flex-col items-center gap-2 font-medium"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-100 to-teal-100 dark:from-green-900/60 dark:to-teal-900/60 text-green-600 dark:text-green-400 shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-violet-100 dark:from-violet-900/60 dark:to-violet-900/60 text-violet-600 dark:text-cyan-400 shadow-md hover:shadow-lg transition-all duration-300">
                 <BriefcaseMedical className="size-6" />
               </div>
-              <span className="sr-only">Pharmacity Inc.</span>
+              <span className="sr-only">Medicare Inc.</span>
             </Link>
 
             <div className="text-center space-y-4">
@@ -293,7 +293,7 @@ export default function ResetPasswordPage() {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-green-100 to-teal-100 dark:from-green-900/60 dark:to-teal-900/60 text-green-600 dark:text-green-400 shadow-lg mx-auto"
+                className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-violet-100 dark:from-violet-900/60 dark:to-violet-900/60 text-violet-600 dark:text-cyan-400 shadow-lg mx-auto"
               >
                 <CheckCircle className="size-8" />
               </motion.div>
@@ -301,7 +301,7 @@ export default function ResetPasswordPage() {
               <TextAnimate
                 animation="blurInUp"
                 by="character"
-                className="text-2xl font-bold bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400"
+                className="text-2xl font-bold bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 dark:from-cyan-400 dark:to-cyan-400"
               >
                 Đặt lại mật khẩu thành công!
               </TextAnimate>
@@ -315,7 +315,7 @@ export default function ResetPasswordPage() {
             <div className="space-y-4 w-full max-w-sm">
               <Link to={routes.auth.login}>
                 <Button
-                  className="w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium"
+                  className="w-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium"
                 >
                   Đăng nhập ngay
                 </Button>
@@ -336,19 +336,19 @@ export default function ResetPasswordPage() {
             to={routes.store.root}
             className="flex flex-col items-center gap-2 font-medium"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-100 to-teal-100 dark:from-green-900/60 dark:to-teal-900/60 text-green-600 dark:text-green-400 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-violet-100 dark:from-violet-900/60 dark:to-violet-900/60 text-violet-600 dark:text-cyan-400 shadow-md hover:shadow-lg transition-all duration-300">
               <BriefcaseMedical className="size-6" />
             </div>
-            <span className="sr-only">Pharmacity Inc.</span>
+            <span className="sr-only">Medicare Inc.</span>
           </Link>
           
-          <Badge variant="outline" className="border-green-200 dark:border-green-800 bg-green-100 dark:bg-green-900/60 text-green-800 dark:text-green-300 px-3 py-1 text-sm rounded-full shadow-sm hover:shadow-md transition-shadow duration-300">
+          <Badge variant="outline" className="border-violet-200 dark:border-violet-800 bg-violet-100 dark:bg-violet-900/60 text-violet-800 dark:text-cyan-300 px-3 py-1 text-sm rounded-full shadow-sm hover:shadow-md transition-shadow duration-300">
             <motion.span
               className="flex items-center"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.3 }}>
-              <ShieldCheck className="h-3.5 w-3.5 mr-2 text-green-600 dark:text-green-400" />
+              <ShieldCheck className="h-3.5 w-3.5 mr-2 text-violet-600 dark:text-cyan-400" />
               Bảo mật tài khoản
             </motion.span>
           </Badge>
@@ -356,7 +356,7 @@ export default function ResetPasswordPage() {
           <TextAnimate
             animation="blurInUp"
             by="character"
-            className="text-2xl font-bold bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400"
+            className="text-2xl font-bold bg-clip-text bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 dark:from-cyan-400 dark:to-cyan-400"
           >
             Đặt lại mật khẩu
           </TextAnimate>
@@ -364,7 +364,7 @@ export default function ResetPasswordPage() {
           <div className="text-gray-500 dark:text-gray-400 text-center max-w-md">
             {tokenData?.email && (
               <p className="text-sm mb-2">
-                Đặt lại mật khẩu cho: <span className="font-semibold text-green-600 dark:text-green-400">{tokenData.email}</span>
+                Đặt lại mật khẩu cho: <span className="font-semibold text-violet-600 dark:text-cyan-400">{tokenData.email}</span>
               </p>
             )}
             Tạo mật khẩu mạnh để bảo vệ tài khoản của bạn
@@ -389,7 +389,7 @@ export default function ResetPasswordPage() {
                         <PasswordInput
                           {...field}
                           placeholder="Nhập mật khẩu mới"
-                          className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 focus:border-green-400 dark:focus:border-green-600 rounded-lg pl-10"
+                          className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 focus:border-cyan-400 dark:focus:border-violet-600 rounded-lg pl-10"
                           onChange={(e) => {
                             field.onChange(e);
                             setPasswordValue(e.target.value);
@@ -411,7 +411,7 @@ export default function ResetPasswordPage() {
                 >
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Độ mạnh mật khẩu:</span>
-                    <span className={`text-xs font-medium ${passwordStrength > 60 ? 'text-green-600 dark:text-green-400' : passwordStrength > 40 ? 'text-yellow-600 dark:text-yellow-400' : 'text-red-600 dark:text-red-400'}`}>
+                    <span className={`text-xs font-medium ${passwordStrength > 60 ? 'text-violet-600 dark:text-cyan-400' : passwordStrength > 40 ? 'text-yellow-600 dark:text-yellow-400' : 'text-red-600 dark:text-red-400'}`}>
                       {getStrengthLabel()}
                     </span>
                   </div>
@@ -423,11 +423,11 @@ export default function ResetPasswordPage() {
                     {passwordRequirements.map((req) => (
                       <div key={req.id} className="flex items-center">
                         {requirements[req.id] ? (
-                          <CheckCircle2 className="h-3.5 w-3.5 text-green-500 dark:text-green-400 mr-2" />
+                          <CheckCircle2 className="h-3.5 w-3.5 text-cyan-500 dark:text-cyan-400 mr-2" />
                         ) : (
                           <XCircle className="h-3.5 w-3.5 text-gray-300 dark:text-gray-600 mr-2" />
                         )}
-                        <span className={`text-xs ${requirements[req.id] ? 'text-green-700 dark:text-green-300' : 'text-gray-500 dark:text-gray-400'}`}>
+                        <span className={`text-xs ${requirements[req.id] ? 'text-violet-700 dark:text-cyan-300' : 'text-gray-500 dark:text-gray-400'}`}>
                           {req.label}
                         </span>
                       </div>
@@ -453,7 +453,7 @@ export default function ResetPasswordPage() {
                         <PasswordInput
                           {...field}
                           placeholder="Nhập lại mật khẩu mới"
-                          className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 focus:border-green-400 dark:focus:border-green-600 rounded-lg pl-10"
+                          className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 focus:border-cyan-400 dark:focus:border-violet-600 rounded-lg pl-10"
                         />
                       </div>
                     </FormControl>
@@ -464,7 +464,7 @@ export default function ResetPasswordPage() {
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect py-6"
+                className="w-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect py-6"
                 disabled={isLoading}
               >
                 {isLoading ? (
@@ -480,7 +480,7 @@ export default function ResetPasswordPage() {
               <div className="flex items-center justify-center pt-2">
                 <Link
                   to={routes.auth.login}
-                  className="text-green-600 dark:text-green-400 hover:underline underline-offset-4 hover:opacity-75 transition-all duration-200 font-medium flex items-center gap-2"
+                  className="text-violet-600 dark:text-cyan-400 hover:underline underline-offset-4 hover:opacity-75 transition-all duration-200 font-medium flex items-center gap-2"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Quay lại đăng nhập

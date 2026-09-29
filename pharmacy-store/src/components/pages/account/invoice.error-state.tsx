@@ -8,7 +8,7 @@ interface InvoiceErrorStateProps {
 
 export function InvoiceErrorState({ onRetry }: InvoiceErrorStateProps) {
   return (
-    <Card className="border-emerald-100 dark:border-emerald-800/30 shadow-sm overflow-hidden">
+    <Card className="border-violet-100 dark:border-violet-800/30 shadow-sm overflow-hidden">
       <CardContent className="flex flex-col items-center justify-center py-20">
         <div className="mx-auto w-20 h-20 bg-red-100 text-red-600 dark:bg-red-900/40 dark:text-red-400 rounded-full flex items-center justify-center mb-4">
           <AlertCircle className="h-10 w-10" />
@@ -18,7 +18,7 @@ export function InvoiceErrorState({ onRetry }: InvoiceErrorStateProps) {
           Có lỗi xảy ra khi tải danh sách hóa đơn. Vui lòng thử lại sau hoặc liên hệ hỗ trợ.
         </p>
         <Button 
-          className="mt-8 px-6 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-700" 
+          className="mt-8 px-6 bg-violet-600 hover:bg-violet-700 dark:bg-violet-600 dark:hover:bg-violet-700" 
           onClick={onRetry || (() => window.location.reload())}
         >
           Thử lại

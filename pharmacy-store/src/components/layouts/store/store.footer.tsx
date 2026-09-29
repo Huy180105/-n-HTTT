@@ -1,76 +1,80 @@
+import { Branding } from "@/components/custom/branding";
 import { routes, siteConfig } from "@/config";
-import { Award, Clock, Heart, Mail, MapPin, Phone, Shield, Truck } from "lucide-react";
+import { motion } from "framer-motion";
+import { Award, Clock, Mail, MapPin, Phone, Shield, Truck } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function StoreFooter() {
   return (
-    <footer className="bg-gradient-to-br from-emerald-800 via-emerald-900 to-emerald-800 text-white">
+    <footer className="bg-gradient-to-br from-slate-950 via-violet-950 to-slate-950 text-white border-t border-slate-800/80">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Company info */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                <Heart className="text-white w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold">{siteConfig.name}</h3>
-                <p className="text-emerald-200 text-sm">Nhà thuốc uy tín hàng đầu</p>
-              </div>
+              <Branding />
             </div>
-            <p className="text-emerald-100 mb-6 leading-relaxed">
-              Nhà thuốc uy tín hàng đầu Việt Nam, cung cấp các sản phẩm chăm sóc sức khỏe chất lượng cao với đội ngũ AI chuyên nghiệp.
+            <p className="text-slate-300 mb-6 leading-relaxed max-w-md text-sm font-medium">
+              Nhà thuốc Pharmacity Store uy tín hàng đầu Việt Nam. Cung cấp các sản phẩm chăm sóc sức khỏe chính hãng 100% với đội ngũ dược sĩ tư vấn và trợ lý AI y khoa chuyên nghiệp.
             </p>
-            <div className="space-y-3">
+            <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-emerald-300" />
-                <span className="text-emerald-100">info@pharmacare.vn</span>
+                <motion.div animate={{ scale: [1, 1.15, 1] }} transition={{ repeat: Infinity, duration: 2.5 }}>
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                </motion.div>
+                <span className="text-slate-300 font-medium">support@pharmacity.vn</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-emerald-300" />
-                <span className="text-emerald-100">1900-1234</span>
+                <motion.div animate={{ rotate: [0, 10, -10, 0] }} transition={{ repeat: Infinity, duration: 3 }}>
+                  <Phone className="w-4 h-4 text-cyan-400" />
+                </motion.div>
+                <span className="text-slate-300 font-medium">1800 6821 (Miễn phí 24/7)</span>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-emerald-300" />
-                <span className="text-emerald-100">123 Đường ABC, Quận 1, TP.HCM</span>
+                <motion.div animate={{ y: [0, -2, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
+                  <MapPin className="w-4 h-4 text-cyan-400" />
+                </motion.div>
+                <span className="text-slate-300 font-medium">248A Nơ Trang Long, P.12, Q.Bình Thạnh, TP.HCM</span>
               </div>
               <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-emerald-300" />
-                <span className="text-emerald-100">Mở cửa 24/7</span>
+                <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 2.8 }}>
+                  <Clock className="w-4 h-4 text-cyan-400" />
+                </motion.div>
+                <span className="text-slate-300 font-medium">Mở cửa 24/7 (Phục vụ cả Lễ & Tết)</span>
               </div>
             </div>
           </div>
 
           {/* Quick links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Liên kết nhanh</h4>
-            <ul className="space-y-3">
-              <li><Link to={routes.store.root} className="text-emerald-200 hover:text-white transition-colors flex items-center gap-2">Trang chủ</Link></li>
-              <li><Link to={routes.store.categories} className="text-emerald-200 hover:text-white transition-colors">Danh mục thuốc</Link></li>
-              <li><Link to={routes.store.consultation} className="text-emerald-200 hover:text-white transition-colors">Tư vấn AI</Link></li>
-              <li><Link to={routes.store.account.root} className="text-emerald-200 hover:text-white transition-colors">Tài khoản</Link></li>
-              <li><Link to={routes.store.account.root} className="text-emerald-200 hover:text-white transition-colors">Giỏ hàng</Link></li>
+            <h4 className="text-base font-bold mb-6 text-white uppercase tracking-wider text-cyan-400">Liên kết nhanh</h4>
+            <ul className="space-y-3 text-sm font-medium">
+              <li><Link to={routes.store.root} className="text-slate-300 hover:text-cyan-400 transition-colors">Trang chủ</Link></li>
+              <li><Link to={routes.store.categories} className="text-slate-300 hover:text-cyan-400 transition-colors">Danh mục thuốc</Link></li>
+              <li><Link to={routes.store.consultation} className="text-slate-300 hover:text-cyan-400 transition-colors">Tư vấn AI y tế</Link></li>
+              <li><Link to={routes.store.account.root} className="text-slate-300 hover:text-cyan-400 transition-colors">Tài khoản cá nhân</Link></li>
+              <li><Link to={routes.store.account.cart} className="text-slate-300 hover:text-cyan-400 transition-colors">Giỏ hàng</Link></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Dịch vụ</h4>
-            <ul className="space-y-3">
-              <li className="text-emerald-200 flex items-center gap-2">
-                <Shield className="w-4 h-4" />
-                Thuốc chính hãng
+            <h4 className="text-base font-bold mb-6 text-white uppercase tracking-wider text-cyan-400">Cam kết chất lượng</h4>
+            <ul className="space-y-3 text-sm font-medium">
+              <li className="text-slate-300 flex items-center gap-2.5">
+                <Shield className="w-4 h-4 text-blue-400" />
+                100% Thuốc chính hãng
               </li>
-              <li className="text-emerald-200 flex items-center gap-2">
-                <Truck className="w-4 h-4" />
-                Giao hàng nhanh
+              <li className="text-slate-300 flex items-center gap-2.5">
+                <Truck className="w-4 h-4 text-cyan-400" />
+                Giao hàng nhanh 2h
               </li>
-              <li className="text-emerald-200 flex items-center gap-2">
-                <Award className="w-4 h-4" />
-                Tư vấn chuyên nghiệp
+              <li className="text-slate-300 flex items-center gap-2.5">
+                <Award className="w-4 h-4 text-cyan-400" />
+                Dược sĩ tư vấn chuyên nghiệp
               </li>
-              <li className="text-emerald-200 flex items-center gap-2">
-                <Clock className="w-4 h-4" />
+              <li className="text-slate-300 flex items-center gap-2.5">
+                <Clock className="w-4 h-4 text-indigo-400" />
                 Hỗ trợ 24/7
               </li>
             </ul>
@@ -78,17 +82,17 @@ export function StoreFooter() {
         </div>
 
         {/* Bottom section */}
-        <div className="border-t border-emerald-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-emerald-200 text-sm">
-              © 2025 {siteConfig.name}. Created by ❤ <Link to={siteConfig.links.github} className="hover:text-white transition-colors">Ngoc Khanh</Link>.
+        <div className="border-t border-slate-800/80 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+            <p>
+              © {new Date().getFullYear()} {siteConfig.name}. Tất cả quyền được bảo lưu.
             </p>
-            <div className="flex items-center gap-6 text-sm text-emerald-200">
-              <span>GPP: 1234-567-890</span>
+            <div className="flex items-center gap-6">
+              <span>Chuẩn GPP: 8821/BYT-HCM</span>
               <span>•</span>
-              <Link to="/privacy" className="hover:text-white transition-colors">Bảo mật</Link>
+              <Link to="/privacy" className="hover:text-cyan-400 transition-colors">Bảo mật</Link>
               <span>•</span>
-              <Link to="/terms" className="hover:text-white transition-colors">Điều khoản</Link>
+              <Link to="/terms" className="hover:text-cyan-400 transition-colors">Điều khoản</Link>
             </div>
           </div>
         </div>

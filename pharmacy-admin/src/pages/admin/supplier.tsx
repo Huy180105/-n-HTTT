@@ -61,19 +61,20 @@ export default function SupplierPage() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-950/40 dark:to-purple-950/40 rounded-xl p-6 shadow-sm border border-violet-100 dark:border-violet-800/20"
+          className="bg-gradient-to-r from-emerald-500/15 via-teal-500/10 via-cyan-500/10 to-indigo-500/15 dark:from-emerald-950/50 dark:via-teal-950/40 dark:to-cyan-950/50 backdrop-blur-xl rounded-2xl p-6 md:p-8 shadow-2xl shadow-purple-950/20 border border-teal-500/20 dark:border-teal-700/30 relative overflow-hidden group"
         >
           <div className="flex items-center gap-3 mb-2">
             <div className="bg-violet-100 dark:bg-violet-800/30 p-2.5 rounded-lg">
               <Building2 size={28} className="text-violet-600 dark:text-violet-400" />
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-violet-800 dark:text-violet-300">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-sm">
               Quản lý Nhà cung cấp
             </h2>
           </div>
           <p className="text-violet-600/90 dark:text-violet-400/80 ml-[52px]">
             Quản lý thông tin nhà cung cấp, hợp đồng và lịch sử giao dịch
           </p>
+          <div className="ambient-banner-blob pointer-events-none absolute -right-12 -bottom-12 w-64 h-64 bg-gradient-to-br from-amber-400/20 via-fuchsia-500/20 to-cyan-500/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700" />
         </motion.div>
 
         <SupplierStats statsData={statsData} isLoading={isStatsLoading} />
@@ -96,7 +97,7 @@ export default function SupplierPage() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="bg-white dark:bg-slate-950 rounded-xl shadow-sm border border-violet-100 dark:border-violet-900/30"
+            className="bg-gradient-to-br from-white/95 via-slate-50/60 to-white/95 dark:from-slate-900/95 dark:via-slate-950/85 dark:to-slate-900/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-slate-900/5 border border-slate-200/80 dark:border-slate-800/80 relative overflow-hidden"
           >
             <div className="p-4 md:p-6">
               <SupplierDataTable

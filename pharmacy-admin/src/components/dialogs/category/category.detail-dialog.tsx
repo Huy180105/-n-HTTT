@@ -50,13 +50,13 @@ export function CategoryDetailDialog({
         <DialogContent className="max-w-7xl p-0 gap-0 overflow-hidden">
           <DialogHeader className="px-6 py-4 border-b flex-shrink-0">
             <DialogTitle className="text-xl font-semibold flex items-center gap-2">
-              <Package className="h-5 w-5 text-teal-600" />
+              <Package className="h-5 w-5 text-indigo-600" />
               Chi tiết danh mục: {currentCategory.title}
             </DialogTitle>
           </DialogHeader>
           <div className="flex flex-1 items-center justify-center h-[80vh]">
             <div className="flex items-center gap-2">
-              <Loader2 className="h-6 w-6 animate-spin text-teal-600" />
+              <Loader2 className="h-6 w-6 animate-spin text-indigo-600" />
               <span>Đang tải thông tin chi tiết...</span>
             </div>
           </div>
@@ -72,7 +72,7 @@ export function CategoryDetailDialog({
         <DialogContent className="max-w-7xl p-0 gap-0 overflow-hidden">
           <DialogHeader className="px-6 py-4 border-b flex-shrink-0">
             <DialogTitle className="text-xl font-semibold flex items-center gap-2">
-              <Package className="h-5 w-5 text-teal-600" />
+              <Package className="h-5 w-5 text-indigo-600" />
               Chi tiết danh mục: {currentCategory.title}
             </DialogTitle>
           </DialogHeader>
@@ -102,7 +102,7 @@ export function CategoryDetailDialog({
       <DialogContent className="max-w-7xl h-[90vh] p-0 gap-0 overflow-hidden">
         <DialogHeader className="px-6 py-4 border-b flex-shrink-0">
           <DialogTitle className="text-xl font-semibold flex items-center gap-2">
-            <Package className="h-5 w-5 text-teal-600" />
+            <Package className="h-5 w-5 text-indigo-600" />
             Chi tiết danh mục: {categoryDetail.title}
           </DialogTitle>
           <CardDescription className="mt-1">

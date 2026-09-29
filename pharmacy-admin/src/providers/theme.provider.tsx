@@ -14,13 +14,13 @@ type ThemeProviderState = {
 }
 
 const initialState: ThemeProviderState = {
-  theme: "system",
+  theme: "light",
   setTheme: () => null,
 }
 
 const ThemeProviderContext = React.createContext<ThemeProviderState>(initialState);
 
-export default function ThemeProvider({ children, defaultTheme = "system", storageKey = "ui-theme", ...props }: ThemeProviderProps) {
+export default function ThemeProvider({ children, defaultTheme = "light", storageKey = "ui-theme", ...props }: ThemeProviderProps) {
   const [theme, setTheme] = React.useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )

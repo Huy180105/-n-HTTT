@@ -30,7 +30,7 @@ export function MedicineRowActions({ row }: MedicineRowActionsProps) {
       <Button
         variant="ghost"
         size="icon"
-        className="h-8 w-8 p-0 text-teal-600 hover:text-teal-700 hover:bg-teal-50 rounded-full"
+        className="h-8 w-8 p-0 text-indigo-600 hover:text-indigo-700 hover:bg-indigo-50 rounded-full"
         onClick={() => {
           setOpen("thumbnail");
           setCurrentMedicine(row.original);

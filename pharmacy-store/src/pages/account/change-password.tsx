@@ -69,8 +69,8 @@ export default function ChangePasswordPage() {
     if (passwordStrength <= 20) return "bg-red-500";
     if (passwordStrength <= 40) return "bg-orange-500";
     if (passwordStrength <= 60) return "bg-yellow-500";
-    if (passwordStrength <= 80) return "bg-blue-500";
-    return "bg-green-500";
+    if (passwordStrength <= 80) return "bg-violet-500";
+    return "bg-cyan-500";
   };
 
   // Get label for password strength
@@ -88,7 +88,7 @@ export default function ChangePasswordPage() {
     onSuccess: () => {
       toast.success("Mật khẩu của bạn đã được cập nhật thành công.", {
         description: "Vui lòng sử dụng mật khẩu mới khi đăng nhập lần sau.",
-        icon: <CheckCircle2 className="h-5 w-5 text-green-500" />,
+        icon: <CheckCircle2 className="h-5 w-5 text-cyan-500" />,
       });
 
       // Reset form and states after successful update
@@ -124,17 +124,17 @@ export default function ChangePasswordPage() {
         transition={{ duration: 0.5 }}
         className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
         <div className="space-y-2">
-          <Badge variant="outline" className="border-green-200 dark:border-green-800 bg-green-100 dark:bg-green-900/60 text-green-800 dark:text-green-300 px-3 py-1 text-sm rounded-full shadow-sm hover:shadow-md transition-shadow duration-300">
+          <Badge variant="outline" className="border-violet-200 dark:border-violet-800 bg-violet-100 dark:bg-violet-900/60 text-violet-800 dark:text-cyan-300 px-3 py-1 text-sm rounded-full shadow-sm hover:shadow-md transition-shadow duration-300">
             <motion.span
               className="flex items-center"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.3 }}>
-              <Lock className="h-3.5 w-3.5 mr-2 text-green-600 dark:text-green-400" />
+              <Lock className="h-3.5 w-3.5 mr-2 text-violet-600 dark:text-cyan-400" />
               Bảo mật tài khoản
             </motion.span>
           </Badge>
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 dark:from-cyan-400 dark:to-cyan-400">
             Đổi mật khẩu
           </h1>
           <p className="max-w-[600px] mx-auto text-gray-500 md:text-xl dark:text-gray-400">
@@ -147,8 +147,8 @@ export default function ChangePasswordPage() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-green-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm rounded-2xl p-6 space-y-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-50/30 to-transparent dark:from-green-950/20 pointer-events-none" />
+        className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-violet-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm rounded-2xl p-6 space-y-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-50/30 to-transparent dark:from-violet-950/20 pointer-events-none" />
 
         <section className="space-y-6 relative">
           <header className="flex items-center justify-between gap-4">
@@ -161,8 +161,8 @@ export default function ChangePasswordPage() {
             <motion.div
               whileHover={{ rotate: 10, scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="h-20 w-20 flex items-center justify-center rounded-full bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-950 dark:to-teal-950 shadow-md">
-              <ShieldCheck className="h-10 w-10 text-green-600 dark:text-green-400" />
+              className="h-20 w-20 flex items-center justify-center rounded-full bg-gradient-to-br from-violet-50 to-cyan-50 dark:from-violet-950 dark:to-violet-950 shadow-md">
+              <ShieldCheck className="h-10 w-10 text-violet-600 dark:text-cyan-400" />
             </motion.div>
           </header>
         </section>
@@ -192,7 +192,7 @@ export default function ChangePasswordPage() {
                         <FormControl>
                           <PasswordInput
                             placeholder="Nhập mật khẩu hiện tại"
-                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-green-300 dark:focus:border-green-700 transition-all duration-300 hover:shadow-sm focus:shadow-md"
+                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-cyan-300 dark:focus:border-violet-700 transition-all duration-300 hover:shadow-sm focus:shadow-md"
                             {...field}
                           />
                         </FormControl>
@@ -227,7 +227,7 @@ export default function ChangePasswordPage() {
                         <FormControl>
                           <PasswordInput
                             placeholder="Nhập mật khẩu mới"
-                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-green-300 dark:focus:border-green-700 transition-all duration-300 hover:shadow-sm focus:shadow-md"
+                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-cyan-300 dark:focus:border-violet-700 transition-all duration-300 hover:shadow-sm focus:shadow-md"
                             {...field}
                             onChange={(e) => {
                               field.onChange(e);
@@ -244,7 +244,7 @@ export default function ChangePasswordPage() {
                     <div className="space-y-2">
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Độ mạnh mật khẩu:</span>
-                        <span className={`text-xs font-medium ${passwordStrength > 60 ? 'text-green-600 dark:text-green-400' : passwordStrength > 40 ? 'text-yellow-600 dark:text-yellow-400' : 'text-red-600 dark:text-red-400'}`}>
+                        <span className={`text-xs font-medium ${passwordStrength > 60 ? 'text-violet-600 dark:text-cyan-400' : passwordStrength > 40 ? 'text-yellow-600 dark:text-yellow-400' : 'text-red-600 dark:text-red-400'}`}>
                           {getStrengthLabel()}
                         </span>
                       </div>
@@ -256,11 +256,11 @@ export default function ChangePasswordPage() {
                         {passwordRequirements.map((req) => (
                           <div key={req.id} className="flex items-center">
                             {requirements[req.id] ? (
-                              <CheckCircle2 className="h-3.5 w-3.5 text-green-500 dark:text-green-400 mr-2" />
+                              <CheckCircle2 className="h-3.5 w-3.5 text-cyan-500 dark:text-cyan-400 mr-2" />
                             ) : (
                               <XCircle className="h-3.5 w-3.5 text-gray-300 dark:text-gray-600 mr-2" />
                             )}
-                            <span className={`text-xs ${requirements[req.id] ? 'text-green-700 dark:text-green-300' : 'text-gray-500 dark:text-gray-400'}`}>
+                            <span className={`text-xs ${requirements[req.id] ? 'text-violet-700 dark:text-cyan-300' : 'text-gray-500 dark:text-gray-400'}`}>
                               {req.label}
                             </span>
                           </div>
@@ -295,7 +295,7 @@ export default function ChangePasswordPage() {
                         <FormControl>
                           <PasswordInput
                             placeholder="Nhập lại mật khẩu mới"
-                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-green-300 dark:focus:border-green-700 transition-all duration-300 hover:shadow-sm focus:shadow-md"
+                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-cyan-300 dark:focus:border-violet-700 transition-all duration-300 hover:shadow-sm focus:shadow-md"
                             {...field}
                           />
                         </FormControl>
@@ -317,7 +317,7 @@ export default function ChangePasswordPage() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect group relative overflow-hidden">
+                className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect group relative overflow-hidden">
                 <div className="relative z-10 flex items-center">
                   <Save className="h-4 w-4 mr-2 transition-transform group-hover:scale-110" />
                   {isLoading ? "Đang cập nhật..." : "Cập nhật mật khẩu"}

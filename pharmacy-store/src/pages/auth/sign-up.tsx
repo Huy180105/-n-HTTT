@@ -144,7 +144,7 @@ export default function RegisterPage() {
                         <Input
                           {...field}
                           placeholder="Nguyễn"
-                          className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-green-500/20 focus:border-green-500 dark:focus:border-green-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
+                          className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 dark:focus:border-cyan-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
                         />
                       </div>
                     </FormControl>
@@ -165,7 +165,7 @@ export default function RegisterPage() {
                         <Input
                           {...field}
                           placeholder="Văn A"
-                          className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-green-500/20 focus:border-green-500 dark:focus:border-green-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
+                          className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 dark:focus:border-cyan-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
                         />
                       </div>
                     </FormControl>
@@ -188,7 +188,7 @@ export default function RegisterPage() {
                       <Input
                         {...field}
                         placeholder="username"
-                        className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-green-500/20 focus:border-green-500 dark:focus:border-green-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
+                        className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 dark:focus:border-cyan-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
                       />
                     </div>
                   </FormControl>
@@ -211,7 +211,7 @@ export default function RegisterPage() {
                         {...field}
                         type="email"
                         placeholder="example@email.com"
-                        className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-green-500/20 focus:border-green-500 dark:focus:border-green-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
+                        className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 dark:focus:border-cyan-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
                       />
                     </div>
                   </FormControl>
@@ -233,7 +233,7 @@ export default function RegisterPage() {
                       placeholder="+84123456789"
                       defaultCountry="VN"
                       international
-                      className="h-10 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-green-500/20 focus:border-green-500 dark:focus:border-green-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
+                      className="h-10 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 dark:focus:border-cyan-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
                     />
                   </FormControl>
                   <FormMessage className="text-xs font-medium" />
@@ -255,7 +255,7 @@ export default function RegisterPage() {
                         <PasswordInput
                           {...field}
                           placeholder="********"
-                          className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-green-500/20 focus:border-green-500 dark:focus:border-green-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
+                          className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 dark:focus:border-cyan-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
                           onChange={(e) => {
                             field.onChange(e);
                             setPasswordValue(e.target.value);
@@ -278,8 +278,8 @@ export default function RegisterPage() {
                           </div>
                           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                             <div
-                              className={`h-full rounded-full transition-all duration-300 ${passwordStrength >= 100 ? 'bg-green-500' :
-                                  passwordStrength >= 67 ? 'bg-blue-500' :
+                              className={`h-full rounded-full transition-all duration-300 ${passwordStrength >= 100 ? 'bg-cyan-500' :
+                                  passwordStrength >= 67 ? 'bg-violet-500' :
                                     passwordStrength >= 34 ? 'bg-yellow-500' : 'bg-red-500'
                                 }`}
                               style={{ width: `${passwordStrength}%` }}
@@ -292,12 +292,12 @@ export default function RegisterPage() {
                           {passwordRequirements.map((req) => (
                             <div key={req.id} className="flex items-center gap-2">
                               {requirements[req.id] ? (
-                                <CheckCircle2 className="h-4 w-4 text-green-500" />
+                                <CheckCircle2 className="h-4 w-4 text-cyan-500" />
                               ) : (
                                 <div className="h-4 w-4 rounded-full border-2 border-gray-300 dark:border-gray-600" />
                               )}
                               <span className={`text-xs ${requirements[req.id]
-                                  ? 'text-green-600 dark:text-green-400'
+                                  ? 'text-violet-600 dark:text-cyan-400'
                                   : 'text-gray-500 dark:text-gray-400'
                                 }`}>
                                 {req.label}
@@ -323,7 +323,7 @@ export default function RegisterPage() {
                         <PasswordInput
                           {...field}
                           placeholder="********"
-                          className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-green-500/20 focus:border-green-500 dark:focus:border-green-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
+                          className="h-10 pl-9 border-gray-200 dark:border-gray-800 bg-transparent dark:bg-transparent focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 dark:focus:border-cyan-400 rounded-lg text-gray-800 dark:text-gray-200 text-sm"
                         />
                       </div>
                     </FormControl>
@@ -336,11 +336,11 @@ export default function RegisterPage() {
             {/* Agreement text - optional */}
             <div className="text-xs text-gray-500 dark:text-gray-400">
               Bằng cách đăng ký, bạn đồng ý với{" "}
-              <Link to="#" className="font-medium text-green-600 hover:text-green-500 dark:text-green-500 dark:hover:text-green-400">
+              <Link to="#" className="font-medium text-violet-600 hover:text-cyan-500 dark:text-cyan-500 dark:hover:text-cyan-400">
                 Điều khoản dịch vụ
               </Link>{" "}
               và{" "}
-              <Link to="#" className="font-medium text-green-600 hover:text-green-500 dark:text-green-500 dark:hover:text-green-400">
+              <Link to="#" className="font-medium text-violet-600 hover:text-cyan-500 dark:text-cyan-500 dark:hover:text-cyan-400">
                 Chính sách bảo mật
               </Link>{" "}
               của chúng tôi.
@@ -349,7 +349,7 @@ export default function RegisterPage() {
             {/* Submit button */}
             <Button
               type="submit"
-              className="w-full h-10 bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white shadow-md font-medium transition-all duration-200 ease-in-out transform hover:translate-y-[-1px] hover:shadow-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full h-10 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-md font-medium transition-all duration-200 ease-in-out transform hover:translate-y-[-1px] hover:shadow-lg text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               disabled={isLoading || !Object.values(requirements).every(req => req)}
             >
               {isLoading ? (
@@ -365,7 +365,7 @@ export default function RegisterPage() {
             {/* Login link */}
             <div className="text-center text-xs text-gray-600 dark:text-gray-400">
               Đã có tài khoản?{" "}
-              <Link to={routes.auth.login} className="font-medium text-green-600 hover:text-green-500 dark:text-green-500 dark:hover:text-green-400 hover:underline transition-colors">
+              <Link to={routes.auth.login} className="font-medium text-violet-600 hover:text-cyan-500 dark:text-cyan-500 dark:hover:text-cyan-400 hover:underline transition-colors">
                 Đăng nhập
               </Link>
             </div>

@@ -22,11 +22,11 @@ export function InvoiceFilterBar({
   return (
     <div className="flex flex-col gap-4 md:flex-row md:items-center justify-between">
       <div className="relative w-full max-w-sm">
-        <Search className="absolute left-3 top-2.5 h-4 w-4 text-emerald-500 dark:text-emerald-400" />
+        <Search className="absolute left-3 top-2.5 h-4 w-4 text-cyan-600 dark:text-cyan-400" />
         <Input
           type="search"
           placeholder="Tìm kiếm hóa đơn..."
-          className="pl-9 w-full focus-visible:ring-emerald-500 dark:focus-visible:ring-emerald-400 border-emerald-100 dark:border-emerald-900/50 dark:bg-gray-900/50 dark:placeholder:text-gray-500 bg-white/80 shadow-sm"
+          className="pl-9 w-full focus-visible:ring-cyan-500 dark:focus-visible:ring-cyan-400 border-cyan-100 dark:border-cyan-900/50 dark:bg-gray-900/50 dark:placeholder:text-gray-500 bg-white/80 shadow-sm"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -45,13 +45,13 @@ export function InvoiceFilterBar({
 
       <div className="flex gap-3 items-center">
         <Select value={statusFilter} onValueChange={setStatusFilter}>
-          <SelectTrigger className="w-full md:w-[200px] focus:ring-emerald-500 dark:focus:ring-emerald-400 border-emerald-100 dark:border-emerald-900/50 dark:bg-gray-900/50 bg-white/80 shadow-sm">
+          <SelectTrigger className="w-full md:w-[200px] focus:ring-cyan-500 dark:focus:ring-cyan-400 border-cyan-100 dark:border-cyan-900/50 dark:bg-gray-900/50 bg-white/80 shadow-sm">
             <div className="flex items-center gap-2">
-              <FilterIcon className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
+              <FilterIcon className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
               <SelectValue placeholder="Lọc theo trạng thái" />
             </div>
           </SelectTrigger>
-          <SelectContent className="rounded-lg border-emerald-100 dark:border-emerald-900/50 dark:bg-gray-900">
+          <SelectContent className="rounded-lg border-cyan-100 dark:border-cyan-900/50 dark:bg-gray-900">
             <SelectItem value="all">Tất cả hóa đơn</SelectItem>
             <SelectItem value={InvoiceStatus.PENDING}>Chờ thanh toán</SelectItem>
             <SelectItem value={InvoiceStatus.PAID}>Đã thanh toán</SelectItem>
@@ -61,7 +61,7 @@ export function InvoiceFilterBar({
 
         {(searchTerm || statusFilter !== "all") && (
           <Button
-            className="border-emerald-200 dark:border-emerald-800/50 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/30"
+            className="border-cyan-200 dark:border-cyan-800/50 text-cyan-700 dark:text-cyan-400 hover:bg-cyan-50 dark:hover:bg-cyan-950/40"
             variant="outline"
             onClick={clearFilters}
           >

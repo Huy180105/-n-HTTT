@@ -39,7 +39,7 @@ export const invoiceColumns: ColumnDef<InvoiceResponse>[] = [
       <DataTableColumnHeader column={column} title="Mã hóa đơn" />
     ),
     cell: ({ row }) => (
-      <div className="font-medium text-emerald-700 dark:text-emerald-400">
+      <div className="font-medium text-blue-700 dark:text-cyan-400">
         {row.getValue("invoiceNumber")}
       </div>
     ),
@@ -65,7 +65,7 @@ export const invoiceColumns: ColumnDef<InvoiceResponse>[] = [
       <DataTableColumnHeader column={column} title="Tổng tiền" />
     ),
     cell: ({ row }) => (
-      <div className="font-medium text-emerald-800 dark:text-emerald-300">
+      <div className="font-medium text-blue-800 dark:text-cyan-300">
         {formatCurrency(row.getValue("totalPrice"))}
       </div>
     ),
@@ -147,7 +147,7 @@ export const invoiceColumns: ColumnDef<InvoiceResponse>[] = [
 function getStatusStyle(status: InvoiceStatus): string {
   switch (status) {
     case InvoiceStatus.PAID:
-      return "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-400 dark:border-emerald-800/40 min-w-[120px] justify-center";
+      return "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-cyan-400 dark:border-blue-800/40 min-w-[120px] justify-center";
     case InvoiceStatus.PENDING:
       return "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-900/20 dark:text-amber-400 dark:border-amber-800/40 min-w-[120px] justify-center";
     case InvoiceStatus.CANCELLED:

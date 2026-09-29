@@ -32,14 +32,14 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
               className={`py-3 px-6 font-medium text-sm rounded-t-xl transition-all duration-300 relative ${activeTab === tab.id
-                ? "text-emerald-600 bg-emerald-50 dark:bg-emerald-950/20"
+                ? "text-violet-600 bg-violet-50 dark:bg-violet-950/20"
                 : "text-muted-foreground hover:text-foreground hover:bg-slate-50 dark:hover:bg-slate-800/50"
                 }`}
             >
               {tab.label}
               {activeTab === tab.id && (
                 <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 to-cyan-500"
                   layoutId="activeTab"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -60,8 +60,8 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
         className="p-8 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900/80 dark:to-slate-900/30 rounded-2xl shadow-lg border"
       >
         {activeTab === "details" && (
-          <div className="prose prose-emerald dark:prose-invert max-w-none">
-            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 mb-8 pb-2 border-b border-emerald-100 dark:border-emerald-900/50">
+          <div className="prose prose-blue dark:prose-invert max-w-none">
+            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 mb-8 pb-2 border-b border-violet-100 dark:border-violet-900/50">
               Thông tin chi tiết
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -73,8 +73,8 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                   className="bg-white dark:bg-slate-800/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <h4 className="font-semibold text-lg flex items-center mb-4">
-                    <span className="h-10 w-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mr-3">
-                      <Info className="h-5 w-5 text-emerald-600" />
+                    <span className="h-10 w-10 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center mr-3">
+                      <Info className="h-5 w-5 text-violet-600" />
                     </span>
                     Thành phần
                   </h4>
@@ -90,8 +90,8 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                   className="bg-white dark:bg-slate-800/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <h4 className="font-semibold text-lg flex items-center mb-4">
-                    <span className="h-10 w-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mr-3">
-                      <Check className="h-5 w-5 text-emerald-600" />
+                    <span className="h-10 w-10 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center mr-3">
+                      <Check className="h-5 w-5 text-violet-600" />
                     </span>
                     Công dụng
                   </h4>
@@ -104,7 +104,7 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                         transition={{ delay: index * 0.1 }}
                         className="flex items-center"
                       >
-                        <Check className="h-5 w-5 text-emerald-500 mr-3 flex-shrink-0" />
+                        <Check className="h-5 w-5 text-cyan-500 mr-3 flex-shrink-0" />
                         <span className="text-muted-foreground">{item}</span>
                       </motion.li>
                     ))}
@@ -119,8 +119,8 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                 className="bg-white dark:bg-slate-800/50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <h4 className="font-semibold text-lg flex items-center mb-6">
-                  <span className="h-10 w-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mr-3">
-                    <BarChart2 className="h-5 w-5 text-emerald-600" />
+                  <span className="h-10 w-10 rounded-full bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center mr-3">
+                    <BarChart2 className="h-5 w-5 text-violet-600" />
                   </span>
                   Thông số
                 </h4>
@@ -149,8 +149,8 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
         )}
 
         {activeTab === "usageguide" && (
-          <div className="prose prose-emerald dark:prose-invert max-w-none">
-            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 mb-8 pb-2 border-b border-emerald-100 dark:border-emerald-900/50">
+          <div className="prose prose-blue dark:prose-invert max-w-none">
+            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 mb-8 pb-2 border-b border-violet-100 dark:border-violet-900/50">
               Hướng dẫn sử dụng
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -160,8 +160,8 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                 transition={{ delay: 0.1 }}
                 className="bg-white dark:bg-slate-800/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-4 border-b border-emerald-100 dark:border-emerald-900/50">
-                  <h4 className="font-semibold flex items-center text-emerald-700 dark:text-emerald-400">
+                <div className="bg-gradient-to-r from-cyan-500/10 to-cyan-500/10 p-4 border-b border-violet-100 dark:border-violet-900/50">
+                  <h4 className="font-semibold flex items-center text-violet-700 dark:text-cyan-400">
                     <BarChart2 className="h-5 w-5 mr-2" /> Liều lượng
                   </h4>
                 </div>
@@ -179,15 +179,15 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                 transition={{ delay: 0.2 }}
                 className="bg-white dark:bg-slate-800/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-4 border-b border-emerald-100 dark:border-emerald-900/50">
-                  <h4 className="font-semibold flex items-center text-emerald-700 dark:text-emerald-400">
+                <div className="bg-gradient-to-r from-cyan-500/10 to-cyan-500/10 p-4 border-b border-violet-100 dark:border-violet-900/50">
+                  <h4 className="font-semibold flex items-center text-violet-700 dark:text-cyan-400">
                     <Check className="h-5 w-5 mr-2" /> Cách dùng
                   </h4>
                 </div>
                 <div className="p-6">
                   {usageguide?.directions.map((direction, index) => (
                     <li key={index} className="flex items-start mb-3 last:mb-0">
-                      <Check className="h-5 w-5 text-emerald-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <Check className="h-5 w-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-muted-foreground">{direction}</span>
                     </li>
                   ))}
@@ -200,8 +200,8 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                 transition={{ delay: 0.3 }}
                 className="bg-white dark:bg-slate-800/50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-4 border-b border-emerald-100 dark:border-emerald-900/50">
-                  <h4 className="font-semibold flex items-center text-emerald-700 dark:text-emerald-400">
+                <div className="bg-gradient-to-r from-cyan-500/10 to-cyan-500/10 p-4 border-b border-violet-100 dark:border-violet-900/50">
+                  <h4 className="font-semibold flex items-center text-violet-700 dark:text-cyan-400">
                     <Info className="h-5 w-5 mr-2" /> Lưu ý
                   </h4>
                 </div>
@@ -221,8 +221,8 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
         )}
 
         {activeTab === "supplier" && (
-          <div className="prose prose-emerald dark:prose-invert max-w-none">
-            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-8 pb-2 border-b border-blue-100 dark:border-blue-900/50">
+          <div className="prose prose-blue dark:prose-invert max-w-none">
+            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600 mb-8 pb-2 border-b border-violet-100 dark:border-violet-900/50">
               Thông tin nhà cung cấp
             </h3>
 
@@ -233,19 +233,19 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
-                  className="md:col-span-4 bg-gradient-to-br from-white to-blue-50 dark:from-slate-800 dark:to-blue-900/20 p-6 rounded-2xl shadow-md border border-blue-100 dark:border-blue-900/30 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+                  className="md:col-span-4 bg-gradient-to-br from-white to-violet-50 dark:from-slate-800 dark:to-violet-900/20 p-6 rounded-2xl shadow-md border border-violet-100 dark:border-violet-900/30 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
                 >
                   {/* Background decoration */}
-                  <div className="absolute -right-12 -bottom-12 h-64 w-64 rounded-full bg-blue-500/5 dark:bg-blue-500/10"></div>
-                  <div className="absolute right-20 bottom-20 h-24 w-24 rounded-full bg-blue-500/5 dark:bg-blue-500/10"></div>
+                  <div className="absolute -right-12 -bottom-12 h-64 w-64 rounded-full bg-violet-500/5 dark:bg-violet-500/10"></div>
+                  <div className="absolute right-20 bottom-20 h-24 w-24 rounded-full bg-violet-500/5 dark:bg-violet-500/10"></div>
 
                   {/* Supplier title */}
                   <div className="flex items-start mb-6">
-                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-6 flex-shrink-0 shadow-md">
+                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center mr-6 flex-shrink-0 shadow-md">
                       <Building className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="inline-flex mb-2 items-center bg-blue-100 dark:bg-blue-800/30 px-2 py-1 rounded text-xs font-medium text-blue-700 dark:text-blue-300">
+                      <div className="inline-flex mb-2 items-center bg-violet-100 dark:bg-violet-800/30 px-2 py-1 rounded text-xs font-medium text-violet-700 dark:text-blue-300">
                         <Shield className="h-3 w-3 mr-1" />
                         Nhà cung cấp được xác minh
                       </div>
@@ -263,8 +263,8 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2 }}
                     >
-                      <div className="h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-800/30 flex-shrink-0 flex items-center justify-center mr-3">
-                        <MapPin className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                      <div className="h-10 w-10 rounded-full bg-violet-100 dark:bg-violet-800/30 flex-shrink-0 flex items-center justify-center mr-3">
+                        <MapPin className="h-5 w-5 text-violet-600 dark:text-blue-400" />
                       </div>
                       <div className="flex-1">
                         <h5 className="font-medium text-slate-700 dark:text-slate-300">Địa chỉ</h5>
@@ -279,12 +279,12 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 }}
                       >
-                        <div className="h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-800/30 flex-shrink-0 flex items-center justify-center mr-3">
-                          <Phone className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                        <div className="h-10 w-10 rounded-full bg-violet-100 dark:bg-violet-800/30 flex-shrink-0 flex items-center justify-center mr-3">
+                          <Phone className="h-5 w-5 text-violet-600 dark:text-blue-400" />
                         </div>
                         <div className="flex-1">
                           <h5 className="font-medium text-slate-700 dark:text-slate-300">Điện thoại</h5>
-                          <a href={`tel:${supplier.contactPhone}`} className="text-blue-600 dark:text-blue-400 hover:underline">
+                          <a href={`tel:${supplier.contactPhone}`} className="text-violet-600 dark:text-blue-400 hover:underline">
                             {supplier.contactPhone}
                           </a>
                         </div>
@@ -296,12 +296,12 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.4 }}
                       >
-                        <div className="h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-800/30 flex-shrink-0 flex items-center justify-center mr-3">
-                          <Mail className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                        <div className="h-10 w-10 rounded-full bg-violet-100 dark:bg-violet-800/30 flex-shrink-0 flex items-center justify-center mr-3">
+                          <Mail className="h-5 w-5 text-violet-600 dark:text-blue-400" />
                         </div>
                         <div className="flex-1">
                           <h5 className="font-medium text-slate-700 dark:text-slate-300">Email</h5>
-                          <a href={`mailto:${supplier.contactEmail}`} className="text-blue-600 dark:text-blue-400 hover:underline">
+                          <a href={`mailto:${supplier.contactEmail}`} className="text-violet-600 dark:text-blue-400 hover:underline">
                             {supplier.contactEmail}
                           </a>
                         </div>
@@ -312,12 +312,12 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                   {/* Partnership badge */}
                   {supplier.createdAt && (
                     <motion.div
-                      className="mt-6 flex items-center p-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg border border-blue-100 dark:border-blue-800/30"
+                      className="mt-6 flex items-center p-3 bg-gradient-to-r from-violet-50 to-indigo-50 dark:from-violet-900/20 dark:to-indigo-900/20 rounded-lg border border-violet-100 dark:border-violet-800/30"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 }}
                     >
-                      <Clock className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" />
+                      <Clock className="h-5 w-5 text-violet-500 dark:text-blue-400 mr-2" />
                       <span className="text-sm text-slate-700 dark:text-slate-300">
                         Là đối tác từ <span className="font-medium">{new Date(supplier.createdAt).toLocaleDateString('vi-VN')}</span>
                       </span>
@@ -334,21 +334,21 @@ export function MedicineDetailTabs({ activeTab, onTabChange, details, usageguide
                 >
                   <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
                     <div className="flex items-center mb-5">
-                      <Globe className="h-6 w-6 text-blue-500 mr-2" />
+                      <Globe className="h-6 w-6 text-violet-500 mr-2" />
                       <h4 className="font-semibold text-xl">Thông tin thêm</h4>
                     </div>
 
                     <div className="space-y-3">
                       <div className="flex items-center">
-                        <Check className="h-5 w-5 text-emerald-500 mr-3" />
+                        <Check className="h-5 w-5 text-cyan-500 mr-3" />
                         <span className="text-slate-700 dark:text-slate-300">Đảm bảo chất lượng sản phẩm</span>
                       </div>
                       <div className="flex items-center">
-                        <Check className="h-5 w-5 text-emerald-500 mr-3" />
+                        <Check className="h-5 w-5 text-cyan-500 mr-3" />
                         <span className="text-slate-700 dark:text-slate-300">Chuyển hàng đúng hẹn</span>
                       </div>
                       <div className="flex items-center">
-                        <Check className="h-5 w-5 text-emerald-500 mr-3" />
+                        <Check className="h-5 w-5 text-cyan-500 mr-3" />
                         <span className="text-slate-700 dark:text-slate-300">Bảo hành hoàn tiền</span>
                       </div>
                     </div>

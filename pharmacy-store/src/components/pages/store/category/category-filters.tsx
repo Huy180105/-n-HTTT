@@ -72,7 +72,7 @@ const PriceSlider = ({
           max={maxPriceLimit}
           min={0}
           step={10000}
-          className="w-full [&_[role=slider]]:bg-teal-600 [&_[role=slider]]:border-teal-600 dark:[&_[role=slider]]:bg-teal-500 dark:[&_[role=slider]]:border-teal-500 [&_.bg-primary]:bg-teal-600 dark:[&_.bg-primary]:bg-teal-500 [&_.bg-primary\\/20]:bg-teal-200 dark:[&_.bg-primary\\/20]:bg-teal-800/30"
+          className="w-full [&_[role=slider]]:bg-cyan-500 [&_[role=slider]]:border-cyan-500 dark:[&_[role=slider]]:bg-cyan-400 dark:[&_[role=slider]]:border-cyan-400 [&_.bg-primary]:bg-violet-600 dark:[&_.bg-primary]:bg-cyan-500 [&_.bg-primary\\/20]:bg-violet-200 dark:[&_.bg-primary\\/20]:bg-violet-900/40"
         />
       </div>
       <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 px-1">
@@ -84,16 +84,16 @@ const PriceSlider = ({
         // Dual range display
         <div className="text-sm text-gray-600 dark:text-gray-400 text-center space-y-1">
           <div>
-            Từ: <span className="font-medium text-teal-600 dark:text-teal-400">{formatCurrency(minPrice)}</span>
+            Từ: <span className="font-medium text-violet-600 dark:text-cyan-400">{formatCurrency(minPrice)}</span>
           </div>
           <div>
-            Đến: <span className="font-medium text-emerald-600 dark:text-emerald-400">{formatCurrency(maxPrice)}</span>
+            Đến: <span className="font-medium text-violet-600 dark:text-cyan-400">{formatCurrency(maxPrice)}</span>
           </div>
         </div>
       ) : (
         // Single range display (backward compatibility)
         <div className="text-sm text-gray-600 dark:text-gray-400 text-center">
-          Tối đa: <span className="font-medium text-emerald-600 dark:text-emerald-400">{formatCurrency(maxPrice)}</span>
+          Tối đa: <span className="font-medium text-violet-600 dark:text-cyan-400">{formatCurrency(maxPrice)}</span>
         </div>
       )}
     </div>
@@ -169,7 +169,7 @@ export function CategoryFilters({
             onClick={clearFilters}
             variant="outline"
             size="sm"
-            className="text-teal-600 dark:text-teal-400 border-teal-300 dark:border-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:border-teal-400 dark:hover:border-teal-500 hover:text-teal-700 dark:hover:text-teal-300"
+            className="text-cyan-600 dark:text-cyan-400 border-cyan-300 dark:border-cyan-600 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 hover:border-cyan-400 dark:hover:border-cyan-500 hover:text-cyan-700 dark:hover:text-cyan-300"
           >
             Xóa tất cả
           </Button>
@@ -179,15 +179,15 @@ export function CategoryFilters({
           {/* Category */}
           <FilterSection title="Danh mục">
             <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-teal-400 dark:hover:border-teal-500 focus:border-teal-500 dark:focus:border-teal-400 focus:ring-teal-500 dark:focus:ring-teal-400">
+              <SelectTrigger className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-cyan-400 dark:hover:border-cyan-500 focus:border-cyan-500 dark:focus:border-cyan-400 focus:ring-cyan-500 dark:focus:ring-cyan-400">
                 <SelectValue placeholder="Chọn danh mục" />
               </SelectTrigger>
               <SelectContent className="bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600">
-                <SelectItem value="all" className="text-gray-700 dark:text-gray-200 hover:bg-teal-50 dark:hover:bg-teal-900/20">
+                <SelectItem value="all" className="text-gray-700 dark:text-gray-200 hover:bg-cyan-50 dark:hover:bg-cyan-950/30">
                   Tất cả ({totalMedicines})
                 </SelectItem>
                 {categories.map((category) => (
-                  <SelectItem key={category.id} value={category.id} className="text-gray-700 dark:text-gray-200 hover:bg-teal-50 dark:hover:bg-teal-900/20">
+                  <SelectItem key={category.id} value={category.id} className="text-gray-700 dark:text-gray-200 hover:bg-cyan-50 dark:hover:bg-cyan-950/30">
                     {category.title} ({category.totalMedicines || 0})
                   </SelectItem>
                 ))}
@@ -198,7 +198,7 @@ export function CategoryFilters({
           {/* Nhà sản xuất */}
           <FilterSection title="Nhà sản xuất">
             <Select value={selectedSupplier} onValueChange={setSelectedSupplier}>
-              <SelectTrigger className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-teal-400 dark:hover:border-teal-500 focus:border-teal-500 dark:focus:border-teal-400 focus:ring-teal-500 dark:focus:ring-teal-400">
+              <SelectTrigger className="bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-cyan-400 dark:hover:border-cyan-500 focus:border-cyan-500 dark:focus:border-cyan-400 focus:ring-cyan-500 dark:focus:ring-cyan-400">
                 <SelectValue placeholder="Chọn nhà sản xuất" />
               </SelectTrigger>
               <SelectContent className="bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600 max-h-60 overflow-y-auto">
@@ -208,7 +208,7 @@ export function CategoryFilters({
                     <SelectItem
                       key={supplier.id}
                       value={supplier.id}
-                      className="text-gray-700 dark:text-gray-200 hover:bg-teal-50 dark:hover:bg-teal-900/20"
+                      className="text-gray-700 dark:text-gray-200 hover:bg-cyan-50 dark:hover:bg-cyan-950/30"
                       ref={isLast ? lastSupplierRef : undefined}
                     >
                       {supplier.name}
@@ -220,7 +220,7 @@ export function CategoryFilters({
                 {isFetchingNextPage && (
                   <div className="p-2 text-center text-sm text-gray-500 dark:text-gray-400">
                     <div className="flex items-center justify-center space-x-2">
-                      <div className="w-4 h-4 border-2 border-teal-500 border-t-transparent rounded-full animate-spin"></div>
+                      <div className="w-4 h-4 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
                       <span>Đang tải...</span>
                     </div>
                   </div>
@@ -269,7 +269,7 @@ export function CategoryFilters({
                     id={`rating-${rating}`}
                     checked={selectedRating.includes(rating)}
                     onCheckedChange={(checked) => handleRatingChange(rating, checked as boolean)}
-                    className="border-gray-300 dark:border-gray-600 data-[state=checked]:bg-teal-600 data-[state=checked]:border-teal-600 dark:data-[state=checked]:bg-teal-500 dark:data-[state=checked]:border-teal-500"
+                    className="border-gray-300 dark:border-gray-600 data-[state=checked]:bg-cyan-600 data-[state=checked]:border-cyan-600 dark:data-[state=checked]:bg-cyan-500 dark:data-[state=checked]:border-cyan-500"
                   />
                   <Label htmlFor={`rating-${rating}`} className="flex items-center space-x-2 cursor-pointer text-sm text-gray-700 dark:text-gray-300">
                     <div className="flex">

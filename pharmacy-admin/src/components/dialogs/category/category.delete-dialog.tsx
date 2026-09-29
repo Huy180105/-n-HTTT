@@ -29,7 +29,7 @@ export function CategoryDeleteDialog({ open, onOpenChange, currentCategory }: Pr
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["categories"] });
       toast.success("Đã xóa danh mục thành công", {
-        className: "bg-white dark:bg-slate-800 dark:text-white border-emerald-100 dark:border-slate-700",
+        className: "bg-white dark:bg-slate-800 dark:text-white border-blue-100 dark:border-slate-700",
       });
       onOpenChange(false);
       setTimeout(() => {

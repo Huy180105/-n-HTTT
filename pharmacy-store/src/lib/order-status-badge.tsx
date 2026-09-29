@@ -11,8 +11,8 @@ export const StatusBadge = ({ status }: { status: OrderStatus }) => {
       icon: <ClockIcon className="w-3 h-3 mr-1" />
     },
     [OrderStatus.PROCESSING]: {
-      color: "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/40 dark:text-blue-400 dark:border-blue-800/50",
-      hoverColor: "hover:bg-blue-100/70 hover:text-blue-800 hover:border-blue-300 dark:hover:bg-blue-900/50 dark:hover:text-blue-300 dark:hover:border-blue-700/60",
+      color: "bg-violet-50 text-violet-700 border-violet-200 dark:bg-violet-950/40 dark:text-blue-400 dark:border-violet-800/50",
+      hoverColor: "hover:bg-violet-100/70 hover:text-violet-800 hover:border-blue-300 dark:hover:bg-violet-900/50 dark:hover:text-blue-300 dark:hover:border-violet-700/60",
       label: "Đang xử lý",
       icon: <Package className="w-3 h-3 mr-1" />
     },
@@ -23,8 +23,8 @@ export const StatusBadge = ({ status }: { status: OrderStatus }) => {
       icon: <Truck className="w-3 h-3 mr-1" />
     },
     [OrderStatus.DELIVERED]: {
-      color: "bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950/40 dark:text-teal-400 dark:border-teal-800/50",
-      hoverColor: "hover:bg-teal-100/70 hover:text-teal-800 hover:border-teal-300 dark:hover:bg-teal-900/50 dark:hover:text-teal-300 dark:hover:border-teal-700/60",
+      color: "bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/40 dark:text-sky-400 dark:border-sky-800/50",
+      hoverColor: "hover:bg-sky-100/70 hover:text-sky-800 hover:border-sky-300 dark:hover:bg-sky-900/50 dark:hover:text-sky-300 dark:hover:border-sky-700/60",
       label: "Đã giao hàng",
       icon: <ShoppingBagIcon className="w-3 h-3 mr-1" />
     },
@@ -35,8 +35,8 @@ export const StatusBadge = ({ status }: { status: OrderStatus }) => {
       icon: <Package className="w-3 h-3 mr-1" />
     },
     [OrderStatus.COMPLETED]: {
-      color: "bg-green-50 text-green-700 border-green-200 dark:bg-green-950/40 dark:text-green-400 dark:border-green-800/50",
-      hoverColor: "hover:bg-green-100/70 hover:text-green-800 hover:border-green-300 dark:hover:bg-green-900/50 dark:hover:text-green-300 dark:hover:border-green-700/60",
+      color: "bg-cyan-50 text-cyan-700 border-cyan-200 dark:bg-cyan-950/40 dark:text-cyan-400 dark:border-cyan-800/50",
+      hoverColor: "hover:bg-cyan-100/70 hover:text-cyan-800 hover:border-cyan-300 dark:hover:bg-cyan-900/50 dark:hover:text-cyan-300 dark:hover:border-cyan-700/60",
       label: "Hoàn thành",
       icon: <CheckCircle2Icon className="w-3 h-3 mr-1" />
     },
@@ -53,17 +53,17 @@ export const StatusBadge = ({ status }: { status: OrderStatus }) => {
 export const OrderStatusIcon = ({ status }: { status: OrderStatus }) => {
   switch (status) {
     case OrderStatus.PENDING:
-      return <Clock className="h-5 w-5 text-green-600 dark:text-green-400" />;
+      return <Clock className="h-5 w-5 text-amber-500 dark:text-amber-400" />;
     case OrderStatus.PROCESSING:
-      return <Package className="h-5 w-5 text-blue-500 dark:text-blue-400" />;
+      return <Package className="h-5 w-5 text-violet-500 dark:text-blue-400" />;
     case OrderStatus.SHIPPED:
       return <TruckIcon className="h-5 w-5 text-indigo-500 dark:text-indigo-400" />;
     case OrderStatus.DELIVERED:
     case OrderStatus.COMPLETED:
-      return <ShoppingBag className="h-5 w-5 text-green-600 dark:text-green-400" />;
+      return <ShoppingBag className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />;
     case OrderStatus.CANCELLED:
       return <Package className="h-5 w-5 text-rose-500 dark:text-rose-400" />;
     default:
-      return <Package className="h-5 w-5 text-green-600 dark:text-green-400" />;
+      return <Package className="h-5 w-5 text-violet-600 dark:text-blue-400" />;
   }
 };

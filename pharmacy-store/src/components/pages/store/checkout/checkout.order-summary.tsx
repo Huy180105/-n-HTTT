@@ -107,8 +107,8 @@ export function CheckoutOrderSummary({ cart, totalPrice, selectedAddress, showNe
   return (
     <div className="lg:col-span-1">
       <Card className="overflow-hidden sticky top-24">
-        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-4">
-          <h2 className="text-white font-medium flex items-center gap-2">
+        <div className="bg-gradient-to-r from-violet-700 via-violet-600 to-cyan-600 px-6 py-4">
+          <h2 className="text-white font-semibold flex items-center gap-2">
             <ShoppingBag size={18} /> Tóm tắt đơn hàng
           </h2>
         </div>
@@ -130,7 +130,7 @@ export function CheckoutOrderSummary({ cart, totalPrice, selectedAddress, showNe
                     <span className="text-sm text-gray-600 dark:text-gray-400">
                       {item.quantity} x {formatCurrency(item.medicine.variants.price)}
                     </span>
-                    <span className="font-medium text-green-600">
+                    <span className="font-semibold text-violet-600 dark:text-cyan-400">
                       {formatCurrency(item.medicine.variants.price * item.quantity)}
                     </span>
                   </div>
@@ -143,32 +143,32 @@ export function CheckoutOrderSummary({ cart, totalPrice, selectedAddress, showNe
 
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
-              <span className="text-gray-600 dark:text-gray-400">Tạm tính:</span>
+              <span className="text-slate-600 dark:text-slate-400">Tạm tính:</span>
               <span>{formatCurrency(totalPrice)}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-gray-600 dark:text-gray-400">Phí vận chuyển:</span>
+              <span className="text-slate-600 dark:text-slate-400">Phí vận chuyển:</span>
               <span>
                 {shippingCost === 0 ? (
-                  <span className="text-green-600">Miễn phí</span>
+                  <span className="text-violet-600 dark:text-cyan-400 font-medium">Miễn phí</span>
                 ) : formatCurrency(shippingCost)}
               </span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-gray-600 dark:text-gray-400">Thuế (10% VAT):</span>
+              <span className="text-slate-600 dark:text-slate-400">Thuế (10% VAT):</span>
               <span>{formatCurrency(taxAmount)}</span>
             </div>
           </div>
 
           <Separator className="my-4" />
 
-          <div className="flex justify-between font-semibold text-lg mb-6">
+          <div className="flex justify-between font-bold text-lg mb-6">
             <span>Tổng cộng:</span>
-            <span className="text-green-600">{formatCurrency(grandTotal)}</span>
+            <span className="text-violet-600 dark:text-cyan-400">{formatCurrency(grandTotal)}</span>
           </div>
 
           <Button
-            className="w-full h-11 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white flex items-center justify-center gap-2"
+            className="w-full h-11 bg-gradient-to-r from-violet-700 via-violet-600 to-cyan-600 hover:from-violet-800 hover:to-cyan-700 text-white font-bold flex items-center justify-center gap-2 rounded-xl shadow-md"
             onClick={handlePlaceOrder}
             disabled={isProcessing || (!selectedAddress && !showNewAddressForm)}
           >

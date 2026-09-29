@@ -184,15 +184,23 @@ export function SupplierActionSheet({ currentSupplier, open, onOpenChange }: Pro
                       <FormItem className="bg-white dark:bg-gray-800/40 p-4 rounded-lg shadow-sm border border-violet-100 dark:border-violet-900/50">
                         <FormLabel className="text-violet-700 dark:text-violet-300 font-medium flex items-center gap-2">
                           <Phone className="h-4 w-4 text-violet-500" />
-                          Số điện thoại liên hệ
+                          Số điện thoại liên hệ (10 số)
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="Nhập số điện thoại liên hệ"
+                            placeholder="0912345678"
+                            maxLength={10}
                             className="border-violet-200 dark:border-violet-800 focus-visible:ring-violet-500 rounded-md mt-1.5 bg-violet-50/50 dark:bg-violet-950/30"
                             {...field}
+                            onChange={(e) => {
+                              const cleaned = e.target.value.replace(/\D/g, '').slice(0, 10);
+                              field.onChange(cleaned);
+                            }}
                           />
                         </FormControl>
+                        <FormDescription className="text-xs text-violet-500/80 mt-1">
+                          Số điện thoại gồm 10 chữ số, bắt đầu bằng số 0
+                        </FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}

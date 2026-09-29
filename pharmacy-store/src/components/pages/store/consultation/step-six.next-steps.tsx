@@ -13,13 +13,13 @@ export const StepSixNextSteps = ({ onStartNewConsultation }: StepSixNextStepsPro
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 1.0 }}
   >
-    <Card className="border-blue-200 dark:border-blue-800/50 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 dark:from-blue-950/20 dark:to-indigo-950/20 shadow-lg">
+    <Card className="border-violet-200 dark:border-violet-800/50 bg-gradient-to-br from-violet-50/50 to-indigo-50/50 dark:from-violet-950/20 dark:to-indigo-950/20 shadow-lg">
       <CardContent className="p-8">
         <div className="flex items-center gap-3 mb-8">
-          <div className="p-3 bg-blue-100 dark:bg-blue-900/50 rounded-xl">
-            <Sparkles className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+          <div className="p-3 bg-violet-100 dark:bg-violet-900/50 rounded-xl">
+            <Sparkles className="w-6 h-6 text-violet-600 dark:text-blue-400" />
           </div>
-          <h3 className="text-2xl font-bold text-blue-700 dark:text-blue-300">
+          <h3 className="text-2xl font-bold text-violet-700 dark:text-blue-300">
             Bước tiếp theo
           </h3>
         </div>
@@ -32,25 +32,25 @@ export const StepSixNextSteps = ({ onStartNewConsultation }: StepSixNextStepsPro
             transition={{ delay: 1.2 }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="group p-6 bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-950/30 dark:to-emerald-950/30 rounded-xl border-2 border-teal-200 dark:border-teal-800 cursor-pointer hover:border-teal-300 dark:hover:border-teal-700 hover:shadow-lg transition-all"
+            className="group p-6 bg-gradient-to-br from-cyan-50 to-violet-50 dark:from-violet-950/30 dark:to-violet-950/30 rounded-xl border-2 border-violet-200 dark:border-violet-800 cursor-pointer hover:border-cyan-300 dark:hover:border-violet-700 hover:shadow-lg transition-all"
             onClick={onStartNewConsultation}
           >
             <div className="flex items-center gap-4 mb-4">
-              <div className="p-3 bg-teal-100 dark:bg-teal-900/50 rounded-xl group-hover:bg-teal-200 dark:group-hover:bg-teal-800/70 transition-colors">
-                <Bot className="w-7 h-7 text-teal-600 dark:text-teal-400" />
+              <div className="p-3 bg-violet-100 dark:bg-violet-900/50 rounded-xl group-hover:bg-violet-200 dark:group-hover:bg-violet-800/70 transition-colors">
+                <Bot className="w-7 h-7 text-violet-600 dark:text-cyan-400" />
               </div>
-              <h4 className="text-xl font-bold text-teal-700 dark:text-teal-300">
+              <h4 className="text-xl font-bold text-violet-700 dark:text-cyan-300">
                 Tư vấn AI mới
               </h4>
             </div>
             
-            <p className="text-base text-teal-600 dark:text-teal-400 mb-6 leading-relaxed">
+            <p className="text-base text-violet-600 dark:text-cyan-400 mb-6 leading-relaxed">
               Bắt đầu một phiên tư vấn AI hoàn toàn mới cho các triệu chứng hoặc vấn đề sức khỏe khác
             </p>
             
             <Button 
               variant="outline" 
-              className="w-full border-2 border-teal-300 hover:border-teal-400 hover:bg-teal-100 dark:border-teal-700 dark:hover:border-teal-600 dark:hover:bg-teal-950/50 h-12 text-base font-medium group-hover:shadow-md transition-all"
+              className="w-full border-2 border-cyan-300 hover:border-cyan-400 hover:bg-violet-100 dark:border-violet-700 dark:hover:border-violet-600 dark:hover:bg-violet-950/50 h-12 text-base font-medium group-hover:shadow-md transition-all"
             >
               <RotateCcw className="w-5 h-5 mr-2" />
               Bắt đầu tư vấn mới
@@ -94,7 +94,7 @@ export const StepSixNextSteps = ({ onStartNewConsultation }: StepSixNextStepsPro
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4 }}
-          className="mt-8 p-4 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-950/30 dark:to-blue-950/30 rounded-xl border border-indigo-200 dark:border-indigo-800"
+          className="mt-8 p-4 bg-gradient-to-r from-indigo-50 to-violet-50 dark:from-indigo-950/30 dark:to-violet-950/30 rounded-xl border border-indigo-200 dark:border-indigo-800"
         >
           <div className="text-center">
             <p className="text-sm text-indigo-700 dark:text-indigo-300 font-medium">

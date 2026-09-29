@@ -214,7 +214,7 @@ export function AccountActionDialog({ currentAccount, open, onOpenChange }: Prop
                   isPending ? "opacity-80 cursor-not-allowed" : "",
                   isEdit
                     ? "bg-sky-600 hover:bg-sky-700"
-                    : "bg-emerald-600 hover:bg-emerald-700"
+                    : "bg-blue-600 hover:bg-blue-700"
                 )}
               >
                 {isPending ? (

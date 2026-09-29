@@ -25,7 +25,7 @@ export default React.memo(function RootPage() {
   });
 
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden bg-gradient-to-b from-white via-gray-50/50 to-green-50/20 dark:from-gray-950 dark:via-gray-900/80 dark:to-green-950/30">
+    <div className="flex flex-col min-h-screen overflow-x-hidden bg-gradient-to-b from-white via-gray-50/50 to-violet-50/20 dark:from-gray-950 dark:via-gray-900/80 dark:to-violet-950/30">
       <Suspense fallback={<SectionSkeleton />}>
         <RootHero />
       </Suspense>

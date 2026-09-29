@@ -65,8 +65,8 @@ export function MedicineDetailReviews({ medicineId, star, reviewCount }: Medicin
       className="mb-12"
     >
       <div className="p-8 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900/80 dark:to-slate-900/30 rounded-2xl shadow-lg border">
-        <div className="prose prose-emerald dark:prose-invert max-w-none">
-          <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 mb-8 pb-2 border-b border-emerald-100 dark:border-emerald-900/50">
+        <div className="prose prose-blue dark:prose-invert max-w-none">
+          <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 mb-8 pb-2 border-b border-violet-100 dark:border-violet-900/50">
             Danh gia tu khach hang ({totalReviews})
           </h3>
 
@@ -78,7 +78,7 @@ export function MedicineDetailReviews({ medicineId, star, reviewCount }: Medicin
               transition={{ delay: 0.1 }}
               className="md:w-1/3 bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg text-center"
             >
-              <div className="text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-teal-500 mb-4">
+              <div className="text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-cyan-500 mb-4">
                 {avgStar.toFixed(1)}
               </div>
               <div className="flex justify-center mb-3 space-x-1">
@@ -106,7 +106,7 @@ export function MedicineDetailReviews({ medicineId, star, reviewCount }: Medicin
                 {isAuthenticated ? (
                   <Button
                     variant="outline"
-                    className="w-full text-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/20"
+                    className="w-full text-sm hover:bg-violet-50 dark:hover:bg-violet-900/20"
                     onClick={() => setShowForm(v => !v)}
                   >
                     {showForm ? "Huy" : "Viet danh gia"}
@@ -128,12 +128,12 @@ export function MedicineDetailReviews({ medicineId, star, reviewCount }: Medicin
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="mb-6 bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-emerald-100 dark:border-emerald-900/30"
+                    className="mb-6 bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-violet-100 dark:border-violet-900/30"
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <Avatar className="h-10 w-10">
                         <AvatarImage src={user?.profileImage?.url || ""} />
-                        <AvatarFallback className="bg-emerald-100 text-emerald-700">
+                        <AvatarFallback className="bg-violet-100 text-violet-700">
                           {user?.firstname?.charAt(0) || "U"}
                         </AvatarFallback>
                       </Avatar>
@@ -184,7 +184,7 @@ export function MedicineDetailReviews({ medicineId, star, reviewCount }: Medicin
                           );
                         })}
                       </div>
-                      <span className="ml-2 text-sm font-semibold text-emerald-600">
+                      <span className="ml-2 text-sm font-semibold text-violet-600">
                         {(hoveredRating || selectedRating).toFixed(1)} sao
                       </span>
                     </div>
@@ -195,14 +195,14 @@ export function MedicineDetailReviews({ medicineId, star, reviewCount }: Medicin
                       value={comment}
                       onChange={(e) => setComment(e.target.value)}
                       rows={4}
-                      className="mb-4 resize-none focus:border-emerald-400 dark:focus:border-emerald-500"
+                      className="mb-4 resize-none focus:border-cyan-400 dark:focus:border-cyan-500"
                     />
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-muted-foreground">{comment.length}/1000 ky tu</span>
                       <Button
                         onClick={handleSubmit}
                         disabled={mutation.isPending || !comment.trim() || comment.trim().length < 3}
-                        className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white"
+                        className="bg-gradient-to-r from-cyan-500 to-cyan-500 hover:from-violet-600 hover:to-violet-600 text-white"
                       >
                         {mutation.isPending ? (
                           <span className="flex items-center gap-2">
@@ -225,7 +225,7 @@ export function MedicineDetailReviews({ medicineId, star, reviewCount }: Medicin
               <div className="space-y-6">
                 {isLoading ? (
                   <div className="flex items-center justify-center py-8 text-muted-foreground">
-                    <div className="w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mr-2" />
+                    <div className="w-5 h-5 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin mr-2" />
                     Dang tai danh gia...
                   </div>
                 ) : displayReviews.length === 0 ? (
@@ -243,9 +243,9 @@ export function MedicineDetailReviews({ medicineId, star, reviewCount }: Medicin
                       className="bg-white dark:bg-slate-800/50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300"
                     >
                       <div className="flex items-center mb-4">
-                        <Avatar className="h-12 w-12 mr-4 ring-2 ring-emerald-100 dark:ring-emerald-900/30">
+                        <Avatar className="h-12 w-12 mr-4 ring-2 ring-violet-100 dark:ring-violet-900/30">
                           <AvatarImage src={review.user?.profile_image?.url || ""} />
-                          <AvatarFallback className="bg-emerald-100 text-emerald-700">
+                          <AvatarFallback className="bg-violet-100 text-violet-700">
                             {review.user?.firstname?.charAt(0) || "U"}
                           </AvatarFallback>
                         </Avatar>
@@ -270,7 +270,7 @@ export function MedicineDetailReviews({ medicineId, star, reviewCount }: Medicin
               </div>
 
               {displayReviews.length > 0 && (
-                <Button variant="outline" className="mt-8 bg-white dark:bg-slate-800 shadow-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/20">
+                <Button variant="outline" className="mt-8 bg-white dark:bg-slate-800 shadow-sm hover:bg-violet-50 dark:hover:bg-violet-900/20">
                   Xem tat ca danh gia <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               )}

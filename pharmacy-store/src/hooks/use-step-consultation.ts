@@ -168,19 +168,19 @@ export const stepTitles = [
     title: 'Mô tả triệu chứng',
     description: 'Chia sẻ triệu chứng với AI',
     icon: BotMessageSquare,
-    color: 'text-emerald-600 dark:text-emerald-400'
+    color: 'text-violet-600 dark:text-cyan-400'
   },
   {
     title: 'Gợi ý thuốc',
     description: 'Xem đề xuất từ AI',
     icon: Pill,
-    color: 'text-green-600 dark:text-green-400'
+    color: 'text-cyan-600 dark:text-cyan-400'
   },
   {
     title: 'Thông tin đặt hàng',
     description: 'Nhập thông tin cá nhân',
     icon: User,
-    color: 'text-teal-600 dark:text-teal-400'
+    color: 'text-sky-600 dark:text-sky-400'
   },
   {
     title: 'Xác nhận đặt hàng',
@@ -192,12 +192,6 @@ export const stepTitles = [
     title: 'Hóa đơn điện tử',
     description: 'Chi tiết đơn hàng đã đặt',
     icon: FileText,
-    color: 'text-green-600 dark:text-green-400'
+    color: 'text-violet-600 dark:text-cyan-400'
   },
-  // {
-  //   title: 'Góp ý & Đánh giá',
-  //   description: 'Đánh giá trải nghiệm',
-  //   icon: Star,
-  //   color: 'text-purple-600 dark:text-purple-400'
-  // }
 ];

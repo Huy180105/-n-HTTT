@@ -5,13 +5,11 @@ import { ArrowRight, CheckCircle, Sparkles } from "lucide-react";
 
 export function RootCTA() {
   return (
-    <section className="w-full py-16 md:py-28 bg-gradient-to-br from-green-600 via-emerald-500 to-teal-600 dark:from-green-800 dark:via-emerald-700 dark:to-teal-800 text-white relative overflow-hidden">
-      {/* Background effects */}
+    <section className="w-full py-16 md:py-28 bg-gradient-to-br from-violet-900 via-indigo-900 to-cyan-950 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/30 rounded-full filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/30 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-teal-300/20 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-      
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-cyan-400/20 rounded-full filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-violet-500/20 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -25,17 +23,19 @@ export function RootCTA() {
             transition={{ duration: 0.5 }}
             className="space-y-4 max-w-3xl"
           >
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 shadow-inner mb-2">
-              <Sparkles className="h-4 w-4 mr-2 text-yellow-200" />
-              <span className="text-sm font-medium">Đăng ký hôm nay để nhận ưu đãi đặc biệt</span>
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-inner mb-2">
+              <motion.div animate={{ rotate: [0, 15, -15, 0] }} transition={{ repeat: Infinity, duration: 3 }} className="mr-2 inline-block">
+                <Sparkles className="h-4 w-4 text-cyan-300" />
+              </motion.div>
+              <span className="text-sm font-bold">Nhận ưu đãi đặc quyền từ Pharmacity Store</span>
             </div>
             
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white to-green-100 bg-clip-text text-transparent drop-shadow-sm">
+            <h2 className="text-3xl font-black tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-white via-cyan-100 to-violet-100 bg-clip-text text-transparent drop-shadow-sm">
               Bắt đầu chăm sóc sức khỏe ngay hôm nay
             </h2>
             
             <p className="max-w-[700px] md:text-xl text-white/90 mx-auto font-light leading-relaxed">
-              Đăng ký nhận thông tin khuyến mãi và lời khuyên sức khỏe từ đội ngũ chuyên gia của chúng tôi.
+              Đăng ký ngay để nhận thông tin ưu đãi dược phẩm và tư vấn sức khỏe miễn phí từ đội ngũ Pharmacity Store.
             </p>
           </motion.div>
           
@@ -48,18 +48,20 @@ export function RootCTA() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Input 
                 placeholder="Email của bạn" 
-                className="bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-white/60 focus:border-white/50 focus:ring-white/20 transition-all duration-300 px-4 py-6 rounded-xl text-base shadow-inner" 
+                className="bg-white/10 backdrop-blur-md border-white/30 text-white placeholder:text-white/70 focus:border-white focus:ring-white/30 transition-all duration-300 px-4 py-6 rounded-xl text-base shadow-inner" 
               />
               <Button 
                 size="lg" 
-                className="bg-white text-green-600 hover:text-green-700 hover:bg-white/90 whitespace-nowrap shadow-lg hover:shadow-xl transition-all duration-300 shine-effect group rounded-xl px-6 py-6 font-medium text-base"
+                className="bg-white text-violet-900 hover:text-violet-950 hover:bg-white/95 whitespace-nowrap shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl px-6 py-6 font-bold text-base group"
               >
                 Đăng ký ngay
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                <motion.div animate={{ x: [0, 4, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} className="ml-2 inline-block">
+                  <ArrowRight className="h-5 w-5" />
+                </motion.div>
               </Button>
             </div>
-            <p className="text-sm text-white/80">
-              Bằng cách đăng ký, bạn đồng ý với <a href="#" className="underline underline-offset-2 hover:text-white transition-colors font-medium">Điều khoản sử dụng</a> và <a href="#" className="underline underline-offset-2 hover:text-white transition-colors font-medium">Chính sách bảo mật</a> của chúng tôi.
+            <p className="text-xs text-white/80">
+              Bằng cách đăng ký, bạn đồng ý với <a href="#" className="underline underline-offset-2 hover:text-white transition-colors font-medium">Điều khoản dịch vụ</a> và <a href="#" className="underline underline-offset-2 hover:text-white transition-colors font-medium">Chính sách bảo mật</a> của Pharmacity Store.
             </p>
           </motion.div>
           
@@ -70,19 +72,21 @@ export function RootCTA() {
             className="flex flex-wrap justify-center gap-3 mt-8 max-w-2xl"
           >
             {[
-              { text: "Đặt thuốc online", delay: 0 },
-              { text: "Tư vấn sức khỏe", delay: 0.1 },
-              { text: "Hỗ trợ 24/7", delay: 0.2 },
-              { text: "Giao hàng tận nơi", delay: 0.3 }
+              { text: "Đặt thuốc online 24/7", delay: 0 },
+              { text: "Tư vấn dược sĩ AI", delay: 0.1 },
+              { text: "Giao hàng siêu tốc 2h", delay: 0.2 },
+              { text: "Cam kết 100% chính hãng", delay: 0.3 }
             ].map((feature, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.4 + feature.delay }}
-                className="flex items-center px-4 py-2.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-sm font-medium shadow-md hover:bg-white/20 hover:border-white/30 transition-all duration-300 cursor-pointer"
+                className="flex items-center px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-sm font-semibold shadow-sm hover:bg-white/20 transition-all duration-300"
               >
-                <CheckCircle className="h-4 w-4 mr-2 text-green-200" />
+                <motion.div animate={{ scale: [1, 1.25, 1] }} transition={{ repeat: Infinity, duration: 2, delay: i * 0.2 }} className="mr-2">
+                  <CheckCircle className="h-4 w-4 text-cyan-300" />
+                </motion.div>
                 {feature.text}
               </motion.div>
             ))}

@@ -194,7 +194,7 @@ export default function ProfilePage() {
         <title>{`${routeNames[routes.store.account.root]} | ${siteConfig.name}`}</title>
       </Helmet>
 
-      <div className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-green-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm rounded-2xl p-6 space-y-6">
+      <div className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-violet-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm rounded-2xl p-6 space-y-6">
         <ProfileTitle />
 
         {/* Avatar Upload Section */}
@@ -204,9 +204,9 @@ export default function ProfilePage() {
           transition={{ delay: 0.1 }}
           className="space-y-6"
         >
-          <Card className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-teal-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm">
+          <Card className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-violet-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-teal-700 dark:text-teal-300">
+              <CardTitle className="flex items-center gap-2 text-violet-700 dark:text-cyan-300">
                 <Image className="h-5 w-5" />
                 Ảnh đại diện
               </CardTitle>
@@ -219,7 +219,7 @@ export default function ProfilePage() {
                 {/* Avatar Display & Upload */}
                 <div className="flex flex-col items-center space-y-4">
                   <label className="relative group cursor-pointer block">
-                    <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-teal-200 dark:border-teal-800 shadow-lg">
+                    <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-violet-200 dark:border-violet-800 shadow-lg">
                       {currentAvatarUrl ? (
                         <img
                           src={currentAvatarUrl}
@@ -227,8 +227,8 @@ export default function ProfilePage() {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-teal-100 to-emerald-200 dark:from-teal-800 dark:to-emerald-800">
-                          <User className="w-10 h-10 text-teal-600 dark:text-teal-400" />
+                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-violet-100 to-violet-200 dark:from-violet-800 dark:to-violet-800">
+                          <User className="w-10 h-10 text-violet-600 dark:text-cyan-400" />
                         </div>
                       )}
 
@@ -267,7 +267,7 @@ export default function ProfilePage() {
                         onClick={handleUpload}
                         disabled={isUploadingAvatar}
                         size="sm"
-                        className="gap-2 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="gap-2 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                       >
                         {isUploadingAvatar ? (
                           <>
@@ -291,19 +291,19 @@ export default function ProfilePage() {
                     <h4 className="font-medium mb-2">Hướng dẫn tải ảnh</h4>
                     <div className="space-y-2 text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
                         <span>Nhấp vào avatar để chọn ảnh</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
                         <span>Định dạng: JPEG, PNG, JPG</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
                         <span>Kích thước tối đa: 5MB</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
                         <span>Tỷ lệ khuyến nghị: 1:1 (vuông)</span>
                       </div>
                     </div>
@@ -350,7 +350,7 @@ export default function ProfilePage() {
                 <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Họ</p>
                             <Input
               type="text"
-              className="w-full bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-teal-300 dark:focus:border-teal-700"
+              className="w-full bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-cyan-300 dark:focus:border-violet-700"
               value={formState.lastName}
               onChange={(e) => handleInputChange('lastName', e.target.value)}
               disabled={!formState.isEditMode}
@@ -360,7 +360,7 @@ export default function ProfilePage() {
                 <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Tên</p>
                             <Input
               type="text"
-              className="w-full bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-teal-300 dark:focus:border-teal-700"
+              className="w-full bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-cyan-300 dark:focus:border-violet-700"
               value={formState.firstName}
               onChange={(e) => handleInputChange('firstName', e.target.value)}
               disabled={!formState.isEditMode}
@@ -379,14 +379,14 @@ export default function ProfilePage() {
               <h3 className="font-medium text-gray-900 dark:text-gray-100">Tên người dùng</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Tên người dùng của bạn sẽ được hiển thị trên trang cá nhân{" "}
-                <a href={siteConfig.url} className="text-green-600 dark:text-green-400 hover:underline">
+                <a href={siteConfig.url} className="text-violet-600 dark:text-cyan-400 hover:underline">
                   {siteConfig.name}
                 </a>
               </p>
             </div>
             <Input
               type="text"
-              className="w-full max-w-xs bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-teal-300 dark:focus:border-teal-700"
+              className="w-full max-w-xs bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-cyan-300 dark:focus:border-violet-700"
               value={formState.username}
               onChange={(e) => handleInputChange('username', e.target.value)}
               disabled={!formState.isEditMode}
@@ -407,7 +407,7 @@ export default function ProfilePage() {
             </div>
             <Input
               type="text"
-              className="w-full max-w-xs bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-teal-300 dark:focus:border-teal-700"
+              className="w-full max-w-xs bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-cyan-300 dark:focus:border-violet-700"
               value={formState.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
               disabled={!formState.isEditMode}
@@ -427,7 +427,7 @@ export default function ProfilePage() {
               </p>
             </div>
             <PhoneInput
-              className="w-full max-w-xs bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-teal-300 dark:focus:border-teal-700"
+              className="w-full max-w-xs bg-gray-50/80 dark:bg-gray-900/80 border-gray-100 dark:border-gray-800 focus:border-cyan-300 dark:focus:border-violet-700"
               value={formState.phone}
               onChange={(value) => handleInputChange('phone', value)}
               placeholder="Số điện thoại của bạn"
@@ -443,15 +443,15 @@ export default function ProfilePage() {
 
         {/* Password Section */}
         <section className="space-y-4">
-          <div className="flex items-center justify-between gap-3 p-4 bg-gray-50 dark:bg-gray-900/60 rounded-lg hover:bg-teal-50 dark:hover:bg-teal-950/30 transition-colors duration-200">
-            <div className="p-2 w-12 h-12 rounded-full bg-teal-50 dark:bg-teal-950 flex items-center justify-center">
-              <Lock className="w-6 h-6 text-teal-600 dark:text-teal-400" />
+          <div className="flex items-center justify-between gap-3 p-4 bg-gray-50 dark:bg-gray-900/60 rounded-lg hover:bg-cyan-50 dark:hover:bg-violet-950/30 transition-colors duration-200">
+            <div className="p-2 w-12 h-12 rounded-full bg-cyan-50 dark:bg-violet-950 flex items-center justify-center">
+              <Lock className="w-6 h-6 text-violet-600 dark:text-cyan-400" />
             </div>
             <div className="flex-1">
               <h3 className="font-medium text-gray-900 dark:text-gray-100">Đổi mật khẩu</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Bạn có thể thay đổi mật khẩu của mình tại{" "}
-                <Link to={routes.store.account.changePwd} className="text-teal-600 dark:text-teal-400 hover:underline">
+                <Link to={routes.store.account.changePwd} className="text-violet-600 dark:text-cyan-400 hover:underline">
                   Trang đổi mật khẩu
                 </Link>
               </p>
@@ -459,7 +459,7 @@ export default function ProfilePage() {
                           <Button
                 variant="outline"
                 size="default"
-                className="shrink-0 border-teal-200 hover:border-teal-300 dark:border-teal-800 dark:hover:border-teal-700 hover:bg-teal-50 dark:hover:bg-teal-950/50">
+                className="shrink-0 border-violet-200 hover:border-cyan-300 dark:border-violet-800 dark:hover:border-violet-700 hover:bg-cyan-50 dark:hover:bg-violet-950/50">
                 <Link to={routes.store.account.changePwd}>
                   Đổi mật khẩu
                 </Link>
@@ -480,15 +480,15 @@ export default function ProfilePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <Card className="bg-teal-50/50 dark:bg-teal-950/20 border-teal-200 dark:border-teal-800">
+          <Card className="bg-cyan-50/50 dark:bg-violet-950/20 border-violet-200 dark:border-violet-800">
             <CardContent className="pt-6">
               <div className="flex items-start gap-3">
-                <div className="rounded-full bg-teal-100 dark:bg-teal-900 p-2">
-                  <Info className="h-4 w-4 text-teal-600 dark:text-teal-400" />
+                <div className="rounded-full bg-violet-100 dark:bg-violet-900 p-2">
+                  <Info className="h-4 w-4 text-violet-600 dark:text-cyan-400" />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="font-medium text-teal-700 dark:text-teal-300">Mẹo hồ sơ</h3>
-                  <ul className="text-sm text-teal-600 dark:text-teal-400 space-y-1">
+                  <h3 className="font-medium text-violet-700 dark:text-cyan-300">Mẹo hồ sơ</h3>
+                  <ul className="text-sm text-violet-600 dark:text-cyan-400 space-y-1">
                     <li>• Ảnh đại diện rõ nét giúp tăng độ tin cậy với dược sĩ</li>
                     <li>• Thông tin chính xác giúp hệ thống tư vấn tốt hơn</li>
                     <li>• Số điện thoại được sử dụng cho thông báo đơn hàng</li>
@@ -519,7 +519,7 @@ export default function ProfilePage() {
                   variant="default"
                   onClick={handleSave}
                   disabled={editProfileMutation.isPending}
-                  className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect group">
+                  className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect group">
                   {editProfileMutation.isPending ? (
                     <>
                       <Loader />
@@ -546,7 +546,7 @@ export default function ProfilePage() {
                 <Button
                   variant="default"
                   onClick={() => setFormState(prev => ({ ...prev, isEditMode: true }))}
-                  className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect">
+                  className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect">
                   Sửa hồ sơ
                 </Button>
               </>

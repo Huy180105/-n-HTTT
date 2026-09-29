@@ -56,7 +56,7 @@ export function InvoicePaymentSettings({ form, selectedUser }: Props) {
                   <div className="flex items-center space-x-2 border rounded-lg p-2 hover:bg-muted/50">
                     <RadioGroupItem value={PaymentMethod.BANK_TRANSFER} id="bank" />
                     <Label htmlFor="bank" className="flex items-center gap-2 cursor-pointer flex-1">
-                      <Wallet className="h-3 w-3 text-green-500" />
+                      <Wallet className="h-3 w-3 text-violet-500" />
                       <span className="text-sm">Chuyển khoản</span>
                     </Label>
                   </div>
@@ -136,7 +136,7 @@ export function InvoicePaymentSettings({ form, selectedUser }: Props) {
                     </Badge>
                   </SelectItem>
                   <SelectItem value={InvoiceStatus.PAID}>
-                    <Badge className="bg-emerald-100 text-emerald-800 border-emerald-300">
+                    <Badge className="bg-blue-100 text-blue-800 border-cyan-300">
                       Đã thanh toán
                     </Badge>
                   </SelectItem>

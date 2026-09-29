@@ -58,7 +58,7 @@ export const AccountChangeStatusDialog = memo(function AccountChangeStatusDialog
       case AccountRole.ADMIN:
         return "text-purple-600 dark:text-purple-400 bg-purple-50/70 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800/30";
       case AccountRole.PHARMACIST:
-        return "text-teal-600 dark:text-teal-400 bg-teal-50/70 dark:bg-teal-900/20 border border-teal-100 dark:border-teal-800/30";
+        return "text-indigo-600 dark:text-indigo-400 bg-indigo-50/70 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800/30";
       case AccountRole.CUSTOMER:
         return "text-amber-600 dark:text-amber-400 bg-amber-50/70 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-800/30";
       default:
@@ -77,11 +77,11 @@ export const AccountChangeStatusDialog = memo(function AccountChangeStatusDialog
         <motion.div
           initial={{ x: -5, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          className={`flex items-center gap-2 ${isActivating ? "text-emerald-600 dark:text-emerald-400" : "text-red-600 dark:text-red-400"}`}
+          className={`flex items-center gap-2 ${isActivating ? "text-blue-600 dark:text-cyan-400" : "text-red-600 dark:text-red-400"}`}
         >
           {isActivating ? (
             <div className="flex items-center gap-2">
-              <UserCheck className="h-5 w-5 stroke-emerald-600 dark:stroke-emerald-400" />
+              <UserCheck className="h-5 w-5 stroke-blue-600 dark:stroke-cyan-400" />
               Mở Khóa Tài Khoản Người Dùng
             </div>
           ) : (
@@ -94,9 +94,9 @@ export const AccountChangeStatusDialog = memo(function AccountChangeStatusDialog
       }
       desc={
         <div className="space-y-5">
-          <div className={`rounded-lg border ${isActivating ? "border-emerald-200 dark:border-emerald-800/30 bg-emerald-50/50 dark:bg-emerald-950/10" : "border-red-200 dark:border-red-800/30 bg-red-50/50 dark:bg-red-950/10"} p-4`}>
+          <div className={`rounded-lg border ${isActivating ? "border-blue-200 dark:border-blue-800/30 bg-blue-50/50 dark:bg-blue-950/10" : "border-red-200 dark:border-red-800/30 bg-red-50/50 dark:bg-red-950/10"} p-4`}>
             <div className="flex flex-col items-center justify-center text-center sm:flex-row sm:text-left">
-              <Avatar className={`mb-3 h-16 w-16 border-2 ${isActivating ? "border-emerald-200 dark:border-emerald-800/40" : "border-red-200 dark:border-red-800/40"} sm:mb-0 sm:mr-4`}>
+              <Avatar className={`mb-3 h-16 w-16 border-2 ${isActivating ? "border-blue-200 dark:border-blue-800/40" : "border-red-200 dark:border-red-800/40"} sm:mb-0 sm:mr-4`}>
                 {currentAccount?.profileImage && (
                   <AvatarImage
                     src={currentAccount?.profileImage.url}
@@ -149,12 +149,12 @@ export const AccountChangeStatusDialog = memo(function AccountChangeStatusDialog
             <Alert
               variant="destructive"
               className={isActivating
-                ? "border-emerald-200/70 dark:border-emerald-800/30 bg-emerald-50/60 dark:bg-emerald-950/10 text-emerald-700 dark:text-emerald-400"
+                ? "border-blue-200/70 dark:border-blue-800/30 bg-blue-50/60 dark:bg-blue-950/10 text-blue-700 dark:text-cyan-400"
                 : "border-red-200/70 dark:border-red-800/30 bg-red-50/60 dark:bg-red-950/10 text-red-700 dark:text-red-400"
               }
             >
               {isActivating ? (
-                <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                <Check className="h-4 w-4 text-blue-600 dark:text-cyan-400" />
               ) : (
                 <TriangleAlert className="h-4 w-4 text-red-600 dark:text-red-400" />
               )}
@@ -198,7 +198,7 @@ export const AccountChangeStatusDialog = memo(function AccountChangeStatusDialog
             className="rounded-lg border border-border/50 bg-card/40 p-4"
           >
             <Label className="mb-2 block font-medium">
-              Vui lòng nhập <span className={`font-mono ${isActivating ? "text-emerald-600 dark:text-emerald-400" : "text-red-600 dark:text-red-400"}`}>{currentAccount?.email}</span> để xác nhận:
+              Vui lòng nhập <span className={`font-mono ${isActivating ? "text-blue-600 dark:text-cyan-400" : "text-red-600 dark:text-red-400"}`}>{currentAccount?.email}</span> để xác nhận:
             </Label>
             <div className="relative">
               <Input
@@ -208,11 +208,11 @@ export const AccountChangeStatusDialog = memo(function AccountChangeStatusDialog
                 className={cn(
                   "pr-8 transition-all",
                   isActivating
-                    ? "focus:border-emerald-500/50 hover:border-emerald-400/30"
+                    ? "focus:border-cyan-500/50 hover:border-cyan-400/30"
                     : "focus:border-red-500/50 hover:border-red-400/30",
                   isConfirmValid
                     ? isActivating
-                      ? "border-emerald-300 dark:border-emerald-700 text-emerald-700 dark:text-emerald-400"
+                      ? "border-cyan-300 dark:border-blue-700 text-blue-700 dark:text-cyan-400"
                       : "border-red-300 dark:border-red-700 text-red-700 dark:text-red-400"
                     : "border-border/50"
                 )}
@@ -224,7 +224,7 @@ export const AccountChangeStatusDialog = memo(function AccountChangeStatusDialog
                   className="absolute right-2.5 top-2.5"
                 >
                   {isActivating ? (
-                    <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                    <Check className="h-4 w-4 text-blue-600 dark:text-cyan-400" />
                   ) : (
                     <Ban className="h-4 w-4 text-red-600 dark:text-red-400" />
                   )}

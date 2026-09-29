@@ -1,4 +1,4 @@
-﻿import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Grid, List, Search, TrendingUp } from "lucide-react";
@@ -18,8 +18,8 @@ interface CategoryToolbarProps {
 }
 
 const POPULAR_SUGGESTIONS = [
-  "Paracetamol", "Vitamin C", "Ibuprofen", "Thuoc ho",
-  "Thuoc dau dau", "Khang sinh", "Canxi", "Omega 3",
+  "Paracetamol", "Vitamin C", "Ibuprofen", "Thuốc ho",
+  "Thuốc đau đầu", "Kháng sinh", "Canxi", "Omega 3",
   "Berocca", "Prospan",
 ];
 
@@ -118,29 +118,29 @@ export function CategoryToolbar({
     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-6">
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
+          <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
           <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-            Hien thi {totalProducts} san pham
+            Hiển thị {totalProducts} sản phẩm
           </span>
         </div>
         {hasActiveFilters && (
-          <Badge variant="outline" className="bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-700">
-            Da ap dung bo loc
+          <Badge variant="outline" className="bg-cyan-50 dark:bg-violet-900/20 text-violet-700 dark:text-cyan-300 border-violet-200 dark:border-violet-700">
+            Đã áp dụng bộ lọc
           </Badge>
         )}
       </div>
 
       <div className="flex-1 max-w-lg mx-6">
         <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-emerald-500/20 rounded-xl blur-lg opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></div>
-          <div className="relative bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md focus-within:shadow-lg focus-within:border-teal-400 dark:focus-within:border-teal-500 transition-all duration-300">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-cyan-500/20 rounded-xl blur-lg opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></div>
+          <div className="relative bg-white dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md focus-within:shadow-lg focus-within:border-cyan-400 dark:focus-within:border-cyan-500 transition-all duration-300">
             <div className="flex items-center">
-              <div className="flex items-center justify-center w-11 h-11 text-gray-400 dark:text-gray-500 group-focus-within:text-teal-500 transition-colors duration-200">
+              <div className="flex items-center justify-center w-11 h-11 text-gray-400 dark:text-gray-500 group-focus-within:text-cyan-500 transition-colors duration-200">
                 <Search className="h-4 w-4" />
               </div>
               <input
                 type="text"
-                placeholder="Tim kiem thuoc..."
+                placeholder="Tìm kiếm thuốc..."
                 value={localSearchValue}
                 onChange={(e) => setLocalSearchValue(e.target.value)}
                 onFocus={() => setIsFocused(true)}
@@ -165,14 +165,14 @@ export function CategoryToolbar({
               <div className="p-3">
                 <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 mb-2 px-1">
                   <TrendingUp className="w-3 h-3" />
-                  {localSearchValue.trim().length === 0 ? "Tim kiem pho bien" : "Goi y"}
+                  {localSearchValue.trim().length === 0 ? "Tìm kiếm phổ biến" : "Gợi ý"}
                 </div>
                 <div className="space-y-0.5">
                   {filteredSuggestions.map((suggestion) => (
                     <button
                       key={suggestion}
                       onMouseDown={() => handleSuggestionClick(suggestion)}
-                      className="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-teal-50 dark:hover:bg-teal-900/20 rounded-lg transition-colors duration-150 flex items-center gap-2"
+                      className="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-cyan-50 dark:hover:bg-violet-900/20 rounded-lg transition-colors duration-150 flex items-center gap-2"
                     >
                       <Search className="w-3 h-3 text-gray-400 flex-shrink-0" />
                       {suggestion}
@@ -187,33 +187,33 @@ export function CategoryToolbar({
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full lg:w-auto">
         <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">Sap xep:</span>
+          <span className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">Sắp xếp:</span>
           <Select value={getSortValue()} onValueChange={handleSortChange}>
             <SelectTrigger className="w-[180px] bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-sm">
-              <SelectValue placeholder="Chon cach sap xep" />
+              <SelectValue placeholder="Chọn cách sắp xếp" />
             </SelectTrigger>
             <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600">
-              <SelectItem value="default">Mac dinh</SelectItem>
-              <SelectItem value="price-asc">Gia tang dan</SelectItem>
-              <SelectItem value="price-desc">Gia giam dan</SelectItem>
-              <SelectItem value="rating-desc">Danh gia cao nhat</SelectItem>
-              <SelectItem value="newest">Moi nhat</SelectItem>
-              <SelectItem value="popular">Pho bien nhat</SelectItem>
-              <SelectItem value="name-asc">Ten A-Z</SelectItem>
-              <SelectItem value="name-desc">Ten Z-A</SelectItem>
+              <SelectItem value="default">Mặc định</SelectItem>
+              <SelectItem value="price-asc">Giá tăng dần</SelectItem>
+              <SelectItem value="price-desc">Giá giảm dần</SelectItem>
+              <SelectItem value="rating-desc">Đánh giá cao nhất</SelectItem>
+              <SelectItem value="newest">Mới nhất</SelectItem>
+              <SelectItem value="popular">Phổ biến nhất</SelectItem>
+              <SelectItem value="name-asc">Tên A-Z</SelectItem>
+              <SelectItem value="name-desc">Tên Z-A</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">Hien thi:</span>
+          <span className="text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap">Hiển thị:</span>
           <div className="flex bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
             <Button
               variant={viewMode === "grid" ? "default" : "ghost"}
               size="sm"
               onClick={() => setViewMode("grid")}
               className={`h-8 w-8 p-0 rounded-md transition-all duration-200 ${viewMode === "grid"
-                  ? "bg-white dark:bg-gray-800 shadow-sm text-teal-600 dark:text-teal-400"
+                  ? "bg-white dark:bg-gray-800 shadow-sm text-violet-600 dark:text-cyan-400"
                   : "hover:bg-white/50 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-400"
                 }`}
             >
@@ -224,7 +224,7 @@ export function CategoryToolbar({
               size="sm"
               onClick={() => setViewMode("list")}
               className={`h-8 w-8 p-0 rounded-md transition-all duration-200 ${viewMode === "list"
-                  ? "bg-white dark:bg-gray-800 shadow-sm text-teal-600 dark:text-teal-400"
+                  ? "bg-white dark:bg-gray-800 shadow-sm text-violet-600 dark:text-cyan-400"
                   : "hover:bg-white/50 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-400"
                 }`}
             >

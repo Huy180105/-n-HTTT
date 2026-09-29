@@ -22,11 +22,11 @@ export function RootFeatured() {
   })
 
   return (
-    <section className="w-full py-16 md:py-28 bg-gradient-to-b from-white via-green-50/30 to-blue-50/20 dark:from-gray-950 dark:via-green-950/20 dark:to-blue-950/10 relative overflow-hidden">
+    <section className="w-full py-16 md:py-28 bg-gradient-to-b from-white via-violet-50/30 to-violet-50/20 dark:from-gray-950 dark:via-violet-950/20 dark:to-violet-950/10 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
-      <div className="absolute -top-40 right-10 w-96 h-96 bg-green-200/40 dark:bg-green-800/20 rounded-full filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div className="absolute -bottom-40 left-10 w-96 h-96 bg-blue-200/40 dark:bg-blue-800/20 rounded-full filter blur-3xl opacity-30 animate-blob"></div>
+      <div className="absolute -top-40 right-10 w-96 h-96 bg-violet-200/40 dark:bg-violet-800/20 rounded-full filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+      <div className="absolute -bottom-40 left-10 w-96 h-96 bg-violet-200/40 dark:bg-violet-800/20 rounded-full filter blur-3xl opacity-30 animate-blob"></div>
 
       <div className="container px-4 md:px-6 relative z-10">
         <motion.div
@@ -43,11 +43,11 @@ export function RootFeatured() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <Badge variant="outline" className="bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/50 dark:to-emerald-900/50 text-green-800 dark:text-green-300 border-green-200 dark:border-green-800/60 px-4 py-1.5 text-sm rounded-full shadow-sm">
-              <Sparkles className="h-3.5 w-3.5 mr-1.5 text-green-600 dark:text-green-400" />
+            <Badge variant="outline" className="bg-gradient-to-r from-violet-100 to-violet-100 dark:from-violet-900/50 dark:to-violet-900/50 text-violet-800 dark:text-cyan-300 border-violet-200 dark:border-violet-800/60 px-4 py-1.5 text-sm rounded-full shadow-sm">
+              <Sparkles className="h-3.5 w-3.5 mr-1.5 text-violet-600 dark:text-cyan-400" />
               <span className="font-medium">Khuyến mãi đặc biệt</span>
             </Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 dark:from-green-400 dark:via-blue-400 dark:to-purple-400 pb-1">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-violet-600 to-purple-600 dark:from-cyan-400 dark:via-purple-400 dark:to-purple-400 pb-1">
               Sản phẩm bán chạy
             </h2>
             <p className="max-w-[700px] text-gray-600 dark:text-gray-300 text-lg md:text-xl/relaxed mx-auto font-light">
@@ -128,9 +128,9 @@ export function RootFeatured() {
                         <Separator orientation="vertical" className="mx-2 h-4" />
                         <div className="text-xs text-gray-500 dark:text-gray-400">{product.ratings.reviewCount} đánh giá</div>
                       </div>
-                      <h3 className="font-medium text-lg mb-2 line-clamp-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-200">{product.name}</h3>
+                      <h3 className="font-medium text-lg mb-2 line-clamp-2 group-hover:text-violet-600 dark:group-hover:text-cyan-400 transition-colors duration-200">{product.name}</h3>
                       <div className="flex items-baseline gap-2">
-                        <div className="font-bold text-xl bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent dark:from-green-400 dark:to-emerald-400">{product.variants.price.toLocaleString('vi-VN')}đ</div>
+                        <div className="font-bold text-xl bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent dark:from-cyan-400 dark:to-cyan-400">{product.variants.price.toLocaleString('vi-VN')}đ</div>
                         <div className="text-sm text-gray-500 line-through">{product.variants.originalPrice?.toLocaleString('vi-VN')}đ</div>
                       </div>
                     </CardContent>
@@ -139,7 +139,7 @@ export function RootFeatured() {
                     <div className="flex gap-3 w-full">
                       <Button
                         variant="default"
-                        className="rounded-lg bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 dark:from-green-500 dark:to-emerald-500 dark:hover:from-green-600 dark:hover:to-emerald-600 group border-0 hover:shadow-md transition-all duration-200 w-full"
+                        className="rounded-lg bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 dark:from-cyan-500 dark:to-cyan-500 dark:hover:from-violet-600 dark:hover:to-violet-600 group border-0 hover:shadow-md transition-all duration-200 w-full"
                         asChild
                       >
                         <Link to={routes.store.medicineDetails(product.id)}>
@@ -149,7 +149,7 @@ export function RootFeatured() {
                       </Button>
                     </div>
                   </CardFooter>
-                  <div className="h-1 w-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 dark:from-green-500/10 dark:to-emerald-500/10 mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="h-1 w-full bg-gradient-to-r from-cyan-500/20 to-cyan-500/20 dark:from-cyan-500/10 dark:to-cyan-500/10 mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Card>
               </motion.div>
             ))
@@ -164,7 +164,7 @@ export function RootFeatured() {
         >
           <Button
             variant="outline"
-            className="group px-6 py-6 rounded-full border-green-300 dark:border-green-700 bg-white/80 dark:bg-gray-900/60 hover:bg-green-50 dark:hover:bg-green-950/30 text-green-700 dark:text-green-400 font-medium text-lg shadow-md hover:shadow-lg transition-all duration-200 backdrop-blur-sm"
+            className="group px-6 py-6 rounded-full border-cyan-300 dark:border-violet-700 bg-white/80 dark:bg-gray-900/60 hover:bg-violet-50 dark:hover:bg-violet-950/30 text-violet-700 dark:text-cyan-400 font-medium text-lg shadow-md hover:shadow-lg transition-all duration-200 backdrop-blur-sm"
             disabled={isLoading}
             asChild
           >

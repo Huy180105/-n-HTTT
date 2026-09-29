@@ -30,7 +30,7 @@ export function InvoiceDeleteDialog({ currentInvoice, open, onOpenChange }: Prop
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["invoices"] });
       toast.success("Đã xóa hóa đơn thành công", {
-        className: "bg-white dark:bg-slate-800 dark:text-white border-emerald-100 dark:border-slate-700",
+        className: "bg-white dark:bg-slate-800 dark:text-white border-blue-100 dark:border-slate-700",
       });
       setTimeout(() => {
         onOpenChange(false);

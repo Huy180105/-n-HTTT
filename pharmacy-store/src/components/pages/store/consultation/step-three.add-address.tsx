@@ -15,13 +15,13 @@ interface StepThreeAddAddressProps {
 }
 
 export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: StepThreeAddAddressProps) => (
-  <Card className="border-teal-200 dark:border-teal-800">
+  <Card className="border-violet-200 dark:border-violet-800">
     <CardContent className="p-6">
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-md">
+        <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-md">
           <Plus className="w-5 h-5 text-white" />
         </div>
-        <h3 className="text-lg font-semibold text-teal-700 dark:text-teal-300">Thêm địa chỉ mới</h3>
+        <h3 className="text-lg font-semibold text-violet-700 dark:text-cyan-300">Thêm địa chỉ mới</h3>
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -35,7 +35,7 @@ export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: 
                   <FormControl>
                     <Input 
                       placeholder="Nhập tên người nhận" 
-                      className="border-teal-200 dark:border-teal-700 focus:border-teal-400 focus:ring-teal-400/20"
+                      className="border-violet-200 dark:border-violet-700 focus:border-cyan-400 focus:ring-cyan-400/20"
                       {...field} 
                     />
                   </FormControl>
@@ -52,7 +52,7 @@ export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: 
                   <FormControl>
                     <Input 
                       placeholder="Nhập số điện thoại" 
-                      className="border-teal-200 dark:border-teal-700 focus:border-teal-400 focus:ring-teal-400/20"
+                      className="border-violet-200 dark:border-violet-700 focus:border-cyan-400 focus:ring-cyan-400/20"
                       {...field} 
                     />
                   </FormControl>
@@ -71,7 +71,7 @@ export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: 
                 <FormControl>
                   <Input 
                     placeholder="Nhập địa chỉ cụ thể" 
-                    className="border-teal-200 dark:border-teal-700 focus:border-teal-400 focus:ring-teal-400/20"
+                    className="border-violet-200 dark:border-violet-700 focus:border-cyan-400 focus:ring-cyan-400/20"
                     {...field} 
                   />
                 </FormControl>
@@ -89,7 +89,7 @@ export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: 
                 <FormControl>
                   <Input 
                     placeholder="Căn hộ, tầng, tòa nhà..." 
-                    className="border-teal-200 dark:border-teal-700 focus:border-teal-400 focus:ring-teal-400/20"
+                    className="border-violet-200 dark:border-violet-700 focus:border-cyan-400 focus:ring-cyan-400/20"
                     {...field} 
                     value={field.value || ""} 
                   />
@@ -109,7 +109,7 @@ export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: 
                   <FormControl>
                     <Input 
                       placeholder="Thành phố" 
-                      className="border-teal-200 dark:border-teal-700 focus:border-teal-400 focus:ring-teal-400/20"
+                      className="border-violet-200 dark:border-violet-700 focus:border-cyan-400 focus:ring-cyan-400/20"
                       {...field} 
                     />
                   </FormControl>
@@ -126,7 +126,7 @@ export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: 
                   <FormControl>
                     <Input 
                       placeholder="Tỉnh/Bang" 
-                      className="border-teal-200 dark:border-teal-700 focus:border-teal-400 focus:ring-teal-400/20"
+                      className="border-violet-200 dark:border-violet-700 focus:border-cyan-400 focus:ring-cyan-400/20"
                       {...field} 
                       value={field.value || ""} 
                     />
@@ -144,7 +144,7 @@ export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: 
                   <FormControl>
                     <Input 
                       placeholder="Mã bưu điện" 
-                      className="border-teal-200 dark:border-teal-700 focus:border-teal-400 focus:ring-teal-400/20"
+                      className="border-violet-200 dark:border-violet-700 focus:border-cyan-400 focus:ring-cyan-400/20"
                       {...field} 
                     />
                   </FormControl>
@@ -162,7 +162,7 @@ export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: 
                 <FormLabel>Quốc gia *</FormLabel>
                 <FormControl>
                   <Input 
-                    className="border-teal-200 dark:border-teal-700 focus:border-teal-400 focus:ring-teal-400/20"
+                    className="border-violet-200 dark:border-violet-700 focus:border-cyan-400 focus:ring-cyan-400/20"
                     {...field} 
                   />
                 </FormControl>
@@ -175,7 +175,7 @@ export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: 
             control={form.control}
             name="isDefault"
             render={({ field }) => (
-              <FormItem className="flex flex-row items-center justify-between rounded-lg border border-teal-200 dark:border-teal-700 p-4">
+              <FormItem className="flex flex-row items-center justify-between rounded-lg border border-violet-200 dark:border-violet-700 p-4">
                 <div className="space-y-0.5">
                   <FormLabel className="text-base">Đặt làm địa chỉ mặc định</FormLabel>
                   <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -197,14 +197,14 @@ export const StepThreeAddAddress = ({ form, onSubmit, onCancel, isSubmitting }: 
               type="button"
               variant="outline"
               onClick={onCancel}
-              className="border-teal-200 dark:border-teal-700 hover:bg-teal-50 dark:hover:bg-teal-950/30"
+              className="border-violet-200 dark:border-violet-700 hover:bg-cyan-50 dark:hover:bg-violet-950/30"
             >
               Hủy
             </Button>
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="bg-teal-600 hover:bg-teal-700 text-white"
+              className="bg-violet-600 hover:bg-violet-700 text-white"
             >
               {isSubmitting ? "Đang thêm..." : "Thêm địa chỉ"}
             </Button>

@@ -62,7 +62,7 @@ export default function LoginPage({ className, ...props }: React.ComponentProps<
   }
 
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
+    <div className={cn("flex flex-col gap-6 relative z-10", className)} {...props}>
       <Helmet>
         <title>{routeNames[routes.auth.login]} | {siteConfig.name}</title>
       </Helmet>
@@ -72,18 +72,18 @@ export default function LoginPage({ className, ...props }: React.ComponentProps<
           {/* Header Section */}
           <div className="text-center space-y-4">
             <div className="relative inline-block">
-              <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-xl animate-pulse" />
-              <div className="relative flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 shadow-lg">
-                <ShieldCheck className="size-8 text-white" />
+              <div className="absolute inset-0 bg-violet-500/30 rounded-full blur-xl animate-pulse" />
+              <div className="relative flex size-16 items-center justify-center rounded-2xl bg-gradient-to-tr from-violet-600 via-purple-500 to-cyan-400 shadow-xl shadow-violet-500/30 mx-auto">
+                <ShieldCheck className="size-8 text-white drop-shadow" />
               </div>
             </div>
             
-            <div className="space-y-2">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 via-green-300 to-teal-400 bg-clip-text text-transparent">
+            <div className="space-y-1.5">
+              <h1 className="text-2xl font-black tracking-tight bg-gradient-to-r from-violet-300 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent">
                 Đăng nhập hệ thống
               </h1>
-              <p className="text-gray-300 text-sm">
-                Chào mừng bạn đến với {siteConfig.name}
+              <p className="text-slate-400 text-xs font-medium">
+                Chào mừng bạn đến với hệ thống quản lý {siteConfig.name}
               </p>
             </div>
           </div>
@@ -95,21 +95,21 @@ export default function LoginPage({ className, ...props }: React.ComponentProps<
               name="account"
               render={({ field }) => (
                 <FormItem className="space-y-2">
-                  <FormLabel className="text-sm font-semibold text-gray-200">
+                  <FormLabel className="text-xs font-bold text-slate-300 uppercase tracking-wider">
                     Tài khoản
                   </FormLabel>
                   <FormControl>
                     <div className="relative group">
-                      <User className="w-4 h-4 absolute left-4 top-1/2 transform -translate-y-1/2 text-emerald-400 transition-all duration-200 group-focus-within:text-emerald-300" />
+                      <User className="w-4 h-4 absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 transition-colors duration-200 group-focus-within:text-cyan-300" />
                       <Input
                         {...field}
-                        placeholder="Nhập email hoặc tên đăng nhập"
+                        placeholder="admin@pharmacity.com"
                         tabIndex={1}
-                        className="bg-white/5 backdrop-blur-sm border-gray-500/30 text-white placeholder:text-gray-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/30 rounded-lg pl-12 pr-4 py-3 text-sm transition-all duration-300 hover:bg-white/10 hover:border-emerald-400/50"
+                        className="bg-slate-950/80 border-slate-700/80 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/30 rounded-xl pl-12 pr-4 py-3.5 text-sm transition-all duration-300 hover:bg-slate-900 hover:border-cyan-400/50 [&:-webkit-autofill]:bg-slate-950 [&:-webkit-autofill]:text-white [&:-webkit-autofill]:[box-shadow:0_0_0_1000px_#09090b_inset] [&:-webkit-autofill]:[-webkit-text-fill-color:white]"
                       />
                     </div>
                   </FormControl>
-                  <FormMessage className="text-xs text-red-300" />
+                  <FormMessage className="text-xs text-rose-400" />
                 </FormItem>
               )}
             />
@@ -119,23 +119,23 @@ export default function LoginPage({ className, ...props }: React.ComponentProps<
               name="password"
               render={({ field }) => (
                 <FormItem className="space-y-2">
-                  <FormLabel className="text-sm font-semibold text-gray-200">
+                  <FormLabel className="text-xs font-bold text-slate-300 uppercase tracking-wider">
                     Mật khẩu
                   </FormLabel>
                   <FormControl>
                     <div className="relative group">
-                      <Lock className="w-4 h-4 absolute left-4 top-1/2 transform -translate-y-1/2 text-emerald-400 transition-all duration-200 group-focus-within:text-emerald-300" />
+                      <Lock className="w-4 h-4 absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 transition-colors duration-200 group-focus-within:text-cyan-300" />
                       <Input
                         {...field}
                         type={showPassword ? "text" : "password"}
-                        placeholder="Nhập mật khẩu của bạn"
+                        placeholder="••••••••"
                         tabIndex={2}
-                        className="bg-white/5 backdrop-blur-sm border-gray-500/30 text-white placeholder:text-gray-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/30 rounded-lg pl-12 pr-12 py-3 text-sm transition-all duration-300 hover:bg-white/10 hover:border-emerald-400/50"
+                        className="bg-slate-950/80 border-slate-700/80 text-white placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/30 rounded-xl pl-12 pr-12 py-3.5 text-sm transition-all duration-300 hover:bg-slate-900 hover:border-cyan-400/50 [&:-webkit-autofill]:bg-slate-950 [&:-webkit-autofill]:text-white [&:-webkit-autofill]:[box-shadow:0_0_0_1000px_#09090b_inset] [&:-webkit-autofill]:[-webkit-text-fill-color:white]"
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-emerald-400 hover:text-emerald-300 transition-all duration-200"
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-cyan-300 transition-colors duration-200"
                       >
                         {showPassword ? (
                           <EyeOff className="w-4 h-4" />
@@ -145,7 +145,7 @@ export default function LoginPage({ className, ...props }: React.ComponentProps<
                       </button>
                     </div>
                   </FormControl>
-                  <FormMessage className="text-xs text-red-300" />
+                  <FormMessage className="text-xs text-rose-400" />
                 </FormItem>
               )}
             />
@@ -155,7 +155,7 @@ export default function LoginPage({ className, ...props }: React.ComponentProps<
           <Button
             type="submit"
             disabled={isPending}
-            className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-500 hover:via-green-500 hover:to-emerald-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-emerald-500/25 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none border border-emerald-500/20"
+            className="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-bold py-3.5 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-violet-500/30 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none border border-violet-500/30 text-sm"
           >
             {isPending ? (
               <div className="flex items-center justify-center space-x-2">
@@ -164,22 +164,21 @@ export default function LoginPage({ className, ...props }: React.ComponentProps<
               </div>
             ) : (
               <div className="flex items-center justify-center space-x-2">
-                <span>Đăng nhập</span>
+                <span>Đăng nhập hệ thống</span>
                 <ShieldCheck className="w-4 h-4" />
               </div>
             )}
           </Button>
 
           {/* Bottom Links */}
-          <div className="text-center space-y-3">
-            <div className="flex items-center justify-center gap-2 text-xs text-gray-400">
-              <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
-              <span>Kết nối bảo mật</span>
+          <div className="text-center space-y-3 pt-2">
+            <div className="flex items-center justify-center gap-2 text-xs text-slate-400">
+              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-ping" />
+              <span>Kênh kết nối bảo mật mã hóa</span>
             </div>
             <a 
-              href="https://pharmacy.ngockhanh.me" 
-              target="_blank" 
-              className="text-emerald-400 hover:text-emerald-300 text-sm underline underline-offset-2 transition-colors"
+              href="http://localhost:8082" 
+              className="inline-flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 text-xs font-semibold underline underline-offset-4 transition-colors"
             >
               Trở về Pharmacity Store
             </a>

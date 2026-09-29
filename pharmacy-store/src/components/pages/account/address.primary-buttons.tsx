@@ -39,7 +39,7 @@ export function AddressesButtonPrimary({ address }: Props) {
         variant="ghost"
         size="sm"
         onClick={() => handleAction("edit")}
-        className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-950/30"
+        className="text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-cyan-400 hover:bg-violet-50 dark:hover:bg-violet-950/30"
       >
         <Edit className="h-4 w-4" />
         Sửa
@@ -62,7 +62,7 @@ export function AddressesButtonPrimary({ address }: Props) {
             variant="outline"
             onClick={() => setDefaultAddressMutation.mutate(id)}
             disabled={isPending}
-            className="border-green-200 hover:border-green-300 dark:border-green-800 dark:hover:border-green-700 hover:bg-green-50 dark:hover:bg-green-950/50 text-green-600 dark:text-green-400"
+            className="border-violet-200 hover:border-cyan-300 dark:border-violet-800 dark:hover:border-violet-700 hover:bg-violet-50 dark:hover:bg-violet-950/50 text-violet-600 dark:text-cyan-400"
           >
             {isPending ? (
               <>

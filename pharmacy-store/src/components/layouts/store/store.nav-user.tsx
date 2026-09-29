@@ -81,7 +81,7 @@ export function StoreNavUser({ user }: StoreNavUserProps) {
                         className={
                           user.role === AccountRole.ADMIN
                             ? "border-red-200 dark:border-red-800 bg-red-100 dark:bg-red-900/60 text-red-800 dark:text-red-300 text-xs font-medium px-1.5 py-0.5"
-                            : "border-blue-200 dark:border-blue-800 bg-blue-100 dark:bg-blue-900/60 text-blue-800 dark:text-blue-300 text-xs font-medium px-1.5 py-0.5"
+                            : "border-violet-200 dark:border-violet-800 bg-violet-100 dark:bg-violet-900/60 text-violet-800 dark:text-blue-300 text-xs font-medium px-1.5 py-0.5"
                         }
                       >
                         {user.role}
@@ -115,8 +115,8 @@ export function StoreNavUser({ user }: StoreNavUserProps) {
               <DropdownMenuGroup>
                 <DropdownMenuItem asChild className="flex items-center gap-2.5 px-3 py-2.5 cursor-pointer rounded-md">
                   <Link to={routes.store.account.root} className="flex items-center gap-2.5 w-full">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-md bg-blue-100 dark:bg-blue-900/30">
-                      <User size={16} className="text-blue-600 dark:text-blue-400" />
+                    <div className="flex items-center justify-center w-8 h-8 rounded-md bg-violet-100 dark:bg-violet-900/30">
+                      <User size={16} className="text-violet-600 dark:text-blue-400" />
                     </div>
                     <span>Tài khoản của tôi</span>
                   </Link>
@@ -131,8 +131,8 @@ export function StoreNavUser({ user }: StoreNavUserProps) {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="flex items-center gap-2.5 px-3 py-2.5 cursor-pointer rounded-md">
                   <Link to={routes.store.account.orders} className="flex items-center gap-2.5 w-full">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-md bg-green-100 dark:bg-green-900/30">
-                      <Package size={16} className="text-green-600 dark:text-green-400" />
+                    <div className="flex items-center justify-center w-8 h-8 rounded-md bg-violet-100 dark:bg-violet-900/30">
+                      <Package size={16} className="text-violet-600 dark:text-cyan-400" />
                     </div>
                     <span>Đơn hàng</span>
                   </Link>

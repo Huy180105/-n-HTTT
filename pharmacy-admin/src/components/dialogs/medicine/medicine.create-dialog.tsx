@@ -211,7 +211,7 @@ export function MedicineCreateDialog({ open, onOpenChange }: MedicineCreateDialo
               {renderCurrentStep()}
             </motion.div>
 
-            <SheetFooter className="mt-8 pt-4 border-t border-teal-50 flex flex-col sm:flex-row gap-2">
+            <SheetFooter className="mt-8 pt-4 border-t border-indigo-50 flex flex-col sm:flex-row gap-2">
               {activeStep > 1 && (
                 <Button
                   variant="outline"

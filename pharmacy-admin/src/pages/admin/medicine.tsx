@@ -68,19 +68,20 @@ export default function MedicinePage() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-gradient-to-r from-fuchsia-50 to-fuschia-50 dark:from-fuchsia-950/40 dark:to-fuschia-950/40 rounded-xl p-6 shadow-sm border border-fuschia-100 dark:border-fuschia-800/20"
+          className="bg-gradient-to-r from-cyan-500/15 via-blue-500/10 via-indigo-500/10 to-purple-500/15 dark:from-cyan-950/50 dark:via-blue-950/40 dark:to-indigo-950/50 backdrop-blur-xl rounded-2xl p-6 md:p-8 shadow-2xl shadow-purple-950/20 border border-cyan-500/20 dark:border-cyan-700/30 relative overflow-hidden group"
         >
           <div className="flex items-center gap-3 mb-2">
-            <div className="bg-fuchsia-100 dark:bg-fuchsia-800/30 p-2.5 rounded-lg">
-              <Pill size={28} className="text-fuchsia-600 dark:text-fuchsia-400" />
+            <div className="bg-blue-100 dark:bg-blue-800/30 p-2.5 rounded-lg">
+              <Pill size={28} className="text-blue-600 dark:text-blue-400" />
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-fuchsia-800 dark:text-fuchsia-300">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-sm">
               Quản lý Dược phẩm
             </h2>
           </div>
-          <p className="text-fuchsia-600/90 dark:text-fuchsia-400/80 ml-[52px]">
+          <p className="text-blue-600/90 dark:text-blue-400/80 ml-[52px]">
             Quản lý dược phẩm, thuốc, và các thông tin liên quan
           </p>
+          <div className="ambient-banner-blob pointer-events-none absolute -right-12 -bottom-12 w-64 h-64 bg-gradient-to-br from-amber-400/20 via-fuchsia-500/20 to-cyan-500/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700" />
         </motion.div>
 
         {/* Statistics */}
@@ -91,7 +92,7 @@ export default function MedicinePage() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
               <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                <Pill size={18} className="text-fuchsia-500" />
+                <Pill size={18} className="text-blue-500" />
                 Danh sách dược phẩm
               </h3>
               <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -104,7 +105,7 @@ export default function MedicinePage() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="bg-white dark:bg-slate-950 rounded-xl shadow-sm border border-fuchsia-100 dark:border-fuchsia-900/30"
+            className="bg-gradient-to-br from-white/95 via-slate-50/60 to-white/95 dark:from-slate-900/95 dark:via-slate-950/85 dark:to-slate-900/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-slate-900/5 border border-slate-200/80 dark:border-slate-800/80 relative overflow-hidden"
           >
             <div className="p-4 md:p-6">
               <MedicineDataTable

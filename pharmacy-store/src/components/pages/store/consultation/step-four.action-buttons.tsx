@@ -32,7 +32,7 @@ export const StepFourActionButtons = ({
       <Button
         onClick={onPlaceOrder}
         disabled={disabled || isLoading}
-        className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white h-14 text-base font-medium flex items-center justify-center gap-2 disabled:opacity-50 shadow-lg hover:shadow-xl transition-all"
+        className="bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-700 hover:to-cyan-700 text-white h-14 text-base font-medium flex items-center justify-center gap-2 disabled:opacity-50 shadow-lg hover:shadow-xl transition-all border-0"
       >
         {isLoading ? (
           <>
@@ -51,7 +51,7 @@ export const StepFourActionButtons = ({
       <Button
         variant="outline"
         onClick={onViewCart}
-        className="border-2 border-teal-200 hover:border-teal-300 hover:bg-teal-50 dark:border-teal-800 dark:hover:border-teal-700 dark:hover:bg-teal-950/50 h-14 text-base font-medium flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all"
+        className="border-2 border-violet-200 hover:border-blue-300 hover:bg-violet-50 dark:border-violet-800 dark:hover:border-violet-700 dark:hover:bg-violet-950/50 h-14 text-base font-medium flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all text-violet-700 dark:text-cyan-300"
       >
         <Eye className="w-5 h-5" />
         Xem giỏ hàng
@@ -69,7 +69,7 @@ export const StepFourActionButtons = ({
         variant="ghost"
         size="sm"
         onClick={onBackToConsultation}
-        className="text-muted-foreground hover:text-teal-600 dark:hover:text-teal-400 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-teal-50 dark:hover:bg-teal-950/30 transition-all"
+        className="text-muted-foreground hover:text-violet-600 dark:hover:text-cyan-400 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-violet-50 dark:hover:bg-violet-950/30 transition-all"
       >
         <RotateCcw className="w-4 h-4" />
         Quay lại tư vấn
@@ -79,7 +79,7 @@ export const StepFourActionButtons = ({
         variant="ghost"
         size="sm"
         onClick={onContinueShopping}
-        className="text-muted-foreground hover:text-emerald-600 dark:hover:text-emerald-400 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-all"
+        className="text-muted-foreground hover:text-cyan-600 dark:hover:text-cyan-400 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-cyan-50 dark:hover:bg-cyan-950/30 transition-all"
       >
         <Package className="w-4 h-4" />
         Tiếp tục mua sắm
@@ -89,7 +89,7 @@ export const StepFourActionButtons = ({
         variant="ghost"
         size="sm"
         onClick={onGoHome}
-        className="text-muted-foreground hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all"
+        className="text-muted-foreground hover:text-violet-600 dark:hover:text-blue-400 flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-violet-50 dark:hover:bg-violet-950/30 transition-all"
       >
         <Home className="w-4 h-4" />
         Về trang chủ

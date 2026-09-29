@@ -10,7 +10,7 @@ export const StepThreeEmptyStateAddress = ({ onAddAddress }: { onAddAddress: () 
     <p className="text-gray-500 dark:text-gray-400 mb-4">Thêm địa chỉ đầu tiên để tiếp tục đặt hàng</p>
     <Button
       onClick={onAddAddress}
-      className="bg-teal-600 hover:bg-teal-700 text-white"
+      className="bg-violet-600 hover:bg-violet-700 text-white"
     >
       <Plus className="w-4 h-4 mr-2" />
       Thêm địa chỉ đầu tiên

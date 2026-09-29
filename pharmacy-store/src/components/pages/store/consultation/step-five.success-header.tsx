@@ -18,16 +18,16 @@ export const StepFiveSuccessHeader = ({ invoiceNumber, orderId }: StepFiveSucces
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-      className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-teal-100 to-emerald-100 dark:from-teal-900/30 dark:to-emerald-900/30 rounded-full mb-6 shadow-xl"
+      className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-violet-100 to-violet-100 dark:from-violet-900/30 dark:to-violet-900/30 rounded-full mb-6 shadow-xl"
     >
-      <CheckCircle className="w-12 h-12 text-teal-600 dark:text-teal-400" />
+      <CheckCircle className="w-12 h-12 text-violet-600 dark:text-cyan-400" />
     </motion.div>
 
     <motion.h2
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.4 }}
-      className="text-4xl font-bold bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4"
+      className="text-4xl font-bold bg-gradient-to-r from-violet-600 via-violet-600 to-violet-600 bg-clip-text text-transparent mb-4"
     >
       Đặt hàng thành công!
     </motion.h2>
@@ -47,7 +47,7 @@ export const StepFiveSuccessHeader = ({ invoiceNumber, orderId }: StepFiveSucces
         </span>
         <Badge 
           variant="outline" 
-          className="font-mono text-base px-4 py-2 bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-950/50 dark:to-emerald-950/50 border-teal-200 dark:border-teal-700"
+          className="font-mono text-base px-4 py-2 bg-gradient-to-r from-cyan-50 to-violet-50 dark:from-violet-950/50 dark:to-violet-950/50 border-violet-200 dark:border-violet-700"
         >
           #{invoiceNumber || orderId}
         </Badge>

@@ -10,14 +10,14 @@ export function StepOnePatientInformation() {
   const { patientAge, setPatientAge, patientGender, setPatientGender } = useStep1()
 
   return (
-    <Card className="border-teal-200 dark:border-teal-800 bg-gradient-to-r from-teal-50/70 to-emerald-50/70 dark:from-teal-950/40 dark:to-emerald-950/30 shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <Card className="border-violet-200 dark:border-violet-800 bg-gradient-to-r from-violet-50/70 via-sky-50/50 to-cyan-50/70 dark:from-violet-950/40 dark:to-cyan-950/30 shadow-lg hover:shadow-xl transition-shadow duration-300">
       <CardHeader className="pb-4">
         <CardTitle className="text-lg flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-md">
+          <div className="w-10 h-10 bg-gradient-to-r from-violet-600 to-cyan-500 rounded-xl flex items-center justify-center shadow-md">
             <User className="w-5 h-5 text-white" />
           </div>
           <div className="flex flex-col">
-            <span className="text-teal-700 dark:text-teal-300 font-semibold">
+            <span className="text-violet-700 dark:text-cyan-300 font-semibold">
               Thông tin bệnh nhân
             </span>
             <span className="text-sm text-gray-500 dark:text-gray-400 font-normal">
@@ -31,7 +31,7 @@ export function StepOnePatientInformation() {
           {/* Tuổi */}
           <div className="space-y-2">
             <Label htmlFor="patient-age" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+              <Calendar className="w-4 h-4 text-violet-600 dark:text-cyan-400" />
               Tuổi
             </Label>
             <Input
@@ -42,27 +42,27 @@ export function StepOnePatientInformation() {
               onChange={(e) => setPatientAge(parseInt(e.target.value) || 0)}
               min="1"
               max="120"
-              className="h-12 border-2 border-teal-200 dark:border-teal-700 focus:border-teal-400 dark:focus:border-teal-500 focus:ring-2 focus:ring-teal-400/20 transition-all duration-200 rounded-xl text-base"
+              className="h-12 border-2 border-violet-200 dark:border-violet-700 focus:border-cyan-400 dark:focus:border-cyan-500 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-200 rounded-xl text-base"
             />
           </div>
 
           {/* Giới tính */}
           <div className="space-y-2">
             <Label htmlFor="patient-gender" className="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-2">
-              <Users className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+              <Users className="w-4 h-4 text-violet-600 dark:text-cyan-400" />
               Giới tính
             </Label>
             <Select value={patientGender} onValueChange={(value: PatientGender) => setPatientGender(value)}>
               <SelectTrigger 
                 id="patient-gender"
-                className="h-12 border-2 border-teal-200 dark:border-teal-700 focus:border-teal-400 dark:focus:border-teal-500 focus:ring-2 focus:ring-teal-400/20 transition-all duration-200 rounded-xl text-base"
+                className="h-12 border-2 border-violet-200 dark:border-violet-700 focus:border-cyan-400 dark:focus:border-cyan-500 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-200 rounded-xl text-base"
               >
                 <SelectValue placeholder="Chọn giới tính" />
               </SelectTrigger>
-              <SelectContent className="rounded-xl border-teal-200 dark:border-teal-700">
+              <SelectContent className="rounded-xl border-violet-200 dark:border-violet-700">
                 <SelectItem value={PatientGender.MALE} className="text-base py-3 cursor-pointer">
                   <div className="flex items-center gap-3">
-                    <User className="w-4 h-4 text-blue-600" />
+                    <User className="w-4 h-4 text-violet-600" />
                     <span>Nam</span>
                   </div>
                 </SelectItem>

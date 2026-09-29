@@ -91,11 +91,11 @@ export function InvoiceCreateDialog({ open, onOpenChange }: Props) {
             transition={{ duration: 0.4 }}
             className="flex items-center gap-3"
           >
-            <div className="h-8 w-8 rounded-lg bg-emerald-100/80 dark:bg-emerald-900/30 flex items-center justify-center">
-              <Receipt className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+            <div className="h-8 w-8 rounded-lg bg-blue-100/80 dark:bg-blue-900/30 flex items-center justify-center">
+              <Receipt className="h-4 w-4 text-blue-600 dark:text-cyan-400" />
             </div>
             <div>
-              <DialogTitle className="text-lg font-semibold text-emerald-800 dark:text-emerald-300">
+              <DialogTitle className="text-lg font-semibold text-blue-800 dark:text-cyan-300">
                 Tạo hóa đơn mới
               </DialogTitle>
               <DialogDescription className="text-sm text-muted-foreground">
@@ -162,7 +162,7 @@ export function InvoiceCreateDialog({ open, onOpenChange }: Props) {
                 className={cn(
                   "transition-all duration-300 relative overflow-hidden",
                   isPending ? "opacity-80 cursor-not-allowed" : "",
-                  "bg-emerald-600 hover:bg-emerald-700"
+                  "bg-blue-600 hover:bg-blue-700"
                 )}
               >
                 {isPending ? (

@@ -13,17 +13,17 @@ export const StepTwoDiagnosisSummary = ({ data }: { data: AiMedicineSuggestionRe
       case SeverityLevel.MEDIUM:
         return { color: 'bg-amber-500', text: 'text-amber-600', border: 'border-amber-600', label: 'Trung bình' };
       default:
-        return { color: 'bg-emerald-500', text: 'text-emerald-600', border: 'border-emerald-600', label: 'Nhẹ' };
+        return { color: 'bg-cyan-500', text: 'text-violet-600', border: 'border-violet-600', label: 'Nhẹ' };
     }
   };
 
   const config = getSeverityConfig(data.consultationInfo.severityLevel);
 
   return (
-    <Card className="border-2 border-teal-200 dark:border-teal-800 bg-gradient-to-r from-teal-50/80 to-emerald-50/80 dark:from-teal-950/30 dark:to-emerald-950/20 shadow-lg">
+    <Card className="border-2 border-violet-200 dark:border-violet-800 bg-gradient-to-r from-cyan-50/80 to-violet-50/80 dark:from-violet-950/30 dark:to-violet-950/20 shadow-lg">
       <CardHeader className="pb-3">
-        <CardTitle className="flex items-center gap-3 text-teal-700 dark:text-teal-300">
-          <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-md">
+        <CardTitle className="flex items-center gap-3 text-violet-700 dark:text-cyan-300">
+          <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-md">
             <Stethoscope className="w-5 h-5 text-white" />
           </div>
           <div className="flex-1">
@@ -31,19 +31,19 @@ export const StepTwoDiagnosisSummary = ({ data }: { data: AiMedicineSuggestionRe
               <span className="text-lg font-bold">
                 {data.consultationInfo.primaryDiagnosis.name}
               </span>
-              <Badge className="bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 border-teal-300 dark:border-teal-700">
+              <Badge className="bg-violet-100 dark:bg-violet-900/50 text-violet-700 dark:text-cyan-300 border-cyan-300 dark:border-violet-700">
                 <TrendingUp className="w-3 h-3 mr-1" />
                 {data.consultationInfo.primaryDiagnosis.confidence}%
               </Badge>
             </div>
-            <p className="text-sm text-teal-600 dark:text-teal-400">
+            <p className="text-sm text-violet-600 dark:text-cyan-400">
               Chẩn đoán từ AI Pharmacity
             </p>
           </div>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="p-3 bg-white/80 dark:bg-gray-900/60 rounded-lg border border-teal-200 dark:border-teal-800">
+        <div className="p-3 bg-white/80 dark:bg-gray-900/60 rounded-lg border border-violet-200 dark:border-violet-800">
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             {data.consultationInfo.primaryDiagnosis.description}
           </p>

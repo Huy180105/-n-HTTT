@@ -14,9 +14,9 @@ interface Props {
 const getConfidenceColor = (percentage: number) => {
   if (percentage >= 70) {
     return {
-      bg: 'bg-emerald-50 dark:bg-emerald-900/30',
-      text: 'text-emerald-700 dark:text-emerald-300',
-      border: 'border-emerald-300 dark:border-emerald-700',
+      bg: 'bg-violet-50 dark:bg-violet-900/30',
+      text: 'text-violet-700 dark:text-cyan-300',
+      border: 'border-cyan-300 dark:border-violet-700',
       icon: CheckCircle2
     }
   } else if (percentage >= 50) {
@@ -81,11 +81,11 @@ export const StepOneData = ({ data, isPending }: Props) => {
         }
       default:
         return {
-          color: 'bg-emerald-500',
-          bgColor: 'bg-emerald-50 dark:bg-emerald-950/20',
-          borderColor: 'border-emerald-200 dark:border-emerald-800',
-          textColor: 'text-emerald-700 dark:text-emerald-300',
-          badgeColor: 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300',
+          color: 'bg-cyan-500',
+          bgColor: 'bg-violet-50 dark:bg-violet-950/20',
+          borderColor: 'border-violet-200 dark:border-violet-800',
+          textColor: 'text-violet-700 dark:text-cyan-300',
+          badgeColor: 'bg-violet-100 dark:bg-violet-900/50 text-violet-700 dark:text-cyan-300',
           icon: CheckCircle2,
           label: 'Nhẹ',
           description: 'Có thể tự điều trị tại nhà'
@@ -94,10 +94,10 @@ export const StepOneData = ({ data, isPending }: Props) => {
   }
 
   return (
-    <Card className="border-teal-200 dark:border-teal-800 bg-gradient-to-br from-teal-50/60 to-emerald-50/60 dark:from-teal-950/30 dark:to-emerald-950/20 shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <Card className="border-violet-200 dark:border-violet-800 bg-gradient-to-br from-cyan-50/60 to-violet-50/60 dark:from-violet-950/30 dark:to-violet-950/20 shadow-lg hover:shadow-xl transition-shadow duration-300">
       <CardHeader className="pb-4">
-        <CardTitle className="flex items-center gap-3 text-teal-700 dark:text-teal-300">
-          <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg">
+        <CardTitle className="flex items-center gap-3 text-violet-700 dark:text-cyan-300">
+          <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
             {isPending ? (
               <Loader2 className="w-6 h-6 text-white animate-spin" />
             ) : (
@@ -106,7 +106,7 @@ export const StepOneData = ({ data, isPending }: Props) => {
           </div>
           <div className="flex-1">
             <div className="flex items-center gap-2">
-              <Stethoscope className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+              <Stethoscope className="w-5 h-5 text-violet-600 dark:text-cyan-400" />
               <span className="text-xl font-bold">AI Pharmacity</span>
               <span className="text-lg text-gray-500 dark:text-gray-400">- Chẩn đoán</span>
             </div>
@@ -120,13 +120,13 @@ export const StepOneData = ({ data, isPending }: Props) => {
       <CardContent className="space-y-6">
         {isPending ? (
           <div className="space-y-6">
-            <div className="flex items-center gap-4 text-sm p-4 bg-teal-50 dark:bg-teal-900/20 rounded-xl border border-teal-200 dark:border-teal-800">
+            <div className="flex items-center gap-4 text-sm p-4 bg-cyan-50 dark:bg-violet-900/20 rounded-xl border border-violet-200 dark:border-violet-800">
               <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 bg-teal-500 rounded-full animate-bounce" />
-                <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-bounce [animation-delay:0.15s]" />
-                <div className="w-2.5 h-2.5 bg-teal-500 rounded-full animate-bounce [animation-delay:0.3s]" />
+                <div className="w-2.5 h-2.5 bg-cyan-500 rounded-full animate-bounce" />
+                <div className="w-2.5 h-2.5 bg-cyan-500 rounded-full animate-bounce [animation-delay:0.15s]" />
+                <div className="w-2.5 h-2.5 bg-cyan-500 rounded-full animate-bounce [animation-delay:0.3s]" />
               </div>
-              <div className="font-medium text-teal-700 dark:text-teal-300">
+              <div className="font-medium text-violet-700 dark:text-cyan-300">
                 <TextShimmer 
                   className="text-sm font-medium"
                   duration={2}
@@ -145,15 +145,15 @@ export const StepOneData = ({ data, isPending }: Props) => {
         ) : data && data.primaryDiagnosis ? (
           <div className="space-y-6">
             {/* Primary Diagnosis */}
-            <div className="p-6 bg-white/95 dark:bg-gray-900/70 rounded-xl border-2 border-teal-200 dark:border-teal-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="p-6 bg-white/95 dark:bg-gray-900/70 rounded-xl border-2 border-violet-200 dark:border-violet-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-start gap-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                   <Heart className="w-7 h-7 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-lg font-bold text-foreground flex items-center gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                      <CheckCircle2 className="w-5 h-5 text-violet-600 dark:text-cyan-400" />
                       Chẩn đoán chính
                     </h4>
                     {(() => {
@@ -171,24 +171,24 @@ export const StepOneData = ({ data, isPending }: Props) => {
                     })()}
                   </div>
 
-                  <h5 className="text-xl font-bold text-teal-700 dark:text-teal-300 mb-3">
+                  <h5 className="text-xl font-bold text-violet-700 dark:text-cyan-300 mb-3">
                     {data.primaryDiagnosis.diagnosisName}
                   </h5>
 
-                  <div className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 p-3 bg-teal-50 dark:bg-teal-900/20 rounded-lg border border-teal-200 dark:border-teal-800">
+                  <div className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 p-3 bg-cyan-50 dark:bg-violet-900/20 rounded-lg border border-violet-200 dark:border-violet-800">
                     {data.primaryDiagnosis.description}
                   </div>
 
                   {data.primaryDiagnosis.reasons && data.primaryDiagnosis.reasons.length > 0 && (
                     <div className="mt-4">
-                      <div className="flex items-center gap-2 text-sm font-semibold text-teal-600 dark:text-teal-400 mb-3">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-violet-600 dark:text-cyan-400 mb-3">
                         <FileText className="w-4 h-4" />
                         Căn cứ chẩn đoán:
                       </div>
                       <div className="space-y-2">
                         {data.primaryDiagnosis.reasons.map((reason: string, index: number) => (
-                          <div key={index} className="flex items-start gap-3 p-2 bg-emerald-50/50 dark:bg-emerald-900/10 rounded-lg">
-                            <ArrowRight className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                          <div key={index} className="flex items-start gap-3 p-2 bg-violet-50/50 dark:bg-violet-900/10 rounded-lg">
+                            <ArrowRight className="w-4 h-4 text-cyan-500 mt-0.5 flex-shrink-0" />
                             <span className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                               {reason}
                             </span>
@@ -205,7 +205,7 @@ export const StepOneData = ({ data, isPending }: Props) => {
             {data.relatedSymptoms && data.relatedSymptoms.length > 0 && (
               <div className="p-6 bg-cyan-50/95 dark:bg-cyan-950/40 rounded-xl border border-cyan-200 dark:border-cyan-800 shadow-md">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center shadow-md">
+                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-violet-500 rounded-xl flex items-center justify-center shadow-md">
                     <Search className="w-5 h-5 text-white" />
                   </div>
                   <h4 className="text-lg font-bold text-cyan-700 dark:text-cyan-300">Triệu chứng liên quan</h4>
@@ -274,17 +274,17 @@ export const StepOneData = ({ data, isPending }: Props) => {
 
             {/* General Advice */}
             {data.generalAdvice && data.generalAdvice.length > 0 && (
-              <div className="p-6 bg-blue-50/95 dark:bg-blue-950/40 rounded-xl border border-blue-200 dark:border-blue-800 shadow-md">
+              <div className="p-6 bg-violet-50/95 dark:bg-violet-950/40 rounded-xl border border-violet-200 dark:border-violet-800 shadow-md">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center shadow-md">
+                  <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-indigo-500 rounded-xl flex items-center justify-center shadow-md">
                     <Lightbulb className="w-5 h-5 text-white" />
                   </div>
-                  <h4 className="text-lg font-bold text-blue-700 dark:text-blue-300">Lời khuyên chung</h4>
+                  <h4 className="text-lg font-bold text-violet-700 dark:text-blue-300">Lời khuyên chung</h4>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {data.generalAdvice.map((advice, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 bg-white/60 dark:bg-gray-900/30 rounded-lg border border-blue-200/50 dark:border-blue-800/50">
-                      <ArrowRight className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                    <div key={index} className="flex items-start gap-3 p-3 bg-white/60 dark:bg-gray-900/30 rounded-lg border border-violet-200/50 dark:border-violet-800/50">
+                      <ArrowRight className="w-4 h-4 text-violet-500 mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{advice}</span>
                     </div>
                   ))}

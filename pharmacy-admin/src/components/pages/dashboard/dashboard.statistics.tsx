@@ -19,26 +19,30 @@ export function DashboardStatisticsCard({ stats, isLoading }: DashboardStatistic
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, delay: 0.1 }}
       >
-        <Card className="overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-100 dark:from-blue-950/30 dark:to-cyan-950/30 dark:border-blue-900/50 shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+        <Card className="overflow-hidden bg-gradient-to-br from-blue-50/90 via-slate-50 to-cyan-50/70 border-blue-200/80 dark:from-slate-900 dark:via-blue-950/40 dark:to-slate-900 dark:border-blue-900/50 shadow-md hover:shadow-xl transition-all duration-300 h-full rounded-2xl">
           <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-            <CardTitle className="text-sm font-medium text-blue-800 dark:text-blue-300">Tổng người dùng</CardTitle>
-            <Users className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+            <CardTitle className="text-sm font-bold text-blue-900 dark:text-blue-200">Tổng người dùng</CardTitle>
+            <div className="p-2 rounded-xl bg-blue-100 dark:bg-blue-900/60 text-blue-600 dark:text-cyan-400 shadow-sm">
+              <motion.div animate={{ scale: [1, 1.15, 1] }} transition={{ repeat: Infinity, duration: 2.5 }}>
+                <Users className="h-5 w-5" />
+              </motion.div>
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-blue-800 dark:text-blue-300">
+            <div className="text-3xl font-black text-blue-950 dark:text-white">
               {isLoading ? <Skeleton className="h-8 w-16 bg-blue-200/50 dark:bg-blue-700/30" /> : stats.overview.totalUsers.total.toLocaleString()}
             </div>
-            <div className="flex gap-2 mt-2">
-              <Badge variant="secondary" className="text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+            <div className="flex gap-1.5 mt-2.5">
+              <Badge variant="secondary" className="text-xs bg-blue-100/80 text-blue-900 dark:bg-blue-900/50 dark:text-cyan-300 border-0 font-bold">
                 {stats.overview.totalUsers.customers} khách hàng
               </Badge>
-              <Badge variant="secondary" className="text-xs bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300">
+              <Badge variant="secondary" className="text-xs bg-cyan-100/80 text-cyan-900 dark:bg-cyan-900/50 dark:text-cyan-300 border-0 font-bold">
                 {stats.overview.totalUsers.pharmacists} dược sĩ
               </Badge>
             </div>
-            <div className="flex items-center gap-1 mt-2 text-xs">
-              <UserPlus className="h-3 w-3 text-green-600" />
-              <span className="text-green-600 dark:text-green-400">+{stats.todayStats.newCustomers} khách hàng mới hôm nay</span>
+            <div className="flex items-center gap-1.5 mt-3 text-xs font-semibold">
+              <UserPlus className="h-3.5 w-3.5 text-blue-600 dark:text-cyan-400" />
+              <span className="text-blue-700 dark:text-cyan-400">+{stats.todayStats.newCustomers} khách mới hôm nay</span>
             </div>
           </CardContent>
         </Card>
@@ -50,23 +54,27 @@ export function DashboardStatisticsCard({ stats, isLoading }: DashboardStatistic
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, delay: 0.15 }}
       >
-        <Card className="overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50 border-green-100 dark:from-green-950/30 dark:to-emerald-950/30 dark:border-green-900/50 shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+        <Card className="overflow-hidden bg-gradient-to-br from-cyan-50/90 via-slate-50 to-indigo-50/70 border-cyan-200/80 dark:from-slate-900 dark:via-cyan-950/40 dark:to-slate-900 dark:border-cyan-900/50 shadow-md hover:shadow-xl transition-all duration-300 h-full rounded-2xl">
           <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-            <CardTitle className="text-sm font-medium text-green-800 dark:text-green-300">Tổng thuốc</CardTitle>
-            <Pill className="h-5 w-5 text-green-600 dark:text-green-400" />
+            <CardTitle className="text-sm font-bold text-cyan-900 dark:text-cyan-200">Tổng dược phẩm</CardTitle>
+            <div className="p-2 rounded-xl bg-cyan-100 dark:bg-cyan-900/60 text-cyan-600 dark:text-cyan-300 shadow-sm">
+              <motion.div animate={{ rotate: [0, 15, -15, 0] }} transition={{ repeat: Infinity, duration: 3 }}>
+                <Pill className="h-5 w-5" />
+              </motion.div>
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-800 dark:text-green-300">
-              {isLoading ? <Skeleton className="h-8 w-16 bg-green-200/50 dark:bg-green-700/30" /> : stats.overview.totalMedicines.total.toLocaleString()}
+            <div className="text-3xl font-black text-cyan-950 dark:text-white">
+              {isLoading ? <Skeleton className="h-8 w-16 bg-cyan-200/50 dark:bg-cyan-700/30" /> : stats.overview.totalMedicines.total.toLocaleString()}
             </div>
-            <div className="flex items-center gap-1 mt-1 text-xs">
-              <CheckCircle2 className="h-3 w-3 text-green-600" />
-              <span className="text-green-600 dark:text-green-400">{stats.overview.totalMedicines.inStock} có sẵn</span>
+            <div className="flex items-center gap-1.5 mt-3 text-xs font-semibold">
+              <CheckCircle2 className="h-3.5 w-3.5 text-blue-600 dark:text-cyan-400" />
+              <span className="text-blue-700 dark:text-cyan-400">{stats.overview.totalMedicines.inStock} sẵn sàng</span>
               {stats.overview.totalMedicines.outOfStock > 0 && (
                 <>
-                  <span className="mx-1">•</span>
-                  <AlertTriangle className="h-3 w-3 text-red-600" />
-                  <span className="text-red-600 dark:text-red-400">{stats.overview.totalMedicines.outOfStock} hết hàng</span>
+                  <span className="mx-1 text-slate-300">•</span>
+                  <AlertTriangle className="h-3.5 w-3.5 text-rose-600" />
+                  <span className="text-rose-600 dark:text-rose-400">{stats.overview.totalMedicines.outOfStock} hết hàng</span>
                 </>
               )}
             </div>
@@ -80,28 +88,29 @@ export function DashboardStatisticsCard({ stats, isLoading }: DashboardStatistic
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, delay: 0.2 }}
       >
-        <Card className="overflow-hidden bg-gradient-to-br from-purple-50 to-indigo-50 border-purple-100 dark:from-purple-950/30 dark:to-indigo-950/30 dark:border-purple-900/50 shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+        <Card className="overflow-hidden bg-gradient-to-br from-indigo-50/90 via-slate-50 to-blue-50/70 border-indigo-200/80 dark:from-slate-900 dark:via-indigo-950/40 dark:to-slate-900 dark:border-indigo-900/50 shadow-md hover:shadow-xl transition-all duration-300 h-full rounded-2xl">
           <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-            <CardTitle className="text-sm font-medium text-purple-800 dark:text-purple-300">Tổng đơn hàng</CardTitle>
-            <ShoppingCart className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+            <CardTitle className="text-sm font-bold text-indigo-900 dark:text-indigo-200">Tổng đơn hàng</CardTitle>
+            <div className="p-2 rounded-xl bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-300 shadow-sm">
+              <motion.div animate={{ y: [0, -3, 0] }} transition={{ repeat: Infinity, duration: 2.5 }}>
+                <ShoppingCart className="h-5 w-5" />
+              </motion.div>
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-purple-800 dark:text-purple-300">
-              {isLoading ? <Skeleton className="h-8 w-16 bg-purple-200/50 dark:bg-purple-700/30" /> : stats.overview.totalOrders.total.toLocaleString()}
+            <div className="text-3xl font-black text-indigo-950 dark:text-white">
+              {isLoading ? <Skeleton className="h-8 w-16 bg-indigo-200/50 dark:bg-indigo-700/30" /> : stats.overview.totalOrders.total.toLocaleString()}
             </div>
-            <div className="flex items-center gap-1 mt-1 text-xs">
-              <Clock className="h-3 w-3 text-amber-600" />
-              <span className="text-amber-600 dark:text-amber-400">{stats.overview.totalOrders.pending} chờ xử lý</span>
-              <span className="mx-1">•</span>
-              <CheckCircle2 className="h-3 w-3 text-green-600" />
-              <span className="text-green-600 dark:text-green-400">{stats.overview.totalOrders.completed} hoàn thành</span>
-              <span className="mx-1">•</span>
-              <AlertTriangle className="h-3 w-3 text-red-600" />
-              <span className="text-red-600 dark:text-red-400">{stats.overview.totalOrders.cancelled} đã hủy</span>
+            <div className="flex items-center gap-1 mt-2 text-xs font-semibold">
+              <Clock className="h-3.5 w-3.5 text-amber-600" />
+              <span className="text-amber-700 dark:text-amber-400">{stats.overview.totalOrders.pending} chờ xử lý</span>
+              <span className="mx-1 text-slate-300">•</span>
+              <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
+              <span className="text-blue-700 dark:text-cyan-400">{stats.overview.totalOrders.completed} xong</span>
             </div>
-            <div className="flex items-center gap-1 mt-2 text-xs">
-              <TrendingUp className="h-3 w-3 text-blue-600" />
-              <span className="text-blue-600 dark:text-blue-400">+{stats.todayStats.ordersToday} đơn hàng hôm nay</span>
+            <div className="flex items-center gap-1.5 mt-2 text-xs font-semibold">
+              <TrendingUp className="h-3.5 w-3.5 text-blue-600 dark:text-cyan-400" />
+              <span className="text-blue-700 dark:text-cyan-300">+{stats.todayStats.ordersToday} đơn hôm nay</span>
             </div>
           </CardContent>
         </Card>
@@ -113,22 +122,26 @@ export function DashboardStatisticsCard({ stats, isLoading }: DashboardStatistic
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3, delay: 0.25 }}
       >
-        <Card className="overflow-hidden bg-gradient-to-br from-orange-50 to-red-50 border-orange-100 dark:from-orange-950/30 dark:to-red-950/30 dark:border-orange-900/50 shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
+        <Card className="overflow-hidden bg-gradient-to-br from-blue-50/90 via-cyan-50/50 to-indigo-50/70 border-blue-200/80 dark:from-slate-900 dark:via-blue-950/40 dark:to-slate-900 dark:border-blue-900/50 shadow-md hover:shadow-xl transition-all duration-300 h-full rounded-2xl">
           <CardHeader className="pb-2 flex flex-row items-center justify-between space-y-0">
-            <CardTitle className="text-sm font-medium text-orange-800 dark:text-orange-300">Tổng doanh thu</CardTitle>
-            <DollarSign className="h-5 w-5 text-orange-600 dark:text-orange-400" />
+            <CardTitle className="text-sm font-bold text-blue-900 dark:text-blue-200">Tổng doanh thu</CardTitle>
+            <div className="p-2 rounded-xl bg-blue-100 dark:bg-blue-900/60 text-blue-600 dark:text-cyan-300 shadow-sm">
+              <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 2 }}>
+                <DollarSign className="h-5 w-5" />
+              </motion.div>
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-orange-800 dark:text-orange-300">
+            <div className="text-2xl lg:text-3xl font-black text-blue-950 dark:text-white">
               {isLoading ? (
-                <Skeleton className="h-8 w-20 bg-orange-200/50 dark:bg-orange-700/30" />
+                <Skeleton className="h-8 w-20 bg-blue-200/50 dark:bg-blue-700/30" />
               ) : (
                 `${(stats.overview.totalRevenue).toLocaleString()} VNĐ`
               )}
             </div>
-            <div className="flex items-center gap-1 mt-2 text-xs">
-              <DollarSign className="h-3 w-3 text-blue-600" />
-              <span className="text-blue-600 dark:text-blue-400">+{stats.todayStats.revenueToday.toLocaleString()} VNĐ hôm nay</span>
+            <div className="flex items-center gap-1.5 mt-3 text-xs font-semibold">
+              <TrendingUp className="h-3.5 w-3.5 text-cyan-600 dark:text-cyan-400" />
+              <span className="text-cyan-700 dark:text-cyan-400">+{stats.todayStats.revenueToday.toLocaleString()} VNĐ hôm nay</span>
             </div>
           </CardContent>
         </Card>

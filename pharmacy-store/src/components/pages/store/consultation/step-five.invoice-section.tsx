@@ -43,22 +43,22 @@ export const StepFiveInvoiceSection = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.8 }}
     >
-      <Card className="border-teal-200 dark:border-teal-800/50 shadow-xl bg-gradient-to-br from-teal-50/30 to-emerald-50/30 dark:from-teal-950/20 dark:to-emerald-950/20">
+      <Card className="border-violet-200 dark:border-violet-800/50 shadow-xl bg-gradient-to-br from-cyan-50/30 to-violet-50/30 dark:from-violet-950/20 dark:to-violet-950/20">
         <CardContent className="p-8">
           {/* Header */}
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-teal-100 dark:bg-teal-900/50 rounded-xl">
-                <Receipt className="w-6 h-6 text-teal-600 dark:text-teal-400" />
+              <div className="p-3 bg-violet-100 dark:bg-violet-900/50 rounded-xl">
+                <Receipt className="w-6 h-6 text-violet-600 dark:text-cyan-400" />
               </div>
-              <h3 className="text-2xl font-bold text-teal-700 dark:text-teal-300">
+              <h3 className="text-2xl font-bold text-violet-700 dark:text-cyan-300">
                 Hóa đơn điện tử
               </h3>
             </div>
             <Button
               variant="outline"
               onClick={onDownloadInvoice}
-              className="flex items-center gap-2 border-teal-200 hover:border-teal-300 hover:bg-teal-50 dark:border-teal-800 dark:hover:border-teal-700 dark:hover:bg-teal-950/50"
+              className="flex items-center gap-2 border-violet-200 hover:border-cyan-300 hover:bg-cyan-50 dark:border-violet-800 dark:hover:border-violet-700 dark:hover:bg-violet-950/50"
             >
               <Download className="w-4 h-4" />
               Tải xuống
@@ -75,7 +75,7 @@ export const StepFiveInvoiceSection = ({
               
               <div className="space-y-4">
                 <div className="flex items-center gap-3 p-4 bg-white/70 dark:bg-gray-800/70 rounded-xl">
-                  <Calendar className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                  <Calendar className="w-5 h-5 text-violet-600 dark:text-cyan-400" />
                   <div>
                     <span className="text-sm font-medium text-muted-foreground">
                       {invoice ? 'Ngày phát hành' : 'Ngày đặt hàng'}
@@ -90,7 +90,7 @@ export const StepFiveInvoiceSection = ({
                 </div>
 
                 <div className="flex items-center gap-3 p-4 bg-white/70 dark:bg-gray-800/70 rounded-xl">
-                  <CreditCard className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                  <CreditCard className="w-5 h-5 text-violet-600 dark:text-cyan-400" />
                   <div>
                     <span className="text-sm font-medium text-muted-foreground">
                       Phương thức thanh toán
@@ -105,11 +105,11 @@ export const StepFiveInvoiceSection = ({
                 </div>
 
                 <div className="flex items-center gap-3 p-4 bg-white/70 dark:bg-gray-800/70 rounded-xl">
-                  <Clock className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                  <Clock className="w-5 h-5 text-violet-600 dark:text-cyan-400" />
                   <div>
                     <span className="text-sm font-medium text-muted-foreground">Trạng thái</span>
                     <div className="mt-1">
-                      <Badge className="bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-300 border-teal-300 dark:border-teal-700">
+                      <Badge className="bg-violet-100 text-violet-700 dark:bg-violet-900/60 dark:text-cyan-300 border-cyan-300 dark:border-violet-700">
                         {invoice ? (invoice.status || 'Đang xử lý') : (placedOrder.status || 'Đang xử lý')}
                       </Badge>
                     </div>
@@ -126,7 +126,7 @@ export const StepFiveInvoiceSection = ({
               
               <div className="p-4 bg-white/70 dark:bg-gray-800/70 rounded-xl">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-teal-600 dark:text-teal-400 mt-1" />
+                  <MapPin className="w-5 h-5 text-violet-600 dark:text-cyan-400 mt-1" />
                   <div className="flex-1">
                     {invoice ? (
                       <>
@@ -179,8 +179,8 @@ export const StepFiveInvoiceSection = ({
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-teal-100 dark:bg-teal-900/50 rounded-lg">
-                  <Package className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                <div className="p-2 bg-violet-100 dark:bg-violet-900/50 rounded-lg">
+                  <Package className="w-5 h-5 text-violet-600 dark:text-cyan-400" />
                 </div>
                 <h4 className="text-xl font-semibold">Chi tiết đơn hàng</h4>
               </div>
@@ -200,7 +200,7 @@ export const StepFiveInvoiceSection = ({
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1 + index * 0.1 }}
-                    className="flex items-center gap-4 p-4 bg-white/80 dark:bg-gray-800/80 rounded-xl border border-teal-200/50 dark:border-teal-800/50 hover:shadow-md transition-shadow"
+                    className="flex items-center gap-4 p-4 bg-white/80 dark:bg-gray-800/80 rounded-xl border border-violet-200/50 dark:border-violet-800/50 hover:shadow-md transition-shadow"
                   >
                     <div className="relative">
                       <img
@@ -211,13 +211,13 @@ export const StepFiveInvoiceSection = ({
                           e.currentTarget.src = '/placeholder-medicine.png';
                         }}
                       />
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-teal-500 text-white rounded-full flex items-center justify-center text-xs font-bold">
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-cyan-500 text-white rounded-full flex items-center justify-center text-xs font-bold">
                         {item.quantity || 0}
                       </div>
                     </div>
                     
                     <div className="flex-1 min-w-0">
-                      <h5 className="font-semibold text-base text-teal-700 dark:text-teal-300 truncate">
+                      <h5 className="font-semibold text-base text-violet-700 dark:text-cyan-300 truncate">
                         {item.medicine?.name || 'Tên thuốc không xác định'}
                       </h5>
                       <p className="text-sm text-muted-foreground mt-1">
@@ -226,7 +226,7 @@ export const StepFiveInvoiceSection = ({
                     </div>
                     
                     <div className="text-right">
-                      <p className="font-bold text-xl text-teal-600 dark:text-teal-400">
+                      <p className="font-bold text-xl text-violet-600 dark:text-cyan-400">
                         {formatCurrency(item.itemTotal || 0)}
                       </p>
                       <p className="text-sm text-muted-foreground">
@@ -264,13 +264,13 @@ export const StepFiveInvoiceSection = ({
                 {invoice.order?.discount && parseFloat(invoice.order.discount) > 0 && (
                   <div className="flex justify-between items-center text-base">
                     <span className="text-muted-foreground">Giảm giá:</span>
-                    <span className="text-emerald-600 font-medium">-{formatCurrency(parseFloat(invoice.order.discount) || 0)}</span>
+                    <span className="text-violet-600 font-medium">-{formatCurrency(parseFloat(invoice.order.discount) || 0)}</span>
                   </div>
                 )}
                 <Separator />
-                <div className="flex justify-between items-center p-4 bg-gradient-to-r from-teal-100 to-emerald-100 dark:from-teal-900/30 dark:to-emerald-900/30 rounded-xl">
-                  <span className="text-xl font-bold text-teal-700 dark:text-teal-300">Tổng cộng:</span>
-                  <span className="text-2xl font-bold text-teal-600 dark:text-teal-400">
+                <div className="flex justify-between items-center p-4 bg-gradient-to-r from-violet-100 to-violet-100 dark:from-violet-900/30 dark:to-violet-900/30 rounded-xl">
+                  <span className="text-xl font-bold text-violet-700 dark:text-cyan-300">Tổng cộng:</span>
+                  <span className="text-2xl font-bold text-violet-600 dark:text-cyan-400">
                     {formatCurrency(invoice.totalPrice || 0)}
                   </span>
                 </div>
@@ -288,13 +288,13 @@ export const StepFiveInvoiceSection = ({
                 {(placedOrder.discount || 0) > 0 && (
                   <div className="flex justify-between items-center text-base">
                     <span className="text-muted-foreground">Giảm giá:</span>
-                    <span className="text-emerald-600 font-medium">-{formatCurrency(placedOrder.discount || 0)}</span>
+                    <span className="text-violet-600 font-medium">-{formatCurrency(placedOrder.discount || 0)}</span>
                   </div>
                 )}
                 <Separator />
-                <div className="flex justify-between items-center p-4 bg-gradient-to-r from-teal-100 to-emerald-100 dark:from-teal-900/30 dark:to-emerald-900/30 rounded-xl">
-                  <span className="text-xl font-bold text-teal-700 dark:text-teal-300">Tổng cộng:</span>
-                  <span className="text-2xl font-bold text-teal-600 dark:text-teal-400">
+                <div className="flex justify-between items-center p-4 bg-gradient-to-r from-violet-100 to-violet-100 dark:from-violet-900/30 dark:to-violet-900/30 rounded-xl">
+                  <span className="text-xl font-bold text-violet-700 dark:text-cyan-300">Tổng cộng:</span>
+                  <span className="text-2xl font-bold text-violet-600 dark:text-cyan-400">
                     {formatCurrency(placedOrder.totalPrice || 0)}
                   </span>
                 </div>

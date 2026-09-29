@@ -88,7 +88,7 @@ export function MedicineActionStepFour({ form }: MedicineActionStepFourProps) {
 
       <motion.div 
         whileHover={{ scale: 1.01 }} 
-        className="p-5 bg-gradient-to-r from-fuchsia-50/80 to-purple-50/80 rounded-lg shadow-sm border border-fuchsia-100"
+        className="p-5 bg-gradient-to-r from-fuchsia-50/80 to-cyan-50/80 rounded-lg shadow-sm border border-fuchsia-100"
       >
         <h4 className="text-fuchsia-700 font-medium mb-4 pb-2 border-b border-fuchsia-100 flex items-center gap-1">
           <FilePlus2 className="h-4 w-4" /> Hướng dẫn sử dụng

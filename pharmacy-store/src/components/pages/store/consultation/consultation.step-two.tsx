@@ -35,10 +35,10 @@ export const ConsultationStepTwo = () => {
     <div className="space-y-6 max-w-full overflow-hidden">
       {/* Header */}
       <div className="text-center">
-        <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+        <div className="w-14 h-14 bg-gradient-to-br from-violet-600 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
           <Pill className="w-7 h-7 text-white" />
         </div>
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent mb-2">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-violet-700 to-cyan-600 bg-clip-text text-transparent mb-2">
           Gợi ý thuốc phù hợp
         </h2>
         <p className="text-gray-600 dark:text-gray-400 max-w-lg mx-auto">
@@ -112,7 +112,7 @@ export const ConsultationStepTwo = () => {
         </Button>
 
         <div className="text-center">
-          <p className={`text-sm mb-2 ${selectedMedicines.length === 0 ? 'text-gray-500' : 'text-teal-600 dark:text-teal-400'}`}>
+          <p className={`text-sm mb-2 ${selectedMedicines.length === 0 ? 'text-gray-500' : 'text-violet-600 dark:text-cyan-400'}`}>
             {selectedMedicines.length === 0 
               ? 'Vui lòng chọn ít nhất một loại thuốc'
               : `✓ Đã chọn ${selectedMedicines.length} loại thuốc`
@@ -123,9 +123,9 @@ export const ConsultationStepTwo = () => {
         <Button
           onClick={() => isValid && nextStep()}
           disabled={!isValid || isLoading}
-          className={`flex items-center gap-2 ${
+          className={`flex items-center gap-2 border-0 ${
             isValid 
-              ? 'bg-teal-600 hover:bg-teal-700 text-white' 
+              ? 'bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-700 hover:to-cyan-700 text-white' 
               : 'bg-gray-300 text-gray-500 cursor-not-allowed'
           }`}
         >

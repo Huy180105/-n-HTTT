@@ -18,8 +18,8 @@ export const StepThreeAddressCard = ({ address, isSelected, onSelect, onSetDefau
     animate={{ opacity: 1, y: 0 }}
     className={`p-4 rounded-xl border-2 transition-all cursor-pointer ${
       isSelected
-        ? "border-teal-500 bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-950/30 dark:to-emerald-950/30"
-        : "border-gray-200 hover:border-teal-300 dark:border-gray-700 dark:hover:border-teal-600"
+        ? "border-cyan-500 bg-gradient-to-r from-cyan-50 to-violet-50 dark:from-violet-950/30 dark:to-violet-950/30"
+        : "border-gray-200 hover:border-cyan-300 dark:border-gray-700 dark:hover:border-violet-600"
     }`}
     onClick={onSelect}
   >
@@ -27,11 +27,11 @@ export const StepThreeAddressCard = ({ address, isSelected, onSelect, onSetDefau
       <div className="flex items-start gap-3">
         <div className={`p-2.5 rounded-xl ${
           isSelected
-            ? "bg-teal-100 dark:bg-teal-900/60"
+            ? "bg-violet-100 dark:bg-violet-900/60"
             : "bg-gray-100 dark:bg-gray-800"
         }`}>
           {isSelected ? (
-            <Check className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+            <Check className="w-4 h-4 text-violet-600 dark:text-cyan-400" />
           ) : (
             <MapPin className="w-4 h-4 text-gray-500" />
           )}
@@ -40,7 +40,7 @@ export const StepThreeAddressCard = ({ address, isSelected, onSelect, onSetDefau
           <div className="flex items-center gap-2 mb-2">
             <span className="font-semibold text-gray-800 dark:text-gray-200">{address.name}</span>
             {address.isDefault && (
-              <Badge className="text-xs bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-300 border-teal-300 dark:border-teal-700">
+              <Badge className="text-xs bg-violet-100 text-violet-700 dark:bg-violet-900/60 dark:text-cyan-300 border-cyan-300 dark:border-violet-700">
                 Mặc định
               </Badge>
             )}
@@ -67,7 +67,7 @@ export const StepThreeAddressCard = ({ address, isSelected, onSelect, onSetDefau
               e.stopPropagation()
               onSetDefault()
             }}
-            className="text-xs px-2 py-1 h-auto hover:bg-teal-100 dark:hover:bg-teal-900/50 text-teal-600 dark:text-teal-400"
+            className="text-xs px-2 py-1 h-auto hover:bg-violet-100 dark:hover:bg-violet-900/50 text-violet-600 dark:text-cyan-400"
           >
             Đặt mặc định
           </Button>

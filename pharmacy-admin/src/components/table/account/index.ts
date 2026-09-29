@@ -4,7 +4,7 @@ import { ShieldCheck, Stethoscope, UserCircle2 } from "lucide-react";
 
 // Loại trạng thái với màu sắc tinh chỉnh
 export const statusTypes = new Map<UserResponse["status"], string>([
-  [AccountStatus.ACTIVE, "bg-emerald-50/80 text-emerald-600 dark:text-emerald-400 border-emerald-200 ring-1 ring-emerald-200/80 shadow-sm dark:bg-emerald-900/20 dark:border-emerald-700 dark:ring-emerald-800/30"],
+  [AccountStatus.ACTIVE, "bg-blue-50/80 text-blue-600 dark:text-cyan-400 border-blue-200 ring-1 ring-blue-200/80 shadow-sm dark:bg-blue-900/20 dark:border-blue-700 dark:ring-blue-800/30"],
   [AccountStatus.SUSPENDED, "bg-amber-50/80 text-amber-600 dark:text-amber-400 border-amber-200 ring-1 ring-amber-200/80 shadow-sm dark:bg-amber-900/20 dark:border-amber-700 dark:ring-amber-800/30"],
   [AccountStatus.PENDING, "bg-sky-50/80 text-sky-600 dark:text-sky-400 border-sky-200 ring-1 ring-sky-200/80 shadow-sm dark:bg-sky-900/20 dark:border-sky-700 dark:ring-sky-800/30"],
 ]);
@@ -21,7 +21,7 @@ export const userTypes = [
     label: "Dược sĩ",
     value: AccountRole.PHARMACIST,
     icon: Stethoscope,
-    color: "text-teal-600 dark:text-teal-400 bg-teal-50/70 dark:bg-teal-900/20 border border-teal-100 dark:border-teal-800/30",
+    color: "text-indigo-600 dark:text-indigo-400 bg-indigo-50/70 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800/30",
   },
   {
     label: "Khách hàng",

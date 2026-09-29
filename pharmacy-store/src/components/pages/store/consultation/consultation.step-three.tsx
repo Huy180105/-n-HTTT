@@ -182,10 +182,10 @@ export const ConsultationStepThree = () => {
     <div className="space-y-6">
       {/* Header */}
       <div className="text-center">
-        <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+        <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
           <User className="w-8 h-8 text-white" />
         </div>
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent mb-2">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent mb-2">
           Thông tin đặt hàng
         </h2>
         <p className="text-gray-600 dark:text-gray-400">
@@ -198,14 +198,14 @@ export const ConsultationStepThree = () => {
 
       <div className="grid gap-6">
         {/* Address Selection */}
-        <Card className="border-teal-200 dark:border-teal-800">
+        <Card className="border-violet-200 dark:border-violet-800">
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-md">
+                <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-md">
                   <MapPin className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-teal-700 dark:text-teal-300">
+                <h3 className="text-lg font-semibold text-violet-700 dark:text-cyan-300">
                   Chọn địa chỉ giao hàng
                 </h3>
               </div>
@@ -213,7 +213,7 @@ export const ConsultationStepThree = () => {
                 variant="outline"
                 size="sm"
                 onClick={() => setShowAddForm(!showAddForm)}
-                className="border-teal-200 hover:border-teal-300 hover:bg-teal-50 dark:border-teal-700 dark:hover:border-teal-600 dark:hover:bg-teal-950/30 text-teal-600 dark:text-teal-400"
+                className="border-violet-200 hover:border-cyan-300 hover:bg-cyan-50 dark:border-violet-700 dark:hover:border-violet-600 dark:hover:bg-violet-950/30 text-violet-600 dark:text-cyan-400"
               >
                 <Plus className="w-4 h-4 mr-2" />
                 Thêm địa chỉ
@@ -263,13 +263,13 @@ export const ConsultationStepThree = () => {
         </Card>
 
         {/* Payment Method Selection */}
-        <Card className="border-teal-200 dark:border-teal-800">
+        <Card className="border-violet-200 dark:border-violet-800">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center shadow-md">
                 <Wallet className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-teal-700 dark:text-teal-300">
+              <h3 className="text-lg font-semibold text-violet-700 dark:text-cyan-300">
                 Chọn phương thức thanh toán
               </h3>
             </div>
@@ -289,11 +289,11 @@ export const ConsultationStepThree = () => {
 
         {/* Order Summary & Add to Cart */}
         {selectedMedicines.length > 0 && (
-          <Card className="border-teal-200 dark:border-teal-800 bg-gradient-to-r from-teal-50/30 to-emerald-50/30 dark:from-teal-950/20 dark:to-emerald-950/20">
+          <Card className="border-violet-200 dark:border-violet-800 bg-gradient-to-r from-cyan-50/30 to-violet-50/30 dark:from-violet-950/20 dark:to-violet-950/20">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-semibold text-teal-700 dark:text-teal-300 mb-1">
+                  <h3 className="text-lg font-semibold text-violet-700 dark:text-cyan-300 mb-1">
                     Tổng đơn hàng
                   </h3>
                   <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
@@ -305,13 +305,13 @@ export const ConsultationStepThree = () => {
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+                  <p className="text-2xl font-bold text-violet-600 dark:text-cyan-400">
                     {formatCurrency(totalPrice)}
                   </p>
                   <Button
                     onClick={handleAddToCart}
                     disabled={!selectedAddressId || selectedMedicines.length === 0 || isAddingToCart}
-                    className="bg-teal-600 hover:bg-teal-700 text-white mt-2"
+                    className="bg-violet-600 hover:bg-violet-700 text-white mt-2"
                   >
                     {isAddingToCart ? (
                       <>

@@ -57,11 +57,11 @@ export function AddressList() {
 
   return (
     <section>
-      <div className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-green-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm rounded-2xl p-6 space-y-6">
+      <div className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-violet-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm rounded-2xl p-6 space-y-6">
         {isLoading ? (
           <div className="flex items-center justify-center py-12">
             <div className="text-center">
-              <Loader2 className="w-8 h-8 animate-spin mx-auto mb-3 text-green-600 dark:text-green-400" />
+              <Loader2 className="w-8 h-8 animate-spin mx-auto mb-3 text-violet-600 dark:text-cyan-400" />
               <span className="text-gray-500 dark:text-gray-400 font-medium">Đang tải địa chỉ của bạn...</span>
             </div>
           </div>
@@ -85,13 +85,13 @@ export function AddressList() {
                   className="group"
                 >
                   <div className={`p-5 rounded-xl transition-all duration-300 ${address.isDefault 
-                    ? "bg-green-50/80 dark:bg-green-950/40 border border-green-200 dark:border-green-800/40 shadow-sm" 
+                    ? "bg-violet-50/80 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800/40 shadow-sm" 
                     : "hover:bg-gray-50 dark:hover:bg-gray-900/30 border border-transparent hover:border-gray-200 dark:hover:border-gray-800/40"}`}
                   >
                     <div className="flex items-start gap-4">
                       <div className={`p-3 rounded-full flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${
                         address.isDefault 
-                          ? "bg-green-100 dark:bg-green-900/60 text-green-600 dark:text-green-400 ring-2 ring-green-200 dark:ring-green-800/40" 
+                          ? "bg-violet-100 dark:bg-violet-900/60 text-violet-600 dark:text-cyan-400 ring-2 ring-violet-200 dark:ring-violet-800/40" 
                           : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
                       }`}>
                         {address.isDefault ? (
@@ -104,14 +104,14 @@ export function AddressList() {
                         <div className="flex flex-wrap items-center gap-2 mb-2">
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{address.name}</h3>
                           {address.isDefault && (
-                            <Badge variant="outline" className="bg-green-100 dark:bg-green-900/60 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800 text-xs px-2 py-0.5">
+                            <Badge variant="outline" className="bg-violet-100 dark:bg-violet-900/60 text-violet-700 dark:text-cyan-300 border-violet-200 dark:border-violet-800 text-xs px-2 py-0.5">
                               Mặc định
                             </Badge>
                           )}
                         </div>
                         
                         <div className="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-1.5">
-                          <Phone className="w-3.5 h-3.5 mr-1.5 text-green-500 dark:text-green-400" />
+                          <Phone className="w-3.5 h-3.5 mr-1.5 text-cyan-500 dark:text-cyan-400" />
                           <span>
                             {address.phone.replace(/(\+\d{2})(\d{2})(\d{3})(\d{4})/, '($1) $2 $3 $4')}
                           </span>
@@ -146,9 +146,9 @@ export function AddressList() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="py-10 text-center rounded-xl border border-dashed border-green-200 dark:border-green-800/50 bg-green-50/50 dark:bg-green-950/30"
+            className="py-10 text-center rounded-xl border border-dashed border-violet-200 dark:border-violet-800/50 bg-violet-50/50 dark:bg-violet-950/30"
           >
-            <MapPin className="w-14 h-14 mx-auto mb-4 text-green-400 dark:text-green-600 opacity-60" />
+            <MapPin className="w-14 h-14 mx-auto mb-4 text-cyan-400 dark:text-violet-600 opacity-60" />
             <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-1">Chưa có địa chỉ nào được thêm vào</p>
             <p className="text-sm text-gray-500 dark:text-gray-400">Hãy thêm địa chỉ đầu tiên của bạn để dễ dàng đặt hàng</p>
           </motion.div>

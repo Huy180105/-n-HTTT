@@ -56,7 +56,7 @@ export function AccountPermissionForm({ form, isEdit, showPassword, setShowPassw
                     </Badge>
                   </SelectItem>
                   <SelectItem value={AccountRole.CUSTOMER}>
-                    <Badge variant="outline" className="bg-green-100 text-green-800 dark:bg-green-900/60 dark:text-green-300">
+                    <Badge variant="outline" className="bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-violet-300">
                       Khách hàng
                     </Badge>
                   </SelectItem>
@@ -82,7 +82,7 @@ export function AccountPermissionForm({ form, isEdit, showPassword, setShowPassw
                   <div className="flex items-center space-x-3 rounded-lg border p-3 hover:bg-muted/50 transition-colors">
                     <RadioGroupItem value={AccountStatus.ACTIVE} id="active" />
                     <label htmlFor="active" className="flex items-center gap-2 cursor-pointer flex-1">
-                      <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                      <div className="h-2 w-2 rounded-full bg-violet-500"></div>
                       <span className="text-sm font-medium">Hoạt động</span>
                     </label>
                   </div>

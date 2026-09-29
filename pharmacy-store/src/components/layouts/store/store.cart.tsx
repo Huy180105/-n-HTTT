@@ -48,7 +48,7 @@ export function StoreCart() {
         <Button
           size="icon"
           variant="ghost"
-          className="rounded-full text-gray-600 hover:text-green-600 dark:text-gray-400 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-950/50 relative"
+          className="rounded-full text-gray-600 hover:text-violet-600 dark:text-gray-400 dark:hover:text-cyan-400 hover:bg-violet-50 dark:hover:bg-violet-950/50 relative"
           aria-label="Mở giỏ hàng"
         >
           {isInitializing ? (
@@ -64,7 +64,7 @@ export function StoreCart() {
                 exit={{ scale: 0 }}
                 className="absolute -top-1.5 -right-1.5 z-10"
               >
-                <Badge className="flex items-center justify-center min-w-[18px] h-[18px] px-1 py-0 bg-gradient-to-r from-green-500 to-teal-500 text-white text-[10px] font-semibold rounded-full border-none shadow-sm">
+                <Badge className="flex items-center justify-center min-w-[18px] h-[18px] px-1 py-0 bg-gradient-to-r from-violet-600 to-cyan-500 text-white text-[10px] font-semibold rounded-full border-none shadow-sm">
                   {itemCount > 99 ? "99+" : itemCount}
                 </Badge>
               </motion.div>
@@ -73,12 +73,12 @@ export function StoreCart() {
         </Button>
       </PopoverTrigger>
       <PopoverContent
-        className="w-96 p-0 border border-green-200 dark:border-green-800/50 shadow-lg rounded-xl overflow-hidden"
+        className="w-96 p-0 border border-violet-200 dark:border-violet-800/50 shadow-lg rounded-xl overflow-hidden"
         align="end"
         side="bottom"
         sideOffset={8}
       >
-        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-3 text-white">
+        <div className="bg-gradient-to-r from-violet-600 to-cyan-600 px-4 py-3 text-white">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <ShoppingBag size={18} />
@@ -99,7 +99,7 @@ export function StoreCart() {
 
         {isInitializing && validCartItems.length === 0 ? (
           <div className="p-6 flex items-center justify-center">
-            <Loader2 className="h-8 w-8 animate-spin text-green-500" />
+            <Loader2 className="h-8 w-8 animate-spin text-violet-600" />
           </div>
         ) : (
           <AnimatePresence>
@@ -118,7 +118,7 @@ export function StoreCart() {
                   <p className="text-sm text-gray-500 dark:text-gray-400 max-w-[250px]">
                     Hãy thêm sản phẩm vào giỏ hàng để tiến hành mua sắm
                   </p>
-                  <Button asChild variant="outline" className="mt-2">
+                  <Button asChild variant="outline" className="mt-2 border-violet-200 dark:border-violet-800 text-violet-600 dark:text-cyan-400">
                     <Link to={routes.store.medicines} className="flex items-center gap-1">
                       Khám phá sản phẩm <ArrowRight size={14} />
                     </Link>
@@ -135,7 +135,7 @@ export function StoreCart() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, height: 0, marginTop: 0, marginBottom: 0, overflow: 'hidden' }}
                       transition={{ duration: 0.2 }}
-                      className="relative flex items-start gap-3 p-3 hover:bg-green-50 dark:hover:bg-green-950/30 rounded-lg my-1 border border-transparent hover:border-green-100 dark:hover:border-green-900/30 transition-colors"
+                      className="relative flex items-start gap-3 p-3 hover:bg-violet-50/60 dark:hover:bg-violet-950/30 rounded-lg my-1 border border-transparent hover:border-violet-100 dark:hover:border-violet-900/30 transition-colors"
                     >
                       <div className="relative h-20 w-20 overflow-hidden rounded-md border border-gray-200 dark:border-gray-800 group">
                         <img
@@ -153,7 +153,7 @@ export function StoreCart() {
                         <div className="flex justify-between">
                           <Link
                             to={routes.store.medicineDetails(item.medicine.id)}
-                            className="text-sm font-medium line-clamp-2 hover:text-green-600 hover:underline"
+                            className="text-sm font-medium line-clamp-2 hover:text-violet-600 dark:hover:text-cyan-400 hover:underline"
                           >
                             {item.medicine.name}
                           </Link>
@@ -171,7 +171,7 @@ export function StoreCart() {
                           </button>
                         </div>
                         <div className="flex items-center justify-between">
-                          <div className="font-medium text-green-600">
+                          <div className="font-medium text-violet-600 dark:text-cyan-400">
                             {formatCurrency(item.medicine.variants?.price || 0)}
                             {item.medicine.variants?.discountPercent && (
                               <span className="text-xs text-gray-500 line-through ml-1">
@@ -179,11 +179,11 @@ export function StoreCart() {
                               </span>
                             )}
                           </div>
-                          <div className="flex items-center border rounded-full overflow-hidden shadow-sm">
+                          <div className="flex items-center border rounded-full overflow-hidden shadow-sm border-violet-200 dark:border-violet-800">
                             <button
                               className={`px-2 py-0.5 text-gray-700 dark:text-gray-300 ${(item.quantity <= 1 || !item.medicine?.id)
                                 ? 'opacity-50 cursor-not-allowed'
-                                : 'hover:bg-green-50 dark:hover:bg-green-900/20'
+                                : 'hover:bg-violet-50 dark:hover:bg-violet-900/30'
                                 }`}
                               onClick={() => {
                                 if (item.quantity > 1 && item.medicine?.id) {
@@ -200,7 +200,7 @@ export function StoreCart() {
                             <button
                               className={`px-2 py-0.5 text-gray-700 dark:text-gray-300 ${(item.quantity >= (item.medicine.variants?.limitQuantity ?? Infinity) || !item.medicine?.id)
                                 ? 'opacity-50 cursor-not-allowed'
-                                : 'hover:bg-green-50 dark:hover:bg-green-900/20'
+                                : 'hover:bg-violet-50 dark:hover:bg-violet-900/30'
                                 }`}
                               onClick={() => {
                                 if (item.medicine?.id) {
@@ -238,13 +238,13 @@ export function StoreCart() {
                     </div>
                     <div className="flex justify-between text-base font-semibold">
                       <span>Tổng cộng:</span>
-                      <span className="text-green-600 dark:text-green-500">{formatCurrency(totalPrice)}</span>
+                      <span className="text-violet-600 dark:text-cyan-400">{formatCurrency(totalPrice)}</span>
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Button
                       onClick={handleCheckout}
-                      className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 h-10 text-white flex items-center justify-center gap-2"
+                      className="w-full bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-700 hover:to-cyan-700 h-10 text-white flex items-center justify-center gap-2 border-0 shadow-md"
                       disabled={validCartItems.length === 0}
                     >
                       Thanh toán ngay <ArrowRight size={14} />

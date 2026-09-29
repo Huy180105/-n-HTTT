@@ -60,7 +60,7 @@ export default function OrderPage() {
           {/* Header section */}
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-violet-100 text-violet-600 dark:bg-violet-950/60 dark:text-cyan-400">
                 <ShoppingBag className="h-5 w-5" />
               </div>
               <h1 className="text-2xl font-bold md:text-3xl">Đơn hàng của bạn</h1>

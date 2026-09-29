@@ -129,7 +129,7 @@ export const categoryColumns: ColumnDef<CategoryResponse>[] = [
             className={cn(
               "flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 shadow-sm",
               isActive
-                ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800/30 hover:bg-emerald-100 dark:hover:bg-emerald-900/40"
+                ? "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/30 dark:text-cyan-400 dark:border-blue-800/30 hover:bg-blue-100 dark:hover:bg-blue-900/40"
                 : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800/30 hover:bg-rose-100 dark:hover:bg-rose-900/40"
             )}
           >

@@ -6,7 +6,7 @@ export const getStatusBadge = (status: InvoiceStatus) => {
   switch (status) {
     case InvoiceStatus.PAID:
       return (
-        <Badge className="bg-emerald-100 text-emerald-800 border-emerald-300 dark:bg-emerald-800 dark:text-emerald-100 dark:border-emerald-600 hover:bg-emerald-200 dark:hover:bg-emerald-700 transition-colors gap-1.5 px-3 py-1">
+        <Badge className="bg-blue-100 text-blue-800 border-cyan-300 dark:bg-blue-800 dark:text-blue-100 dark:border-blue-600 hover:bg-blue-200 dark:hover:bg-blue-700 transition-colors gap-1.5 px-3 py-1">
           <CheckCircle2 className="h-3.5 w-3.5" />
           Đã thanh toán
         </Badge>

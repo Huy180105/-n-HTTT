@@ -15,7 +15,7 @@ export function StoreSocialMedias({ containerClassName, itemsClassName }: Props)
       <Link to={siteConfig.links.github} target="_blank">
         <Icons.gitHub
           className={cn(
-            "w-4 h-4 md:w-5 md:h-5 text-muted-foreground hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300",
+            "w-4 h-4 md:w-5 md:h-5 text-muted-foreground hover:text-violet-600 dark:hover:text-cyan-400 transition-colors duration-300",
             itemsClassName,
           )}
         />

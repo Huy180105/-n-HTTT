@@ -17,7 +17,7 @@ class Settings(BaseSettings):
 
     # LLM API KEY
     GROQ_API_KEY: Optional[str] = None
-    GROQ_MODEL: str = "qwen-qwq-32b"
+    GROQ_MODEL: str = "openai/gpt-oss-120b"
     COHERE_API_KEY: Optional[str] = None
     COHERE_EMBEDDING_MODEL: str = "embed-multilingual-v3.0"
     GEMINI_API_KEY: Optional[str] = None

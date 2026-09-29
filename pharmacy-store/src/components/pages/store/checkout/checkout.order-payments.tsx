@@ -33,8 +33,8 @@ export function CheckoutOrderPayments({ user, onAddressSelect, selectedAddress, 
     <div className="lg:col-span-2 space-y-6">
       {/* Delivery address section */}
       <Card className="overflow-hidden">
-        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-4">
-          <h2 className="text-white font-medium flex items-center gap-2">
+        <div className="bg-gradient-to-r from-violet-700 via-violet-600 to-cyan-600 px-6 py-4">
+          <h2 className="text-white font-semibold flex items-center gap-2">
             <MapPin size={18} /> Địa chỉ giao hàng
           </h2>
         </div>
@@ -62,14 +62,14 @@ export function CheckoutOrderPayments({ user, onAddressSelect, selectedAddress, 
                   <div
                     key={address.id}
                     className={`flex items-start gap-3 p-4 rounded-lg border transition-colors ${selectedAddress === address.id
-                      ? 'border-green-500 bg-green-50 dark:bg-green-950/20 dark:border-green-800'
+                      ? 'border-cyan-500 bg-violet-50 dark:bg-violet-950/20 dark:border-violet-800'
                       : 'border-gray-200 dark:border-gray-800'
                       }`}
                   >
                     <RadioGroupItem value={address.id} id={address.id} className="mt-1" />
                     <div className="flex-1">
                       <Label htmlFor={address.id} className="font-medium mb-1 block cursor-pointer">
-                        {address.name} {address.isDefault && <span className="text-green-600 text-xs ml-2">(Mặc định)</span>}
+                        {address.name} {address.isDefault && <span className="text-violet-600 text-xs ml-2">(Mặc định)</span>}
                       </Label>
                       <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                         <p>{address.phone}</p>
@@ -102,8 +102,8 @@ export function CheckoutOrderPayments({ user, onAddressSelect, selectedAddress, 
 
       {/* Payment method section */}
       <Card className="overflow-hidden">
-        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-4">
-          <h2 className="text-white font-medium flex items-center gap-2">
+        <div className="bg-gradient-to-r from-violet-700 via-violet-600 to-cyan-600 px-6 py-4">
+          <h2 className="text-white font-semibold flex items-center gap-2">
             <CreditCard size={18} /> Phương thức thanh toán
           </h2>
         </div>
@@ -115,7 +115,7 @@ export function CheckoutOrderPayments({ user, onAddressSelect, selectedAddress, 
             className="space-y-3"
           >
             <div className={`flex items-start gap-3 p-4 rounded-lg border transition-colors ${paymentMethod === PaymentMethod.CREDIT_CARD
-              ? 'border-green-500 bg-green-50 dark:bg-green-950/20 dark:border-green-800'
+              ? 'border-cyan-500 bg-violet-50 dark:bg-violet-950/20 dark:border-violet-800'
               : 'border-gray-200 dark:border-gray-800'
               }`}>
               <RadioGroupItem value={PaymentMethod.CREDIT_CARD} id="credit-card" className="mt-1" disabled={true} />
@@ -130,7 +130,7 @@ export function CheckoutOrderPayments({ user, onAddressSelect, selectedAddress, 
             </div>
 
             <div className={`flex items-start gap-3 p-4 rounded-lg border transition-colors ${paymentMethod === PaymentMethod.COD
-              ? 'border-green-500 bg-green-50 dark:bg-green-950/20 dark:border-green-800'
+              ? 'border-cyan-500 bg-violet-50 dark:bg-violet-950/20 dark:border-violet-800'
               : 'border-gray-200 dark:border-gray-800'
               }`}>
               <RadioGroupItem value={PaymentMethod.COD} id="cod" className="mt-1" />
@@ -145,7 +145,7 @@ export function CheckoutOrderPayments({ user, onAddressSelect, selectedAddress, 
             </div>
 
             <div className={`flex items-start gap-3 p-4 rounded-lg border transition-colors ${paymentMethod === PaymentMethod.BANK_TRANSFER
-              ? 'border-green-500 bg-green-50 dark:bg-green-950/20 dark:border-green-800'
+              ? 'border-cyan-500 bg-violet-50 dark:bg-violet-950/20 dark:border-violet-800'
               : 'border-gray-200 dark:border-gray-800'
               }`}>
               <RadioGroupItem value={PaymentMethod.BANK_TRANSFER} id="bank-transfer" className="mt-1" disabled={true} />

@@ -82,7 +82,7 @@ export function MedicineBulkDeleteDialog({
             <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
               Danh sách tài khoản sẽ bị xóa:
             </p>
-            <div className="max-h-32 overflow-y-auto space-y-1 bg-slate-50 dark:bg-slate-900/50 rounded-lg p-3 border border-slate-200 dark:border-slate-700">
+            <div className="max-h-32 overflow-y-auto space-y-1 bg-gradient-to-r from-slate-100/80 via-slate-50/50 to-slate-100/80 dark:from-slate-900/80 dark:via-slate-900/40 dark:to-slate-900/80 backdrop-blur-sm rounded-lg p-3 border border-slate-200 dark:border-slate-700">
               {selectedMedicines.map((medicine, index) => (
                 <motion.div
                   key={medicine.id}

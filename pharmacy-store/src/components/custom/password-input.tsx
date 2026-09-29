@@ -15,7 +15,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     return (
       <div className="relative group">
         {showIcon && (
-          <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600 dark:text-gray-300 group-focus-within:text-green-500 transition-colors duration-200 drop-shadow-sm z-10" />
+          <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600 dark:text-gray-300 group-focus-within:text-cyan-500 transition-colors duration-200 drop-shadow-sm z-10" />
         )}
         <Input
           {...props}
@@ -23,14 +23,14 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           type={showPassword ? "text" : "password"}
           className={cn(
             showIcon ? "pl-11 pr-12" : "pr-12",
-            "h-12 bg-white/50 dark:bg-gray-800/30 border-gray-300/50 dark:border-gray-700/50 focus:border-green-500 dark:focus:border-green-400 focus:ring-2 focus:ring-green-500/20 rounded-lg transition-all backdrop-blur-sm focus:shadow-lg focus:shadow-green-500/10",
+            "h-12 bg-white/50 dark:bg-gray-800/30 border-gray-300/50 dark:border-gray-700/50 focus:border-cyan-500 dark:focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 rounded-lg transition-all backdrop-blur-sm focus:shadow-lg focus:shadow-cyan-500/10",
             className
           )}
         />
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-400 transition-colors focus:outline-none focus:text-green-500 p-1 rounded-md hover:bg-green-50 dark:hover:bg-green-900/20 group z-10"
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors focus:outline-none focus:text-cyan-500 p-1 rounded-md hover:bg-violet-50 dark:hover:bg-violet-900/20 group z-10"
           tabIndex={-1}
         >
           {showPassword ? (

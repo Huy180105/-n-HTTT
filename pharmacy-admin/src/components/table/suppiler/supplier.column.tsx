@@ -76,11 +76,11 @@ export const supplierColumns: ColumnDef<SupplierResponse>[] = [
     cell: ({ row }) => (
       <div className="flex items-center">
         <Badge variant="outline" className={cn(
-          "bg-transparent hover:bg-emerald-50 dark:hover:bg-emerald-950/40 transition-colors",
-          "border-emerald-200 dark:border-emerald-800/60 text-slate-700 dark:text-slate-300",
+          "bg-transparent hover:bg-blue-50 dark:hover:bg-blue-950/40 transition-colors",
+          "border-blue-200 dark:border-blue-800/60 text-slate-700 dark:text-slate-300",
           "flex items-center gap-1.5 py-1 px-2.5 font-normal"
         )}>
-          <Phone className="h-3 w-3 text-emerald-500" />
+          <Phone className="h-3 w-3 text-cyan-500" />
           <span className="text-xs">
             {row.original.contactPhone || "Chưa cung cấp"}
           </span>

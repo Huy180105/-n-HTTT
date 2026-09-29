@@ -43,8 +43,8 @@ export const StepSixRatingSection = ({
       case 1: return "text-red-500";
       case 2: return "text-orange-500";
       case 3: return "text-yellow-500";
-      case 4: return "text-teal-500";
-      case 5: return "text-emerald-500";
+      case 4: return "text-cyan-500";
+      case 5: return "text-cyan-500";
       default: return "text-gray-400";
     }
   };
@@ -117,8 +117,8 @@ export const StepSixRatingSection = ({
             {/* Feedback Comment */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg">
-                  <MessageCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                <div className="p-2 bg-violet-100 dark:bg-violet-900/50 rounded-lg">
+                  <MessageCircle className="w-5 h-5 text-violet-600 dark:text-blue-400" />
                 </div>
                 <label className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                   Chia sẻ thêm về trải nghiệm của bạn

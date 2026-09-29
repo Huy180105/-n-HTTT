@@ -159,7 +159,7 @@ export default function VerifyAccountPage() {
                   onKeyDown={(e) => handleKeyDown(e, index)}
                   onPaste={index === 0 ? handlePaste : undefined}
                   className={`h-14 text-center text-xl font-semibold ${activeInput === index
-                    ? "border-green-600 ring-2 ring-green-600/50 dark:border-green-500 dark:ring-green-500/50" 
+                    ? "border-violet-600 ring-2 ring-violet-600/50 dark:border-cyan-500 dark:ring-cyan-500/50" 
                     : ""
                   }`}
                   autoComplete="one-time-code"
@@ -172,7 +172,7 @@ export default function VerifyAccountPage() {
             <motion.p
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className={`text-center text-sm ${error.includes("gửi") ? "text-green-600 dark:text-green-500" : "text-red-600 dark:text-red-500"
+              className={`text-center text-sm ${error.includes("gửi") ? "text-violet-600 dark:text-cyan-500" : "text-red-600 dark:text-red-500"
                 }`}
             >
               {error}
@@ -184,7 +184,7 @@ export default function VerifyAccountPage() {
             {canResend ? (
               <Button
                 variant="link"
-                className="p-0 h-auto font-semibold text-green-600 hover:text-green-700 dark:text-green-500 dark:hover:text-green-400"
+                className="p-0 h-auto font-semibold text-violet-600 hover:text-violet-700 dark:text-cyan-500 dark:hover:text-cyan-400"
                 onClick={handleResend}
                 disabled={isResending}
               >
@@ -208,7 +208,7 @@ export default function VerifyAccountPage() {
         <CardFooter>
           <Button 
             variant="default"
-            className="w-full font-semibold bg-green-600 hover:bg-green-700 text-white dark:bg-green-700 dark:hover:bg-green-600" 
+            className="w-full font-semibold bg-violet-600 hover:bg-violet-700 text-white dark:bg-violet-700 dark:hover:bg-violet-600" 
             size="lg"
             onClick={handleVerify}
             disabled={isVerifying || otp.some(digit => digit === "")}

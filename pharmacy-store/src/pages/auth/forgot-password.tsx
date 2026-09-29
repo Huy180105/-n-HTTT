@@ -1,4 +1,3 @@
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -69,24 +68,20 @@ export default function ForgotPasswordPage() {
               to={routes.store.root}
               className="flex flex-col items-center gap-2 font-medium"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-100 to-teal-100 dark:from-green-900/60 dark:to-teal-900/60 text-green-600 dark:text-green-400 shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-violet-100 dark:from-violet-900/60 dark:to-violet-900/60 text-violet-600 dark:text-cyan-400 shadow-md hover:shadow-lg transition-all duration-300">
                 <BriefcaseMedical className="size-6" />
               </div>
-              <span className="sr-only">Pharmacity Inc.</span>
+              <span className="sr-only">Medicare Inc.</span>
             </Link>
 
             <div className="text-center space-y-4">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-green-100 to-teal-100 dark:from-green-900/60 dark:to-teal-900/60 text-green-600 dark:text-green-400 shadow-lg mx-auto">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-violet-100 dark:from-violet-900/60 dark:to-violet-900/60 text-violet-600 dark:text-cyan-400 shadow-lg mx-auto">
                 <CheckCircle className="size-8" />
               </div>
               
-              <TextAnimate
-                animation="blurInUp"
-                by="character"
-                className="text-2xl font-bold bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400"
-              >
+              <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 dark:from-cyan-400 dark:to-cyan-400 pb-1">
                 Email đã được gửi!
-              </TextAnimate>
+              </h1>
               
               <div className="text-gray-500 dark:text-gray-400 text-center max-w-md">
                 Chúng tôi đã gửi hướng dẫn đặt lại mật khẩu đến email của bạn. 
@@ -106,7 +101,7 @@ export default function ForgotPasswordPage() {
               <Link to={routes.auth.login}>
                 <Button
                   variant="ghost"
-                  className="w-full text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300"
+                  className="w-full text-violet-600 dark:text-cyan-400 hover:text-violet-700 dark:hover:text-cyan-300"
                 >
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Quay lại đăng nhập
@@ -130,19 +125,15 @@ export default function ForgotPasswordPage() {
                   to={routes.store.root}
                   className="flex flex-col items-center gap-2 font-medium"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-100 to-teal-100 dark:from-green-900/60 dark:to-teal-900/60 text-green-600 dark:text-green-400 shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-violet-100 dark:from-violet-900/60 dark:to-violet-900/60 text-violet-600 dark:text-cyan-400 shadow-md hover:shadow-lg transition-all duration-300">
                     <BriefcaseMedical className="size-6" />
                   </div>
-                  <span className="sr-only">Pharmacity Inc.</span>
+                  <span className="sr-only">Medicare Inc.</span>
                 </Link>
                 
-                <TextAnimate
-                  animation="blurInUp"
-                  by="character"
-                  className="text-2xl font-bold bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400"
-                >
+                <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 dark:from-cyan-400 dark:to-cyan-400 pb-1">
                   Quên mật khẩu?
-                </TextAnimate>
+                </h1>
                 
                 <div className="text-gray-500 dark:text-gray-400 text-center max-w-md">
                   Nhập địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn hướng dẫn để đặt lại mật khẩu
@@ -165,7 +156,7 @@ export default function ForgotPasswordPage() {
                             {...field}
                             type="email"
                             placeholder="your-email@example.com"
-                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 focus:border-green-400 dark:focus:border-green-600 rounded-lg pl-10"
+                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 focus:border-cyan-400 dark:focus:border-violet-600 rounded-lg pl-10"
                           />
                         </div>
                       </FormControl>
@@ -176,7 +167,7 @@ export default function ForgotPasswordPage() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect py-6"
+                  className="w-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect py-6"
                   disabled={isLoading}
                 >
                   {isLoading ? (
@@ -192,7 +183,7 @@ export default function ForgotPasswordPage() {
                 <div className="flex items-center justify-center pt-2">
                   <Link
                     to={routes.auth.login}
-                    className="text-green-600 dark:text-green-400 hover:underline underline-offset-4 hover:opacity-75 transition-all duration-200 font-medium flex items-center gap-2"
+                    className="text-violet-600 dark:text-cyan-400 hover:underline underline-offset-4 hover:opacity-75 transition-all duration-200 font-medium flex items-center gap-2"
                   >
                     <ArrowLeft className="h-4 w-4" />
                     Quay lại đăng nhập

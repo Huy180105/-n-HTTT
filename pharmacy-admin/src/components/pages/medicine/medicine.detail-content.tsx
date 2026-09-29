@@ -26,25 +26,25 @@ export function MedicineDetailContent({ medicine }: MedicineDetailContentProps) 
         <TabsList className="w-full justify-start bg-white dark:bg-slate-800 p-1 h-12 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700/30 mb-5">
           <TabsTrigger
             value="overview"
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white dark:data-[state=active]:from-blue-600 dark:data-[state=active]:to-purple-600 data-[state=active]:border-none rounded-lg h-10 transition-all duration-200"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white dark:data-[state=active]:from-blue-600 dark:data-[state=active]:to-cyan-600 data-[state=active]:border-none rounded-lg h-10 transition-all duration-200"
           >
             Tổng quan
           </TabsTrigger>
           <TabsTrigger
             value="variants"
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white dark:data-[state=active]:from-blue-600 dark:data-[state=active]:to-purple-600 data-[state=active]:border-none rounded-lg h-10 transition-all duration-200"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white dark:data-[state=active]:from-blue-600 dark:data-[state=active]:to-cyan-600 data-[state=active]:border-none rounded-lg h-10 transition-all duration-200"
           >
             Biến thể
           </TabsTrigger>
           <TabsTrigger
             value="sales"
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white dark:data-[state=active]:from-blue-600 dark:data-[state=active]:to-purple-600 data-[state=active]:border-none rounded-lg h-10 transition-all duration-200"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white dark:data-[state=active]:from-blue-600 dark:data-[state=active]:to-cyan-600 data-[state=active]:border-none rounded-lg h-10 transition-all duration-200"
           >
             Số liệu bán hàng
           </TabsTrigger>
           {/* <TabsTrigger
             value="reviews"
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white dark:data-[state=active]:from-blue-600 dark:data-[state=active]:to-purple-600 data-[state=active]:border-none rounded-lg h-10 transition-all duration-200"
+            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white dark:data-[state=active]:from-blue-600 dark:data-[state=active]:to-cyan-600 data-[state=active]:border-none rounded-lg h-10 transition-all duration-200"
           >
             Đánh giá
           </TabsTrigger> */}
@@ -56,7 +56,7 @@ export function MedicineDetailContent({ medicine }: MedicineDetailContentProps) 
             <CardHeader className="pb-3">
               <div className="flex flex-col space-y-1.5">
                 <CardTitle className="text-2xl font-bold flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 dark:from-blue-600 dark:to-purple-600 flex items-center justify-center shadow-sm">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 dark:from-blue-600 dark:to-cyan-600 flex items-center justify-center shadow-sm">
                     <Pill className="h-5 w-5 text-white" />
                   </div>
                   <span className="bg-gradient-to-r from-slate-700 to-slate-900 dark:from-slate-200 dark:to-white bg-clip-text text-transparent">
@@ -91,7 +91,7 @@ export function MedicineDetailContent({ medicine }: MedicineDetailContentProps) 
                   </h3>
                   <div className="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800/80 rounded-lg border border-slate-100 dark:border-slate-700/30">
                     <Avatar className="h-10 w-10 rounded-lg">
-                      <AvatarFallback className="rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 text-white dark:from-blue-600 dark:to-purple-600 shadow-sm">
+                      <AvatarFallback className="rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 text-white dark:from-blue-600 dark:to-cyan-600 shadow-sm">
                         {medicine?.category?.title?.substring(0, 2).toUpperCase() || 'BR'}
                       </AvatarFallback>
                     </Avatar>
@@ -195,7 +195,7 @@ export function MedicineDetailContent({ medicine }: MedicineDetailContentProps) 
                   <div className="p-4 bg-slate-50 dark:bg-slate-800/80 rounded-lg border border-slate-100 dark:border-slate-700/30">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-slate-600 dark:text-slate-300">Hạn sử dụng</span>
-                      <Badge variant="secondary" className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                      <Badge variant="secondary" className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-violet-400">
                         Hết hạn
                       </Badge>
                     </div>
@@ -232,11 +232,11 @@ export function MedicineDetailContent({ medicine }: MedicineDetailContentProps) 
                   </Card>
                   <Card className="border border-slate-100 dark:border-slate-700/30 bg-slate-50 dark:bg-slate-800/50 rounded-lg overflow-hidden">
                     <CardContent className="p-4 text-center">
-                      <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 mx-auto flex items-center justify-center mb-2">
-                        <TrendingUp className="h-4 w-4 text-green-600 dark:text-green-400" />
+                      <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 mx-auto flex items-center justify-center mb-2">
+                        <TrendingUp className="h-4 w-4 text-blue-600 dark:text-violet-400" />
                       </div>
                       <p className="text-sm text-slate-600 dark:text-slate-300">Đã bán</p>
-                      <p className="font-bold text-green-600 dark:text-green-400">142</p>
+                      <p className="font-bold text-blue-600 dark:text-violet-400">142</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -263,25 +263,25 @@ export function MedicineDetailContent({ medicine }: MedicineDetailContentProps) 
                   Doanh thu
                 </h3>
                 <div className="grid grid-cols-3 gap-4">
-                  <Card className="border border-slate-100 dark:border-slate-700/30 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg overflow-hidden">
+                  <Card className="border border-slate-100 dark:border-slate-700/30 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg overflow-hidden">
                     <CardContent className="p-4 text-center">
                       <p className="text-sm text-slate-600 dark:text-slate-300">Hôm nay</p>
                       <p className="font-bold text-blue-600 dark:text-blue-400 text-lg">2.400.000đ</p>
-                      <p className="text-xs text-green-600 dark:text-green-400">+12%</p>
+                      <p className="text-xs text-blue-600 dark:text-violet-400">+12%</p>
                     </CardContent>
                   </Card>
-                  <Card className="border border-slate-100 dark:border-slate-700/30 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-lg overflow-hidden">
+                  <Card className="border border-slate-100 dark:border-slate-700/30 bg-gradient-to-r from-blue-50 to-blue-50 dark:from-blue-900/20 dark:to-blue-900/20 rounded-lg overflow-hidden">
                     <CardContent className="p-4 text-center">
                       <p className="text-sm text-slate-600 dark:text-slate-300">Tuần này</p>
-                      <p className="font-bold text-green-600 dark:text-green-400 text-lg">18.500.000đ</p>
-                      <p className="text-xs text-green-600 dark:text-green-400">+8%</p>
+                      <p className="font-bold text-blue-600 dark:text-violet-400 text-lg">18.500.000đ</p>
+                      <p className="text-xs text-blue-600 dark:text-violet-400">+8%</p>
                     </CardContent>
                   </Card>
-                  <Card className="border border-slate-100 dark:border-slate-700/30 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg overflow-hidden">
+                  <Card className="border border-slate-100 dark:border-slate-700/30 bg-gradient-to-r from-cyan-50 to-pink-50 dark:from-cyan-900/20 dark:to-pink-900/20 rounded-lg overflow-hidden">
                     <CardContent className="p-4 text-center">
                       <p className="text-sm text-slate-600 dark:text-slate-300">Tháng này</p>
-                      <p className="font-bold text-purple-600 dark:text-purple-400 text-lg">76.200.000đ</p>
-                      <p className="text-xs text-green-600 dark:text-green-400">+15%</p>
+                      <p className="font-bold text-cyan-600 dark:text-purple-400 text-lg">76.200.000đ</p>
+                      <p className="text-xs text-blue-600 dark:text-violet-400">+15%</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -307,20 +307,20 @@ export function MedicineDetailContent({ medicine }: MedicineDetailContentProps) 
                   </Card>
                   <Card className="border border-slate-100 dark:border-slate-700/30 bg-slate-50 dark:bg-slate-800/50 rounded-lg overflow-hidden">
                     <CardContent className="p-4 text-center">
-                      <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 mx-auto flex items-center justify-center mb-2">
-                        <Calendar className="h-4 w-4 text-green-600 dark:text-green-400" />
+                      <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 mx-auto flex items-center justify-center mb-2">
+                        <Calendar className="h-4 w-4 text-blue-600 dark:text-violet-400" />
                       </div>
                       <p className="text-sm text-slate-600 dark:text-slate-300">Tuần này</p>
-                      <p className="font-bold text-green-600 dark:text-green-400">185</p>
+                      <p className="font-bold text-blue-600 dark:text-violet-400">185</p>
                     </CardContent>
                   </Card>
                   <Card className="border border-slate-100 dark:border-slate-700/30 bg-slate-50 dark:bg-slate-800/50 rounded-lg overflow-hidden">
                     <CardContent className="p-4 text-center">
-                      <div className="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 mx-auto flex items-center justify-center mb-2">
-                        <BarChart3 className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                      <div className="w-8 h-8 rounded-full bg-cyan-100 dark:bg-purple-900/30 mx-auto flex items-center justify-center mb-2">
+                        <BarChart3 className="h-4 w-4 text-cyan-600 dark:text-purple-400" />
                       </div>
                       <p className="text-sm text-slate-600 dark:text-slate-300">Tháng này</p>
-                      <p className="font-bold text-purple-600 dark:text-purple-400">762</p>
+                      <p className="font-bold text-cyan-600 dark:text-purple-400">762</p>
                     </CardContent>
                   </Card>
                   <Card className="border border-slate-100 dark:border-slate-700/30 bg-slate-50 dark:bg-slate-800/50 rounded-lg overflow-hidden">
@@ -437,7 +437,7 @@ export function MedicineDetailContent({ medicine }: MedicineDetailContentProps) 
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center gap-3">
                           <Avatar className="h-8 w-8">
-                            <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-500 text-white text-sm">
+                            <AvatarFallback className="bg-gradient-to-br from-blue-500 to-cyan-500 text-white text-sm">
                               NT
                             </AvatarFallback>
                           </Avatar>
@@ -464,7 +464,7 @@ export function MedicineDetailContent({ medicine }: MedicineDetailContentProps) 
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center gap-3">
                           <Avatar className="h-8 w-8">
-                            <AvatarFallback className="bg-gradient-to-br from-green-500 to-emerald-500 text-white text-sm">
+                            <AvatarFallback className="bg-gradient-to-br from-violet-500 to-cyan-500 text-white text-sm">
                               LM
                             </AvatarFallback>
                           </Avatar>

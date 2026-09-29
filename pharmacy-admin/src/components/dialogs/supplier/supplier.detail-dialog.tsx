@@ -42,7 +42,7 @@ export function SupplierDetailDialog({ currentSupplier, open, onOpenChange }: Pr
             /> */}
 
             <InfoItem 
-              icon={<Phone className="h-4 w-4 text-emerald-500" />} 
+              icon={<Phone className="h-4 w-4 text-cyan-500" />} 
               label="Số điện thoại" 
               value={currentSupplier.contactPhone || "Chưa cập nhật"}
             />
@@ -60,7 +60,7 @@ export function SupplierDetailDialog({ currentSupplier, open, onOpenChange }: Pr
             />
 
             {/* <InfoItem 
-              icon={<Truck className="h-4 w-4 text-indigo-500" />} 
+              icon={<Truck className="h-4 w-4 text-teal-500" />} 
               label="Sản phẩm cung cấp" 
               value={currentSupplier.products || "Chưa cập nhật"}
             /> */}

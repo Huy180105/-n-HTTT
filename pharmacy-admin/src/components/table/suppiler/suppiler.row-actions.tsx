@@ -51,7 +51,7 @@ export function SupplierRowActions({ row }: SupplierRowActionsProps) {
               setCurrentSupplier(row.original);
             }}
           >
-            <ExternalLink className="h-3.5 w-3.5 text-teal-600" />
+            <ExternalLink className="h-3.5 w-3.5 text-indigo-600" />
             <span>Xem chi tiết</span>
           </DropdownMenuItem>
 

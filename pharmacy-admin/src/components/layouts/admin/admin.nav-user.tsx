@@ -47,7 +47,7 @@ export function AdminNavUser({ user }: { user: UserResponse }) {
                   : "border-sidebar-border group-hover:border-sidebar-ring/50"
               )}>
                 <AvatarImage src={user.profileImage.url} alt={user.profileImage.alt} />
-                <AvatarFallback className="rounded-xl bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+                <AvatarFallback className="rounded-xl bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-cyan-300">
                   {user.firstname.charAt(0)}
                 </AvatarFallback>
               </Avatar>
@@ -71,7 +71,7 @@ export function AdminNavUser({ user }: { user: UserResponse }) {
               <div className="flex items-center gap-3 p-4 text-left">
                 <Avatar className="h-12 w-12 rounded-xl border-2 border-sidebar-border">
                   <AvatarImage src={user.profileImage.url} alt={user.profileImage.alt} />
-                  <AvatarFallback className="rounded-xl bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+                  <AvatarFallback className="rounded-xl bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-cyan-300">
                     {user.firstname.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
@@ -83,7 +83,7 @@ export function AdminNavUser({ user }: { user: UserResponse }) {
                   <div className="flex items-center gap-1">
                     <span className={`mt-1 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ${user.role === AccountRole.ADMIN
                       ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300'
-                      : 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300'
+                      : 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-cyan-300'
                       }`}>
                       <Shield className="h-3 w-3" /> {user.role === AccountRole.ADMIN ? 'Quản trị viên' : 'Dược sĩ'}
                     </span>
@@ -110,8 +110,8 @@ export function AdminNavUser({ user }: { user: UserResponse }) {
 
             <div className="px-2 py-1.5">
               <Link to={routes.admin.settings.root} className="w-full">
-                <DropdownMenuItem className="flex cursor-pointer items-center gap-3 rounded-lg p-2.5 focus:bg-emerald-50 focus:text-emerald-700 dark:focus:bg-emerald-900/20 dark:focus:text-emerald-300">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-300">
+                <DropdownMenuItem className="flex cursor-pointer items-center gap-3 rounded-lg p-2.5 focus:bg-blue-50 focus:text-blue-700 dark:focus:bg-blue-900/20 dark:focus:text-cyan-300">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-cyan-300">
                     <UserIcon className="h-5 w-5" />
                   </div>
                   <div className="flex-1 grid">
@@ -124,8 +124,8 @@ export function AdminNavUser({ user }: { user: UserResponse }) {
 
             <div className="px-2 py-1.5">
               <Link to={routes.admin.settings.root}>
-                <DropdownMenuItem className="flex cursor-pointer items-center gap-3 rounded-lg p-2.5 focus:bg-emerald-50 focus:text-emerald-700 dark:focus:bg-emerald-900/20 dark:focus:text-emerald-300">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-300">
+                <DropdownMenuItem className="flex cursor-pointer items-center gap-3 rounded-lg p-2.5 focus:bg-blue-50 focus:text-blue-700 dark:focus:bg-blue-900/20 dark:focus:text-cyan-300">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-cyan-300">
                     <Settings className="h-5 w-5" />
                   </div>
                   <span className="font-medium">Cài đặt hệ thống</span>

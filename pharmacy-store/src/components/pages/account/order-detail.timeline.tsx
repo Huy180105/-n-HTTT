@@ -13,27 +13,27 @@ export const OrderTimeline = ({ status }: OrderTimelineProps) => {
       status: OrderStatus.PENDING,
       label: "Đã đặt hàng",
       icon: Package,
-      color: "from-green-500 to-emerald-400",
-      darkColor: "from-green-400 to-emerald-500",
-      hoverColor: "hover:from-green-600 hover:to-emerald-500",
-      darkHoverColor: "dark:hover:from-green-500 dark:hover:to-emerald-600",
-      bgLight: "bg-green-50",
-      bgDark: "bg-green-900/20",
-      hoverBgLight: "hover:bg-green-100",
-      hoverBgDark: "dark:hover:bg-green-900/30"
+      color: "from-cyan-500 to-cyan-400",
+      darkColor: "from-cyan-400 to-cyan-500",
+      hoverColor: "hover:from-violet-600 hover:to-cyan-500",
+      darkHoverColor: "dark:hover:from-cyan-500 dark:hover:to-violet-600",
+      bgLight: "bg-violet-50",
+      bgDark: "bg-violet-900/20",
+      hoverBgLight: "hover:bg-violet-100",
+      hoverBgDark: "dark:hover:bg-violet-900/30"
     },
     {
       status: OrderStatus.PROCESSING,
       label: "Đang xử lý",
       icon: ClockIcon,
-      color: "from-blue-500 to-cyan-400",
-      darkColor: "from-blue-400 to-cyan-500",
-      hoverColor: "hover:from-blue-600 hover:to-cyan-500",
-      darkHoverColor: "dark:hover:from-blue-500 dark:hover:to-cyan-600",
-      bgLight: "bg-blue-50",
-      bgDark: "bg-blue-900/20",
-      hoverBgLight: "hover:bg-blue-100",
-      hoverBgDark: "dark:hover:bg-blue-900/30"
+      color: "from-violet-500 to-cyan-400",
+      darkColor: "from-violet-400 to-cyan-500",
+      hoverColor: "hover:from-violet-600 hover:to-cyan-500",
+      darkHoverColor: "dark:hover:from-violet-500 dark:hover:to-cyan-600",
+      bgLight: "bg-violet-50",
+      bgDark: "bg-violet-900/20",
+      hoverBgLight: "hover:bg-violet-100",
+      hoverBgDark: "dark:hover:bg-violet-900/30"
     },
     {
       status: OrderStatus.SHIPPED,
@@ -52,27 +52,27 @@ export const OrderTimeline = ({ status }: OrderTimelineProps) => {
       status: OrderStatus.DELIVERED,
       label: "Đã giao hàng",
       icon: MapPinIcon,
-      color: "from-teal-500 to-cyan-400",
-      darkColor: "from-teal-400 to-cyan-500",
-      hoverColor: "hover:from-teal-600 hover:to-cyan-500",
-      darkHoverColor: "dark:hover:from-teal-500 dark:hover:to-cyan-600",
-      bgLight: "bg-teal-50",
-      bgDark: "bg-teal-900/20",
-      hoverBgLight: "hover:bg-teal-100",
-      hoverBgDark: "dark:hover:bg-teal-900/30"
+      color: "from-cyan-500 to-cyan-400",
+      darkColor: "from-cyan-400 to-cyan-500",
+      hoverColor: "hover:from-violet-600 hover:to-cyan-500",
+      darkHoverColor: "dark:hover:from-cyan-500 dark:hover:to-cyan-600",
+      bgLight: "bg-cyan-50",
+      bgDark: "bg-violet-900/20",
+      hoverBgLight: "hover:bg-violet-100",
+      hoverBgDark: "dark:hover:bg-violet-900/30"
     },
     {
       status: OrderStatus.COMPLETED,
       label: "Hoàn thành",
       icon: CheckCircle2Icon,
-      color: "from-green-500 to-emerald-400",
-      darkColor: "from-green-400 to-emerald-500",
-      hoverColor: "hover:from-green-600 hover:to-emerald-500",
-      darkHoverColor: "dark:hover:from-green-500 dark:hover:to-emerald-600",
-      bgLight: "bg-green-50",
-      bgDark: "bg-green-900/20",
-      hoverBgLight: "hover:bg-green-100",
-      hoverBgDark: "dark:hover:bg-green-900/30"
+      color: "from-cyan-500 to-cyan-400",
+      darkColor: "from-cyan-400 to-cyan-500",
+      hoverColor: "hover:from-violet-600 hover:to-cyan-500",
+      darkHoverColor: "dark:hover:from-cyan-500 dark:hover:to-violet-600",
+      bgLight: "bg-violet-50",
+      bgDark: "bg-violet-900/20",
+      hoverBgLight: "hover:bg-violet-100",
+      hoverBgDark: "dark:hover:bg-violet-900/30"
     },
   ];
 
@@ -96,7 +96,7 @@ export const OrderTimeline = ({ status }: OrderTimelineProps) => {
 
       {/* Active timeline line */}
       <motion.div
-        className="absolute top-[64px] left-1 h-1.5 bg-green-500 dark:bg-green-400 z-0 mx-4 md:mx-8"
+        className="absolute top-[64px] left-1 h-1.5 bg-cyan-500 dark:bg-cyan-400 z-0 mx-4 md:mx-8"
         initial={{ width: 0 }}
         animate={{
           width: currentStepIndex >= 0 ?
@@ -128,7 +128,7 @@ export const OrderTimeline = ({ status }: OrderTimelineProps) => {
                     "text-white ring-4 ring-white dark:ring-gray-800" :
                     "text-gray-400 dark:text-gray-500 border-2 border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600"
                   } ${isCurrent ?
-                    "ring-offset-2 ring-offset-green-50 dark:ring-offset-gray-900" : ""
+                    "ring-offset-2 ring-offset-violet-50 dark:ring-offset-gray-900" : ""
                   } cursor-pointer`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

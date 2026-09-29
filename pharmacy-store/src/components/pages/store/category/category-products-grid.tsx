@@ -32,8 +32,8 @@ const ProductSkeleton = () => (
 const EmptyState = () => (
   <div className="text-center py-20 text-gray-500 dark:text-gray-400">
     <div className="mb-4">
-      <div className="w-16 h-16 mx-auto mb-4 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center">
-        <svg className="w-8 h-8 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="w-16 h-16 mx-auto mb-4 bg-violet-100 dark:bg-violet-900/30 rounded-full flex items-center justify-center">
+        <svg className="w-8 h-8 text-violet-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
         </svg>
       </div>
@@ -45,8 +45,8 @@ const EmptyState = () => (
 
 const LoadingIndicator = () => (
   <div className="col-span-full flex justify-center py-8">
-    <div className="flex items-center space-x-2 text-emerald-600 dark:text-emerald-400">
-      <div className="w-6 h-6 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+    <div className="flex items-center space-x-2 text-violet-600 dark:text-cyan-400">
+      <div className="w-6 h-6 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
       <span>Đang tải thêm sản phẩm...</span>
     </div>
   </div>

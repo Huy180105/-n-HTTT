@@ -50,7 +50,7 @@ export const AccountDeleteDialog = memo(function AccountDeleteDialog({ currentAc
       case "pharmacist":
         return "bg-sky-50 text-sky-700 dark:bg-sky-950/40 dark:text-sky-400 border-sky-200 dark:border-sky-900/50";
       default:
-        return "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900/50";
+        return "bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-cyan-400 border-blue-200 dark:border-blue-900/50";
     }
   };
 

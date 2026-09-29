@@ -37,10 +37,10 @@ export const OrderCard = ({ order, showConfirmButton = false }: { order: OrderRe
       }}
       className="rounded-xl overflow-hidden"
     >
-      <Card className="overflow-hidden border-0 dark:border dark:border-green-900/50 shadow-sm dark:shadow-md dark:shadow-green-950/10 hover:shadow-md dark:hover:shadow-lg dark:hover:shadow-green-950/20 transition-all duration-300">
-        <div className="border-b border-border dark:border-green-900/30 p-4 flex justify-between items-center bg-gradient-to-r from-green-50 to-green-50/30 dark:from-green-950/40 dark:to-green-950/20">
+      <Card className="overflow-hidden border-0 dark:border dark:border-violet-900/50 shadow-sm dark:shadow-md dark:shadow-violet-950/10 hover:shadow-md dark:hover:shadow-lg dark:hover:shadow-violet-950/20 transition-all duration-300">
+        <div className="border-b border-border dark:border-violet-900/30 p-4 flex justify-between items-center bg-gradient-to-r from-violet-50/80 via-sky-50/50 to-cyan-50/80 dark:from-violet-950/40 dark:to-cyan-950/30">
           <div className="flex items-center gap-4">
-            <div className="bg-gradient-to-br from-green-100 to-green-50 dark:from-green-800/40 dark:to-green-900/60 p-2.5 rounded-full shadow-sm dark:shadow-green-950/30 flex items-center justify-center">
+            <div className="bg-gradient-to-br from-violet-100 to-cyan-100 dark:from-violet-900/60 dark:to-cyan-900/40 p-2.5 rounded-full shadow-sm dark:shadow-violet-950/30 flex items-center justify-center">
               <OrderStatusIcon status={order.status} />
             </div>
             <div>
@@ -67,11 +67,11 @@ export const OrderCard = ({ order, showConfirmButton = false }: { order: OrderRe
                 <ShoppingBag className="h-3.5 w-3.5 mr-1.5 opacity-70" />
                 {order.items.length} {order.items.length === 1 ? 'sản phẩm' : 'sản phẩm'}
               </div>
-              <div className="space-y-3 border-l-2 border-green-100 dark:border-green-800 pl-3">
+              <div className="space-y-3 border-l-2 border-violet-100 dark:border-violet-800 pl-3">
                 {order.items.filter(item => item.medicine).slice(0, 2).map((item, index) => (
                   <div key={`${item.medicineId}-${index}`} className="text-sm flex justify-between items-center">
                     <div className="flex items-center">
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-green-400 dark:from-green-400 dark:to-green-500 mr-2.5 shadow-sm dark:shadow-green-900/30"></div>
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400 dark:from-violet-400 dark:to-cyan-500 mr-2.5 shadow-sm dark:shadow-violet-900/30"></div>
                       <span className="text-gray-700 dark:text-gray-200 font-medium">
                         {item.medicine?.name || 'Sản phẩm không xác định'}
                       </span>
@@ -79,21 +79,21 @@ export const OrderCard = ({ order, showConfirmButton = false }: { order: OrderRe
                         × {item.quantity}
                       </span>
                     </div>
-                    <div className="font-medium text-green-700 dark:text-green-400">{formatCurrency(item.itemTotal)}</div>
+                    <div className="font-medium text-violet-700 dark:text-cyan-400">{formatCurrency(item.itemTotal)}</div>
                   </div>
                 ))}
                 {order.items.length > 2 && (
-                  <div className="text-xs text-green-600 dark:text-green-400 font-medium ml-4 italic flex items-center">
-                    <Leaf className="h-3 w-3 mr-1.5 text-green-500 dark:text-green-400" />
+                  <div className="text-xs text-violet-600 dark:text-cyan-400 font-medium ml-4 italic flex items-center">
+                    <Leaf className="h-3 w-3 mr-1.5 text-cyan-500 dark:text-cyan-400" />
                     +{order.items.length - 2} sản phẩm khác
                   </div>
                 )}
               </div>
             </div>
             <div className="mt-4 md:mt-0 flex flex-col items-start md:items-end justify-between">
-              <div className="text-right px-4 py-2 bg-green-50/50 dark:bg-green-900/30 rounded-lg">
+              <div className="text-right px-4 py-2 bg-violet-50/60 dark:bg-violet-950/40 rounded-lg border border-violet-100/50 dark:border-violet-900/30">
                 <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">Tổng thanh toán</div>
-                <div className="font-bold text-lg text-green-700 dark:text-green-400">{formatCurrency(order.totalPrice)}</div>
+                <div className="font-bold text-lg text-violet-700 dark:text-cyan-400">{formatCurrency(order.totalPrice)}</div>
               </div>
 
               <div className="mt-4 flex flex-col md:flex-row gap-2 w-full md:w-auto">
@@ -125,7 +125,7 @@ export const OrderCard = ({ order, showConfirmButton = false }: { order: OrderRe
                   <Button
                     onClick={handleConfirmOrder}
                     disabled={isConfirming}
-                    className="group bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 dark:from-teal-500 dark:to-teal-600 dark:hover:from-teal-600 dark:hover:to-teal-700 text-white shadow-sm dark:shadow-teal-900/20 hover:shadow"
+                    className="group bg-gradient-to-r from-cyan-600 to-violet-600 hover:from-cyan-700 hover:to-violet-700 text-white shadow-sm dark:shadow-cyan-900/20 hover:shadow"
                     size="sm"
                   >
                     {isConfirming ? (
@@ -144,7 +144,7 @@ export const OrderCard = ({ order, showConfirmButton = false }: { order: OrderRe
 
                 <Button
                   asChild
-                  className="group bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 dark:from-green-500 dark:to-green-600 dark:hover:from-green-600 dark:hover:to-green-700 text-white shadow-sm dark:shadow-green-900/20 hover:shadow"
+                  className="group bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-700 hover:to-cyan-700 text-white shadow-sm dark:shadow-violet-900/20 hover:shadow"
                   size="sm"
                 >
                   <Link to={routes.store.account.orderDetails(order.id)}>

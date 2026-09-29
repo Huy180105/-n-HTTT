@@ -1,55 +1,80 @@
-import { Stepper, StepperDescription, StepperItem, StepperSeparator, StepperTitle, StepperTrigger } from "@/components/custom/stepper";
-import { ConsultationStepFine, ConsultationStepFour, ConsultationStepOne, ConsultationStepThree, ConsultationStepTwo } from "@/components/pages/store/consultation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { stepTitles, useStepConsultation } from "@/hooks/use-step-consultation";
-import { Bot, Check, HelpCircle, MessageSquare, Phone } from "lucide-react";
+import {
+  ConsultationStepOne,
+  ConsultationStepTwo,
+  ConsultationStepThree,
+  ConsultationStepFour,
+  ConsultationStepFine,
+  ConsultationStepSix,
+} from "@/components/pages/store/consultation";
+import { useStepConsultation } from "@/hooks/use-step-consultation";
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { Bot, Check, BotMessageSquare, CheckCircle2, FileText, Pill, User } from "lucide-react";
+
+interface StepItem {
+  number: number;
+  title: string;
+  description: string;
+  icon: React.ElementType;
+}
+
+const stepsList: StepItem[] = [
+  { number: 1, title: "Nhập triệu chứng", description: "Mô tả vấn đề sức khỏe", icon: User },
+  { number: 2, title: "AI Chẩn đoán", description: "Phân tích và tư vấn thuốc", icon: BotMessageSquare },
+  { number: 3, title: "Thông tin giao hàng", description: "Địa chỉ và phương thức", icon: FileText },
+  { number: 4, title: "Xác nhận đơn hàng", description: "Kiểm tra chi tiết đơn hàng", icon: Pill },
+  { number: 5, title: "Hoàn tất đơn hàng", description: "Thanh toán và theo dõi", icon: CheckCircle2 },
+  { number: 6, title: "Đánh giá dịch vụ", description: "Phản hồi trải nghiệm", icon: BotMessageSquare },
+];
 
 export default function ConsultationPage() {
   const { currentStep, totalSteps } = useStepConsultation();
+  const progressPercentage = (currentStep / totalSteps) * 100;
 
   const renderCurrentStep = () => {
     switch (currentStep) {
       case 1:
-        return <ConsultationStepOne />
+        return <ConsultationStepOne />;
       case 2:
-        return <ConsultationStepTwo />
+        return <ConsultationStepTwo />;
       case 3:
-        return <ConsultationStepThree />
+        return <ConsultationStepThree />;
       case 4:
-        return <ConsultationStepFour />
+        return <ConsultationStepFour />;
       case 5:
-        return <ConsultationStepFine />
-      // case 6:
-      //   return <ConsultationStepSix />
+        return <ConsultationStepFine />;
+      case 6:
+        return <ConsultationStepSix />;
       default:
-        return null
+        return <ConsultationStepOne />;
     }
-  }
-
-  const progressPercentage = (currentStep / totalSteps) * 100;
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-emerald-50 to-teal-50 dark:from-gray-950 dark:via-teal-950/20 dark:to-emerald-950/20">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50/80 via-slate-50 to-cyan-50/60 dark:from-slate-950 dark:via-violet-950/50 dark:to-slate-900">
       <div className="container-wrapper">
         <div className="container py-8">
           {/* Enhanced Header */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl mb-4 shadow-lg">
-              <Bot className="w-8 h-8 text-white" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-violet-700 via-violet-600 to-cyan-500 rounded-2xl mb-4 shadow-lg shadow-violet-500/25">
+              <motion.div animate={{ scale: [1, 1.15, 1], rotate: [0, 5, -5, 0] }} transition={{ repeat: Infinity, duration: 3 }}>
+                <Bot className="w-8 h-8 text-white" />
+              </motion.div>
             </div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
-              Tư vấn thuốc AI
+            <h1 className="text-4xl font-black bg-gradient-to-r from-violet-800 via-cyan-600 to-cyan-500 dark:from-violet-400 dark:via-cyan-300 dark:to-cyan-300 bg-clip-text text-transparent mb-2">
+              Tư vấn thuốc AI - Pharmacity Store
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Nhận tư vấn chuyên nghiệp và đặt thuốc trực tuyến
+            <p className="text-lg text-slate-600 dark:text-slate-300 font-medium">
+              Nhận tư vấn y tế chuyên nghiệp và hỗ trợ đặt thuốc trực tuyến
             </p>
           </div>
           {/* Main Layout - 2 Columns */}
           <div className="grid lg:grid-cols-12 max-w-8xl gap-8">
             {/* Left Column - Interactive Content */}
             <div className="lg:col-span-8">
-              <Card className="shadow-xl border-teal-200 dark:border-teal-800/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
+              <Card className="shadow-xl border-violet-200/80 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-2xl">
                 <CardContent className="p-8">
                   {renderCurrentStep()}
                 </CardContent>
@@ -60,130 +85,95 @@ export default function ConsultationPage() {
             <div className="lg:col-span-4">
               <div className="sticky top-8 space-y-6">
                 {/* Progress Overview */}
-                <Card className="border-teal-200 dark:border-teal-800/50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-lg">
-                  <CardHeader className="">
-                    <CardTitle className="text-lg font-semibold text-card-foreground flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center">
+                <Card className="border-violet-200/80 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-lg rounded-2xl">
+                  <CardHeader>
+                    <CardTitle className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-violet-700 to-cyan-500 flex items-center justify-center">
                         <Check className="w-4 h-4 text-white" />
                       </div>
-                      Tiến trình
-                    </CardTitle>
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <span>Bước {currentStep} / {totalSteps}</span>
-                      <span>{Math.round(progressPercentage)}% hoàn thành</span>
-                    </div>
-                    <Progress
-                      value={progressPercentage}
-                      className="h-3 bg-teal-100 dark:bg-teal-900/30"
-                    />
-                  </CardHeader>
-                </Card>
-
-                {/* Steps List */}
-                <Card className="border-teal-200 dark:border-teal-800/50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="text-lg font-semibold text-card-foreground">
-                      Các bước thực hiện
+                      Tiến trình tư vấn
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <Stepper value={currentStep} orientation="vertical">
-                      {stepTitles.map((step, index) => {
-                        const stepNumber = index + 1;
-                        const isCompleted = stepNumber < currentStep;
-                        const isCurrent = stepNumber === currentStep;
-                        const IconComponent = step.icon;
-
-                        return (
-                          <StepperItem
-                            key={index}
-                            step={stepNumber}
-                            className="relative items-start not-last:flex-1"
-                          >
-                            <StepperTrigger
-                              className="items-start rounded pb-16 last:pb-0 cursor-default pointer-events-none"
-                            >
-                              <div className={`
-                                w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300
-                                ${isCompleted
-                                  ? 'bg-gradient-to-br from-teal-500 to-emerald-500 text-white shadow-lg'
-                                  : isCurrent
-                                    ? 'bg-gradient-to-br from-teal-600 to-emerald-600 text-white ring-4 ring-teal-200 dark:ring-teal-800 shadow-lg'
-                                    : 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400'
-                                }
-                              `}>
-                                {isCompleted ? (
-                                  <Check className="w-6 h-6" />
-                                ) : (
-                                  <IconComponent className="w-6 h-6" />
-                                )}
-                              </div>
-                              <div className="mt-1 space-y-1.5 px-4 text-left">
-                                <StepperTitle className={`
-                                  text-lg transition-colors duration-300 leading-tight
-                                  ${isCompleted
-                                    ? 'text-teal-700 dark:text-teal-300 font-semibold'
-                                    : isCurrent
-                                      ? 'text-teal-800 dark:text-teal-200 font-semibold'
-                                      : 'text-gray-500 dark:text-gray-400'
-                                  }
-                                `}>
-                                  {step.title}
-                                </StepperTitle>
-                                <StepperDescription className={`
-                                  text-base transition-colors duration-300
-                                  ${isCompleted
-                                    ? 'text-teal-600 dark:text-teal-400'
-                                    : isCurrent
-                                      ? 'text-teal-700 dark:text-teal-300'
-                                      : 'text-gray-400 dark:text-gray-500'
-                                  }
-                                `}>
-                                  {step.description}
-                                </StepperDescription>
-                              </div>
-                            </StepperTrigger>
-                            {index < stepTitles.length - 1 && (
-                              <StepperSeparator className={`
-                                absolute inset-y-0 top-[calc(2.9rem+0.125rem)] left-6 -order-1 m-0 -translate-x-1/2 group-data-[orientation=horizontal]/stepper:w-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=horizontal]/stepper:flex-none group-data-[orientation=vertical]/stepper:h-[calc(100%-1.5rem-0.25rem)]
-                                transition-colors duration-300
-                                ${stepNumber < currentStep
-                                  ? 'data-[orientation=vertical]:bg-gradient-to-b data-[orientation=vertical]:from-teal-500 data-[orientation=vertical]:to-emerald-500'
-                                  : 'bg-gray-200 dark:bg-gray-700'
-                                }
-                              `} />
-                            )}
-                          </StepperItem>
-                        );
-                      })}
-                    </Stepper>
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-slate-600 dark:text-slate-400 font-medium">Hoàn thành:</span>
+                        <span className="font-bold text-violet-600 dark:text-cyan-400">
+                          {Math.round(progressPercentage)}% ({currentStep}/{totalSteps})
+                        </span>
+                      </div>
+                      <Progress value={progressPercentage} className="h-2 bg-slate-100 dark:bg-slate-800" />
+                    </div>
                   </CardContent>
                 </Card>
 
-                {/* Help & Support */}
-                <Card className="border-teal-200 dark:border-teal-800/50 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 shadow-lg">
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
-                        <HelpCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <h4 className="font-semibold text-card-foreground">
-                        Cần hỗ trợ?
-                      </h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      Liên hệ với chúng tôi nếu bạn cần hỗ trợ trong quá trình tư vấn.
-                    </p>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex items-center gap-2 p-2 bg-white/50 dark:bg-gray-800/50 rounded-lg">
-                        <Phone className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                        <span className="text-foreground">Hotline: (028) 3840 5678</span>
-                      </div>
-                      <div className="flex items-center gap-2 p-2 bg-white/50 dark:bg-gray-800/50 rounded-lg">
-                        <MessageSquare className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                        <span className="text-foreground">Tư vấn trực tuyến 24/7</span>
-                      </div>
-                    </div>
+                {/* Steps List */}
+                <Card className="border-violet-200/80 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-lg rounded-2xl">
+                  <CardHeader>
+                    <CardTitle className="text-base font-bold text-slate-900 dark:text-white"> Các bước tư vấn </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {stepsList.map((step) => {
+                      const Icon = step.icon;
+                      const isCurrent = step.number === currentStep;
+                      const isComplete = step.number < currentStep;
+
+                      return (
+                        <div
+                          key={step.number}
+                          className={cn(
+                            "flex items-center gap-4 p-3 rounded-xl transition-all duration-300 border",
+                            isCurrent
+                              ? "bg-violet-50 dark:bg-violet-950/60 border-blue-300 dark:border-violet-700/60 shadow-sm"
+                              : isComplete
+                              ? "bg-slate-50/80 dark:bg-slate-800/40 border-slate-200/60 dark:border-slate-800"
+                              : "bg-transparent border-transparent opacity-60"
+                          )}
+                        >
+                          <div
+                            className={cn(
+                              "w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm transition-all shadow-sm",
+                              isCurrent
+                                ? "bg-gradient-to-br from-violet-700 to-cyan-600 text-white shadow-violet-500/25"
+                                : isComplete
+                                ? "bg-gradient-to-br from-violet-600 to-cyan-500 text-white"
+                                : "bg-slate-200 dark:bg-slate-800 text-slate-500"
+                            )}
+                          >
+                            {isComplete ? (
+                              <Check className="w-5 h-5" />
+                            ) : (
+                              <motion.div animate={isCurrent ? { scale: [1, 1.15, 1] } : {}} transition={{ repeat: Infinity, duration: 2 }}>
+                                <Icon className="w-5 h-5" />
+                              </motion.div>
+                            )}
+                          </div>
+
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between">
+                              <p
+                                className={cn(
+                                  "font-bold text-sm truncate",
+                                  isCurrent
+                                    ? "text-violet-900 dark:text-cyan-300"
+                                    : isComplete
+                                    ? "text-slate-800 dark:text-slate-200"
+                                    : "text-slate-500"
+                                )}
+                              >
+                                {step.title}
+                              </p>
+                              {isCurrent && (
+                                <div className="w-2 h-2 rounded-full bg-violet-600 dark:bg-cyan-400 animate-ping" />
+                              )}
+                            </div>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 truncate font-medium">
+                              {step.description}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </CardContent>
                 </Card>
               </div>

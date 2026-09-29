@@ -28,8 +28,8 @@ const AddressCard = memo(({ address, index }: { address: UserAddress; index: num
         <div className="flex items-center gap-2 flex-wrap">
           <p className="font-medium text-sm">{address.name || `Địa chỉ ${index + 1}`}</p>
           {address.isDefault && (
-            <Badge className="bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 text-xs h-5 px-2 py-0 flex items-center gap-1 border-none">
-              <Star className="h-3 w-3 fill-emerald-500 dark:fill-emerald-400" /> Mặc định
+            <Badge className="bg-blue-50 text-blue-700 dark:bg-blue-950/30 dark:text-cyan-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 text-xs h-5 px-2 py-0 flex items-center gap-1 border-none">
+              <Star className="h-3 w-3 fill-cyan-500 dark:fill-cyan-400" /> Mặc định
             </Badge>
           )}
         </div>
@@ -42,7 +42,7 @@ const AddressCard = memo(({ address, index }: { address: UserAddress; index: num
         </p>
         <p className="text-xs text-muted-foreground">{address.country}</p>
         <div className="flex items-center gap-2 mt-2 bg-muted/30 px-2 py-1 rounded-md">
-          <Phone className="h-3 w-3 text-emerald-600 dark:text-emerald-400" />
+          <Phone className="h-3 w-3 text-blue-600 dark:text-cyan-400" />
           <p className="text-xs font-medium">{address.phone}</p>
         </div>
       </div>
@@ -76,7 +76,7 @@ const getStatusBadge = (status: string) => {
     case AccountStatus.ACTIVE:
       return {
         label: 'Hoạt động',
-        className: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900/50'
+        className: 'bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-cyan-400 border-blue-200 dark:border-blue-900/50'
       };
     case AccountStatus.SUSPENDED:
       return {
@@ -137,7 +137,7 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
                 </Button>
                 <div>
                   <SheetTitle className="text-xl font-semibold flex items-center gap-1.5">
-                    <User className="h-5 w-5 text-emerald-500" />
+                    <User className="h-5 w-5 text-cyan-500" />
                     <span>
                       {`${currentAccount.firstname} ${currentAccount.lastname}`}
                     </span>
@@ -184,9 +184,9 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
               {/* User Profile Card */}
               <motion.div 
                 variants={itemVariants}
-                className="bg-gradient-to-br from-emerald-50 to-cyan-50 dark:from-emerald-900/10 dark:to-cyan-900/10 rounded-lg p-4 border border-emerald-100/50 dark:border-emerald-800/30 shadow-sm"
+                className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10 rounded-lg p-4 border border-blue-100/50 dark:border-blue-800/30 shadow-sm"
               >
-                <h3 className="text-sm font-medium text-emerald-700 dark:text-emerald-300 flex items-center gap-1.5 mb-3">
+                <h3 className="text-sm font-medium text-blue-700 dark:text-cyan-300 flex items-center gap-1.5 mb-3">
                   <UserCircle className="h-4 w-4" />
                   Thông tin cá nhân
                 </h3>
@@ -200,7 +200,7 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
                         className="object-cover"
                       />
                     ) : null}
-                    <AvatarFallback className="bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 text-lg font-bold">
+                    <AvatarFallback className="bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-cyan-300 text-lg font-bold">
                       {`${currentAccount.firstname?.[0] || ''}${currentAccount.lastname?.[0] || ''}`.toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
@@ -235,8 +235,8 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
                 
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="bg-emerald-100/60 dark:bg-emerald-900/30 p-2 rounded-full flex items-center justify-center shrink-0">
-                      <Mail className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                    <div className="bg-blue-100/60 dark:bg-blue-900/30 p-2 rounded-full flex items-center justify-center shrink-0">
+                      <Mail className="h-4 w-4 text-blue-600 dark:text-cyan-400" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-xs font-medium text-muted-foreground mb-1">Email</p>
@@ -245,8 +245,8 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <div className="bg-emerald-100/60 dark:bg-emerald-900/30 p-2 rounded-full flex items-center justify-center shrink-0">
-                      <Phone className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                    <div className="bg-blue-100/60 dark:bg-blue-900/30 p-2 rounded-full flex items-center justify-center shrink-0">
+                      <Phone className="h-4 w-4 text-blue-600 dark:text-cyan-400" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-xs font-medium text-muted-foreground mb-1">Số điện thoại</p>
@@ -267,7 +267,7 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
                 </h3>
 
                 {currentAccount.addresses && currentAccount.addresses.length > 0 ? (
-                  <div className="p-1 max-h-[280px] overflow-y-auto will-change-transform scrollbar-thin scrollbar-thumb-emerald-200 dark:scrollbar-thumb-emerald-800/30 scrollbar-track-transparent">
+                  <div className="p-1 max-h-[280px] overflow-y-auto will-change-transform scrollbar-thin scrollbar-thumb-blue-200 dark:scrollbar-thumb-blue-800/30 scrollbar-track-transparent">
                     {/* Chỉ render địa chỉ có thể nhìn thấy */}
                     {currentAccount.addresses.slice(0, 10).map((address, index) => (
                       <AddressCard key={address.id || index} address={address} index={index} />
@@ -280,8 +280,8 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
                   </div>
                 ) : (
                   <div className="p-6 text-center">
-                    <div className="mx-auto w-12 h-12 rounded-full bg-emerald-50/70 dark:bg-emerald-950/30 flex items-center justify-center mb-3">
-                      <MapPin className="h-6 w-6 text-emerald-400/50 dark:text-emerald-500/40" />
+                    <div className="mx-auto w-12 h-12 rounded-full bg-blue-50/70 dark:bg-blue-950/30 flex items-center justify-center mb-3">
+                      <MapPin className="h-6 w-6 text-cyan-400/50 dark:text-cyan-500/40" />
                     </div>
                     <p className="text-sm text-muted-foreground">Không tìm thấy địa chỉ</p>
                     <p className="text-xs text-muted-foreground/70 mt-1">Người dùng chưa thêm địa chỉ nào</p>

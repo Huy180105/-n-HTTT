@@ -86,9 +86,9 @@ function ElegantShape({
 
 export default function ShapeHero() {
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-blue-50 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-violet-50 via-slate-50 to-cyan-50 dark:bg-gradient-to-br dark:from-slate-950 dark:via-violet-950 dark:to-slate-900">
             {/* Subtle background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/[0.03] via-transparent to-blue-500/[0.03] dark:from-green-500/[0.02] dark:via-transparent dark:to-blue-500/[0.02]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/[0.05] via-transparent to-cyan-500/[0.05] dark:from-violet-500/[0.03] dark:via-transparent dark:to-cyan-500/[0.03]" />
 
             <div className="absolute inset-0 overflow-hidden">
                 {/* Tall rectangle - top left */}
@@ -98,7 +98,7 @@ export default function ShapeHero() {
                     height={500}
                     rotate={-8}
                     borderRadius={24}
-                    gradient="from-green-500/[0.15] dark:from-green-500/[0.12]"
+                    gradient="from-violet-600/[0.18] dark:from-violet-500/[0.15]"
                     className="left-[-15%] top-[-10%]"
                 />
 
@@ -109,7 +109,7 @@ export default function ShapeHero() {
                     height={200}
                     rotate={15}
                     borderRadius={20}
-                    gradient="from-blue-500/[0.15] dark:from-blue-500/[0.12]"
+                    gradient="from-cyan-500/[0.18] dark:from-cyan-500/[0.15]"
                     className="right-[-20%] bottom-[-5%]"
                 />
 
@@ -120,7 +120,7 @@ export default function ShapeHero() {
                     height={300}
                     rotate={24}
                     borderRadius={32}
-                    gradient="from-emerald-500/[0.15] dark:from-emerald-500/[0.12]"
+                    gradient="from-indigo-500/[0.18] dark:from-indigo-500/[0.15]"
                     className="left-[-5%] top-[40%]"
                 />
 
@@ -131,7 +131,7 @@ export default function ShapeHero() {
                     height={100}
                     rotate={-20}
                     borderRadius={12}
-                    gradient="from-teal-500/[0.15] dark:from-teal-500/[0.12]"
+                    gradient="from-sky-500/[0.18] dark:from-sky-500/[0.15]"
                     className="right-[10%] top-[5%]"
                 />
 
@@ -142,7 +142,7 @@ export default function ShapeHero() {
                     height={150}
                     rotate={35}
                     borderRadius={16}
-                    gradient="from-cyan-500/[0.15] dark:from-cyan-500/[0.12]"
+                    gradient="from-violet-500/[0.18] dark:from-violet-500/[0.15]"
                     className="right-[-10%] top-[45%]"
                 />
 
@@ -153,7 +153,7 @@ export default function ShapeHero() {
                     height={200}
                     rotate={-25}
                     borderRadius={28}
-                    gradient="from-indigo-500/[0.15] dark:from-indigo-500/[0.12]"
+                    gradient="from-cyan-600/[0.18] dark:from-cyan-600/[0.15]"
                     className="left-[20%] bottom-[10%]"
                 />
 
@@ -164,7 +164,7 @@ export default function ShapeHero() {
                     height={80}
                     rotate={45}
                     borderRadius={10}
-                    gradient="from-purple-500/[0.15] dark:from-purple-500/[0.12]"
+                    gradient="from-indigo-600/[0.18] dark:from-indigo-600/[0.15]"
                     className="left-[40%] top-[15%]"
                 />
 
@@ -175,13 +175,13 @@ export default function ShapeHero() {
                     height={120}
                     rotate={-12}
                     borderRadius={18}
-                    gradient="from-violet-500/[0.15] dark:from-violet-500/[0.12]"
+                    gradient="from-sky-600/[0.18] dark:from-sky-600/[0.15]"
                     className="left-[25%] top-[60%]"
                 />
             </div>
 
             {/* Gradient overlay để tạo depth */}
-            <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-white/10 dark:from-gray-900/30 dark:via-transparent dark:to-gray-900/10 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-50/40 via-transparent to-slate-50/20 dark:from-slate-950/40 dark:via-transparent dark:to-slate-950/20 pointer-events-none" />
         </div>
     );
 }

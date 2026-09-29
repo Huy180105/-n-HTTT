@@ -26,17 +26,45 @@ export const OrdersChangeStatusDialog = memo(function OrdersChangeStatusDialog({
     switch (status) {
       case OrderStatus.PROCESSING:
         return {
-          title: "Xác nhận đơn hàng",
-          description: "Bạn có chắc chắn muốn xác nhận đơn hàng này?",
-          confirmText: "Xác nhận đơn hàng",
-          icon: <CheckCircle2 className="h-10 w-10 text-teal-500" />,
-          color: "text-teal-600 dark:text-teal-400",
-          bgColor: "bg-teal-50 dark:bg-teal-900/20",
-          borderColor: "border-teal-100 dark:border-teal-800/30",
-          iconBg: "bg-gradient-to-br from-teal-50 to-cyan-100 dark:from-teal-900/30 dark:to-cyan-900/20",
-          iconBorder: "border-teal-100/50 dark:border-teal-800/20",
+          title: "Duyệt xử lý đơn hàng",
+          description: "Chuyển trạng thái đơn hàng từ Đã đặt hàng sang Đang xử lý?",
+          confirmText: "Duyệt xử lý đơn",
+          icon: <CheckCircle2 className="h-10 w-10 text-indigo-500" />,
+          color: "text-indigo-600 dark:text-indigo-400",
+          bgColor: "bg-indigo-50 dark:bg-indigo-900/20",
+          borderColor: "border-indigo-100 dark:border-indigo-800/30",
+          iconBg: "bg-gradient-to-br from-indigo-50 to-cyan-100 dark:from-indigo-900/30 dark:to-cyan-900/20",
+          iconBorder: "border-indigo-100/50 dark:border-indigo-800/20",
           destructive: false,
           status: OrderStatus.PROCESSING,
+        };
+      case OrderStatus.SHIPPED:
+        return {
+          title: "Giao hàng cho vận chuyển",
+          description: "Chuyển trạng thái đơn hàng sang Đang giao hàng?",
+          confirmText: "Giao cho vận chuyển",
+          icon: <Package className="h-10 w-10 text-cyan-500" />,
+          color: "text-cyan-600 dark:text-cyan-400",
+          bgColor: "bg-cyan-50 dark:bg-cyan-900/20",
+          borderColor: "border-cyan-100 dark:border-cyan-800/30",
+          iconBg: "bg-gradient-to-br from-cyan-50 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/20",
+          iconBorder: "border-cyan-100/50 dark:border-cyan-800/20",
+          destructive: false,
+          status: OrderStatus.SHIPPED,
+        };
+      case OrderStatus.DELIVERED:
+        return {
+          title: "Xác nhận đã giao hàng",
+          description: "Xác nhận đơn hàng đã giao thành công tới người mua?",
+          confirmText: "Xác nhận đã giao",
+          icon: <CheckCircle2 className="h-10 w-10 text-purple-500" />,
+          color: "text-purple-600 dark:text-purple-400",
+          bgColor: "bg-purple-50 dark:bg-purple-900/20",
+          borderColor: "border-purple-100 dark:border-purple-800/30",
+          iconBg: "bg-gradient-to-br from-purple-50 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/20",
+          iconBorder: "border-purple-100/50 dark:border-purple-800/20",
+          destructive: false,
+          status: OrderStatus.DELIVERED,
         };
       case OrderStatus.CANCELLED:
         return {
@@ -57,12 +85,12 @@ export const OrdersChangeStatusDialog = memo(function OrdersChangeStatusDialog({
           title: "Hoàn thành đơn hàng",
           description: "Bạn có chắc chắn muốn đánh dấu đơn hàng này là đã hoàn thành?",
           confirmText: "Xác nhận hoàn thành",
-          icon: <ShoppingBag className="h-10 w-10 text-green-500" />,
-          color: "text-green-600 dark:text-green-400",
-          bgColor: "bg-green-50 dark:bg-green-900/20",
-          borderColor: "border-green-100 dark:border-green-800/30",
-          iconBg: "bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/20",
-          iconBorder: "border-green-100/50 dark:border-green-800/20",
+          icon: <ShoppingBag className="h-10 w-10 text-violet-500" />,
+          color: "text-violet-600 dark:text-violet-400",
+          bgColor: "bg-violet-50 dark:bg-violet-900/20",
+          borderColor: "border-violet-100 dark:border-violet-800/30",
+          iconBg: "bg-gradient-to-br from-violet-50 to-purple-100 dark:from-violet-900/30 dark:to-purple-900/20",
+          iconBorder: "border-violet-100/50 dark:border-violet-800/20",
           destructive: false,
           status: OrderStatus.COMPLETED,
         };
@@ -78,7 +106,7 @@ export const OrdersChangeStatusDialog = memo(function OrdersChangeStatusDialog({
           iconBg: "bg-gradient-to-br from-amber-50 to-yellow-100 dark:from-amber-900/30 dark:to-yellow-900/20",
           iconBorder: "border-amber-100/50 dark:border-amber-800/20",
           destructive: false,
-          status: mode, // Fallback to provided mode
+          status: mode,
         };
     }
   };
@@ -221,7 +249,7 @@ export const OrdersChangeStatusDialog = memo(function OrdersChangeStatusDialog({
             <div className="space-y-2">
               <div className="flex items-start gap-2.5">
                 <div className="rounded-full bg-slate-100 dark:bg-slate-800 p-1 mt-0.5 flex-shrink-0">
-                  <Package className="h-3 w-3 text-teal-500 dark:text-teal-400" />
+                  <Package className="h-3 w-3 text-indigo-500 dark:text-indigo-400" />
                 </div>
                 <div className="min-w-0">
                   <span className="text-xs font-medium text-slate-700 dark:text-slate-300 block">
@@ -235,7 +263,7 @@ export const OrdersChangeStatusDialog = memo(function OrdersChangeStatusDialog({
               
               <div className="flex items-start gap-2.5">
                 <div className="rounded-full bg-slate-100 dark:bg-slate-800 p-1 mt-0.5 flex-shrink-0">
-                  <User className="h-3 w-3 text-blue-500 dark:text-blue-400" />
+                  <User className="h-3 w-3 text-rose-500 dark:text-blue-400" />
                 </div>
                 <div className="min-w-0">
                   <span className="text-xs font-medium text-slate-700 dark:text-slate-300 block">
@@ -266,14 +294,14 @@ export const OrdersChangeStatusDialog = memo(function OrdersChangeStatusDialog({
                   {currentOrder.paymentMethod === "COD" ? (
                     <Banknote className="h-3 w-3 text-amber-500 dark:text-amber-400" />
                   ) : (
-                    <CreditCard className="h-3 w-3 text-green-500 dark:text-green-400" />
+                    <CreditCard className="h-3 w-3 text-violet-500 dark:text-violet-400" />
                   )}
                 </div>
                 <div className="min-w-0">
                   <span className="text-xs font-medium text-slate-700 dark:text-slate-300 block">
                     Tổng tiền
                   </span>
-                  <p className="text-xs font-semibold text-teal-600 dark:text-teal-400 mt-0.5">
+                  <p className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 mt-0.5">
                     {formatCurrency(currentOrder.totalPrice)}
                   </p>
                 </div>

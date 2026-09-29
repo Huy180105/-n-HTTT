@@ -178,7 +178,7 @@ export function MedicineActionStepTwo({ form }: MedicineActionStepTwoProps) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="IN-STOCK" className="text-green-600 font-medium">Còn hàng</SelectItem>
+                  <SelectItem value="IN-STOCK" className="text-blue-600 font-medium">Còn hàng</SelectItem>
                   <SelectItem value="LOW-STOCK" className="text-amber-600 font-medium">Sắp hết hàng</SelectItem>
                   <SelectItem value="OUT-OF-STOCK" className="text-red-600 font-medium">Hết hàng</SelectItem>
                 </SelectContent>

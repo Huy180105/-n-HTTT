@@ -16,7 +16,7 @@ const InvoiceProductItem = ({ item, index }: { item: InvoiceDetailsItem; index: 
     exit={{ opacity: 0 }}
     transition={{ duration: 0.2, delay: index * 0.05 }}
     className={cn(
-      "group hover:bg-teal-50/30 dark:hover:bg-teal-900/20 transition-colors",
+      "group hover:bg-cyan-50/30 dark:hover:bg-violet-900/20 transition-colors",
       index % 2 === 0 ? "bg-white dark:bg-gray-800" : "bg-gray-50/30 dark:bg-gray-700/30"
     )}
   >
@@ -32,8 +32,8 @@ const InvoiceProductItem = ({ item, index }: { item: InvoiceDetailsItem; index: 
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
                 e.currentTarget.parentElement!.innerHTML = `
-                  <div class="h-full w-full bg-gradient-to-br from-teal-100 to-emerald-200 dark:from-teal-800 dark:to-emerald-800 flex items-center justify-center">
-                    <svg class="h-7 w-7 text-teal-600 dark:text-teal-400" fill="currentColor" viewBox="0 0 24 24">
+                  <div class="h-full w-full bg-gradient-to-br from-violet-100 to-violet-200 dark:from-violet-800 dark:to-violet-800 flex items-center justify-center">
+                    <svg class="h-7 w-7 text-violet-600 dark:text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/>
                     </svg>
                   </div>
@@ -42,16 +42,16 @@ const InvoiceProductItem = ({ item, index }: { item: InvoiceDetailsItem; index: 
             />
           </div>
         ) : (
-          <div className="h-16 w-16 mr-4 rounded-xl bg-gradient-to-br from-teal-100 to-emerald-200 dark:from-teal-800 dark:to-emerald-800 flex items-center justify-center flex-shrink-0 shadow-sm">
-            <Pill className="h-7 w-7 text-teal-600 dark:text-teal-400" />
+          <div className="h-16 w-16 mr-4 rounded-xl bg-gradient-to-br from-violet-100 to-violet-200 dark:from-violet-800 dark:to-violet-800 flex items-center justify-center flex-shrink-0 shadow-sm">
+            <Pill className="h-7 w-7 text-violet-600 dark:text-cyan-400" />
           </div>
         )}
         <div className="min-w-0 flex-1">
-          <h4 className="font-medium text-gray-900 dark:text-gray-100 truncate group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors">
+          <h4 className="font-medium text-gray-900 dark:text-gray-100 truncate group-hover:text-violet-700 dark:group-hover:text-cyan-400 transition-colors">
             {item.medicine?.name || "Tên thuốc không xác định"}
           </h4>
           <div className="flex items-center mt-1">
-            <Badge variant="outline" className="mr-2 px-1.5 py-0 text-xs border-teal-100 dark:border-teal-800 bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400">
+            <Badge variant="outline" className="mr-2 px-1.5 py-0 text-xs border-violet-100 dark:border-violet-800 bg-cyan-50 dark:bg-violet-900/30 text-violet-600 dark:text-cyan-400">
               Thuốc
             </Badge>
             <p className="text-xs text-gray-500 dark:text-gray-400 truncate mt-0.5">
@@ -69,7 +69,7 @@ const InvoiceProductItem = ({ item, index }: { item: InvoiceDetailsItem; index: 
     <TableCell className="text-right font-medium text-gray-800 dark:text-gray-200 text-sm">
       {formatCurrency(item.price || 0)}
     </TableCell>
-    <TableCell className="text-right font-semibold text-teal-700 dark:text-teal-400 text-sm">
+    <TableCell className="text-right font-semibold text-violet-700 dark:text-cyan-400 text-sm">
       {formatCurrency(item.itemTotal || 0)}
     </TableCell>
   </motion.tr>
@@ -96,7 +96,7 @@ const InvoiceTotals = ({ invoice }: { invoice: InvoiceDetails }) => (
 
       <div className="flex justify-between items-center text-base">
         <span className="font-bold text-gray-900 dark:text-gray-100">Tổng cộng</span>
-        <div className="font-bold text-white bg-gradient-to-r from-teal-500 to-emerald-500 px-4 py-2 rounded-lg shadow-sm">
+        <div className="font-bold text-white bg-gradient-to-r from-cyan-500 to-cyan-500 px-4 py-2 rounded-lg shadow-sm">
           {formatCurrency(invoice.totalPrice || 0)}
         </div>
       </div>
@@ -108,7 +108,7 @@ const InvoiceTotals = ({ invoice }: { invoice: InvoiceDetails }) => (
 const CustomerAddress = ({ invoice }: { invoice: InvoiceDetails }) => (
   <div className="p-4 bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-600">
     <div className="flex items-start">
-      <MapPin className="h-5 w-5 text-teal-600 dark:text-teal-400 mt-0.5 mr-2 flex-shrink-0" />
+      <MapPin className="h-5 w-5 text-violet-600 dark:text-cyan-400 mt-0.5 mr-2 flex-shrink-0" />
       <div>
         <h3 className="font-medium text-gray-800 dark:text-gray-200 mb-1">Địa Chỉ Giao Hàng</h3>
         <div className="text-sm text-gray-600 dark:text-gray-300">
@@ -137,13 +137,13 @@ export function InvoiceDetailProducts({ invoice }: InvoiceProductsProps) {
 
   return (
     <Card className="shadow-md border-0 rounded-xl overflow-hidden h-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm">
-      <CardHeader className="border-b dark:border-gray-700 pb-4 pt-5 bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-900/30 dark:to-emerald-900/30">
+      <CardHeader className="border-b dark:border-gray-700 pb-4 pt-5 bg-gradient-to-r from-cyan-50 to-violet-50 dark:from-violet-900/30 dark:to-violet-900/30">
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg font-semibold flex items-center">
-            <ShoppingBag className="h-5 w-5 text-teal-600 dark:text-teal-400 mr-2" />
+            <ShoppingBag className="h-5 w-5 text-violet-600 dark:text-cyan-400 mr-2" />
             Chi Tiết Sản Phẩm
           </CardTitle>
-          <Badge className="bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 border-teal-200 dark:border-teal-800 px-3 py-1 rounded-full">
+          <Badge className="bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-cyan-400 border-violet-200 dark:border-violet-800 px-3 py-1 rounded-full">
             {totalItems} sản phẩm
           </Badge>
         </div>

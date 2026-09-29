@@ -33,7 +33,7 @@ export function DataTableColumnHeader<TData, TValue>({
           <Button
             variant="ghost"
             size="sm"
-            className="h-8 font-medium text-foreground hover:text-emerald-600 data-[state=open]:text-emerald-600 data-[state=open]:bg-emerald-50/50 hover:bg-emerald-50/50 rounded-md transition-all duration-200"
+            className="h-8 font-medium text-foreground hover:text-blue-600 data-[state=open]:text-blue-600 data-[state=open]:bg-blue-50/50 hover:bg-blue-50/50 rounded-md transition-all duration-200"
           >
             <span>{title}</span>
             {column.getIsSorted() === "desc" ? (
@@ -42,7 +42,7 @@ export function DataTableColumnHeader<TData, TValue>({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.2 }}
               >
-                <ArrowDown className="ml-1.5 h-3.5 w-3.5 text-emerald-600" />
+                <ArrowDown className="ml-1.5 h-3.5 w-3.5 text-blue-600" />
               </motion.div>
             ) : column.getIsSorted() === "asc" ? (
               <motion.div 
@@ -50,7 +50,7 @@ export function DataTableColumnHeader<TData, TValue>({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.2 }}
               >
-                <ArrowUp className="ml-1.5 h-3.5 w-3.5 text-emerald-600" />
+                <ArrowUp className="ml-1.5 h-3.5 w-3.5 text-blue-600" />
               </motion.div>
             ) : (
               <ChevronsUpDown className="ml-1.5 h-3.5 w-3.5 text-muted-foreground/50" />
@@ -59,25 +59,25 @@ export function DataTableColumnHeader<TData, TValue>({
         </DropdownMenuTrigger>
         <DropdownMenuContent 
           align="start" 
-          className="w-36 rounded-md border border-emerald-100 shadow-md"
+          className="w-36 rounded-md border border-blue-100 shadow-md"
         >
           <DropdownMenuItem 
             onClick={() => column.toggleSorting(false)}
-            className="cursor-pointer hover:bg-emerald-50 text-sm font-medium group flex items-center"
+            className="cursor-pointer hover:bg-blue-50 text-sm font-medium group flex items-center"
           >
-            <ArrowUp className="mr-2 h-3.5 w-3.5 text-emerald-600 group-hover:text-emerald-700" />
-            <span className="group-hover:text-emerald-700">Tăng dần</span>
+            <ArrowUp className="mr-2 h-3.5 w-3.5 text-blue-600 group-hover:text-blue-700" />
+            <span className="group-hover:text-blue-700">Tăng dần</span>
           </DropdownMenuItem>
           <DropdownMenuItem 
             onClick={() => column.toggleSorting(true)}
-            className="cursor-pointer hover:bg-emerald-50 text-sm font-medium group flex items-center"
+            className="cursor-pointer hover:bg-blue-50 text-sm font-medium group flex items-center"
           >
-            <ArrowDown className="mr-2 h-3.5 w-3.5 text-emerald-600 group-hover:text-emerald-700" />
-            <span className="group-hover:text-emerald-700">Giảm dần</span>
+            <ArrowDown className="mr-2 h-3.5 w-3.5 text-blue-600 group-hover:text-blue-700" />
+            <span className="group-hover:text-blue-700">Giảm dần</span>
           </DropdownMenuItem>
           {column.getCanHide() && (
             <>
-              <DropdownMenuSeparator className="bg-emerald-100/50" />
+              <DropdownMenuSeparator className="bg-blue-100/50" />
               <DropdownMenuItem 
                 onClick={() => column.toggleVisibility(false)}
                 className="cursor-pointer hover:bg-rose-50 text-sm font-medium group flex items-center"

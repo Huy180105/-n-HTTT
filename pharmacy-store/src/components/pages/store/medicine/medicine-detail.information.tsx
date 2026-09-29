@@ -85,12 +85,12 @@ export function MedicineDetailInformation({ medicine, quantity, onQuantityChange
     >
       <div className="flex items-center mb-2">
         <Link to={routes.store.categories} className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center">
-          <span className="h-2 w-2 rounded-full bg-emerald-500 mr-2"></span>
+          <span className="h-2 w-2 rounded-full bg-cyan-500 mr-2"></span>
           {medicine?.category?.title}
         </Link>
       </div>
 
-      <h1 className="text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600">
+      <h1 className="text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400">
         {medicine?.name}
       </h1>
 
@@ -130,7 +130,7 @@ export function MedicineDetailInformation({ medicine, quantity, onQuantityChange
       {/* Price */}
       <div className="mb-6">
         <div className="flex items-center gap-2 mb-1">
-          <span className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600">
+          <span className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400">
             {formatCurrency(medicine.variants.price || 0)}
           </span>
           {(medicine.variants.discountPercent ?? 0) > 0 && (
@@ -165,7 +165,7 @@ export function MedicineDetailInformation({ medicine, quantity, onQuantityChange
           <Button
             variant="ghost"
             size="icon"
-            className="h-12 w-12 rounded-none border-r hover:bg-emerald-50 dark:hover:bg-emerald-900/20"
+            className="h-12 w-12 rounded-none border-r hover:bg-violet-50 dark:hover:bg-violet-900/20"
             onClick={() => onQuantityChange(quantity - 1)}
             disabled={quantity <= 1}
           >
@@ -177,7 +177,7 @@ export function MedicineDetailInformation({ medicine, quantity, onQuantityChange
           <Button
             variant="ghost"
             size="icon"
-            className="h-12 w-12 rounded-none border-l hover:bg-emerald-50 dark:hover:bg-emerald-900/20"
+            className="h-12 w-12 rounded-none border-l hover:bg-violet-50 dark:hover:bg-violet-900/20"
             onClick={() => onQuantityChange(quantity + 1)}
             disabled={quantity >= remainingBuyQuantity}
           >
@@ -203,7 +203,7 @@ export function MedicineDetailInformation({ medicine, quantity, onQuantityChange
       <div className="flex items-center justify-between gap-4 mb-8">
         <Button
           size="lg"
-          className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-lg hover:shadow-emerald-500/25 transition-all duration-300"
+          className="flex-1 bg-gradient-to-r from-cyan-500 to-cyan-500 hover:from-violet-600 hover:to-violet-600 text-white shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
           disabled={medicine.variants.stockStatus === StockStatus.OUT_OF_STOCK || stockQuantity <= 0 || remainingBuyQuantity <= 0}
           onClick={handleAddToCart}
         >
@@ -221,7 +221,7 @@ export function MedicineDetailInformation({ medicine, quantity, onQuantityChange
             icon: Truck,
             title: "Giao hàng nhanh",
             description: "2-3 ngày giao hàng",
-            color: "emerald"
+            color: "cyan"
           },
           {
             icon: Shield,

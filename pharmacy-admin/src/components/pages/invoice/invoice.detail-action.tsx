@@ -66,7 +66,7 @@ export function InvoiceDetailAction({
                     variant="outline"
                     size="sm"
                     onClick={startEditingStatus}
-                    className="gap-2 border-emerald-200 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 dark:border-emerald-800/40 dark:text-emerald-400 dark:hover:text-emerald-300 dark:hover:bg-emerald-900/20"
+                    className="gap-2 border-blue-200 text-blue-600 hover:text-blue-700 hover:bg-blue-50 dark:border-blue-800/40 dark:text-cyan-400 dark:hover:text-cyan-300 dark:hover:bg-blue-900/20"
                   >
                     <Edit className="h-4 w-4" />
                     Cập nhật trạng thái
@@ -100,7 +100,7 @@ export function InvoiceDetailAction({
                 size="sm"
                 onClick={handleStatusUpdate}
                 disabled={updateStatusMutation.isPending || !newStatus}
-                className="gap-2 bg-emerald-600 hover:bg-emerald-700 text-white"
+                className="gap-2 bg-blue-600 hover:bg-blue-700 text-white"
               >
                 <Save className="h-4 w-4" />
                 {updateStatusMutation.isPending ? "Đang lưu..." : "Lưu thay đổi"}
@@ -115,7 +115,7 @@ export function InvoiceDetailAction({
               variant="outline"
               size="sm"
               onClick={printInvoice}
-              className="gap-2 border-emerald-200 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 dark:border-emerald-800/40 dark:text-emerald-400 dark:hover:text-emerald-300 dark:hover:bg-emerald-900/20"
+              className="gap-2 border-blue-200 text-blue-600 hover:text-blue-700 hover:bg-blue-50 dark:border-blue-800/40 dark:text-cyan-400 dark:hover:text-cyan-300 dark:hover:bg-blue-900/20"
             >
               <Download className="h-4 w-4" />
               In hóa đơn

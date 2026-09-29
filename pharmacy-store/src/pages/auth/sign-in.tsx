@@ -1,5 +1,4 @@
 import { PasswordInput } from "@/components/custom/password-input";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -44,8 +43,8 @@ export default function SignInPage() {
   const form = useForm<CredentialsForm>({
     resolver: zodResolver(credentialsSchema),
     defaultValues: {
-      account: import.meta.env.DEV ? "testver1@customer.com" : "",
-      password: import.meta.env.DEV ? "Test@123" : "",
+      account: import.meta.env.DEV ? "customer@pharmacity.com" : "",
+      password: import.meta.env.DEV ? "Customer@123" : "",
     },
   });
 
@@ -69,19 +68,15 @@ export default function SignInPage() {
                   to={routes.store.root}
                   className="flex flex-col items-center gap-2 font-medium"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-100 to-teal-100 dark:from-green-900/60 dark:to-teal-900/60 text-green-600 dark:text-green-400 shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-cyan-100 dark:from-violet-900/60 dark:to-cyan-900/60 text-violet-600 dark:text-cyan-400 shadow-md hover:shadow-lg transition-all duration-300">
                     <BriefcaseMedical className="size-6" />
                   </div>
-                  <span className="sr-only">Pharmacity Inc.</span>
+                  <span className="sr-only">Medicare Inc.</span>
                 </Link>
                 
-                <TextAnimate
-                  animation="blurInUp"
-                  by="character"
-                  className="text-2xl font-bold bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 dark:to-teal-400"
-                >
+                <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-500 dark:from-violet-400 dark:to-cyan-400 pb-1">
                   Đăng nhập
-                </TextAnimate>
+                </h1>
                 
                 <div className="text-gray-500 dark:text-gray-400 text-center max-w-md">
                   Chào mừng trở lại! Vui lòng đăng nhập vào tài khoản của bạn
@@ -104,7 +99,7 @@ export default function SignInPage() {
                             {...field}
                             placeholder="Email hoặc tên đăng nhập"
                             tabIndex={1}
-                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 focus:border-green-400 dark:focus:border-green-600 rounded-lg pl-10"
+                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 focus:border-cyan-400 dark:focus:border-violet-600 rounded-lg pl-10"
                           />
                         </div>
                       </FormControl>
@@ -124,7 +119,7 @@ export default function SignInPage() {
                         </FormLabel>
                         <Link
                           to={routes.auth.forgotPassword}
-                          className="text-sm text-green-600 dark:text-green-400 hover:underline underline-offset-4 hover:opacity-75 transition-all duration-200"
+                          className="text-sm text-violet-600 dark:text-cyan-400 hover:underline underline-offset-4 hover:opacity-75 transition-all duration-200"
                         >
                           Quên mật khẩu?
                         </Link>
@@ -135,7 +130,7 @@ export default function SignInPage() {
                             {...field}
                             placeholder="Nhập mật khẩu"
                             tabIndex={2}
-                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 focus:border-green-400 dark:focus:border-green-600 rounded-lg pl-10"
+                            className="bg-gray-50/80 dark:bg-gray-900/80 border-gray-200 dark:border-gray-800 focus:border-cyan-400 dark:focus:border-violet-600 rounded-lg pl-10"
                           />
                         </div>
                       </FormControl>
@@ -146,7 +141,7 @@ export default function SignInPage() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect py-6"
+                  className="w-full bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 font-medium shine-effect py-6"
                   disabled={isLoading}
                   tabIndex={3}
                 >
@@ -165,7 +160,7 @@ export default function SignInPage() {
                     Chưa có tài khoản?{" "}
                     <Link
                       to={routes.auth.register}
-                      className="text-green-600 dark:text-green-400 hover:underline underline-offset-4 hover:opacity-75 transition-all duration-200 font-medium"
+                      className="text-violet-600 dark:text-cyan-400 hover:underline underline-offset-4 hover:opacity-75 transition-all duration-200 font-medium"
                     >
                       Đăng ký ngay
                     </Link>

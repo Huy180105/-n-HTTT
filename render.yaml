@@ -13,19 +13,11 @@ services:
       - key: DATABASE_URL
         sync: false
       - key: DATABASE_NAME
-        value: pharmacy
+        value: pharmacy_api_v2
       - key: GROQ_API_KEY
         sync: false
       - key: GROQ_MODEL
         value: llama-3.3-70b-versatile
-      - key: GEMINI_API_KEY
-        sync: false
-      - key: COHERE_API_KEY
-        sync: false
-      - key: MILVUS_URI
-        sync: false
-      - key: MILVUS_TOKEN
-        sync: false
 
   # ----------------------------------------------------
   # 2. Pharmacy Admin Frontend (React / Vite + Nginx)
@@ -39,9 +31,9 @@ services:
     plan: free
     envVars:
       - key: VITE_BACKEND_API_URL
-        sync: false
+        value: /api
       - key: VITE_LLM_API_URL
-        sync: false
+        value: /ai-api
 
   # ----------------------------------------------------
   # 3. Pharmacy Store Frontend (React / Vite + Nginx)
@@ -55,6 +47,6 @@ services:
     plan: free
     envVars:
       - key: VITE_BACKEND_API_URL
-        sync: false
+        value: /api
       - key: VITE_LLM_API_URL
-        sync: false
+        value: /ai-api

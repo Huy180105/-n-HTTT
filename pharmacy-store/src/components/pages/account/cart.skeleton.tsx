@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export const CartSkeletons = () => (
   <>
     {[1, 2, 3].map((i) => (
-      <div key={i} className="flex items-start gap-5 p-5 border-b border-emerald-100 dark:border-emerald-800/30">
+      <div key={i} className="flex items-start gap-5 p-5 border-b border-violet-100 dark:border-violet-800/30">
         <Skeleton className="h-24 w-24 rounded-lg" />
         <div className="flex-1 space-y-4">
           <div className="space-y-2">

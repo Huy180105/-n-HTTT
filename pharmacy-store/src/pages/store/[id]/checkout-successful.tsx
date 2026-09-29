@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { routeNames, routes, siteConfig } from "@/config";
+import { OrderStatus } from "@/data/enums";
 import { StoreAPI } from "@/services/v1";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from 'framer-motion';
@@ -10,39 +11,12 @@ import { Helmet } from "react-helmet-async";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
 
-const orderSteps = [
-  {
-    icon: ClipboardCheck,
-    title: "Đặt hàng thành công",
-    description: "Đơn hàng đã được xác nhận",
-    status: "completed"
-  },
-  {
-    icon: Package,
-    title: "Chuẩn bị hàng",
-    description: "Đang đóng gói sản phẩm",
-    status: "current"
-  },
-  {
-    icon: Truck,
-    title: "Vận chuyển",
-    description: "Đang trên đường giao",
-    status: "pending"
-  },
-  {
-    icon: MapPin,
-    title: "Giao hàng",
-    description: "Sẽ giao trong 2-3 ngày",
-    status: "pending"
-  }
-];
-
 const benefitCards = [
   {
     icon: Clock,
     title: "Giao hàng nhanh",
     description: "2-3 ngày làm việc",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-violet-500 to-cyan-500"
   },
   {
     icon: Phone,
@@ -53,8 +27,8 @@ const benefitCards = [
   {
     icon: Mail,
     title: "Liên hệ support",
-    description: "support@pharmacity.com",
-    color: "from-green-500 to-emerald-500"
+    description: "support@medicare.vn",
+    color: "from-cyan-500 to-cyan-500"
   }
 ];
 
@@ -147,9 +121,9 @@ export default function CheckoutSuccessfulPage() {
   // Hiển thị loading nếu đang kiểm tra order
   if (checkingOrder) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-gray-950 dark:via-gray-900 dark:to-green-950/20 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-violet-50 dark:from-gray-950 dark:via-gray-900 dark:to-violet-950/20 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-green-500 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-cyan-500 mx-auto mb-4"></div>
           <p className="text-gray-600 dark:text-gray-400">Đang kiểm tra đơn hàng...</p>
         </div>
       </div>
@@ -157,7 +131,7 @@ export default function CheckoutSuccessfulPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-gray-950 dark:via-gray-900 dark:to-green-950/20">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-violet-50 dark:from-gray-950 dark:via-gray-900 dark:to-violet-950/20">
       <Helmet>
         <title>{`${routeNames[routes.store.checkoutSuccess(":id")]} | ${siteConfig.name}`}</title>
       </Helmet>
@@ -175,7 +149,7 @@ export default function CheckoutSuccessfulPage() {
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-emerald-600 shadow-2xl shadow-green-500/25 mb-8"
+              className="inline-flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-violet-600 shadow-2xl shadow-cyan-500/25 mb-8"
             >
               <CheckCircle2 className="h-16 w-16 text-white" />
             </motion.div>
@@ -197,7 +171,7 @@ export default function CheckoutSuccessfulPage() {
                     repeat: Infinity,
                     repeatDelay: 3
                   }}
-                  className={`absolute w-2 h-2 bg-green-400 rounded-full`}
+                  className={`absolute w-2 h-2 bg-cyan-400 rounded-full`}
                   style={{
                     left: `${30 + i * 8}%`,
                     top: '50%'
@@ -211,7 +185,7 @@ export default function CheckoutSuccessfulPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4"
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent mb-4"
           >
             Đặt hàng thành công! <span className="text-yellow-500">🎉</span>
           </motion.h1>
@@ -222,17 +196,17 @@ export default function CheckoutSuccessfulPage() {
             transition={{ delay: 0.5 }}
             className="text-xl text-gray-600 dark:text-gray-300 mb-2"
           >
-            Cảm ơn bạn đã tin tương và mua sắm tại <span className="font-semibold text-green-600">Pharmacity</span>
+            Cảm ơn bạn đã tin tưởng và mua sắm tại <span className="font-bold text-violet-600 dark:text-cyan-400">Pharmacity Store</span>
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6 }}
-            className="inline-block px-6 py-3 bg-white dark:bg-gray-800 rounded-full shadow-lg border border-green-200 dark:border-green-800/50"
+            className="inline-block px-6 py-3 bg-white dark:bg-gray-800 rounded-full shadow-lg border border-violet-200 dark:border-violet-800/50"
           >
             <span className="text-lg text-gray-700 dark:text-gray-300">
-              Mã đơn hàng: <span className="font-bold text-green-600 text-xl">#{orderNumber}</span>
+              Mã đơn hàng: <span className="font-bold text-violet-600 text-xl">#{orderNumber}</span>
             </span>
           </motion.div>
         </motion.div>
@@ -247,17 +221,50 @@ export default function CheckoutSuccessfulPage() {
           >
             <Card className="p-8 h-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm border-0 shadow-xl">
               <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-violet-600 rounded-lg flex items-center justify-center">
                   <Package className="w-4 h-4 text-white" />
                 </div>
                 Trạng thái đơn hàng
               </h2>
 
               <div className="space-y-6">
-                {orderSteps.map((step, index) => {
-                  const Icon = step.icon;
-                  const isCompleted = step.status === "completed";
-                  const isCurrent = step.status === "current";
+                {(() => {
+                  const currentStatus = orderData?.status || OrderStatus.PENDING;
+                  const dynamicOrderSteps = [
+                    {
+                      icon: ClipboardCheck,
+                      title: "Đặt hàng thành công",
+                      description: "Đơn hàng đã được khởi tạo thành công",
+                      isCompleted: true,
+                      isCurrent: currentStatus === OrderStatus.PENDING,
+                    },
+                    {
+                      icon: Package,
+                      title: "Duyệt & Chuẩn bị hàng",
+                      description: currentStatus === OrderStatus.PENDING ? "Đang chờ Admin duyệt đơn hàng" : "Admin đã duyệt & đóng gói sản phẩm",
+                      isCompleted: currentStatus !== OrderStatus.PENDING,
+                      isCurrent: currentStatus === OrderStatus.PROCESSING,
+                    },
+                    {
+                      icon: Truck,
+                      title: "Vận chuyển",
+                      description: (currentStatus === OrderStatus.SHIPPED || currentStatus === OrderStatus.DELIVERED || currentStatus === OrderStatus.COMPLETED) ? "Đang trong quá trình giao hàng" : "Chờ bàn giao vận chuyển",
+                      isCompleted: currentStatus === OrderStatus.SHIPPED || currentStatus === OrderStatus.DELIVERED || currentStatus === OrderStatus.COMPLETED,
+                      isCurrent: currentStatus === OrderStatus.SHIPPED,
+                    },
+                    {
+                      icon: MapPin,
+                      title: "Giao hàng thành công",
+                      description: (currentStatus === OrderStatus.DELIVERED || currentStatus === OrderStatus.COMPLETED) ? "Đã giao đến người nhận" : "Chờ hoàn tất giao hàng",
+                      isCompleted: currentStatus === OrderStatus.DELIVERED || currentStatus === OrderStatus.COMPLETED,
+                      isCurrent: currentStatus === OrderStatus.DELIVERED,
+                    }
+                  ];
+
+                  return dynamicOrderSteps.map((step, index) => {
+                    const Icon = step.icon;
+                    const isCompleted = step.isCompleted;
+                    const isCurrent = step.isCurrent;
 
                   return (
                     <motion.div
@@ -268,16 +275,16 @@ export default function CheckoutSuccessfulPage() {
                       className="flex items-center gap-4 relative"
                     >
                       {/* Connecting line */}
-                      {index !== orderSteps.length - 1 && (
+                      {index !== dynamicOrderSteps.length - 1 && (
                         <div className="absolute left-6 top-12 w-0.5 h-8 bg-gray-200 dark:bg-gray-700" />
                       )}
 
                       <div className={`
                         w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-500
                         ${isCompleted
-                          ? 'bg-green-500 border-green-500 shadow-lg shadow-green-500/25'
+                          ? 'bg-cyan-500 border-cyan-500 shadow-lg shadow-cyan-500/25'
                           : isCurrent
-                            ? 'bg-blue-500 border-blue-500 shadow-lg shadow-blue-500/25 animate-pulse'
+                            ? 'bg-violet-500 border-violet-500 shadow-lg shadow-violet-500/25 animate-pulse'
                             : 'bg-gray-100 border-gray-300 dark:bg-gray-800 dark:border-gray-600'
                         }
                       `}>
@@ -297,11 +304,12 @@ export default function CheckoutSuccessfulPage() {
                       </div>
 
                       {isCompleted && (
-                        <CheckCircle2 className="w-5 h-5 text-green-500" />
+                        <CheckCircle2 className="w-5 h-5 text-cyan-500" />
                       )}
                     </motion.div>
                   );
-                })}
+                });
+              })()}
               </div>
             </Card>
           </motion.div>
@@ -347,7 +355,7 @@ export default function CheckoutSuccessfulPage() {
             asChild
             variant="outline"
             size="lg"
-            className="gap-3 border-2 hover:border-green-500 hover:text-green-600 transition-all duration-300"
+            className="gap-3 border-2 hover:border-cyan-500 hover:text-violet-600 transition-all duration-300"
           >
             <Link to={routes.store.root}>
               <ArrowLeft className="h-5 w-5" />
@@ -358,7 +366,7 @@ export default function CheckoutSuccessfulPage() {
           <Button
             asChild
             size="lg"
-            className="gap-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-300"
+            className="gap-3 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
           >
             <Link to={routes.store.account.orders}>
               Xem đơn hàng của tôi
@@ -374,12 +382,12 @@ export default function CheckoutSuccessfulPage() {
           transition={{ delay: 1.4 }}
           className="text-center"
         >
-          <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border-green-200 dark:border-green-800/50">
+          <Card className="p-6 bg-gradient-to-r from-violet-50 to-violet-50 dark:from-violet-950/20 dark:to-violet-950/20 border-violet-200 dark:border-violet-800/50">
             <p className="text-gray-600 dark:text-gray-400">
               📧 Thông tin chi tiết đơn hàng đã được gửi đến email của bạn
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">
-              Nếu có bất kỳ thắc mắc nào, vui lòng liên hệ với chúng tôi qua hotline <span className="font-semibold text-green-600">1800 5998 98</span>
+              Nếu có bất kỳ thắc mắc nào, vui lòng liên hệ với chúng tôi qua hotline <span className="font-semibold text-violet-600">1800 5998 98</span>
             </p>
           </Card>
         </motion.div>

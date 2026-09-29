@@ -57,7 +57,7 @@ export const useSupplierDialog = () => {
 
 
 // Order Dialog
-export type OrderDialogType = DialogType | "detail" | "confirm" | "complete" | "cancel";
+export type OrderDialogType = DialogType | "detail" | "confirm" | "ship" | "deliver" | "complete" | "cancel";
 
 export const openOrderDialogAtom = atom<OrderDialogType | null>(null);
 export const currentOrderAtom = atom<OrderResponse | null>(null);

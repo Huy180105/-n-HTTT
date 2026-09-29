@@ -21,7 +21,7 @@ export const StepSixActionButtons = ({
   >
     <Button
       onClick={onViewOrders}
-      className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white h-14 text-base font-medium flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all"
+      className="bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-700 hover:to-cyan-700 text-white h-14 text-base font-medium flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all"
     >
       <FileText className="w-5 h-5" />
       Xem đơn hàng
@@ -30,7 +30,7 @@ export const StepSixActionButtons = ({
     <Button
       variant="outline"
       onClick={onContinueShopping}
-      className="border-2 border-emerald-200 hover:border-emerald-300 hover:bg-emerald-50 dark:border-emerald-800 dark:hover:border-emerald-700 dark:hover:bg-emerald-950/50 h-14 text-base font-medium flex items-center justify-center gap-3 shadow-sm hover:shadow-md transition-all"
+      className="border-2 border-violet-200 hover:border-cyan-300 hover:bg-violet-50 dark:border-violet-800 dark:hover:border-violet-700 dark:hover:bg-violet-950/50 h-14 text-base font-medium flex items-center justify-center gap-3 shadow-sm hover:shadow-md transition-all"
     >
       <ShoppingBag className="w-5 h-5" />
       Tiếp tục mua sắm

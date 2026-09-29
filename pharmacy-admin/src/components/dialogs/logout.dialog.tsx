@@ -34,7 +34,7 @@ export function LogOutDialog({
 
   return (
     <AlertDialog open={isOpen} onOpenChange={onClose}>
-      <AlertDialogContent className="sm:max-w-md border-0 shadow-xl dark:shadow-emerald-900/5 bg-white dark:bg-zinc-900 p-0 overflow-hidden rounded-xl border-emerald-100/50 dark:border-emerald-800/20">
+      <AlertDialogContent className="sm:max-w-md border-0 shadow-xl dark:shadow-blue-900/5 bg-white dark:bg-zinc-900 p-0 overflow-hidden rounded-xl border-blue-100/50 dark:border-blue-800/20">
         <div className="absolute top-3 right-3 z-10">
           <Button 
             variant="ghost" 
@@ -46,9 +46,9 @@ export function LogOutDialog({
           </Button>
         </div>
         
-        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/20 dark:to-teal-950/20 pt-8 pb-6 px-6">
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 pt-8 pb-6 px-6">
           <div className="flex flex-col items-center justify-center text-center">
-            <div className="bg-white dark:bg-zinc-800 shadow-md rounded-full p-3 mb-4 border border-emerald-200/50 dark:border-emerald-800/30">
+            <div className="bg-white dark:bg-zinc-800 shadow-md rounded-full p-3 mb-4 border border-blue-200/50 dark:border-blue-800/30">
               <AlertTriangle className="h-6 w-6 text-amber-500 dark:text-amber-400" />
             </div>
             <AlertDialogHeader className="space-y-2">

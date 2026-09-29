@@ -20,7 +20,7 @@ export function MedicineDetailSidebar({ medicine }: MedicineDetailSidebarProps) 
         transition={{ duration: 0.3, delay: 0.1 }}
       >
         <Card className="overflow-hidden border-none bg-white dark:bg-slate-800 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-xl">
-          <div className="aspect-square w-full overflow-hidden bg-gradient-to-br from-cyan-50 to-teal-100 dark:from-cyan-950/60 dark:to-teal-900/60 flex items-center justify-center relative">
+          <div className="aspect-square w-full overflow-hidden bg-gradient-to-br from-cyan-50 to-indigo-100 dark:from-cyan-950/60 dark:to-indigo-900/60 flex items-center justify-center relative">
             {medicine.thumbnail.url ? (
               <img
                 src={medicine.thumbnail.url}
@@ -28,8 +28,8 @@ export function MedicineDetailSidebar({ medicine }: MedicineDetailSidebarProps) 
                 className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
               />
             ) : (
-              <div className="p-10 bg-gradient-to-br from-teal-50/80 to-cyan-50/80 dark:from-teal-900/30 dark:to-cyan-900/30 rounded-full">
-                <Pill className="h-24 w-24 text-teal-600 dark:text-teal-400" />
+              <div className="p-10 bg-gradient-to-br from-indigo-50/80 to-cyan-50/80 dark:from-indigo-900/30 dark:to-cyan-900/30 rounded-full">
+                <Pill className="h-24 w-24 text-indigo-600 dark:text-indigo-400" />
               </div>
             )}
             {medicine.variants.isFeatured && (
@@ -51,7 +51,7 @@ export function MedicineDetailSidebar({ medicine }: MedicineDetailSidebarProps) 
                       ? "bg-red-100 text-red-700 hover:bg-red-200 dark:bg-red-950/30 dark:text-red-400"
                       : medicine.variants.stockStatus === StockStatus.PRE_ORDER
                         ? "bg-amber-100 text-amber-700 hover:bg-amber-200 dark:bg-amber-950/30 dark:text-amber-400"
-                        : "bg-teal-100 text-teal-700 hover:bg-teal-200 dark:bg-teal-950/30 dark:text-teal-400"
+                        : "bg-indigo-100 text-indigo-700 hover:bg-indigo-200 dark:bg-indigo-950/30 dark:text-indigo-400"
                   )}
                 >
                   {getStockConfig(medicine?.variants?.stockStatus).icon}

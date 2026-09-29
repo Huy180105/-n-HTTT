@@ -26,7 +26,7 @@ export function AuthLayout({ children, title, useModernLayout = false }: AuthLay
         </Helmet>
 
         {/* Left column with branding and testimonial - now 2/3 width */}
-        <div className="relative hidden w-2/3 flex-col justify-between bg-gradient-to-br from-green-600 to-teal-700 dark:from-green-950 dark:to-teal-950 lg:flex overflow-hidden">
+        <div className="relative hidden w-2/3 flex-col justify-between bg-gradient-to-br from-violet-600 to-violet-700 dark:from-violet-950 dark:to-violet-950 lg:flex overflow-hidden">
           {/* Background patterns and effects */}
           <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-20" />
           <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-black/20 to-transparent" />
@@ -75,15 +75,15 @@ export function AuthLayout({ children, title, useModernLayout = false }: AuthLay
 
   // Original layout (for login)
   return (
-    <div className="relative flex min-h-svh flex-col items-center justify-center gap-6 bg-gradient-to-br from-green-50 via-teal-50 to-blue-50 dark:from-green-950/30 dark:via-teal-950/30 dark:to-blue-950/30 p-6 md:p-10 overflow-hidden">
+    <div className="relative flex min-h-svh flex-col items-center justify-center gap-6 bg-gradient-to-br from-violet-50 via-cyan-50 to-violet-50 dark:from-violet-950/30 dark:via-violet-950/30 dark:to-violet-950/30 p-6 md:p-10 overflow-hidden">
       <Helmet>
         <title>{title} | {siteConfig.name}</title>
       </Helmet>
 
       {/* Background animated circles */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-green-200 dark:bg-green-900/30 rounded-full filter blur-3xl opacity-30 animate-blob" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-200 dark:bg-blue-900/30 rounded-full filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-200 dark:bg-teal-900/30 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-violet-200 dark:bg-violet-900/30 rounded-full filter blur-3xl opacity-30 animate-blob" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-violet-200 dark:bg-violet-900/30 rounded-full filter blur-3xl opacity-30 animate-blob animation-delay-2000" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-violet-200 dark:bg-violet-900/30 rounded-full filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
 
       {/* Background pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10" />

@@ -33,11 +33,11 @@ export function AccountStats({ statsData, isLoading }: Props) {
       title: "Dược sĩ",
       value: statsData?.pharmacistAccounts ?? 0,
       icon: UserCheck,
-      color: "from-emerald-400 via-emerald-500 to-emerald-600",
-      iconBg: "bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20",
-      textColor: "text-emerald-600 dark:text-emerald-400",
+      color: "from-cyan-400 via-cyan-500 to-blue-600",
+      iconBg: "bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20",
+      textColor: "text-blue-600 dark:text-cyan-400",
       subText: "Nhân viên tư vấn",
-      borderColor: "border-emerald-200/50 dark:border-emerald-800/30"
+      borderColor: "border-blue-200/50 dark:border-blue-800/30"
     },
     {
       title: "Quản trị viên",

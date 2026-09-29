@@ -85,9 +85,9 @@ export function MedicineDetailRelated({ medicines, isLoading, error }: MedicineD
         className="text-center py-12"
       >
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-600/20 to-emerald-600/20 blur-3xl" />
-          <h2 className="relative text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700">
-            <Sparkles className="inline-block w-8 h-8 mr-3 text-emerald-500" />
+          <div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-violet-600/20 blur-3xl" />
+          <h2 className="relative text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-violet-600 to-violet-700">
+            <Sparkles className="inline-block w-8 h-8 mr-3 text-cyan-500" />
             Sản phẩm tương tự
           </h2>
         </div>
@@ -104,8 +104,8 @@ export function MedicineDetailRelated({ medicines, isLoading, error }: MedicineD
       className="relative"
     >
       {/* Background decoration */}
-      <div className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl" />
+      <div className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-r from-cyan-500/10 to-cyan-500/10 rounded-full blur-3xl" />
+      <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-r from-cyan-500/10 to-cyan-500/10 rounded-full blur-3xl" />
       
       <div className="relative">
         <div className="text-center mb-8">
@@ -113,16 +113,16 @@ export function MedicineDetailRelated({ medicines, isLoading, error }: MedicineD
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700"
+            className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-violet-600 to-violet-700"
           >
-            <Sparkles className="inline-block w-8 h-8 mr-3 text-emerald-500" />
+            <Sparkles className="inline-block w-8 h-8 mr-3 text-cyan-500" />
             Sản phẩm tương tự
           </motion.h2>
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-24 h-1 bg-gradient-to-r from-teal-500 to-emerald-500 mx-auto rounded-full"
+            className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-cyan-500 mx-auto rounded-full"
           />
         </div>
         
@@ -144,7 +144,7 @@ export function MedicineDetailRelated({ medicines, isLoading, error }: MedicineD
                 onHoverStart={() => setHoveredCard(medicine.id)}
                 onHoverEnd={() => setHoveredCard(null)}
               >
-                <Card className="overflow-hidden h-full flex flex-col bg-gradient-to-br from-background via-background/95 to-background/90 border-muted hover:border-teal-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-teal-500/10 group cursor-pointer backdrop-blur-sm">
+                <Card className="overflow-hidden h-full flex flex-col bg-gradient-to-br from-background via-background/95 to-background/90 border-muted hover:border-cyan-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/10 group cursor-pointer backdrop-blur-sm">
                   <div className="relative pt-[100%] bg-gradient-to-br from-slate-50 via-white to-slate-50/50 dark:from-slate-900/50 dark:via-slate-900/30 dark:to-slate-900/20 overflow-hidden">
                     {/* Image with enhanced hover effect */}
                     <div className="absolute inset-0 flex items-center justify-center p-4">
@@ -167,7 +167,7 @@ export function MedicineDetailRelated({ medicines, isLoading, error }: MedicineD
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.2 + 0.1 * index }}
-                        className="absolute top-3 right-3 bg-gradient-to-r from-teal-500 via-emerald-500 to-teal-600 text-white text-xs px-3 py-1.5 rounded-full shadow-lg backdrop-blur-sm border border-white/20"
+                        className="absolute top-3 right-3 bg-gradient-to-r from-cyan-500 via-cyan-500 to-violet-600 text-white text-xs px-3 py-1.5 rounded-full shadow-lg backdrop-blur-sm border border-white/20"
                       >
                         <Sparkles className="inline-block w-3 h-3 mr-1" />
                         {Math.round(medicine.similarityScore * 100)}%
@@ -196,7 +196,7 @@ export function MedicineDetailRelated({ medicines, isLoading, error }: MedicineD
                         </Button>
                         <Button
                           size="sm"
-                          className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white shadow-xl backdrop-blur-sm border border-white/20 transition-all duration-300 hover:scale-105"
+                          className="bg-gradient-to-r from-cyan-500 to-cyan-500 hover:from-violet-600 hover:to-violet-600 text-white shadow-xl backdrop-blur-sm border border-white/20 transition-all duration-300 hover:scale-105"
                           onClick={(e) => handleAddToCart(medicine, e)}
                           disabled={addingToCart === medicine.id}
                         >
@@ -216,12 +216,12 @@ export function MedicineDetailRelated({ medicines, isLoading, error }: MedicineD
 
                   <CardContent className="flex flex-col flex-grow p-6 relative">
                     {/* Subtle gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-50/20 to-emerald-50/20 dark:via-teal-950/10 dark:to-emerald-950/10 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-50/20 to-violet-50/20 dark:via-violet-950/10 dark:to-violet-950/10 opacity-0 group-hover:opacity-100 transition-all duration-500" />
                     
                     <div className="relative z-10">
                       <Link
                         to={routes.store.medicineDetails(medicine.id)}
-                        className="font-semibold text-lg line-clamp-2 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-teal-600 hover:to-emerald-600 cursor-pointer transition-all duration-300 min-h-[3.5rem] flex items-start mb-3"
+                        className="font-semibold text-lg line-clamp-2 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-violet-600 hover:to-violet-600 cursor-pointer transition-all duration-300 min-h-[3.5rem] flex items-start mb-3"
                       >
                         {medicine.name}
                       </Link>
@@ -276,14 +276,14 @@ export function MedicineDetailRelated({ medicines, isLoading, error }: MedicineD
                               )}
                             </div>
                           )}
-                          <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700">
+                          <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-violet-600 via-violet-600 to-violet-700">
                             {formatCurrency(medicine.variants?.price || 0)}
                           </span>
                         </div>
                         
                         <Button 
                           size="sm" 
-                          className="bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-600 hover:to-emerald-600 text-white md:hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                          className="bg-gradient-to-r from-cyan-500 to-cyan-500 hover:from-violet-600 hover:to-violet-600 text-white md:hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                           onClick={(e) => handleAddToCart(medicine, e)}
                           disabled={addingToCart === medicine.id}
                         >
@@ -312,7 +312,7 @@ export function MedicineDetailRelated({ medicines, isLoading, error }: MedicineD
                         >
                           <span className={`text-xs px-3 py-1.5 rounded-full font-medium transition-all duration-300 ${
                             medicine.variants.stockStatus === StockStatus.IN_STOCK 
-                              ? 'bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 border border-green-200' 
+                              ? 'bg-gradient-to-r from-violet-100 to-violet-100 text-violet-700 border border-violet-200' 
                               : medicine.variants.stockStatus === StockStatus.PRE_ORDER
                               ? 'bg-gradient-to-r from-yellow-100 to-orange-100 text-yellow-700 border border-yellow-200'
                               : 'bg-gradient-to-r from-red-100 to-pink-100 text-red-700 border border-red-200'
@@ -336,8 +336,8 @@ export function MedicineDetailRelated({ medicines, isLoading, error }: MedicineD
             transition={{ duration: 0.5 }}
             className="text-center py-12"
           >
-            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-teal-100 to-emerald-100 dark:from-teal-900/30 dark:to-emerald-900/30 rounded-full flex items-center justify-center">
-              <Sparkles className="w-8 h-8 text-teal-500" />
+            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-violet-100 to-violet-100 dark:from-violet-900/30 dark:to-violet-900/30 rounded-full flex items-center justify-center">
+              <Sparkles className="w-8 h-8 text-cyan-500" />
             </div>
             <p className="text-muted-foreground text-lg">Không tìm thấy sản phẩm tương tự.</p>
           </motion.div>

@@ -118,7 +118,7 @@ export default function AccountPage() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="bg-white dark:bg-slate-950 rounded-xl shadow-sm border border-cyan-100 dark:border-cyan-900/30"
+            className="bg-gradient-to-br from-white/95 via-slate-50/60 to-white/95 dark:from-slate-900/95 dark:via-slate-950/85 dark:to-slate-900/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-slate-900/5 border border-slate-200/80 dark:border-slate-800/80 relative overflow-hidden"
           >
             <div className="p-4 md:p-6">
               <AccountDataTable

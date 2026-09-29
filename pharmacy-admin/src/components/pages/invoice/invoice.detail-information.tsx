@@ -32,7 +32,7 @@ export function InvoiceDetailInformation({ invoice }: InvoiceDetailInformationPr
         {/* Company Information */}
         <div>
           <h3 className="flex items-center gap-2 text-base md:text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3 md:mb-4">
-            <Building2 className="h-4 md:h-5 w-4 md:w-5 text-emerald-600" />
+            <Building2 className="h-4 md:h-5 w-4 md:w-5 text-blue-600" />
             Thông tin công ty
           </h3>
 
@@ -48,7 +48,7 @@ export function InvoiceDetailInformation({ invoice }: InvoiceDetailInformationPr
             </div>
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-slate-500" />
-              <p className="text-slate-600 dark:text-slate-400">cskh@pharmacity.vn</p>
+              <p className="text-slate-600 dark:text-slate-400">cskh@medicare.vn</p>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export function InvoiceDetailInformation({ invoice }: InvoiceDetailInformationPr
         {/* Customer Information */}
         <div>
           <h3 className="flex items-center gap-2 text-base md:text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3 md:mb-4">
-            <User className="h-4 md:h-5 w-4 md:w-5 text-emerald-600" />
+            <User className="h-4 md:h-5 w-4 md:w-5 text-blue-600" />
             Thông tin khách hàng
           </h3>
           {invoice ? (
@@ -166,7 +166,7 @@ export function InvoiceDetailInformation({ invoice }: InvoiceDetailInformationPr
                   </td>
                   <td className="px-3 md:px-4 py-3 md:py-4">
                     <div className="flex items-center gap-2">
-                      <Package className="h-4 w-4 text-emerald-600 flex-shrink-0" />
+                      <Package className="h-4 w-4 text-blue-600 flex-shrink-0" />
                       <p className="font-medium text-slate-900 dark:text-slate-100">
                         {item.medicine?.name || `Sản phẩm #${item.medicineId}`}
                       </p>
@@ -210,9 +210,9 @@ export function InvoiceDetailInformation({ invoice }: InvoiceDetailInformationPr
               <span className="font-medium">{formatCurrency(vatAmount)}</span>
             </div>
             <Separator />
-            <div className="flex justify-between py-2 md:py-3 bg-emerald-50 dark:bg-emerald-900/20 px-3 md:px-4 rounded-lg">
-              <span className="text-base md:text-lg font-bold text-emerald-900 dark:text-emerald-100">Tổng cộng:</span>
-              <span className="text-lg md:text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+            <div className="flex justify-between py-2 md:py-3 bg-blue-50 dark:bg-blue-900/20 px-3 md:px-4 rounded-lg">
+              <span className="text-base md:text-lg font-bold text-blue-900 dark:text-blue-100">Tổng cộng:</span>
+              <span className="text-lg md:text-2xl font-bold text-blue-600 dark:text-cyan-400">
                 {formatCurrency(totalWithVat)}
               </span>
             </div>

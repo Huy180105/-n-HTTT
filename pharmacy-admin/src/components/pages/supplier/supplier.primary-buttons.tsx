@@ -52,7 +52,7 @@ export function SuppliersPrimaryButtons() {
             </DropdownMenuItem>
 
             <DropdownMenuItem className="flex items-center gap-2 text-sm cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors py-2.5">
-              <ScanBarcode className="h-4 w-4 text-indigo-600" />
+              <ScanBarcode className="h-4 w-4 text-teal-600" />
               <span>Quét mã vạch</span>
             </DropdownMenuItem>
           </DropdownMenuContent>

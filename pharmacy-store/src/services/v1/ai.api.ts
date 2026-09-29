@@ -5,7 +5,13 @@ import { aiApiGet, aiApiPost } from "@/services/api";
 
 export const AiAPI = {
   async AiConsultation(dto: AiConsultationDto) {
-    const res = await aiApiPost<AiConsultationDto, SRO<AiConsultationResponse>>("v1/consultation/diagnose", dto)
+    const payload = {
+      ...dto,
+      user_id: dto.userId || "guest_user",
+      patient_age: dto.patientAge,
+      patient_gender: dto.patientGender,
+    };
+    const res = await aiApiPost<typeof payload, SRO<AiConsultationResponse>>("v1/consultation/diagnose", payload)
     return res.data.data;
   },
 

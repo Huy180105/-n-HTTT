@@ -156,9 +156,9 @@ export const medicineColumns: ColumnDef<MedicineResponse>[] = [
         return {
           variant: "outline",
           label: "Còn hàng",
-          icon: <CircleDot className="h-3 w-3 text-teal-500" />,
-          bg: "bg-teal-100 text-teal-700 dark:bg-teal-950/40 dark:text-teal-400",
-          hover: "hover:bg-teal-200 dark:hover:bg-teal-950/60"
+          icon: <CircleDot className="h-3 w-3 text-indigo-500" />,
+          bg: "bg-indigo-100 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-400",
+          hover: "hover:bg-indigo-200 dark:hover:bg-indigo-950/60"
         };
       };
 

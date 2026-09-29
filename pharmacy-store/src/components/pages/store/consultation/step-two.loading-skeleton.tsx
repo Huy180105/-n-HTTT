@@ -4,7 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export const StepTwoLoadingSkeleton = () => (
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
     {[1, 2, 3, 4].map((i) => (
-      <Card key={i} className="border-teal-200 dark:border-teal-800 shadow-lg">
+      <Card key={i} className="border-violet-200 dark:border-violet-800 shadow-lg">
         <CardContent className="p-4">
           <div className="animate-pulse space-y-3">
             <div className="flex gap-3">

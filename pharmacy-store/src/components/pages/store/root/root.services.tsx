@@ -22,54 +22,61 @@ const staggerChildren = {
 export function RootServices() {
   const features = [
     {
-      icon: <ShoppingCart className="text-green-600 dark:text-green-400" size={24} />,
-      title: "Giao hàng nhanh chóng",
-      description: "Giao hàng trong vòng 2 giờ cho đơn hàng khẩn cấp và miễn phí vận chuyển cho đơn hàng trên 300.000đ.",
-      bgGradient: "bg-gradient-to-br from-green-50 to-green-100/70",
-      darkBgGradient: "dark:bg-gradient-to-br dark:from-green-900/30 dark:to-green-800/10",
-      borderLight: "border-green-200/70",
-      borderDark: "dark:border-green-700/30",
-      textGradient: "bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent dark:from-green-400 dark:to-emerald-400",
-      iconGradient: "bg-gradient-to-br from-green-100 to-emerald-100/70 dark:from-green-900/50 dark:to-green-800/30"
+      icon: (
+        <motion.div animate={{ y: [0, -4, 0] }} transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}>
+          <ShoppingCart className="text-violet-600 dark:text-cyan-400" size={26} />
+        </motion.div>
+      ),
+      title: "Giao hàng nhanh 2h",
+      description: "Giao nhận siêu tốc cho các đơn thuốc khẩn cấp và miễn phí vận chuyển cho đơn hàng từ 300.000đ.",
+      borderLight: "border-violet-200/70",
+      borderDark: "dark:border-violet-800/30",
+      textGradient: "bg-gradient-to-r from-violet-700 to-cyan-600 bg-clip-text text-transparent dark:from-violet-400 dark:to-cyan-300",
+      iconGradient: "bg-gradient-to-br from-violet-100 to-cyan-100/80 dark:from-violet-950/80 dark:to-cyan-900/40"
     },
     {
-      icon: <Shield className="text-blue-600 dark:text-blue-400" size={24} />,
-      title: "Thuốc chính hãng",
-      description: "Cam kết 100% thuốc chính hãng, nguồn gốc rõ ràng và đảm bảo chất lượng.",
-      bgGradient: "bg-gradient-to-br from-blue-50 to-blue-100/70",
-      darkBgGradient: "dark:bg-gradient-to-br dark:from-blue-900/30 dark:to-blue-800/10",
-      borderLight: "border-blue-200/70",
-      borderDark: "dark:border-blue-700/30",
-      textGradient: "bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-sky-400",
-      iconGradient: "bg-gradient-to-br from-blue-100 to-sky-100/70 dark:from-blue-900/50 dark:to-blue-800/30"
+      icon: (
+        <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}>
+          <Shield className="text-indigo-600 dark:text-indigo-400" size={26} />
+        </motion.div>
+      ),
+      title: "100% Thuốc chính hãng",
+      description: "Cam kết thuốc và thực phẩm chức năng có xuất xứ rõ ràng, kiểm định nghiêm ngặt chuẩn GPP.",
+      borderLight: "border-indigo-200/70",
+      borderDark: "dark:border-indigo-800/30",
+      textGradient: "bg-gradient-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-violet-300",
+      iconGradient: "bg-gradient-to-br from-indigo-100 to-violet-100/80 dark:from-indigo-950/80 dark:to-violet-900/40"
     },
     {
-      icon: <MessageCircle className="text-purple-600 dark:text-purple-400" size={24} />,
-      title: "Tư vấn 24/7",
-      description: "Đội ngũ dược sĩ và hỗ trợ AI luôn sẵn sàng giải đáp mọi thắc mắc của bạn.",
-      bgGradient: "bg-gradient-to-br from-purple-50 to-purple-100/70",
-      darkBgGradient: "dark:bg-gradient-to-br dark:from-purple-900/30 dark:to-purple-800/10",
-      borderLight: "border-purple-200/70",
-      borderDark: "dark:border-purple-700/30",
-      textGradient: "bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent dark:from-purple-400 dark:to-indigo-400",
-      iconGradient: "bg-gradient-to-br from-purple-100 to-indigo-100/70 dark:from-purple-900/50 dark:to-purple-800/30"
+      icon: (
+        <motion.div animate={{ rotate: [0, 10, -10, 0] }} transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}>
+          <MessageCircle className="text-cyan-600 dark:text-cyan-400" size={26} />
+        </motion.div>
+      ),
+      title: "Tư vấn AI & Dược sĩ 24/7",
+      description: "Sự kết hợp hoàn hảo giữa công nghệ AI tự động chuẩn đoán và đội ngũ dược sĩ chuyên môn cao.",
+      borderLight: "border-cyan-200/70",
+      borderDark: "dark:border-cyan-800/30",
+      textGradient: "bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent dark:from-cyan-400 dark:to-cyan-300",
+      iconGradient: "bg-gradient-to-br from-cyan-100 to-sky-100/80 dark:from-cyan-950/80 dark:to-sky-900/40"
     },
     {
-      icon: <Clock className="text-emerald-600 dark:text-emerald-400" size={24} />,
-      title: "Tiết kiệm thời gian",
-      description: "Đặt hàng online dễ dàng, không cần xếp hàng chờ đợi và theo dõi đơn hàng thời gian thực.",
-      bgGradient: "bg-gradient-to-br from-emerald-50 to-emerald-100/70",
-      darkBgGradient: "dark:bg-gradient-to-br dark:from-emerald-900/30 dark:to-emerald-800/10",
-      borderLight: "border-emerald-200/70",
-      borderDark: "dark:border-emerald-700/30",
-      textGradient: "bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent dark:from-emerald-400 dark:to-teal-400",
-      iconGradient: "bg-gradient-to-br from-emerald-100 to-teal-100/70 dark:from-emerald-900/50 dark:to-emerald-800/30"
+      icon: (
+        <motion.div animate={{ scale: [1, 1.08, 1] }} transition={{ repeat: Infinity, duration: 2.8, ease: "easeInOut" }}>
+          <Clock className="text-sky-600 dark:text-sky-400" size={26} />
+        </motion.div>
+      ),
+      title: "Đặt hàng thuận tiện",
+      description: "Quy trình mua hàng tối giản, không lo chờ đợi và theo dõi hành trình đơn hàng thời gian thực.",
+      borderLight: "border-sky-200/70",
+      borderDark: "dark:border-sky-800/30",
+      textGradient: "bg-gradient-to-r from-sky-600 to-violet-600 bg-clip-text text-transparent dark:from-sky-400 dark:to-violet-300",
+      iconGradient: "bg-gradient-to-br from-sky-100 to-violet-100/80 dark:from-sky-950/80 dark:to-violet-900/40"
     }
   ];
 
   return (
-    <section className="w-full py-20 md:py-28 lg:py-32 bg-gradient-to-b from-white via-green-50/30 to-blue-50/20 dark:from-gray-950 dark:via-green-950/20 dark:to-blue-950/10 relative overflow-hidden">
-
+    <section className="w-full py-20 md:py-28 lg:py-32 bg-gradient-to-b from-white via-violet-50/30 to-slate-50 dark:from-slate-950 dark:via-violet-950/30 dark:to-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <BackgroundPathsOnly />
       </div>
@@ -83,37 +90,48 @@ export function RootServices() {
           className="flex flex-col items-center justify-center space-y-6 text-center mb-16"
         >
           <motion.div variants={fadeInUp}>
-            <Badge variant="outline" className="bg-gradient-to-r from-green-100 to-emerald-100 dark:from-green-900/50 dark:to-emerald-900/50 text-green-800 dark:text-green-300 border-green-200 dark:border-green-800/60 px-4 py-1.5 text-sm rounded-full shadow-sm">
-              <Sparkles className="h-3.5 w-3.5 mr-1.5 text-green-600 dark:text-green-400" />
-              <span className="font-medium">Tại sao chọn Pharmacity Store?</span>
+            <Badge variant="outline" className="bg-gradient-to-r from-violet-100 to-cyan-100 dark:from-violet-950/80 dark:to-cyan-950/80 text-violet-950 dark:text-cyan-300 border-blue-300 dark:border-cyan-700/60 px-4 py-1.5 text-sm font-bold rounded-full shadow-sm">
+              <motion.div
+                animate={{ rotate: [0, 15, -15, 0] }}
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                className="mr-1.5 inline-block"
+              >
+                <Sparkles className="h-3.5 w-3.5 text-violet-600 dark:text-cyan-400" />
+              </motion.div>
+              <span>Tại sao chọn Pharmacity Store?</span>
             </Badge>
           </motion.div>
 
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl font-bold tracking-tight sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 dark:from-green-400 dark:via-blue-400 dark:to-purple-400 pb-2"
+            className="text-3xl font-black tracking-tight sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-violet-800 via-cyan-600 to-cyan-500 dark:from-violet-400 dark:via-cyan-300 dark:to-cyan-300 pb-2"
           >
-            Dịch vụ đáng tin cậy
+            Dịch Vụ Y Tế Đáng Tin Cậy
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
-            className="max-w-[850px] text-gray-600 text-lg md:text-xl/relaxed dark:text-gray-300 leading-relaxed"
+            className="max-w-[850px] text-slate-600 text-lg md:text-xl/relaxed dark:text-slate-300 leading-relaxed"
           >
-            Chúng tôi cung cấp trải nghiệm mua sắm thuốc trực tuyến thuận tiện với sự hỗ trợ từ các chuyên gia dược phẩm hàng đầu.
+            Chúng tôi mang đến giải pháp chăm sóc sức khỏe trực tuyến hiện đại với sự đồng hành của đội ngũ chuyên gia dược phẩm.
           </motion.p>
 
-          {/* Rating indicator */}
           <motion.div
             variants={fadeInUp}
-            className="flex items-center gap-2 mt-4 bg-white/80 dark:bg-gray-900/50 py-2.5 px-5 rounded-full shadow-md border border-gray-100 dark:border-gray-800/40 backdrop-blur-sm hover:shadow-lg transition-all duration-300"
+            className="flex items-center gap-2 mt-4 bg-white/90 dark:bg-slate-900/80 py-2.5 px-5 rounded-full shadow-md border border-slate-200/80 dark:border-slate-800 backdrop-blur-md hover:shadow-lg transition-all duration-300"
           >
             <div className="flex">
               {[1, 2, 3, 4, 5].map((_, index) => (
-                <Star key={index} size={18} className="text-amber-500 fill-amber-500" />
+                <motion.div
+                  key={index}
+                  animate={{ scale: [1, 1.15, 1] }}
+                  transition={{ repeat: Infinity, duration: 2, delay: index * 0.2 }}
+                >
+                  <Star size={18} className="text-amber-500 fill-amber-500" />
+                </motion.div>
               ))}
             </div>
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">4.9/5 từ 1,200+ đánh giá</span>
+            <span className="text-sm font-bold text-slate-800 dark:text-slate-200">4.9/5 từ 3,000+ đánh giá tại Pharmacity Store</span>
           </motion.div>
         </motion.div>
 
@@ -130,10 +148,10 @@ export function RootServices() {
               variants={fadeInUp}
               custom={index}
               transition={{ duration: 0.5 }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -6 }}
               className="h-full"
             >
-              <Card className="border-0 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full bg-white/80 dark:bg-gray-900/60 backdrop-blur-sm border-gray-100/80 dark:border-gray-800/50">
+              <Card className="border border-violet-100/80 dark:border-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group h-full bg-white/90 dark:bg-slate-900/80 backdrop-blur-md">
                 <CardHeader className="pb-4">
                   <div className={`p-4 w-16 h-16 rounded-2xl ${feature.iconGradient} flex items-center justify-center mb-4 border ${feature.borderLight} ${feature.borderDark} group-hover:-translate-y-1 transition-transform duration-300 shadow-sm`}>
                     {feature.icon}
@@ -143,7 +161,7 @@ export function RootServices() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                  <CardDescription className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
                     {feature.description}
                   </CardDescription>
                 </CardContent>
@@ -159,9 +177,11 @@ export function RootServices() {
           transition={{ delay: 0.6 }}
           className="mt-20 text-center"
         >
-          <div className="inline-flex items-center gap-2.5 text-green-700 dark:text-green-300 font-medium bg-white/80 dark:bg-gray-900/60 px-5 py-3 rounded-full border border-green-100 dark:border-green-800/30 shadow-md backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-            <Shield size={20} className="text-green-600 dark:text-green-400" />
-            <span>Đã được Bộ Y tế cấp phép hoạt động</span>
+          <div className="inline-flex items-center gap-2.5 text-violet-900 dark:text-cyan-300 font-bold bg-white/90 dark:bg-slate-900/80 px-6 py-3.5 rounded-full border border-violet-200 dark:border-violet-900/50 shadow-md backdrop-blur-md hover:shadow-lg transition-all duration-300">
+            <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 2 }}>
+              <Shield size={20} className="text-violet-600 dark:text-cyan-400" />
+            </motion.div>
+            <span>Pharmacity Store đã được Bộ Y tế xác thực chuẩn GPP</span>
           </div>
         </motion.div>
       </div>

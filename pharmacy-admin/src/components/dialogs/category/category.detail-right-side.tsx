@@ -19,7 +19,7 @@ export function CategoryDetailRightSide({ getMedicines }: CategoryDetailRightSid
     <div className="w-1/3 border-l flex flex-col min-h-0">
       <div className="p-4 border-b bg-muted/50 flex-shrink-0">
         <h3 className="font-semibold text-lg flex items-center gap-2">
-          <Pill className="h-5 w-5 text-teal-600" />
+          <Pill className="h-5 w-5 text-indigo-600" />
           Danh sách thuốc ({getMedicines().length})
         </h3>
         <p className="text-sm text-muted-foreground mt-1">
@@ -60,7 +60,7 @@ export function CategoryDetailRightSide({ getMedicines }: CategoryDetailRightSid
 
                         {/* Price */}
                         <div className="mb-1">
-                          <span className="text-xs font-semibold text-teal-600">
+                          <span className="text-xs font-semibold text-indigo-600">
                             {formatCurrency(medicine.variants.price)}
                           </span>
                           {medicine.variants.originalPrice &&
@@ -78,7 +78,7 @@ export function CategoryDetailRightSide({ getMedicines }: CategoryDetailRightSid
                             className={cn(
                               "text-xs py-0 px-1 h-5",
                               medicine.variants.stockStatus === StockStatus.IN_STOCK
-                                ? "border-green-200 text-green-700"
+                                ? "border-blue-200 text-blue-700"
                                 : medicine.variants.stockStatus === StockStatus.PRE_ORDER
                                   ? "border-yellow-200 text-yellow-700"
                                   : "border-red-200 text-red-700"

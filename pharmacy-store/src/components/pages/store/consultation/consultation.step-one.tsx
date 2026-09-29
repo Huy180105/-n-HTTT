@@ -47,12 +47,12 @@ export function ConsultationStepOne() {
       {/* Enhanced Header */}
       <div className="text-center relative">
         <div className="relative inline-flex items-center justify-center w-24 h-24 mb-6">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-500 rounded-3xl opacity-20 animate-pulse" />
-          <div className="relative w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-violet-600 to-cyan-500 rounded-3xl opacity-20 animate-pulse" />
+          <div className="relative w-20 h-20 bg-gradient-to-br from-violet-600 to-cyan-500 rounded-2xl flex items-center justify-center shadow-xl">
             <BotMessageSquare className="w-10 h-10 text-white" />
           </div>
         </div>
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-700 via-violet-600 to-cyan-500 bg-clip-text text-transparent mb-4">
           Thông tin chẩn đoán triệu chứng
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -71,7 +71,7 @@ export function ConsultationStepOne() {
           <Button
             onClick={onSubmit}
             disabled={!isValid || isPending}
-            className="w-full h-14 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none group"
+            className="w-full h-14 bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-700 hover:to-cyan-700 text-white font-semibold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none group border-0"
           >
             <div className="flex items-center justify-center gap-3">
               <Brain className="w-6 h-6 group-hover:animate-pulse" />
@@ -89,7 +89,7 @@ export function ConsultationStepOne() {
           <Button
             onClick={handleNext}
             disabled={!isValid || isPending}
-            className="group relative px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="group relative px-8 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none border-0"
           >
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 group-hover:animate-pulse" />

@@ -37,7 +37,7 @@ export function CategoryChangeStatusDialog({ currentCategory, open, onOpenChange
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["categories"] });
       toast.success(`Đã ${statusText} danh mục thành công`, {
-        className: "bg-white dark:bg-slate-800 dark:text-white border-emerald-100 dark:border-slate-700",
+        className: "bg-white dark:bg-slate-800 dark:text-white border-blue-100 dark:border-slate-700",
       });
       onOpenChange(false);
       setTimeout(() => {
@@ -59,15 +59,15 @@ export function CategoryChangeStatusDialog({ currentCategory, open, onOpenChange
   };
 
   const bgColor = isActive
-    ? "bg-emerald-50 dark:bg-emerald-900/20"
+    ? "bg-blue-50 dark:bg-blue-900/20"
     : "bg-amber-50 dark:bg-amber-900/20";
 
   const borderColor = isActive
-    ? "border-emerald-100 dark:border-emerald-900/30"
+    ? "border-blue-100 dark:border-blue-900/30"
     : "border-amber-100 dark:border-amber-900/30";
 
   const textColor = isActive
-    ? "text-emerald-700 dark:text-emerald-400"
+    ? "text-blue-700 dark:text-cyan-400"
     : "text-amber-700 dark:text-amber-400";
 
   return (
@@ -91,7 +91,7 @@ export function CategoryChangeStatusDialog({ currentCategory, open, onOpenChange
               <span className={textColor}>{statusTitle}</span>
             </AlertDialogTitle>
             <AlertDialogDescription className={cn(
-              isActive ? "text-emerald-600/90 dark:text-emerald-400/90" : "text-amber-600/90 dark:text-amber-400/90"
+              isActive ? "text-blue-600/90 dark:text-cyan-400/90" : "text-amber-600/90 dark:text-amber-400/90"
             )}>
               {isActive
                 ? "Kích hoạt danh mục sẽ cho phép người dùng xem và truy cập."
@@ -104,19 +104,19 @@ export function CategoryChangeStatusDialog({ currentCategory, open, onOpenChange
           <div className={cn(
             "border rounded-md p-3 flex items-start gap-3",
             isActive
-              ? "border-emerald-100 dark:border-emerald-800/30 bg-emerald-50/50 dark:bg-emerald-900/10"
+              ? "border-blue-100 dark:border-blue-800/30 bg-blue-50/50 dark:bg-blue-900/10"
               : "border-amber-100 dark:border-amber-800/30 bg-amber-50/50 dark:bg-amber-900/10"
           )}>
             <div className="flex-shrink-0 p-1.5 rounded-full bg-white dark:bg-slate-800">
               <Tag className={cn(
                 "h-5 w-5",
-                isActive ? "text-emerald-500" : "text-amber-500"
+                isActive ? "text-cyan-500" : "text-amber-500"
               )} />
             </div>
             <div>
               <h4 className={cn(
                 "font-medium text-sm",
-                isActive ? "text-emerald-700 dark:text-emerald-400" : "text-amber-700 dark:text-amber-400"
+                isActive ? "text-blue-700 dark:text-cyan-400" : "text-amber-700 dark:text-amber-400"
               )}>
                 Thông tin danh mục
               </h4>
@@ -132,7 +132,7 @@ export function CategoryChangeStatusDialog({ currentCategory, open, onOpenChange
                     Trạng thái:
                   </span>
                   {currentCategory.isActive ? (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-cyan-400">
                       <CheckCircle2 className="h-3 w-3 mr-1" />
                       Đang hoạt động
                     </span>
@@ -161,7 +161,7 @@ export function CategoryChangeStatusDialog({ currentCategory, open, onOpenChange
               onCheckedChange={setIsActive}
               className={cn(
                 isActive
-                  ? "bg-emerald-500 data-[state=checked]:bg-emerald-500"
+                  ? "bg-cyan-500 data-[state=checked]:bg-cyan-500"
                   : "bg-amber-500 data-[state=unchecked]:bg-amber-500"
               )}
             />
@@ -178,7 +178,7 @@ export function CategoryChangeStatusDialog({ currentCategory, open, onOpenChange
             className={cn(
               "text-white",
               isActive
-                ? "bg-emerald-500 hover:bg-emerald-600"
+                ? "bg-cyan-500 hover:bg-blue-600"
                 : "bg-amber-500 hover:bg-amber-600"
             )}
           >

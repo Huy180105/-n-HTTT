@@ -71,7 +71,7 @@ export function CategoryRowActions({ row }: CategoryRowActionsProps) {
                 "cursor-pointer flex items-center gap-2 py-1.5 px-2 text-sm rounded-sm group",
                 isActive
                   ? "hover:bg-amber-50 dark:hover:bg-amber-900/20 hover:text-amber-700 dark:hover:text-amber-400"
-                  : "hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-700 dark:hover:text-emerald-400"
+                  : "hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-cyan-400"
               )}
             >
               {isActive ? (
@@ -81,13 +81,13 @@ export function CategoryRowActions({ row }: CategoryRowActionsProps) {
                 </>
               ) : (
                 <>
-                  <Shield className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-300" />
+                  <Shield className="h-3.5 w-3.5 text-cyan-500 dark:text-cyan-400 group-hover:text-blue-600 dark:group-hover:text-cyan-300" />
                   <span>Kích hoạt</span>
                 </>
               )}
             </DropdownMenuItem>
 
-            <DropdownMenuSeparator className="my-1 bg-emerald-100/70 dark:bg-emerald-800/30" />
+            <DropdownMenuSeparator className="my-1 bg-blue-100/70 dark:bg-blue-800/30" />
 
             <DropdownMenuItem
               onClick={() => {

@@ -11,7 +11,7 @@ export function ProfileSkeleton() {
           <Skeleton className="h-6 w-[600px] mx-auto" />
         </div>
       </div>
-      <div className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-green-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm rounded-2xl p-6 space-y-6">
+      <div className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-violet-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm rounded-2xl p-6 space-y-6">
         <section className="space-y-6">
           <header className="flex items-center justify-between gap-4">
             <div>

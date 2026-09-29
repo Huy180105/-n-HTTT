@@ -116,7 +116,7 @@ export function DataTablePagination<TData>({
               handlePageSizeChange(Number(value));
             }}
           >
-            <SelectTrigger className="h-8 w-[70px] border-emerald-100 dark:border-emerald-800/40 focus:ring-emerald-500">
+            <SelectTrigger className="h-8 w-[70px] border-blue-100 dark:border-blue-800/40 focus:ring-cyan-500">
               <SelectValue placeholder={currentPageSize} />
             </SelectTrigger>
             <SelectContent side="top" className="min-w-[5rem]">
@@ -139,7 +139,7 @@ export function DataTablePagination<TData>({
             <Button
               variant="outline"
               size="icon"
-              className="h-8 w-8 p-0 border-emerald-100 dark:border-emerald-800/40"
+              className="h-8 w-8 p-0 border-blue-100 dark:border-blue-800/40"
               onClick={() => handlePageChange(1)}
               disabled={!canPreviousPage}
             >
@@ -149,7 +149,7 @@ export function DataTablePagination<TData>({
             <Button
               variant="outline"
               size="icon"
-              className="h-8 w-8 p-0 border-emerald-100 dark:border-emerald-800/40"
+              className="h-8 w-8 p-0 border-blue-100 dark:border-blue-800/40"
               onClick={() => {
                 const prevPage = Math.max(1, currentPageDisplay - 1);
                 if (prevPage >= 1) {
@@ -164,7 +164,7 @@ export function DataTablePagination<TData>({
             <Button
               variant="outline"
               size="icon"
-              className="h-8 w-8 p-0 border-emerald-100 dark:border-emerald-800/40"
+              className="h-8 w-8 p-0 border-blue-100 dark:border-blue-800/40"
               onClick={() => {
                 const nextPage = Math.min(totalPageCount, currentPageDisplay + 1);
                 if (nextPage <= totalPageCount) {
@@ -179,7 +179,7 @@ export function DataTablePagination<TData>({
             <Button
               variant="outline"
               size="icon"
-              className="h-8 w-8 p-0 border-emerald-100 dark:border-emerald-800/40"
+              className="h-8 w-8 p-0 border-blue-100 dark:border-blue-800/40"
               onClick={() => {
                 if (totalPageCount > 0) {
                   handlePageChange(totalPageCount);

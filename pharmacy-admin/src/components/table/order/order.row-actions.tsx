@@ -20,25 +20,35 @@ export function OrderRowActions({ row }: OrderRowActionsProps) {
   const navigate = useNavigate();
   const order = row.original;
   const orderStatus = order.status as OrderStatus;
-  const canConfirm = orderStatus === OrderStatus.PENDING;
-  const canDeliver = orderStatus === OrderStatus.SHIPPED || orderStatus === OrderStatus.PROCESSING;
-  const canCancel = orderStatus !== OrderStatus.CANCELLED &&
-    orderStatus !== OrderStatus.DELIVERED &&
-    orderStatus !== OrderStatus.COMPLETED;
+  const isPending = orderStatus === OrderStatus.PENDING;
+  const isProcessing = orderStatus === OrderStatus.PROCESSING;
+  const isShipped = orderStatus === OrderStatus.SHIPPED;
+  const isDelivered = orderStatus === OrderStatus.DELIVERED;
+  const canCancel = orderStatus !== OrderStatus.CANCELLED && orderStatus !== OrderStatus.COMPLETED;
 
   const handleViewDetails = () => {
     setCurrentOrder(order);
     setOpen("detail");
   };
 
-  const handleConfirmOrder = () => {
+  const handleProcessOrder = () => {
     setCurrentOrder(order);
-    setOpen("confirm");
+    setOpen("confirm"); // Sets mode to PROCESSING
+  };
+
+  const handleShipOrder = () => {
+    setCurrentOrder(order);
+    setOpen("ship"); // Sets mode to SHIPPED
+  };
+
+  const handleDeliverOrder = () => {
+    setCurrentOrder(order);
+    setOpen("deliver"); // Sets mode to DELIVERED
   };
 
   const handleCompleteOrder = () => {
     setCurrentOrder(order);
-    setOpen("complete");
+    setOpen("complete"); // Sets mode to COMPLETED
   };
 
   const handleCancelOrder = () => {
@@ -82,35 +92,59 @@ export function OrderRowActions({ row }: OrderRowActionsProps) {
           >
             <DropdownMenuItem
               onClick={handleViewDetails}
-              className="cursor-pointer flex items-center gap-2 py-1.5 px-2 text-sm hover:bg-blue-50 dark:hover:bg-blue-900/20 text-slate-700 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-300 rounded-md group transition-colors"
+              className="cursor-pointer flex items-center gap-2 py-1.5 px-2 text-sm hover:bg-rose-50 dark:hover:bg-blue-900/20 text-slate-700 hover:text-rose-600 dark:text-slate-300 dark:hover:text-blue-300 rounded-md group transition-colors"
             >
-              <div className="rounded-full bg-blue-50 dark:bg-blue-900/30 p-1 group-hover:bg-blue-100 dark:group-hover:bg-blue-800/30 transition-colors">
-                <Eye className="h-3.5 w-3.5 text-blue-500 dark:text-blue-400" />
+              <div className="rounded-full bg-rose-50 dark:bg-blue-900/30 p-1 group-hover:bg-rose-100 dark:group-hover:bg-blue-800/30 transition-colors">
+                <Eye className="h-3.5 w-3.5 text-rose-500 dark:text-blue-400" />
               </div>
-              <span className="text-blue-600 dark:text-blue-400">Xem chi tiết</span>
+              <span className="text-rose-600 dark:text-blue-400">Xem chi tiết</span>
             </DropdownMenuItem>
 
-            {canConfirm && (
+            {isPending && (
               <DropdownMenuItem
-                onClick={handleConfirmOrder}
-                className="cursor-pointer flex items-center gap-2 py-1.5 px-2 text-sm hover:bg-emerald-50 dark:hover:bg-emerald-900/20 text-slate-700 hover:text-emerald-600 dark:text-slate-300 dark:hover:text-emerald-300 rounded-md group transition-colors"
+                onClick={handleProcessOrder}
+                className="cursor-pointer flex items-center gap-2 py-1.5 px-2 text-sm hover:bg-indigo-50 dark:hover:bg-indigo-900/20 text-slate-700 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-300 rounded-md group transition-colors"
               >
-                <div className="rounded-full bg-emerald-50 dark:bg-emerald-900/30 p-1 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-800/30 transition-colors">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
+                <div className="rounded-full bg-indigo-50 dark:bg-indigo-900/30 p-1 group-hover:bg-indigo-100 transition-colors">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-indigo-500" />
                 </div>
-                <span className="text-emerald-600 dark:text-emerald-400">Xác nhận đơn</span>
+                <span className="text-indigo-600 dark:text-indigo-400 font-semibold">1. Duyệt xử lý đơn</span>
               </DropdownMenuItem>
             )}
 
-            {canDeliver && (
+            {isProcessing && (
+              <DropdownMenuItem
+                onClick={handleShipOrder}
+                className="cursor-pointer flex items-center gap-2 py-1.5 px-2 text-sm hover:bg-cyan-50 dark:hover:bg-cyan-900/20 text-slate-700 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300 rounded-md group transition-colors"
+              >
+                <div className="rounded-full bg-cyan-50 dark:bg-cyan-900/30 p-1 group-hover:bg-cyan-100 transition-colors">
+                  <PackageCheck className="h-3.5 w-3.5 text-cyan-500" />
+                </div>
+                <span className="text-cyan-600 dark:text-cyan-400 font-semibold">2. Giao cho vận chuyển</span>
+              </DropdownMenuItem>
+            )}
+
+            {isShipped && (
+              <DropdownMenuItem
+                onClick={handleDeliverOrder}
+                className="cursor-pointer flex items-center gap-2 py-1.5 px-2 text-sm hover:bg-purple-50 dark:hover:bg-purple-900/20 text-slate-700 hover:text-purple-600 dark:text-slate-300 dark:hover:text-purple-300 rounded-md group transition-colors"
+              >
+                <div className="rounded-full bg-purple-50 dark:bg-purple-900/30 p-1 group-hover:bg-purple-100 transition-colors">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-purple-500" />
+                </div>
+                <span className="text-purple-600 dark:text-purple-400 font-semibold">3. Xác nhận đã giao</span>
+              </DropdownMenuItem>
+            )}
+
+            {isDelivered && (
               <DropdownMenuItem
                 onClick={handleCompleteOrder}
-                className="cursor-pointer flex items-center gap-2 py-1.5 px-2 text-sm hover:bg-amber-50 dark:hover:bg-amber-900/20 text-slate-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-amber-300 rounded-md group transition-colors"
+                className="cursor-pointer flex items-center gap-2 py-1.5 px-2 text-sm hover:bg-violet-50 dark:hover:bg-violet-900/20 text-slate-700 hover:text-violet-600 dark:text-slate-300 dark:hover:text-violet-300 rounded-md group transition-colors"
               >
-                <div className="rounded-full bg-amber-50 dark:bg-amber-900/30 p-1 group-hover:bg-amber-100 dark:group-hover:bg-amber-800/30 transition-colors">
-                  <PackageCheck className="h-3.5 w-3.5 text-amber-500 dark:text-amber-400" />
+                <div className="rounded-full bg-violet-50 dark:bg-violet-900/30 p-1 group-hover:bg-violet-100 transition-colors">
+                  <PackageCheck className="h-3.5 w-3.5 text-violet-500" />
                 </div>
-                <span className="text-amber-600 dark:text-amber-400">Hoàn thành đơn</span>
+                <span className="text-violet-600 dark:text-violet-400 font-semibold">4. Hoàn thành đơn</span>
               </DropdownMenuItem>
             )}
 

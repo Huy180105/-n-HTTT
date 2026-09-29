@@ -20,7 +20,7 @@ function NoIdFallback({ onBack }: { onBack: () => void }) {
       <div className="mb-6 flex items-center">
         <Button
           variant="ghost"
-          className="mr-4 rounded-full p-2 h-9 w-9 hover:bg-teal-50 dark:hover:bg-teal-900/30 text-teal-600 dark:text-teal-400"
+          className="mr-4 rounded-full p-2 h-9 w-9 hover:bg-cyan-50 dark:hover:bg-violet-900/30 text-violet-600 dark:text-cyan-400"
           onClick={onBack}
         >
           <ArrowLeft className="h-5 w-5" />
@@ -43,7 +43,7 @@ function NoIdFallback({ onBack }: { onBack: () => void }) {
           </p>
           
           <Button
-            className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white font-medium px-6"
+            className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white font-medium px-6"
             onClick={onBack}
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -62,7 +62,7 @@ function NetworkErrorFallback({ onBack, onRetry }: { onBack: () => void; onRetry
       <div className="mb-6 flex items-center">
         <Button
           variant="ghost"
-          className="mr-4 rounded-full p-2 h-9 w-9 hover:bg-teal-50 dark:hover:bg-teal-900/30 text-teal-600 dark:text-teal-400"
+          className="mr-4 rounded-full p-2 h-9 w-9 hover:bg-cyan-50 dark:hover:bg-violet-900/30 text-violet-600 dark:text-cyan-400"
           onClick={onBack}
         >
           <ArrowLeft className="h-5 w-5" />
@@ -86,7 +86,7 @@ function NetworkErrorFallback({ onBack, onRetry }: { onBack: () => void; onRetry
           
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button
-              className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white font-medium px-6"
+              className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white font-medium px-6"
               onClick={onRetry}
             >
               <RefreshCw className="h-4 w-4 mr-2" />
@@ -94,7 +94,7 @@ function NetworkErrorFallback({ onBack, onRetry }: { onBack: () => void; onRetry
             </Button>
             <Button
               variant="outline"
-              className="border-teal-200 text-teal-600 hover:bg-teal-50 dark:border-teal-800 dark:text-teal-400 dark:hover:bg-teal-900/30"
+              className="border-violet-200 text-violet-600 hover:bg-cyan-50 dark:border-violet-800 dark:text-cyan-400 dark:hover:bg-violet-900/30"
               onClick={onBack}
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -168,7 +168,7 @@ export default function InvoiceDetailPage() {
         <div className="mb-6 flex items-center">
           <Button
             variant="ghost"
-            className="mr-4 rounded-full p-2 h-9 w-9 hover:bg-teal-50 dark:hover:bg-teal-900/30 text-teal-600 dark:text-teal-400"
+            className="mr-4 rounded-full p-2 h-9 w-9 hover:bg-cyan-50 dark:hover:bg-violet-900/30 text-violet-600 dark:text-cyan-400"
             onClick={goBack}
           >
             <ArrowLeft className="h-5 w-5" />
@@ -192,7 +192,7 @@ export default function InvoiceDetailPage() {
             
             <Button
               variant="outline"
-              className="border-teal-200 text-teal-600 hover:bg-teal-50 dark:border-teal-800 dark:text-teal-400 dark:hover:bg-teal-900/30"
+              className="border-violet-200 text-violet-600 hover:bg-cyan-50 dark:border-violet-800 dark:text-cyan-400 dark:hover:bg-violet-900/30"
               onClick={goBack}
             >
               <ArrowLeft className="h-4 w-4 mr-2" />

@@ -24,7 +24,7 @@ export function CategoryProductCard({
   onAddToCart,
   lastRef
 }: ProductCardProps) {
-  const isOutOfStock = medicine.variants.stockStatus === StockStatus.OUT_OF_STOCK;
+  const isOutOfStock = medicine.variants?.stockStatus === StockStatus.OUT_OF_STOCK;
 
   const handleAddToCart = async () => {
     if (isOutOfStock || isAddingToCart) return;
@@ -33,7 +33,7 @@ export function CategoryProductCard({
 
   return (
     <Card
-      className="overflow-hidden h-full flex flex-col group bg-background/50 backdrop-blur-sm border-muted hover:border-emerald-500/20 transition-all duration-300 hover:shadow-lg"
+      className="overflow-hidden h-full flex flex-col group bg-background/50 backdrop-blur-sm border-muted hover:border-violet-500/30 transition-all duration-300 hover:shadow-lg"
       onMouseEnter={() => onHover(medicine.id)}
       onMouseLeave={() => onHover(null)}
       ref={lastRef}
@@ -49,9 +49,9 @@ export function CategoryProductCard({
           </div>
 
           {/* Discount badge */}
-          {(medicine.variants.discountPercent ?? 0) > 0 && (
-            <Badge className="absolute top-2 left-2 bg-emerald-500 text-white hover:bg-emerald-600">
-              -{medicine.variants.discountPercent}%
+          {(medicine.variants?.discountPercent ?? 0) > 0 && (
+            <Badge className="absolute top-2 left-2 bg-gradient-to-r from-violet-600 to-cyan-600 text-white hover:from-violet-700 hover:to-cyan-700">
+              -{medicine.variants?.discountPercent}%
             </Badge>
           )}
 
@@ -64,7 +64,7 @@ export function CategoryProductCard({
         </div>
 
         <CardContent className="flex flex-col flex-grow p-4">
-          <h3 className="font-medium line-clamp-2 hover:text-emerald-500 cursor-pointer mb-2 transition-colors group-hover:text-emerald-500">
+          <h3 className="font-medium line-clamp-2 hover:text-violet-600 dark:hover:text-cyan-400 cursor-pointer mb-2 transition-colors group-hover:text-violet-600 dark:group-hover:text-cyan-400">
             {medicine.name}
           </h3>
 
@@ -103,21 +103,23 @@ export function CategoryProductCard({
 
           <div className="flex items-center justify-between">
             <div className="flex flex-col">
-              {(medicine.variants.discountPercent ?? 0) > 0 && (
+              {(medicine.variants?.discountPercent ?? 0) > 0 && (
                 <span className="text-sm line-through text-muted-foreground">
-                  {Math.floor((medicine.variants.price || 0) / (1 - (medicine.variants.discountPercent ?? 0) / 100)).toLocaleString()}₫
+                  {Math.floor((medicine.variants?.price || 0) / (1 - (medicine.variants?.discountPercent ?? 0) / 100)).toLocaleString()}₫
                 </span>
               )}
-              <span className="font-bold text-emerald-500">{(medicine.variants.price || 0).toLocaleString()}₫</span>
+              <span className="font-bold text-violet-600 dark:text-cyan-400">{(medicine.variants?.price || 0).toLocaleString()}₫</span>
               {/* Supplier name */}
-              <span className="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                {medicine.supplier.name}
-              </span>
+              {medicine.supplier?.name && (
+                <span className="text-xs text-gray-400 dark:text-gray-500 mt-1">
+                  {medicine.supplier.name}
+                </span>
+              )}
             </div>
             {!isOutOfStock ? (
-              <div className="flex items-center text-xs text-emerald-500">
+              <div className="flex items-center text-xs text-violet-600 dark:text-cyan-400">
                 <Truck className="h-3 w-3 mr-1" />
-                <span className="font-medium">Có sẵn ({medicine.variants.quantity || 0})</span>
+                <span className="font-medium">Có sẵn ({medicine.variants?.quantity || 0})</span>
               </div>
             ) : (
               <div className="flex items-center text-xs text-gray-400">
@@ -134,23 +136,23 @@ export function CategoryProductCard({
         <Button
           size="icon"
           variant="secondary"
-          className="h-8 w-8 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white shadow-md"
+          className="h-8 w-8 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white shadow-md"
           onClick={handleAddToCart}
           disabled={isOutOfStock || isAddingToCart}
         >
-          <ShoppingCart className={`h-4 w-4 ${isAddingToCart ? 'animate-ping text-green-600' : 'text-green-500 fill-green-500'}`} />
+          <ShoppingCart className={`h-4 w-4 ${isAddingToCart ? 'animate-ping text-violet-600' : 'text-violet-600 fill-violet-600 dark:text-cyan-400 dark:fill-cyan-400'}`} />
         </Button>
       </div>
 
       {/* Hover showing */}
       <div className={`mt-3 px-4 pb-4 transition-all duration-300 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         <Button
-          className="w-full text-sm h-8 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white relative overflow-hidden"
+          className="w-full text-sm h-8 bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-700 hover:to-cyan-700 text-white border-0 relative overflow-hidden"
           onClick={handleAddToCart}
           disabled={isOutOfStock || isAddingToCart}
         >
           {isAddingToCart && (
-            <span className="absolute inset-0 flex items-center justify-center bg-green-600 animate-pulse">
+            <span className="absolute inset-0 flex items-center justify-center bg-violet-700 animate-pulse">
               Đã thêm!
             </span>
           )}

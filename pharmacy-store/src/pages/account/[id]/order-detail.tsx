@@ -37,7 +37,7 @@ export default function OrderDetails() {
       <div className="text-center py-12">
         <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-200">Không thể tải thông tin đơn hàng</h2>
         <p className="mt-2 text-gray-500 dark:text-gray-400">Vui lòng thử lại sau hoặc liên hệ hỗ trợ</p>
-        <Button asChild className="mt-4 bg-gradient-to-r from-teal-600 to-emerald-500 hover:from-teal-700 hover:to-emerald-600 dark:from-teal-500 dark:to-emerald-600 dark:hover:from-teal-600 dark:hover:to-emerald-700 text-white shadow-sm dark:shadow-teal-900/20 rounded-full">
+        <Button asChild className="mt-4 bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-700 hover:to-violet-600 dark:from-cyan-500 dark:to-violet-600 dark:hover:from-violet-600 dark:hover:to-violet-700 text-white shadow-sm dark:shadow-violet-900/20 rounded-full">
           <Link to={routes.store.account.orders}>Quay lại danh sách đơn hàng</Link>
         </Button>
       </div>
@@ -62,7 +62,7 @@ export default function OrderDetails() {
             <Button
               asChild
               variant="ghost"
-              className="self-start flex items-center text-teal-700 dark:text-teal-400 hover:text-teal-800 dark:hover:text-teal-300 hover:bg-teal-50 dark:hover:bg-teal-900/30 -ml-3"
+              className="self-start flex items-center text-violet-700 dark:text-cyan-400 hover:text-violet-800 dark:hover:text-cyan-300 hover:bg-cyan-50 dark:hover:bg-violet-900/30 -ml-3"
             >
               <Link to={routes.store.account.orders}>
                 <ArrowLeft className="mr-2 h-4 w-4" />
@@ -73,24 +73,24 @@ export default function OrderDetails() {
           </div>
 
           <Card className="overflow-hidden border-0 dark:border dark:border-gray-700 shadow-xl dark:shadow-lg rounded-2xl mb-8 bg-white dark:bg-gray-800">
-            <div className="bg-gradient-to-r from-teal-50 to-emerald-50/70 dark:from-teal-950/30 dark:to-emerald-950/20 p-6">
+            <div className="bg-gradient-to-r from-cyan-50 to-violet-50/70 dark:from-violet-950/30 dark:to-violet-950/20 p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-2">
-                    <div className="w-1 h-8 bg-gradient-to-b from-teal-500 to-emerald-400 dark:from-teal-400 dark:to-emerald-500 rounded-full"></div>
+                    <div className="w-1 h-8 bg-gradient-to-b from-cyan-500 to-cyan-400 dark:from-cyan-400 dark:to-cyan-500 rounded-full"></div>
                     <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
                       Đơn hàng #{id?.slice(-6)}
                     </h1>
                   </div>
                   <p className="mt-2 ml-3 text-gray-500 dark:text-gray-400 flex items-center">
-                    <CalendarIcon className="h-4 w-4 mr-2 text-teal-600 dark:text-teal-400" />
+                    <CalendarIcon className="h-4 w-4 mr-2 text-violet-600 dark:text-cyan-400" />
                     Đặt hàng ngày {formattedDate}
                   </p>
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-gray-500 dark:text-gray-400">Phương thức thanh toán</div>
                   <div className="mt-1 flex items-center justify-end gap-2">
-                    <BanknoteIcon className="h-4 w-4 text-teal-600 dark:text-teal-400" />
+                    <BanknoteIcon className="h-4 w-4 text-violet-600 dark:text-cyan-400" />
                     <span className="text-gray-700 dark:text-gray-200 font-medium">{formatPaymentMethod(order.paymentMethod)}</span>
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export default function OrderDetails() {
                 transition={{ delay: 0.2, duration: 0.4 }}
               >
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 flex items-center">
-                  <MapPinIcon className="mr-2 h-5 w-5 text-teal-600 dark:text-teal-400" />
+                  <MapPinIcon className="mr-2 h-5 w-5 text-violet-600 dark:text-cyan-400" />
                   Địa chỉ giao hàng
                 </h3>
                 <div className="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-100 dark:border-gray-600 shadow-sm">
@@ -128,7 +128,7 @@ export default function OrderDetails() {
                 transition={{ delay: 0.3, duration: 0.4 }}
               >
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 flex items-center">
-                  <BanknoteIcon className="mr-2 h-5 w-5 text-teal-600 dark:text-teal-400" />
+                  <BanknoteIcon className="mr-2 h-5 w-5 text-violet-600 dark:text-cyan-400" />
                   Thông tin thanh toán
                 </h3>
                 <div className="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-100 dark:border-gray-600 shadow-sm">
@@ -141,7 +141,7 @@ export default function OrderDetails() {
                     <span>{formatCurrency(order.shippingFee)}</span>
                   </div>
                   {order.discount > 0 && (
-                    <div className="flex justify-between text-teal-600 dark:text-teal-400 mb-2">
+                    <div className="flex justify-between text-violet-600 dark:text-cyan-400 mb-2">
                       <span>Giảm giá:</span>
                       <span>- {formatCurrency(order.discount)}</span>
                     </div>
@@ -149,7 +149,7 @@ export default function OrderDetails() {
                   <Separator className="my-3 bg-gray-200 dark:bg-gray-600" />
                   <div className="flex justify-between font-bold text-gray-800 dark:text-gray-100">
                     <span>Tổng cộng:</span>
-                    <span className="text-teal-700 dark:text-teal-400">{formatCurrency(order.totalPrice)}</span>
+                    <span className="text-violet-700 dark:text-cyan-400">{formatCurrency(order.totalPrice)}</span>
                   </div>
                 </div>
               </motion.div>
@@ -157,7 +157,7 @@ export default function OrderDetails() {
 
             <div className="p-6 pt-0">
               <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
-                <ShoppingBagIcon className="mr-2 h-5 w-5 text-teal-600 dark:text-teal-400" />
+                <ShoppingBagIcon className="mr-2 h-5 w-5 text-violet-600 dark:text-cyan-400" />
                 Sản phẩm đã đặt
               </h3>
               <div className="space-y-4">
@@ -179,8 +179,8 @@ export default function OrderDetails() {
                             onError={(e) => {
                               e.currentTarget.style.display = 'none';
                               e.currentTarget.parentElement!.innerHTML = `
-                                <div class="w-full h-full bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-900/30 dark:to-emerald-900/20 flex items-center justify-center">
-                                  <svg class="h-8 w-8 text-teal-500 dark:text-teal-400" fill="currentColor" viewBox="0 0 24 24">
+                                <div class="w-full h-full bg-gradient-to-br from-cyan-50 to-violet-50 dark:from-violet-900/30 dark:to-violet-900/20 flex items-center justify-center">
+                                  <svg class="h-8 w-8 text-cyan-500 dark:text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5L6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/>
                                   </svg>
                                 </div>
@@ -188,8 +188,8 @@ export default function OrderDetails() {
                             }}
                           />
                         ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-900/30 dark:to-emerald-900/20 flex items-center justify-center">
-                            <ShoppingBagIcon className="h-8 w-8 text-teal-500 dark:text-teal-400" />
+                          <div className="w-full h-full bg-gradient-to-br from-cyan-50 to-violet-50 dark:from-violet-900/30 dark:to-violet-900/20 flex items-center justify-center">
+                            <ShoppingBagIcon className="h-8 w-8 text-cyan-500 dark:text-cyan-400" />
                           </div>
                         )}
                       </div>
@@ -201,7 +201,7 @@ export default function OrderDetails() {
                             "Thuốc chính hãng"}
                         </p>
                         <div className="flex flex-wrap items-center gap-3 mt-2">
-                          <Badge variant="outline" className="bg-teal-50/80 hover:bg-teal-100/80 dark:bg-teal-900/30 dark:hover:bg-teal-900/40 text-teal-700 hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-300 border-teal-200 hover:border-teal-300 dark:border-teal-800/50 dark:hover:border-teal-700/60 px-2.5 py-0.5 transition-colors duration-200">
+                          <Badge variant="outline" className="bg-cyan-50/80 hover:bg-violet-100/80 dark:bg-violet-900/30 dark:hover:bg-violet-900/40 text-violet-700 hover:text-violet-800 dark:text-cyan-400 dark:hover:text-cyan-300 border-violet-200 hover:border-cyan-300 dark:border-violet-800/50 dark:hover:border-violet-700/60 px-2.5 py-0.5 transition-colors duration-200">
                             {formatCurrency(item.price)} / đơn vị
                           </Badge>
                           <span className="text-gray-500 dark:text-gray-400 text-sm">
@@ -212,7 +212,7 @@ export default function OrderDetails() {
                     </div>
                     <div className="text-right self-end sm:self-center flex flex-col items-end justify-center mt-3 sm:mt-0">
                       <div className="text-sm text-gray-500 dark:text-gray-400">Thành tiền</div>
-                      <div className="font-semibold text-teal-700 dark:text-teal-400 text-lg">
+                      <div className="font-semibold text-violet-700 dark:text-cyan-400 text-lg">
                         {formatCurrency(item.itemTotal)}
                       </div>
                     </div>

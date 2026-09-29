@@ -39,12 +39,12 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
           ></feGaussianBlur>
         </filter>
         
-        {/* Enhanced emerald gradient for dark theme */}
-        <radialGradient id="emeraldSpotlight" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
-          <stop offset="25%" stopColor="#059669" stopOpacity="0.3" />
-          <stop offset="50%" stopColor="#047857" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="#064e3b" stopOpacity="0.1" />
+        {/* Enhanced ocean blue gradient for dark theme */}
+        <radialGradient id="blueSpotlight" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#00d8ff" stopOpacity="0.4" />
+          <stop offset="25%" stopColor="#0284c7" stopOpacity="0.3" />
+          <stop offset="50%" stopColor="#2563eb" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="#1e3a8a" stopOpacity="0.1" />
         </radialGradient>
       </defs>
       
@@ -55,7 +55,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
           rx="1924.71"
           ry="273.501"
           transform="matrix(-0.822377 -0.568943 -0.568943 0.822377 3631.88 2291.09)"
-          fill={fill?.startsWith('url(') ? fill : (fill || "url(#emeraldSpotlight)")}
+          fill={fill?.startsWith('url(') ? fill : (fill || "url(#blueSpotlight)")}
           fillOpacity="0.8"
         ></ellipse>
       </g>

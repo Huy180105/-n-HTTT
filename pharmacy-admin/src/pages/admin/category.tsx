@@ -60,19 +60,20 @@ export default function CategoryPage() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/40 dark:to-orange-950/40 rounded-xl p-6 shadow-sm border border-amber-100 dark:border-amber-800/20"
+          className="bg-gradient-to-r from-amber-500/15 via-orange-500/10 via-rose-500/10 to-violet-500/15 dark:from-amber-950/50 dark:via-orange-950/40 dark:to-purple-950/50 backdrop-blur-xl rounded-2xl p-6 md:p-8 shadow-2xl shadow-purple-950/20 border border-amber-500/20 dark:border-amber-700/30 relative overflow-hidden group"
         >
           <div className="flex items-center gap-3 mb-2">
             <div className="bg-amber-100 dark:bg-amber-800/30 p-2.5 rounded-lg">
               <FolderTree size={28} className="text-amber-600 dark:text-amber-400" />
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-amber-800 dark:text-amber-300">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400 bg-clip-text text-transparent drop-shadow-sm">
               Quản lý danh mục
             </h2>
           </div>
           <p className="text-amber-600/90 dark:text-amber-400/80 ml-[52px]">
             Thêm, sửa và quản lý danh mục phân loại sản phẩm để tạo cấu trúc cho hệ thống Pharmacity Store
           </p>
+          <div className="ambient-banner-blob pointer-events-none absolute -right-12 -bottom-12 w-64 h-64 bg-gradient-to-br from-amber-400/20 via-fuchsia-500/20 to-cyan-500/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700" />
         </motion.div>
 
         {/* Statistics Cards */}
@@ -100,7 +101,7 @@ export default function CategoryPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.4 }}
-            className="bg-white dark:bg-slate-950 rounded-xl shadow-sm border border-amber-100 dark:border-amber-800/30"
+            className="bg-gradient-to-br from-white/95 via-slate-50/60 to-white/95 dark:from-slate-900/95 dark:via-slate-950/85 dark:to-slate-900/95 backdrop-blur-xl rounded-2xl shadow-xl shadow-slate-900/5 border border-slate-200/80 dark:border-slate-800/80 relative overflow-hidden"
           >
             <div className="p-4 md:p-6">
               <CategoryDataTable

@@ -31,9 +31,9 @@ export function InvoiceTabs({
 
   return (
     <Tabs defaultValue="all" className="w-full">
-      <div className="p-4 pt-6 pb-0 bg-gradient-to-r from-emerald-50/70 to-emerald-50/50 dark:from-emerald-950/30 dark:to-emerald-950/20 border-b border-emerald-100/80 dark:border-emerald-900/30 overflow-hidden">
-        <TabsList className="grid grid-cols-4 gap-1 sm:gap-1.5 w-full max-w-3xl mx-auto bg-white/60 dark:bg-gray-800/40 p-1 sm:p-1.5 rounded-xl shadow-sm border border-emerald-100/80 dark:border-emerald-900/30">
-          <TabsTrigger value="all" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600 data-[state=active]:to-emerald-500 dark:data-[state=active]:from-emerald-500 dark:data-[state=active]:to-emerald-600 data-[state=active]:text-white data-[state=active]:shadow-md rounded-lg transition-all duration-200 font-medium py-1.5">
+      <div className="p-4 pt-6 pb-0 bg-gradient-to-r from-violet-50/70 to-violet-50/50 dark:from-violet-950/30 dark:to-violet-950/20 border-b border-violet-100/80 dark:border-violet-900/30 overflow-hidden">
+        <TabsList className="grid grid-cols-4 gap-1 sm:gap-1.5 w-full max-w-3xl mx-auto bg-white/60 dark:bg-gray-800/40 p-1 sm:p-1.5 rounded-xl shadow-sm border border-violet-100/80 dark:border-violet-900/30">
+          <TabsTrigger value="all" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-600 data-[state=active]:to-cyan-500 dark:data-[state=active]:from-cyan-500 dark:data-[state=active]:to-violet-600 data-[state=active]:text-white data-[state=active]:shadow-md rounded-lg transition-all duration-200 font-medium py-1.5">
             <span className="flex items-center justify-center gap-1.5">
               <Receipt className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               <span className="hidden sm:inline text-xs sm:text-sm">Tất cả</span>
@@ -50,13 +50,13 @@ export function InvoiceTabs({
               </Badge>
             )}
           </TabsTrigger>
-          <TabsTrigger value="paid" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600 data-[state=active]:to-emerald-500 dark:data-[state=active]:from-emerald-500 dark:data-[state=active]:to-emerald-600 data-[state=active]:text-white data-[state=active]:shadow-md rounded-lg transition-all duration-200 font-medium py-1.5">
+          <TabsTrigger value="paid" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-600 data-[state=active]:to-cyan-500 dark:data-[state=active]:from-cyan-500 dark:data-[state=active]:to-violet-600 data-[state=active]:text-white data-[state=active]:shadow-md rounded-lg transition-all duration-200 font-medium py-1.5">
             <span className="flex items-center justify-center gap-1.5">
               <FileCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               <span className="hidden sm:inline text-xs sm:text-sm">Đã thanh toán</span>
             </span>
             {paidInvoices && paidInvoices.length > 0 && (
-              <Badge variant="secondary" className="ml-1 text-xs px-1.5 py-0 min-w-4 flex items-center justify-center bg-white hover:bg-emerald-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-emerald-700 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300 shadow-sm dark:shadow-none transition-colors duration-200">
+              <Badge variant="secondary" className="ml-1 text-xs px-1.5 py-0 min-w-4 flex items-center justify-center bg-white hover:bg-violet-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-violet-700 hover:text-violet-800 dark:text-cyan-400 dark:hover:text-cyan-300 shadow-sm dark:shadow-none transition-colors duration-200">
                 {paidInvoices.length}
               </Badge>
             )}

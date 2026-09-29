@@ -167,7 +167,7 @@ export function SupplierUploadAvatar({
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader className="pb-2">
-            <DialogTitle className="text-xl font-semibold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+            <DialogTitle className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
               Upload avatar nhà cung cấp
             </DialogTitle>
             <DialogDescription className="text-muted-foreground">
@@ -205,7 +205,7 @@ export function SupplierUploadAvatar({
             <Button 
               onClick={handleUpload}
               disabled={!finalImageUrl || isUploading}
-              className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isUploading ? (
                 <>

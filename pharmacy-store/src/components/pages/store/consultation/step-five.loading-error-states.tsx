@@ -20,10 +20,10 @@ export const StepFiveLoadingState = () => (
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           className="w-16 h-16 mx-auto mb-6"
         >
-          <Loader2 className="w-16 h-16 text-teal-600 dark:text-teal-400" />
+          <Loader2 className="w-16 h-16 text-violet-600 dark:text-cyan-400" />
         </motion.div>
         
-        <h3 className="text-xl font-semibold text-teal-700 dark:text-teal-300 mb-3">
+        <h3 className="text-xl font-semibold text-violet-700 dark:text-cyan-300 mb-3">
           Đang tải hóa đơn...
         </h3>
         <p className="text-muted-foreground">
@@ -44,7 +44,7 @@ export const StepFiveLoadingState = () => (
                   repeat: Infinity,
                   delay: i * 0.2,
                 }}
-                className="w-2 h-2 bg-teal-500 rounded-full"
+                className="w-2 h-2 bg-cyan-500 rounded-full"
               />
             ))}
           </div>
@@ -76,7 +76,7 @@ export const StepFiveErrorState = ({ onGoHome }: StepFiveErrorStateProps) => (
         <div className="space-y-3">
           <Button 
             onClick={onGoHome} 
-            className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white w-full"
+            className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white w-full"
           >
             <FileText className="w-4 h-4 mr-2" />
             Về trang chủ

@@ -15,7 +15,7 @@ interface InvoiceDetailHeaderProps {
 
 export function InvoiceDetailHeader({ invoice, editingStatus, newStatus, setNewStatus }: InvoiceDetailHeaderProps) {
   return (
-    <div className="bg-emerald-600 text-white p-4 print:bg-emerald-600 print:text-white">
+    <div className="bg-blue-600 text-white p-4 print:bg-blue-600 print:text-white">
       <div className="flex items-center justify-between gap-4">
         {/* Company Info */}
         <div className="flex items-center gap-3">
@@ -53,7 +53,7 @@ export function InvoiceDetailHeader({ invoice, editingStatus, newStatus, setNewS
                       </SelectItem>
                       <SelectItem value={InvoiceStatus.PAID}>
                         <div className="flex items-center gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                          <CheckCircle2 className="h-4 w-4 text-cyan-500" />
                           <span>Đã thanh toán</span>
                         </div>
                       </SelectItem>
@@ -86,7 +86,7 @@ export function InvoiceDetailHeader({ invoice, editingStatus, newStatus, setNewS
             </AnimatePresence>
           </div>
           
-          <div className="flex gap-4 text-emerald-100">
+          <div className="flex gap-4 text-blue-100">
             <div className="text-right">
               <p className="text-xs opacity-80">Ngày lập:</p>
               <p className="text-sm font-semibold">{formatDate(invoice?.issuedAt)}</p>

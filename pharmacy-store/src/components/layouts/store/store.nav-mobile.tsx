@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { routes } from "@/config";
 import { useMetaColor } from "@/hooks/use-meta-color";
+import { motion } from "framer-motion";
 import { Bot as ChatBubbleLeftRightIcon, HomeIcon, ShoppingBagIcon, UserIcon } from "lucide-react";
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
@@ -32,7 +33,7 @@ export function StoreNavMobile() {
       <DrawerTrigger asChild>
         <Button
           variant="ghost"
-          className="-ml-2 mr-2 h-8 w-8 px-0 text-base hover:bg-teal-50 dark:hover:bg-teal-950/50 hover:text-teal-600 dark:hover:text-teal-400 focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+          className="-ml-2 mr-2 h-8 w-8 px-0 text-base hover:bg-violet-50 dark:hover:bg-violet-950/50 hover:text-violet-600 dark:hover:text-cyan-400 focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +41,7 @@ export function StoreNavMobile() {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="!size-6 text-gray-700 dark:text-gray-300"
+            className="!size-6 text-slate-700 dark:text-slate-300"
           >
             <path
               strokeLinecap="round"
@@ -51,19 +52,17 @@ export function StoreNavMobile() {
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="max-h-[65svh] p-0 border-t-2 border-teal-200 dark:border-teal-800/50 bg-gradient-to-br from-teal-50/80 to-emerald-50/80 dark:from-teal-950/30 dark:to-emerald-950/20 backdrop-blur-sm">
+      <DrawerContent className="max-h-[65svh] p-0 border-t-2 border-violet-200 dark:border-violet-900/50 bg-gradient-to-br from-violet-50/90 to-cyan-50/90 dark:from-slate-950 dark:to-violet-950/60 backdrop-blur-md">
         <div className="px-6 py-8">
-          {/* Header với gradient */}
-          <div className="mb-6 pb-4 border-b border-teal-200/50 dark:border-teal-700/50">
-            <h2 className="text-lg font-semibold bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
-              Menu điều hướng
+          <div className="mb-6 pb-4 border-b border-violet-200/60 dark:border-violet-800/60">
+            <h2 className="text-lg font-extrabold bg-gradient-to-r from-violet-800 to-cyan-600 dark:from-violet-400 dark:to-cyan-300 bg-clip-text text-transparent">
+              Menu điều hướng Pharmacity
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-              Khám phá các tính năng của chúng tôi
+            <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 font-medium">
+              Khám phá các tính năng của Pharmacity Store
             </p>
           </div>
 
-          {/* Navigation Items */}
           <nav className="space-y-3">
             {navigationItems.map((item, index) => {
               const IconComponent = item.icon;
@@ -72,20 +71,22 @@ export function StoreNavMobile() {
                   key={item.href}
                   to={item.href}
                   onClick={closeDrawer}
-                  className="group flex items-center gap-4 px-4 py-4 text-gray-700 dark:text-gray-300 hover:text-teal-700 dark:hover:text-emerald-400 hover:bg-gradient-to-r hover:from-teal-100 hover:to-emerald-100 dark:hover:from-teal-900/30 dark:hover:to-emerald-900/30 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-teal-200/50 dark:hover:shadow-teal-900/30"
+                  className="group flex items-center gap-4 px-4 py-4 text-slate-700 dark:text-slate-200 hover:text-violet-700 dark:hover:text-cyan-300 hover:bg-gradient-to-r hover:from-violet-100 hover:to-cyan-100 dark:hover:from-violet-900/40 dark:hover:to-cyan-900/40 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg"
                   style={{
                     animationDelay: `${index * 100}ms`,
                   }}
                 >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-teal-100 to-emerald-100 dark:from-teal-900/40 dark:to-emerald-900/40 group-hover:from-teal-200 group-hover:to-emerald-200 dark:group-hover:from-teal-800/60 dark:group-hover:to-emerald-800/60 transition-all duration-300">
-                    <IconComponent className="w-5 h-5 text-teal-600 dark:text-emerald-400 group-hover:text-teal-700 dark:group-hover:text-emerald-300 transition-colors duration-300" />
+                  <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-violet-100 to-cyan-100 dark:from-violet-900/50 dark:to-cyan-900/50 group-hover:from-violet-200 group-hover:to-cyan-200 dark:group-hover:from-violet-800/60 dark:group-hover:to-cyan-800/60 transition-all duration-300 shadow-sm">
+                    <motion.div animate={{ scale: [1, 1.15, 1] }} transition={{ repeat: Infinity, duration: 2.5, delay: index * 0.2 }}>
+                      <IconComponent className="w-5 h-5 text-violet-600 dark:text-cyan-400 group-hover:text-violet-700 dark:group-hover:text-cyan-300 transition-colors duration-300" />
+                    </motion.div>
                   </div>
                   <div className="flex-1">
-                    <span className="font-medium text-base">{item.label}</span>
-                    <div className="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 transition-all duration-300 rounded-full mt-1"></div>
+                    <span className="font-bold text-base">{item.label}</span>
+                    <div className="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-violet-500 to-cyan-500 transition-all duration-300 rounded-full mt-1"></div>
                   </div>
                   <svg
-                    className="w-4 h-4 text-gray-400 group-hover:text-teal-500 dark:group-hover:text-emerald-400 transition-colors duration-300 transform group-hover:translate-x-1"
+                    className="w-4 h-4 text-slate-400 group-hover:text-violet-600 dark:group-hover:text-cyan-400 transition-colors duration-300 transform group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -102,13 +103,12 @@ export function StoreNavMobile() {
             })}
           </nav>
 
-          {/* Footer */}
-          <div className="mt-8 pt-6 border-t border-teal-200/50 dark:border-teal-700/50">
+          <div className="mt-8 pt-6 border-t border-violet-200/60 dark:border-violet-800/60">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-100 to-emerald-100 dark:from-teal-900/40 dark:to-emerald-900/40 rounded-full">
-                <div className="w-2 h-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-teal-700 dark:text-emerald-300">
-                  Pharmacy Store
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-100 to-cyan-100 dark:from-violet-950/80 dark:to-cyan-950/80 rounded-full border border-violet-200 dark:border-cyan-800">
+                <div className="w-2 h-2 bg-gradient-to-r from-violet-600 to-cyan-500 rounded-full animate-ping"></div>
+                <span className="text-sm font-bold text-violet-900 dark:text-cyan-300">
+                  Pharmacity Store
                 </span>
               </div>
             </div>

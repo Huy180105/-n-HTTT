@@ -47,7 +47,7 @@ export default function InvoicePage() {
           {/* Header section */}
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-100 text-cyan-600 dark:bg-cyan-950/60 dark:text-cyan-400">
                 <Receipt className="h-5 w-5" />
               </div>
               <h1 className="text-2xl font-bold md:text-3xl">Hóa đơn của bạn</h1>
@@ -66,16 +66,16 @@ export default function InvoicePage() {
           ) : isError ? (
             <InvoiceErrorState />
           ) : !invoices || invoices.length === 0 ? (
-            <Card className="border-dashed bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900/50 dark:to-gray-900/30 shadow-sm">
+            <Card className="border-dashed bg-gradient-to-br from-gray-50 to-violet-50/30 dark:from-gray-900/50 dark:to-violet-950/20 shadow-sm">
               <CardContent className="flex flex-col items-center justify-center py-20">
-                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400 mb-4">
+                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-cyan-100 text-cyan-600 dark:bg-cyan-950/60 dark:text-cyan-400 mb-4">
                   <Receipt className="h-10 w-10" />
                 </div>
                 <h2 className="mt-2 text-xl font-semibold">Bạn chưa có hóa đơn nào</h2>
                 <p className="mt-3 text-center text-muted-foreground max-w-md mx-auto">
                   Lịch sử hóa đơn của bạn sẽ xuất hiện ở đây. Hãy khám phá và mua sắm ngay!
                 </p>
-                <Button asChild size="lg" className="mt-8 px-6 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-700">
+                <Button asChild size="lg" className="mt-8 px-6 bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-700 hover:to-cyan-700 text-white border-0">
                   <a href={routes.store.medicines} className="flex items-center gap-2">
                     <ChevronLeft className="h-4 w-4" />
                     Tiếp tục mua sắm
@@ -96,7 +96,7 @@ export default function InvoicePage() {
               {searchTerm || statusFilter !== "all" ? (
                 <InvoiceFilteredList invoices={filteredInvoices} />
               ) : (
-                <Card className="border-emerald-100 dark:border-emerald-800/30 shadow-sm overflow-hidden">
+                <Card className="border-cyan-100 dark:border-cyan-800/30 shadow-sm overflow-hidden">
                   <CardContent className="p-0">
                     <InvoiceTabs
                       invoices={invoices}

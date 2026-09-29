@@ -13,7 +13,7 @@ export function InvoiceDetailErrorState({ error, onBack }: ErrorStateProps) {
       <div className="mb-6 flex items-center">
         <Button
           variant="ghost"
-          className="mr-4 rounded-full p-2 h-9 w-9 hover:bg-teal-50 dark:hover:bg-teal-900/30 text-teal-600 dark:text-teal-400"
+          className="mr-4 rounded-full p-2 h-9 w-9 hover:bg-cyan-50 dark:hover:bg-violet-900/30 text-violet-600 dark:text-cyan-400"
           onClick={onBack}
         >
           <ArrowLeft className="h-5 w-5" />
@@ -36,7 +36,7 @@ export function InvoiceDetailErrorState({ error, onBack }: ErrorStateProps) {
           </p>
           
           <Button
-            className="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white font-medium px-6"
+            className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 hover:from-violet-700 hover:to-violet-700 text-white font-medium px-6"
             onClick={onBack}
           >
             <ArrowLeft className="h-4 w-4 mr-2" />

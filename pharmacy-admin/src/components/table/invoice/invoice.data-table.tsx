@@ -68,7 +68,7 @@ export function InvoiceDataTable({ columns, data, searchTerm, onSearchChange, is
         onResetFilters={onResetFilters}
       />
 
-      <div className="bg-white dark:bg-slate-950 rounded-xl border border-emerald-100 dark:border-emerald-800/30 shadow-sm p-2">
+      <div className="bg-white dark:bg-slate-950 rounded-xl border border-blue-100 dark:border-blue-800/30 shadow-sm p-2">
         {pagination ? (
           <DataTablePagination
             table={table}
@@ -84,7 +84,7 @@ export function InvoiceDataTable({ columns, data, searchTerm, onSearchChange, is
         )}
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-emerald-100 dark:border-emerald-800/30 bg-white dark:bg-slate-950 shadow-sm">
+      <div className="overflow-hidden rounded-xl border border-blue-100 dark:border-blue-800/30 bg-white dark:bg-slate-950 shadow-sm">
         <motion.div
           initial={{ opacity: 0.7 }}
           animate={{ opacity: 1 }}
@@ -95,8 +95,8 @@ export function InvoiceDataTable({ columns, data, searchTerm, onSearchChange, is
           {(isLoading || isChangingPage) && (
             <div className="absolute inset-0 bg-white/80 dark:bg-slate-950/80 z-20 flex items-center justify-center">
               <div className="flex items-center gap-2">
-                <div className="w-4 h-4 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
-                <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium">
+                <div className="w-4 h-4 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
+                <span className="text-blue-600 dark:text-cyan-400 text-sm font-medium">
                   Đang tải...
                 </span>
               </div>
@@ -106,9 +106,9 @@ export function InvoiceDataTable({ columns, data, searchTerm, onSearchChange, is
 
           <div className="overflow-x-auto">
             <Table className="w-full table-fixed">
-              <TableHeader className="bg-emerald-50/80 dark:bg-emerald-950/40 sticky top-0 z-10">
+              <TableHeader className="bg-blue-50/80 dark:bg-blue-950/40 sticky top-0 z-10">
                 {table.getHeaderGroups().map((headerGroup) => (
-                  <TableRow key={headerGroup.id} className="border-b border-emerald-100 dark:border-emerald-800/20">
+                  <TableRow key={headerGroup.id} className="border-b border-blue-100 dark:border-blue-800/20">
                     {headerGroup.headers.map((header) => {
                       return (
                         <TableHead
@@ -140,7 +140,7 @@ export function InvoiceDataTable({ columns, data, searchTerm, onSearchChange, is
                       initial="hidden"
                       animate="visible"
                       variants={fadeInUpVariants as Variants}
-                      className="group border-b border-emerald-50 dark:border-emerald-800/10 hover:bg-emerald-50/70 dark:hover:bg-emerald-900/20 data-[state=selected]:bg-emerald-100 dark:data-[state=selected]:bg-emerald-800/30 transition-colors"
+                      className="group border-b border-blue-50 dark:border-blue-800/10 hover:bg-blue-50/70 dark:hover:bg-blue-900/20 data-[state=selected]:bg-blue-100 dark:data-[state=selected]:bg-blue-800/30 transition-colors"
                       data-state={row.getIsSelected() && "selected"}
                     >
                       {row.getVisibleCells().map((cell) => (

@@ -61,7 +61,7 @@ export const OrdersViewDetails = memo(function OrdersViewDetails({
       case OrderStatus.PROCESSING:
         return {
           label: "Đang xử lý",
-          color: "bg-gradient-to-r from-blue-50 to-indigo-100 text-blue-600 border-blue-200/50 dark:from-blue-900/20 dark:to-indigo-800/20 dark:text-blue-300 dark:border-blue-700/30",
+          color: "bg-gradient-to-r from-rose-50 to-indigo-100 text-rose-600 border-blue-200/50 dark:from-rose-900/20 dark:to-indigo-800/20 dark:text-blue-300 dark:border-rose-700/30",
           icon: <Clock className="h-3.5 w-3.5 mr-1" />
         };
       case OrderStatus.SHIPPED:
@@ -73,13 +73,13 @@ export const OrdersViewDetails = memo(function OrdersViewDetails({
       case OrderStatus.DELIVERED:
         return {
           label: "Đã giao hàng",
-          color: "bg-gradient-to-r from-teal-50 to-emerald-100 text-emerald-600 border-emerald-200/50 dark:from-teal-900/20 dark:to-emerald-800/20 dark:text-emerald-300 dark:border-emerald-700/30",
+          color: "bg-gradient-to-r from-indigo-50 to-rose-100 text-rose-600 border-blue-200/50 dark:from-indigo-900/20 dark:to-pink-800/20 dark:text-cyan-300 dark:border-rose-700/30",
           icon: <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
         };
       case OrderStatus.COMPLETED:
         return {
           label: "Hoàn thành",
-          color: "bg-gradient-to-r from-green-50 to-teal-100 text-teal-600 border-teal-200/50 dark:from-green-900/20 dark:to-teal-800/20 dark:text-teal-300 dark:border-teal-700/30",
+          color: "bg-gradient-to-r from-rose-50 to-indigo-100 text-indigo-600 border-indigo-200/50 dark:from-rose-900/20 dark:to-indigo-800/20 dark:text-indigo-300 dark:border-indigo-700/30",
           icon: <ShoppingBag className="h-3.5 w-3.5 mr-1" />
         };
       case OrderStatus.CANCELLED:
@@ -108,14 +108,14 @@ export const OrdersViewDetails = memo(function OrdersViewDetails({
       case PaymentMethod.CREDIT_CARD:
         return {
           label: "Thẻ tín dụng",
-          color: "text-blue-600 dark:text-blue-400",
-          icon: <CreditCard className="h-4 w-4 text-blue-500 dark:text-blue-400" />
+          color: "text-rose-600 dark:text-blue-400",
+          icon: <CreditCard className="h-4 w-4 text-rose-500 dark:text-blue-400" />
         };
       case PaymentMethod.BANK_TRANSFER:
         return {
           label: "Chuyển khoản ngân hàng",
-          color: "text-green-600 dark:text-green-400",
-          icon: <CheckCircle2 className="h-4 w-4 text-green-500 dark:text-green-400" />
+          color: "text-rose-600 dark:text-violet-400",
+          icon: <CheckCircle2 className="h-4 w-4 text-violet-500 dark:text-violet-400" />
         };
       default:
         return {

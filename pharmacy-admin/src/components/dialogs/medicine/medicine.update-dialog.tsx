@@ -456,7 +456,7 @@ export function MedicineUpdateDialog({ currentMedicine, open, onOpenChange }: Me
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="IN-STOCK" className="text-green-600">Còn hàng</SelectItem>
+                            <SelectItem value="IN-STOCK" className="text-blue-600">Còn hàng</SelectItem>
                             <SelectItem value="LOW-STOCK" className="text-amber-600">Sắp hết hàng</SelectItem>
                             <SelectItem value="OUT-OF-STOCK" className="text-red-600">Hết hàng</SelectItem>
                           </SelectContent>
@@ -645,8 +645,8 @@ export function MedicineUpdateDialog({ currentMedicine, open, onOpenChange }: Me
 
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Liều dùng */}
-                <div className="p-4 bg-green-50 rounded-lg space-y-4">
-                  <h4 className="text-green-700 font-medium">Liều dùng</h4>
+                <div className="p-4 bg-blue-50 rounded-lg space-y-4">
+                  <h4 className="text-blue-700 font-medium">Liều dùng</h4>
                   
                   <FormField
                     control={form.control}

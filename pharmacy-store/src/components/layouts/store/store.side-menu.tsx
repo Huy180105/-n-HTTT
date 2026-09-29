@@ -21,9 +21,9 @@ export function StoreSideMenu() {
       <SheetTrigger asChild>
         <Button 
           variant="ghost" 
-          className="p-2 hover:bg-teal-50 dark:hover:bg-teal-900/30 transition-all duration-300 ease-out rounded-lg hover:scale-105 border border-transparent hover:border-teal-200 dark:hover:border-teal-800/50"
+          className="p-2 hover:bg-cyan-50 dark:hover:bg-violet-900/30 transition-all duration-300 ease-out rounded-lg hover:scale-105 border border-transparent hover:border-violet-200 dark:hover:border-violet-800/50"
         >
-          <Icons.menu className="w-5 h-5 text-foreground/80 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300" />
+          <Icons.menu className="w-5 h-5 text-foreground/80 hover:text-violet-600 dark:hover:text-cyan-400 transition-colors duration-300" />
         </Button>
       </SheetTrigger>
 
@@ -43,13 +43,13 @@ export function StoreSideMenu() {
                 key={index}
                 to={href}
                 onClick={handleLinkClick}
-                className="group relative text-lg md:text-2xl font-bold uppercase text-foreground/90 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-500 ease-out transform hover:translate-x-3 hover:scale-105 py-2 px-3 rounded-lg"
+                className="group relative text-lg md:text-2xl font-bold uppercase text-foreground/90 hover:text-violet-600 dark:hover:text-cyan-400 transition-all duration-500 ease-out transform hover:translate-x-3 hover:scale-105 py-2 px-3 rounded-lg"
               >
                 <span className="relative z-10">{title}</span>
                 {/* Hover background effect */}
-                <div className="absolute inset-0 bg-teal-50 dark:bg-teal-900/20 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left rounded-md -z-10" />
+                <div className="absolute inset-0 bg-cyan-50 dark:bg-violet-900/20 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left rounded-md -z-10" />
                 {/* Animated underline */}
-                <div className="absolute bottom-0 left-3 right-3 h-0.5 bg-teal-500 dark:bg-teal-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left" />
+                <div className="absolute bottom-0 left-3 right-3 h-0.5 bg-cyan-500 dark:bg-cyan-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-left" />
               </Link>
             ))}
           </div>
@@ -58,7 +58,7 @@ export function StoreSideMenu() {
           <div className="mt-12 pt-6 border-t border-border/50">
             <div className="relative mb-3">
               {/* Subtle glow effect for branding in dark mode */}
-              <div className="absolute inset-0 bg-teal-500/5 dark:bg-teal-400/10 blur-xl rounded-lg opacity-0 dark:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-cyan-500/5 dark:bg-cyan-400/10 blur-xl rounded-lg opacity-0 dark:opacity-100 transition-opacity duration-500" />
               <Branding className="relative text-xl md:text-3xl text-foreground font-extrabold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text" />
             </div>
 
@@ -69,7 +69,7 @@ export function StoreSideMenu() {
               <p className="text-xs md:text-sm font-medium">
                 <span>74DCHT21108</span> {` / `}
                 <Link
-                  className="hover:underline hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300 ease-out inline-block text-muted-foreground/80 dark:text-muted-foreground"
+                  className="hover:underline hover:text-violet-600 dark:hover:text-cyan-400 transition-all duration-300 ease-out inline-block text-muted-foreground/80 dark:text-muted-foreground"
                   to="mailto:qhuy180105@gmail.com"
                 >
                   qhuy180105@gmail.com

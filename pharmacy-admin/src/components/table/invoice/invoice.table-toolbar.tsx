@@ -55,23 +55,23 @@ export function InvoiceTableToolbar({ table, searchTerm, onSearchChange, filters
       initial={{ opacity: 0.9, y: 5 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
-      className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white dark:bg-slate-950 rounded-lg p-2 shadow-sm border border-emerald-100 dark:border-emerald-800/30"
+      className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white dark:bg-slate-950 rounded-lg p-2 shadow-sm border border-blue-100 dark:border-blue-800/30"
     >
       <div className="flex w-full sm:w-auto items-center gap-2">
         <div className="relative w-full sm:w-72 md:w-80">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-emerald-500 dark:text-emerald-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-cyan-500 dark:text-cyan-400" />
           <Input
             placeholder="Tìm kiếm hóa đơn (nhấn Enter)..."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
-            className="w-full pl-9 h-10 shadow-none bg-emerald-50/50 dark:bg-slate-900 border border-emerald-100 dark:border-emerald-800/40 rounded-lg focus-visible:ring-emerald-500"
+            className="w-full pl-9 h-10 shadow-none bg-blue-50/50 dark:bg-slate-900 border border-blue-100 dark:border-blue-800/40 rounded-lg focus-visible:ring-cyan-500"
           />
           {searchTerm && (
             <Button
               variant="ghost"
               size="sm"
-              className="absolute right-1 top-1/2 -translate-y-1/2 h-6 w-6 p-0 text-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-full"
+              className="absolute right-1 top-1/2 -translate-y-1/2 h-6 w-6 p-0 text-cyan-500 hover:text-blue-600 dark:hover:text-cyan-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full"
               onClick={handleClearFilters}
             >
               <X className="h-3.5 w-3.5" />
@@ -89,7 +89,7 @@ export function InvoiceTableToolbar({ table, searchTerm, onSearchChange, filters
                 label: "Đã thanh toán",
                 value: InvoiceStatus.PAID,
                 icon: CheckCircle2,
-                color: "bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400",
+                color: "bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-violet-400",
               }, {
                 label: "Chờ thanh toán",
                 value: InvoiceStatus.PENDING,
@@ -124,7 +124,7 @@ export function InvoiceTableToolbar({ table, searchTerm, onSearchChange, filters
             <Button
               variant="ghost"
               size="sm"
-              className="h-10 px-3 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400"
+              className="h-10 px-3 text-blue-700 dark:text-cyan-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-cyan-400"
               onClick={handleClearFilters}
             >
               <RotateCcw className="mr-2 h-3.5 w-3.5" />
@@ -135,7 +135,7 @@ export function InvoiceTableToolbar({ table, searchTerm, onSearchChange, filters
 
         <Button
           variant="outline"
-          className="h-10 border-emerald-200 dark:border-emerald-800/40 bg-white dark:bg-slate-900 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20"
+          className="h-10 border-blue-200 dark:border-blue-800/40 bg-white dark:bg-slate-900 text-blue-700 dark:text-cyan-400 hover:bg-blue-50 dark:hover:bg-blue-900/20"
           onClick={handleExportExcel}
           disabled={exportInvoiceExcel.isPending}
         >

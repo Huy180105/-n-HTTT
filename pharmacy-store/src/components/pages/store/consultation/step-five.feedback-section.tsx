@@ -92,7 +92,7 @@ export const StepFiveFeedbackSection = () => {
             Chúng tôi sẽ liên hệ với bạn nếu cần hỗ trợ thêm về đơn hàng 📞
             <br />
             <span className="font-medium">Hotline: 1900-1234</span> | 
-            <span className="font-medium"> Email: support@pharmacity.vn</span>
+            <span className="font-medium"> Email: support@medicare.vn</span>
           </p>
         </CardContent>
       </Card>

@@ -28,8 +28,8 @@ const AddressCard = memo(({ address, index }: { address: UserAddress; index: num
         <div className="flex items-center gap-2">
           <p className="font-medium text-base">{address.name || `Địa chỉ ${index + 1}`}</p>
           {address.isDefault && (
-            <Badge className="bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 text-xs h-5 px-2 py-0 flex items-center gap-1 border-none">
-              <Star className="h-3 w-3 fill-emerald-500 dark:fill-emerald-400" /> Mặc định
+            <Badge className="bg-blue-50 text-blue-700 dark:bg-blue-950/30 dark:text-cyan-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 text-xs h-5 px-2 py-0 flex items-center gap-1 border-none">
+              <Star className="h-3 w-3 fill-cyan-500 dark:fill-cyan-400" /> Mặc định
             </Badge>
           )}
         </div>
@@ -42,7 +42,7 @@ const AddressCard = memo(({ address, index }: { address: UserAddress; index: num
         </p>
         <p className="text-sm text-muted-foreground">{address.country}</p>
         <div className="flex items-center gap-2 mt-3 bg-muted/30 px-3 py-1.5 rounded-md">
-          <Phone className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+          <Phone className="h-3.5 w-3.5 text-blue-600 dark:text-cyan-400" />
           <p className="text-xs font-medium">{address.phone}</p>
         </div>
       </div>
@@ -76,7 +76,7 @@ const getStatusBadge = (status: string) => {
     case AccountStatus.ACTIVE:
       return {
         label: 'Hoạt động',
-        className: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900/50'
+        className: 'bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-cyan-400 border-blue-200 dark:border-blue-900/50'
       };
     case AccountStatus.SUSPENDED:
       return {
@@ -126,9 +126,9 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
           {/* Tiêu đề với thông tin người dùng */}
           <div className="relative overflow-hidden">
             {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-full h-full bg-emerald-50/80 dark:bg-emerald-950/20 z-0" />
-            <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-gradient-to-br from-emerald-200/40 to-emerald-50/5 dark:from-emerald-800/20 dark:to-emerald-950/5 blur-xl z-0" />
-            <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-gradient-to-tr from-emerald-100/30 to-transparent dark:from-emerald-900/20 blur-lg z-0" />
+            <div className="absolute top-0 left-0 w-full h-full bg-blue-50/80 dark:bg-blue-950/20 z-0" />
+            <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-gradient-to-br from-blue-200/40 to-blue-50/5 dark:from-blue-800/20 dark:to-blue-950/5 blur-xl z-0" />
+            <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-gradient-to-tr from-blue-100/30 to-transparent dark:from-blue-900/20 blur-lg z-0" />
 
             <div className="relative p-6">
               <SheetHeader className="pb-3">
@@ -137,7 +137,7 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <SheetTitle className="text-2xl tracking-tight font-bold text-emerald-800 dark:text-emerald-300">
+                  <SheetTitle className="text-2xl tracking-tight font-bold text-blue-800 dark:text-cyan-300">
                     Hồ sơ người dùng
                   </SheetTitle>
                   <SheetDescription className="text-muted-foreground text-base mt-1">
@@ -160,7 +160,7 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
                       className="object-cover"
                     />
                   ) : null}
-                  <AvatarFallback className="bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 text-2xl font-bold">
+                  <AvatarFallback className="bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-cyan-300 text-2xl font-bold">
                     {`${currentAccount.firstname?.[0] || ''}${currentAccount.lastname?.[0] || ''}`.toUpperCase()}
                   </AvatarFallback>
                 </Avatar>
@@ -197,10 +197,10 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
             <div className="space-y-4">
               <motion.div 
                 variants={itemVariants}
-                className="flex items-center gap-4 bg-muted/10 p-4 rounded-xl hover:bg-emerald-50/50 dark:hover:bg-emerald-950/10 transition-colors border border-border/30 hover:border-emerald-200 dark:hover:border-emerald-800/30"
+                className="flex items-center gap-4 bg-muted/10 p-4 rounded-xl hover:bg-blue-50/50 dark:hover:bg-blue-950/10 transition-colors border border-border/30 hover:border-blue-200 dark:hover:border-blue-800/30"
               >
-                <div className="bg-emerald-100/60 dark:bg-emerald-900/30 p-3 rounded-full flex items-center justify-center">
-                  <Mail className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                <div className="bg-blue-100/60 dark:bg-blue-900/30 p-3 rounded-full flex items-center justify-center">
+                  <Mail className="h-5 w-5 text-blue-600 dark:text-cyan-400" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-muted-foreground mb-1">Email</p>
@@ -210,10 +210,10 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
 
               <motion.div 
                 variants={itemVariants}
-                className="flex items-center gap-4 bg-muted/10 p-4 rounded-xl hover:bg-emerald-50/50 dark:hover:bg-emerald-950/10 transition-colors border border-border/30 hover:border-emerald-200 dark:hover:border-emerald-800/30"
+                className="flex items-center gap-4 bg-muted/10 p-4 rounded-xl hover:bg-blue-50/50 dark:hover:bg-blue-950/10 transition-colors border border-border/30 hover:border-blue-200 dark:hover:border-blue-800/30"
               >
-                <div className="bg-emerald-100/60 dark:bg-emerald-900/30 p-3 rounded-full flex items-center justify-center">
-                  <Phone className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                <div className="bg-blue-100/60 dark:bg-blue-900/30 p-3 rounded-full flex items-center justify-center">
+                  <Phone className="h-5 w-5 text-blue-600 dark:text-cyan-400" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-muted-foreground mb-1">Số điện thoại</p>
@@ -223,10 +223,10 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
 
               <motion.div 
                 variants={itemVariants}
-                className="flex items-center gap-4 bg-muted/10 p-4 rounded-xl hover:bg-emerald-50/50 dark:hover:bg-emerald-950/10 transition-colors border border-border/30 hover:border-emerald-200 dark:hover:border-emerald-800/30"
+                className="flex items-center gap-4 bg-muted/10 p-4 rounded-xl hover:bg-blue-50/50 dark:hover:bg-blue-950/10 transition-colors border border-border/30 hover:border-blue-200 dark:hover:border-blue-800/30"
               >
-                <div className="bg-emerald-100/60 dark:bg-emerald-900/30 p-3 rounded-full flex items-center justify-center">
-                  <UserCircle className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                <div className="bg-blue-100/60 dark:bg-blue-900/30 p-3 rounded-full flex items-center justify-center">
+                  <UserCircle className="h-5 w-5 text-blue-600 dark:text-cyan-400" />
                 </div>
                 <div className="flex flex-col gap-3 flex-1">
                   <div>
@@ -251,19 +251,19 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
               <motion.div variants={itemVariants} className="mt-2">
                 <div className="flex justify-between items-center mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="bg-emerald-100/60 dark:bg-emerald-900/30 p-2 rounded-full flex items-center justify-center">
-                      <MapPin className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                    <div className="bg-blue-100/60 dark:bg-blue-900/30 p-2 rounded-full flex items-center justify-center">
+                      <MapPin className="h-5 w-5 text-blue-600 dark:text-cyan-400" />
                     </div>
                     <h3 className="text-base font-semibold">Địa chỉ</h3>
                   </div>
-                  <Badge variant="outline" className="bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 text-xs font-normal px-3 py-1 shadow-sm border-emerald-200 dark:border-emerald-800/50">
+                  <Badge variant="outline" className="bg-blue-50 text-blue-700 dark:bg-blue-950/30 dark:text-cyan-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 text-xs font-normal px-3 py-1 shadow-sm border-blue-200 dark:border-blue-800/50">
                     {currentAccount.addresses?.length || 0} địa chỉ
                   </Badge>
                 </div>
 
-                <div className="border rounded-xl overflow-hidden bg-muted/5 shadow-sm border-border/50 hover:border-emerald-200 dark:hover:border-emerald-800/30 transition-colors">
+                <div className="border rounded-xl overflow-hidden bg-muted/5 shadow-sm border-border/50 hover:border-blue-200 dark:hover:border-blue-800/30 transition-colors">
                   {currentAccount.addresses && currentAccount.addresses.length > 0 ? (
-                    <div className="p-2 max-h-[300px] overflow-y-auto will-change-transform scrollbar-thin scrollbar-thumb-emerald-200 dark:scrollbar-thumb-emerald-800/30 scrollbar-track-transparent">
+                    <div className="p-2 max-h-[300px] overflow-y-auto will-change-transform scrollbar-thin scrollbar-thumb-blue-200 dark:scrollbar-thumb-blue-800/30 scrollbar-track-transparent">
                       {/* Chỉ render địa chỉ có thể nhìn thấy */}
                       {currentAccount.addresses.slice(0, 10).map((address, index) => (
                         <AddressCard key={address.id || index} address={address} index={index} />
@@ -276,8 +276,8 @@ export const ViewAccountSheet = memo(function ViewAccountSheet({ currentAccount,
                     </div>
                   ) : (
                     <div className="p-6 text-center">
-                      <div className="mx-auto w-16 h-16 rounded-full bg-emerald-50/70 dark:bg-emerald-950/30 flex items-center justify-center mb-3">
-                        <MapPin className="h-7 w-7 text-emerald-400/50 dark:text-emerald-500/40" />
+                      <div className="mx-auto w-16 h-16 rounded-full bg-blue-50/70 dark:bg-blue-950/30 flex items-center justify-center mb-3">
+                        <MapPin className="h-7 w-7 text-cyan-400/50 dark:text-cyan-500/40" />
                       </div>
                       <p className="text-base text-muted-foreground">Không tìm thấy địa chỉ</p>
                       <p className="text-sm text-muted-foreground/70 mt-1">Người dùng chưa thêm địa chỉ nào</p>

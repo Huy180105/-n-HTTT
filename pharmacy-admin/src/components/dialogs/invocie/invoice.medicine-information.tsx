@@ -108,7 +108,7 @@ export function InvoiceMedicineInformation({ form }: Props) {
                                   </div>
                                 </div>
                               </div>
-                              <div className="text-xs text-emerald-600 font-medium">
+                              <div className="text-xs text-blue-600 font-medium">
                                 {formatCurrency(medicine.variants.price)}
                               </div>
                             </div>
@@ -174,7 +174,7 @@ export function InvoiceMedicineInformation({ form }: Props) {
             <div className="flex justify-end">
               <div className="text-right">
                 <span className="text-xs text-muted-foreground">Thành tiền: </span>
-                <span className="font-semibold text-emerald-600 text-sm">
+                <span className="font-semibold text-blue-600 text-sm">
                   {formatCurrency(items[index]?.quantity * items[index]?.price || 0)}
                 </span>
               </div>
@@ -187,7 +187,7 @@ export function InvoiceMedicineInformation({ form }: Props) {
         {/* Tổng tiền */}
         <div className="flex justify-end">
           <div className="text-right space-y-1">
-            <div className="text-lg font-semibold text-emerald-700 dark:text-emerald-300">
+            <div className="text-lg font-semibold text-blue-700 dark:text-cyan-300">
               Tổng cộng: {formatCurrency(totalAmount)}
             </div>
             <div className="text-xs text-muted-foreground">

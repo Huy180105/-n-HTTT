@@ -39,6 +39,20 @@ export function OrderDialog() {
 
       <OrdersChangeStatusDialog
         currentOrder={currentOrder || undefined}
+        open={open === "ship"}
+        onOpenChange={(isOpen) => handleOpenChange(isOpen, "ship")}
+        mode={OrderStatus.SHIPPED}
+      />
+
+      <OrdersChangeStatusDialog
+        currentOrder={currentOrder || undefined}
+        open={open === "deliver"}
+        onOpenChange={(isOpen) => handleOpenChange(isOpen, "deliver")}
+        mode={OrderStatus.DELIVERED}
+      />
+
+      <OrdersChangeStatusDialog
+        currentOrder={currentOrder || undefined}
         open={open === "complete"}
         onOpenChange={(isOpen) => handleOpenChange(isOpen, "complete")}
         mode={OrderStatus.COMPLETED}

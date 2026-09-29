@@ -40,15 +40,15 @@ export function OrderTabs({
 
   if (isLoading) {
     return (
-      <Card className="border-emerald-100 dark:border-emerald-800/30 shadow-sm overflow-hidden">
-        <CardHeader className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/20 dark:to-teal-950/20 border-b border-emerald-100 dark:border-emerald-800/30">
+      <Card className="border-violet-100 dark:border-violet-800/30 shadow-sm overflow-hidden">
+        <CardHeader className="bg-gradient-to-r from-violet-50 to-cyan-50 dark:from-violet-950/20 dark:to-violet-950/20 border-b border-violet-100 dark:border-violet-800/30">
           <div className="flex items-center gap-2">
-            <div className="h-6 w-40 bg-emerald-100 dark:bg-emerald-800/30 animate-pulse rounded" />
+            <div className="h-6 w-40 bg-violet-100 dark:bg-violet-800/30 animate-pulse rounded" />
           </div>
         </CardHeader>
         <CardContent className="p-0">
           <div className="p-4 flex items-center justify-center">
-            <div className="h-8 w-full max-w-md bg-emerald-50 dark:bg-emerald-900/20 animate-pulse rounded-lg" />
+            <div className="h-8 w-full max-w-md bg-violet-50 dark:bg-violet-900/20 animate-pulse rounded-lg" />
           </div>
         </CardContent>
       </Card>
@@ -57,14 +57,14 @@ export function OrderTabs({
 
   if (isError) {
     return (
-      <Card className="border-emerald-100 dark:border-emerald-800/30 shadow-sm overflow-hidden">
+      <Card className="border-violet-100 dark:border-violet-800/30 shadow-sm overflow-hidden">
         <CardContent className="flex flex-col items-center justify-center py-20">
           <div className="mx-auto w-20 h-20 bg-red-100 text-red-600 dark:bg-red-900/40 dark:text-red-400 rounded-full flex items-center justify-center mb-4">
             <AlertCircle className="h-10 w-10" />
           </div>
           <h2 className="mt-2 text-xl font-semibold">Không thể tải đơn hàng</h2>
           <p className="mt-3 text-center text-muted-foreground max-w-md mx-auto">Có lỗi xảy ra khi tải danh sách đơn hàng. Vui lòng thử lại sau hoặc liên hệ hỗ trợ.</p>
-          <Button className="mt-8 px-6 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-700" onClick={() => window.location.reload()}>
+          <Button className="mt-8 px-6 bg-violet-600 hover:bg-violet-700 dark:bg-violet-600 dark:hover:bg-violet-700" onClick={() => window.location.reload()}>
             Thử lại
           </Button>
         </CardContent>
@@ -76,14 +76,14 @@ export function OrderTabs({
     return (
       <Card className="border-dashed bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900/50 dark:to-gray-900/30 shadow-sm">
         <CardContent className="flex flex-col items-center justify-center py-20">
-          <div className="flex items-center justify-center w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400 mb-4">
+          <div className="flex items-center justify-center w-20 h-20 rounded-full bg-violet-100 text-violet-600 dark:bg-violet-900/40 dark:text-cyan-400 mb-4">
             <ShoppingBag className="h-10 w-10" />
           </div>
           <h2 className="mt-2 text-xl font-semibold">Bạn chưa có đơn hàng nào</h2>
           <p className="mt-3 text-center text-muted-foreground max-w-md mx-auto">
             Lịch sử đơn hàng của bạn sẽ xuất hiện ở đây. Hãy khám phá và mua sắm ngay!
           </p>
-          <Button asChild size="lg" className="mt-8 px-6 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-700">
+          <Button asChild size="lg" className="mt-8 px-6 bg-violet-600 hover:bg-violet-700 dark:bg-violet-600 dark:hover:bg-violet-700">
             <a href={routes.store.medicines} className="flex items-center gap-2">
               <ChevronLeft className="h-4 w-4" />
               Tiếp tục mua sắm
@@ -95,21 +95,21 @@ export function OrderTabs({
   }
 
   return (
-    <Card className="border-emerald-100 dark:border-emerald-800/30 shadow-sm overflow-hidden">
-      <CardHeader className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/20 dark:to-teal-950/20 border-b border-emerald-100 dark:border-emerald-800/30">
+    <Card className="border-violet-100 dark:border-violet-800/30 shadow-sm overflow-hidden">
+      <CardHeader className="bg-gradient-to-r from-violet-50 to-cyan-50 dark:from-violet-950/20 dark:to-violet-950/20 border-b border-violet-100 dark:border-violet-800/30">
         <CardTitle className="flex items-center gap-2">
-          <ShoppingBag className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+          <ShoppingBag className="h-5 w-5 text-violet-600 dark:text-cyan-400" />
           Đơn hàng của bạn
-          <Badge variant="outline" className="ml-2 bg-emerald-50 hover:bg-emerald-100/80 text-emerald-600 hover:text-emerald-700 border-emerald-200 hover:border-emerald-300 dark:bg-emerald-900/30 dark:hover:bg-emerald-900/40 dark:text-emerald-400 dark:hover:text-emerald-300 dark:border-emerald-800/40 dark:hover:border-emerald-700/60 transition-colors duration-200">
+          <Badge variant="outline" className="ml-2 bg-violet-50 hover:bg-violet-100/80 text-violet-600 hover:text-violet-700 border-violet-200 hover:border-cyan-300 dark:bg-violet-900/30 dark:hover:bg-violet-900/40 dark:text-cyan-400 dark:hover:text-cyan-300 dark:border-violet-800/40 dark:hover:border-violet-700/60 transition-colors duration-200">
             {orders.length}
           </Badge>
         </CardTitle>
       </CardHeader>
       <CardContent className="p-0">
         <Tabs defaultValue="all" className="w-full">
-          <div className="p-4 pt-6 pb-0 bg-gradient-to-r from-emerald-50/70 to-emerald-50/50 dark:from-emerald-950/30 dark:to-emerald-950/20 border-b border-emerald-100/80 dark:border-emerald-900/30 overflow-hidden">
-            <TabsList className="grid grid-cols-5 gap-1 sm:gap-1.5 w-full max-w-3xl mx-auto bg-white/60 dark:bg-gray-800/40 p-1 sm:p-1.5 rounded-xl shadow-sm border border-emerald-100/80 dark:border-emerald-900/30">
-              <TabsTrigger value="all" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600 data-[state=active]:to-emerald-500 dark:data-[state=active]:from-emerald-500 dark:data-[state=active]:to-emerald-600 data-[state=active]:text-white data-[state=active]:shadow-md rounded-lg transition-all duration-200 font-medium py-1.5">
+          <div className="p-4 pt-6 pb-0 bg-gradient-to-r from-violet-50/70 to-violet-50/50 dark:from-violet-950/30 dark:to-violet-950/20 border-b border-violet-100/80 dark:border-violet-900/30 overflow-hidden">
+            <TabsList className="grid grid-cols-5 gap-1 sm:gap-1.5 w-full max-w-3xl mx-auto bg-white/60 dark:bg-gray-800/40 p-1 sm:p-1.5 rounded-xl shadow-sm border border-violet-100/80 dark:border-violet-900/30">
+              <TabsTrigger value="all" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-600 data-[state=active]:to-cyan-500 dark:data-[state=active]:from-cyan-500 dark:data-[state=active]:to-violet-600 data-[state=active]:text-white data-[state=active]:shadow-md rounded-lg transition-all duration-200 font-medium py-1.5">
                 <span className="flex items-center justify-center gap-1.5">
                   <ShoppingBag className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   <span className="hidden sm:inline text-xs sm:text-sm">Tất cả</span>
@@ -126,24 +126,24 @@ export function OrderTabs({
                   </Badge>
                 )}
               </TabsTrigger>
-              <TabsTrigger value="delivered" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-teal-600 data-[state=active]:to-teal-500 dark:data-[state=active]:from-teal-500 dark:data-[state=active]:to-teal-600 data-[state=active]:text-white data-[state=active]:shadow-md rounded-lg transition-all duration-200 font-medium py-1.5">
+              <TabsTrigger value="delivered" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-600 data-[state=active]:to-cyan-500 dark:data-[state=active]:from-cyan-500 dark:data-[state=active]:to-violet-600 data-[state=active]:text-white data-[state=active]:shadow-md rounded-lg transition-all duration-200 font-medium py-1.5">
                 <span className="flex items-center justify-center gap-1.5">
                   <TruckIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   <span className="hidden sm:inline text-xs sm:text-sm">Đã giao</span>
                 </span>
                 {deliveredOrders && deliveredOrders.length > 0 && (
-                  <Badge variant="secondary" className="ml-1 text-xs px-1.5 py-0 min-w-4 flex items-center justify-center bg-white hover:bg-teal-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-teal-700 hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-300 shadow-sm dark:shadow-none transition-colors duration-200">
+                  <Badge variant="secondary" className="ml-1 text-xs px-1.5 py-0 min-w-4 flex items-center justify-center bg-white hover:bg-cyan-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-violet-700 hover:text-violet-800 dark:text-cyan-400 dark:hover:text-cyan-300 shadow-sm dark:shadow-none transition-colors duration-200">
                     {deliveredOrders.length}
                   </Badge>
                 )}
               </TabsTrigger>
-              <TabsTrigger value="completed" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-600 data-[state=active]:to-emerald-500 dark:data-[state=active]:from-emerald-500 dark:data-[state=active]:to-emerald-600 data-[state=active]:text-white data-[state=active]:shadow-md rounded-lg transition-all duration-200 font-medium py-1.5">
+              <TabsTrigger value="completed" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-600 data-[state=active]:to-cyan-500 dark:data-[state=active]:from-cyan-500 dark:data-[state=active]:to-violet-600 data-[state=active]:text-white data-[state=active]:shadow-md rounded-lg transition-all duration-200 font-medium py-1.5">
                 <span className="flex items-center justify-center gap-1.5">
                   <Package className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   <span className="hidden sm:inline text-xs sm:text-sm">Hoàn thành</span>
                 </span>
                 {completedOrders && completedOrders.length > 0 && (
-                  <Badge variant="secondary" className="ml-1 text-xs px-1.5 py-0 min-w-4 flex items-center justify-center bg-white hover:bg-emerald-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-emerald-700 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300 shadow-sm dark:shadow-none transition-colors duration-200">
+                  <Badge variant="secondary" className="ml-1 text-xs px-1.5 py-0 min-w-4 flex items-center justify-center bg-white hover:bg-violet-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-violet-700 hover:text-violet-800 dark:text-cyan-400 dark:hover:text-cyan-300 shadow-sm dark:shadow-none transition-colors duration-200">
                     {completedOrders.length}
                   </Badge>
                 )}
@@ -235,8 +235,8 @@ export function OrderTabs({
           </div>
         </Tabs>
       </CardContent>
-      <CardFooter className="flex justify-between p-4 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/20 dark:to-teal-950/20 border-t border-emerald-100 dark:border-emerald-800/30">
-        <Button variant="outline" asChild className="border-emerald-200 dark:border-emerald-800/50 hover:bg-emerald-100 dark:hover:bg-emerald-800/30">
+      <CardFooter className="flex justify-between p-4 bg-gradient-to-r from-violet-50 to-cyan-50 dark:from-violet-950/20 dark:to-violet-950/20 border-t border-violet-100 dark:border-violet-800/30">
+        <Button variant="outline" asChild className="border-violet-200 dark:border-violet-800/50 hover:bg-violet-100 dark:hover:bg-violet-800/30">
           <a href={routes.store.medicines} className="flex items-center gap-2">
             <ChevronLeft className="h-4 w-4" />
             Tiếp tục mua sắm

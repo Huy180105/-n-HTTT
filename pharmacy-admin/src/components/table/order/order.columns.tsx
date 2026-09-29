@@ -196,7 +196,7 @@ export const orderColumns: ColumnDef<OrderResponse>[] = [
             };
           case OrderStatus.PROCESSING:
             return {
-              color: "bg-gradient-to-r from-blue-50 to-indigo-100 text-blue-600 border-blue-200/50 dark:from-blue-900/20 dark:to-indigo-800/20 dark:text-blue-300 dark:border-blue-700/30",
+              color: "bg-gradient-to-r from-rose-50 to-indigo-100 text-rose-600 border-blue-200/50 dark:from-rose-900/20 dark:to-indigo-800/20 dark:text-blue-300 dark:border-rose-700/30",
               icon: <Clock className="h-3.5 w-3.5 mr-1" />
             };
           case OrderStatus.SHIPPED:
@@ -206,12 +206,12 @@ export const orderColumns: ColumnDef<OrderResponse>[] = [
             };
           case OrderStatus.DELIVERED:
             return {
-              color: "bg-gradient-to-r from-teal-50 to-emerald-100 text-emerald-600 border-emerald-200/50 dark:from-teal-900/20 dark:to-emerald-800/20 dark:text-emerald-300 dark:border-emerald-700/30",
+              color: "bg-gradient-to-r from-indigo-50 to-rose-100 text-rose-600 border-blue-200/50 dark:from-indigo-900/20 dark:to-pink-800/20 dark:text-cyan-300 dark:border-rose-700/30",
               icon: <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
             };
           case OrderStatus.COMPLETED:
             return {
-              color: "bg-gradient-to-r from-green-50 to-teal-100 text-teal-600 border-teal-200/50 dark:from-green-900/20 dark:to-teal-800/20 dark:text-teal-300 dark:border-teal-700/30",
+              color: "bg-gradient-to-r from-rose-50 to-indigo-100 text-indigo-600 border-indigo-200/50 dark:from-rose-900/20 dark:to-indigo-800/20 dark:text-indigo-300 dark:border-indigo-700/30",
               icon: <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
             };
           case OrderStatus.CANCELLED:
@@ -260,13 +260,13 @@ export const orderColumns: ColumnDef<OrderResponse>[] = [
           case PaymentMethod.CREDIT_CARD:
             return {
               text: "Thẻ tín dụng",
-              color: "border-blue-200/50 bg-gradient-to-r from-blue-50 to-indigo-100 text-blue-600 dark:border-blue-800/30 dark:from-blue-900/20 dark:to-indigo-900/20 dark:text-blue-300",
+              color: "border-blue-200/50 bg-gradient-to-r from-rose-50 to-indigo-100 text-rose-600 dark:border-blue-800/30 dark:from-rose-900/20 dark:to-indigo-900/20 dark:text-blue-300",
               icon: <CreditCard className="h-3 w-3 mr-1" />
             };
           case PaymentMethod.BANK_TRANSFER:
             return {
               text: "Chuyển khoản",
-              color: "border-teal-200/50 bg-gradient-to-r from-teal-50 to-green-100 text-teal-600 dark:border-teal-800/30 dark:from-teal-900/20 dark:to-green-900/20 dark:text-teal-300",
+              color: "border-indigo-200/50 bg-gradient-to-r from-indigo-50 to-rose-100 text-indigo-600 dark:border-indigo-800/30 dark:from-indigo-900/20 dark:to-pink-900/20 dark:text-indigo-300",
               icon: <CheckCircle2 className="h-3 w-3 mr-1" />
             };
           default:

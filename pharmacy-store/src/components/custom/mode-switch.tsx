@@ -24,7 +24,7 @@ export function ModeSwitcher() {
       variant="outline"
       className={cn(
         "relative size-8 rounded-full border-none",
-        "bg-green-50/80 hover:bg-green-100/90 dark:bg-green-900/30 dark:hover:bg-green-800/50",
+        "bg-violet-50/80 hover:bg-violet-100/90 dark:bg-violet-900/30 dark:hover:bg-violet-800/50",
         "transition-all duration-300 ease-in-out"
       )}
       pressed={isDark}
@@ -34,7 +34,7 @@ export function ModeSwitcher() {
       <div 
         className={cn(
           "absolute inset-0 rounded-full",
-          "bg-gradient-to-br from-green-100 to-teal-50 dark:from-green-900 dark:to-emerald-950",
+          "bg-gradient-to-br from-violet-100 to-cyan-50 dark:from-violet-900 dark:to-violet-950",
           "opacity-0 transition-opacity duration-500",
           isDark ? "opacity-100" : "opacity-0"
         )}
@@ -54,7 +54,7 @@ export function ModeSwitcher() {
         size={14}
         className={cn(
           "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
-          "text-green-800 dark:text-green-200",
+          "text-violet-800 dark:text-violet-200",
           "transition-all duration-300",
           isDark ? "opacity-0 -rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"
         )}

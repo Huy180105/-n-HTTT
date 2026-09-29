@@ -33,9 +33,9 @@ export function AccountSidebar() {
 
   return (
     <div className="w-72 space-y-6">
-      <div className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-green-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden sticky top-6">
+      <div className="bg-white/90 dark:bg-gray-950/90 shadow-xl dark:shadow-violet-900/5 border border-gray-100 dark:border-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden sticky top-6">
         {/* User Profile Card */}
-        <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-6 relative">
+        <div className="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 text-white p-6 relative">
           {/* Decoration */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
           <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/10 rounded-full -ml-10 -mb-10"></div>
@@ -49,7 +49,7 @@ export function AccountSidebar() {
                     alt={user.profileImage.alt || `${user.firstname} ${user.lastname}`} 
                   />
                 ) : null}
-                <AvatarFallback className="bg-emerald-800 text-white text-xl font-semibold">
+                <AvatarFallback className="bg-violet-800 text-white text-xl font-semibold">
                   {getInitials()}
                 </AvatarFallback>
               </Avatar>
@@ -59,7 +59,7 @@ export function AccountSidebar() {
                 ? `${user.firstname} ${user.lastname}`
                 : "Người dùng"}
             </h3>
-            <p className="text-emerald-100 text-sm mb-2">
+            <p className="text-violet-100 text-sm mb-2">
               {user?.role || "Khách hàng"}
             </p>
             <Badge className="bg-white/20 hover:bg-white/30 text-white border-white/30 font-normal">
@@ -81,21 +81,21 @@ export function AccountSidebar() {
                     className={cn(
                       "flex items-center gap-3 px-3 py-2.5 text-sm rounded-lg transition-all duration-200",
                       pathname === item.href
-                        ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-medium shadow-md shadow-emerald-500/20"
-                        : "hover:bg-emerald-50 dark:hover:bg-emerald-900/20 text-gray-700 dark:text-gray-300 hover:translate-x-1",
+                        ? "bg-gradient-to-r from-cyan-500 to-cyan-500 text-white font-medium shadow-md shadow-cyan-500/20"
+                        : "hover:bg-violet-50 dark:hover:bg-violet-900/20 text-gray-700 dark:text-gray-300 hover:translate-x-1",
                     )}
                   >
                     <div className={cn(
                       "w-8 h-8 flex items-center justify-center rounded-lg",
                       pathname === item.href
                         ? "bg-white/20"
-                        : "bg-emerald-100/80 dark:bg-emerald-900/30"
+                        : "bg-violet-100/80 dark:bg-violet-900/30"
                     )}>
                       <item.icon className={cn(
                         "w-4 h-4",
                         pathname === item.href
                           ? "text-white"
-                          : "text-emerald-600 dark:text-emerald-400"
+                          : "text-violet-600 dark:text-cyan-400"
                       )} />
                     </div>
                     <span>{item.label}</span>
