@@ -1,6 +1,34 @@
 services:
   # ----------------------------------------------------
-  # 1. Pharmacy AI Service (Python FastAPI / Flask Backend)
+  # 1. Laravel API Backend
+  # ----------------------------------------------------
+  - type: web
+    name: pharmacy-api
+    runtime: docker
+    dockerContext: ./pharmacy-api-production
+    dockerfilePath: ./pharmacy-api-production/Dockerfile
+    region: singapore
+    plan: free
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: DB_CONNECTION
+        value: mongodb
+      - key: DB_URI
+        sync: false
+      - key: DB_DATABASE
+        value: pharmacy_api_v2
+      - key: GEMINI_API_KEY
+        sync: false
+
+  # ----------------------------------------------------
+  # 2. Pharmacy AI Service (Python FastAPI / Flask Backend)
   # ----------------------------------------------------
   - type: web
     name: pharmacy-ai
@@ -20,7 +48,7 @@ services:
         value: llama-3.3-70b-versatile
 
   # ----------------------------------------------------
-  # 2. Pharmacy Admin Frontend (React / Vite + Nginx)
+  # 3. Pharmacy Admin Frontend (React / Vite + Nginx)
   # ----------------------------------------------------
   - type: web
     name: pharmacy-admin
@@ -31,12 +59,12 @@ services:
     plan: free
     envVars:
       - key: VITE_BACKEND_API_URL
-        value: /api
+        value: https://pharmacy-api.onrender.com/api
       - key: VITE_LLM_API_URL
         value: /ai-api
 
   # ----------------------------------------------------
-  # 3. Pharmacy Store Frontend (React / Vite + Nginx)
+  # 4. Pharmacy Store Frontend (React / Vite + Nginx)
   # ----------------------------------------------------
   - type: web
     name: pharmacy-store
@@ -47,6 +75,6 @@ services:
     plan: free
     envVars:
       - key: VITE_BACKEND_API_URL
-        value: /api
+        value: https://pharmacy-api.onrender.com/api
       - key: VITE_LLM_API_URL
         value: /ai-api
