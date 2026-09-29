@@ -15,9 +15,9 @@ services:
       - key: APP_DEBUG
         value: "false"
       - key: APP_KEY
-        sync: false
+        value: base64:nSaztRVeyWnd1yzgvNnIrgfEqNoTlYgwnKlUfrtj40E=
       - key: JWT_SECRET
-        sync: false
+        value: 3PphbUNHPnsowpwcxFj6o+wukZ4mkIbfVrue92bdzsQ=
       - key: DB_CONNECTION
         value: mongodb
       - key: DB_URI
