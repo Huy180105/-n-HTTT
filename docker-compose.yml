@@ -67,7 +67,7 @@ services:
 
   pharmacy-api:
     build:
-      context: ../pharmacy-api-production
+      context: ./pharmacy-api-production
       dockerfile: Dockerfile
     container_name: pharmacy-api-laravel
     ports:
@@ -75,6 +75,8 @@ services:
     environment:
       - APP_ENV=local
       - APP_DEBUG=true
+      - APP_KEY=base64:nSaztRVeyWnd1yzgvNnIrgfEqNoTlYgwnKlUfrtj40E=
+      - JWT_SECRET=3PphbUNHPnsowpwcxFj6o+wukZ4mkIbfVrue92bdzsQ=
       - DB_CONNECTION=mongodb
       - DB_HOST=mongodb
       - DB_PORT=27017
@@ -84,7 +86,7 @@ services:
     depends_on:
       - mongodb
     volumes:
-      - ../pharmacy-api-production:/var/www
+      - ./pharmacy-api-production:/var/www
     restart: always
 
 volumes:
