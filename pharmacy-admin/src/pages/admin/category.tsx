@@ -1,5 +1,5 @@
 import CategoryDialog from "@/components/dialogs/category.dialog";
-import { CategoryPrimaryButtons, CategoryStats } from "@/components/pages/category";
+import { CategoryPrimaryButtons } from "@/components/pages/category";
 import { categoryColumns, CategoryDataTable } from "@/components/table/category";
 import { routeNames, routes, siteConfig } from "@/config";
 import { CategoryResponse, CategoryStatsResponse } from "@/data/interfaces";
@@ -13,8 +13,6 @@ import { Helmet } from "react-helmet-async";
 export default function CategoryPage() {
   const {
     data: categoriesData,
-    statsData,
-    isStatsLoading,
     isLoading,
     isChangingPage,
     paginationInfo,
@@ -75,9 +73,6 @@ export default function CategoryPage() {
           </p>
           <div className="ambient-banner-blob pointer-events-none absolute -right-12 -bottom-12 w-64 h-64 bg-gradient-to-br from-amber-400/20 via-fuchsia-500/20 to-cyan-500/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700" />
         </motion.div>
-
-        {/* Statistics Cards */}
-        <CategoryStats categoriesData={statsData} isLoading={isStatsLoading} />
 
         <div className="flex flex-col gap-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">

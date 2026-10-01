@@ -57,8 +57,8 @@ export function AuthLayout({ children, title, useModernLayout = false }: AuthLay
               "Pharmacy Store giúp tôi đặt thuốc dễ dàng và nhận tư vấn từ dược sĩ mọi lúc mọi nơi."
             </blockquote>
             <footer className="mt-2">
-              <div className="font-medium">Đỗ Ngọc Khánh</div>
-              <div className="text-sm opacity-80">72DCTT20150 - 72DCTT23</div>
+              <div className="font-medium">Khách hàng Pharmacity</div>
+              <div className="text-sm opacity-80">Hệ thống Nhà thuốc Thông minh</div>
             </footer>
           </div>
         </div>

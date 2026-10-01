@@ -195,16 +195,32 @@ class CategoryController extends Controller
     public function createCategory(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required|string|min:3|max:255',
+            'title' => [
+                'required',
+                'string',
+                'min:3',
+                'max:255',
+                'regex:/^(?!\d+$).+$/',
+            ],
             'description' => 'nullable|string|max:1000',
             'is_active' => 'nullable|boolean',
+        ], [
+            'title.required' => 'Tên danh mục không được để trống.',
+            'title.min' => 'Tên danh mục phải có ít nhất 3 ký tự.',
+            'title.regex' => 'Tên danh mục không được chỉ bao gồm chữ số.',
         ]);
         if ($validator->fails()) return $this->fail(null, $validator->errors()->first(), 422);
+
+        $exists = Category::where('title', 'LIKE', $request->title)->first();
+        if ($exists) {
+            return $this->fail(null, 'Tên danh mục đã tồn tại trong hệ thống.', 422);
+        }
+
         $category = Category::create([
-            'title' => $request->title,
+            'title' => trim($request->title),
             'slug' => \Illuminate\Support\Str::slug($request->title),
-            'description' => $request->description,
-            'is_active' => $request->has('is_active') ? $request->is_active : true,
+            'description' => $request->description ?? '',
+            'is_active' => $request->has('is_active') ? (bool)$request->is_active : true,
             'created_at' => now(),
         ]);
         return $this->json($category, 'Danh mục đã được tạo thành công', 201);
@@ -305,16 +321,32 @@ class CategoryController extends Controller
         $category = Category::find($id);
         if (!$category) return $this->fail(null, 'Danh mục không tồn tại', 404);
         $validator = Validator::make($request->all(), [
-            'title' => 'required|string|min:3|max:255',
+            'title' => [
+                'required',
+                'string',
+                'min:3',
+                'max:255',
+                'regex:/^(?!\d+$).+$/',
+            ],
             'description' => 'nullable|string|max:1000',
             'is_active' => 'nullable|boolean',
+        ], [
+            'title.required' => 'Tên danh mục không được để trống.',
+            'title.min' => 'Tên danh mục phải có ít nhất 3 ký tự.',
+            'title.regex' => 'Tên danh mục không được chỉ bao gồm chữ số.',
         ]);
         if ($validator->fails()) return $this->fail(null, $validator->errors()->first(), 422);
+
+        $exists = Category::where('_id', '!=', $id)->where('title', 'LIKE', $request->title)->first();
+        if ($exists) {
+            return $this->fail(null, 'Tên danh mục đã tồn tại trong hệ thống.', 422);
+        }
+
         $category->update([
-            'title' => $request->title,
+            'title' => trim($request->title),
             'slug' => \Illuminate\Support\Str::slug($request->title),
-            'description' => $request->description,
-            'is_active' => $request->has('is_active') ? $request->is_active : $category->is_active,
+            'description' => $request->description ?? '',
+            'is_active' => $request->has('is_active') ? (bool)$request->is_active : $category->is_active,
         ]);
         return $this->json($category, 'Danh mục đã được cập nhật thành công', 200);
     }

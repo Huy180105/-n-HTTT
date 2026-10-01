@@ -1,5 +1,4 @@
 import { OrderDialog } from "@/components/dialogs/order.dialog";
-import { OrderStats } from "@/components/pages/order";
 import { orderColumns, OrderDataTable } from "@/components/table/order";
 import { routeNames, routes, siteConfig } from "@/config";
 import { OrderResponse, OrderStatsResponse } from "@/data/interfaces";
@@ -17,8 +16,6 @@ type FilterParams = Record<string, string> & {
 export default function OrderPage() {
   const {
     data: orderData,
-    statsData,
-    isStatsLoading,
     isLoading,
     isChangingPage,
     paginationInfo,
@@ -85,8 +82,6 @@ export default function OrderPage() {
           </p>
           <div className="ambient-banner-blob pointer-events-none absolute -right-12 -bottom-12 w-64 h-64 bg-gradient-to-br from-amber-400/20 via-fuchsia-500/20 to-cyan-500/20 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700" />
         </motion.div>
-
-        <OrderStats statsData={statsData} isLoading={isStatsLoading} />
 
         {/* Table Section */}
         <div className="flex flex-col gap-6">

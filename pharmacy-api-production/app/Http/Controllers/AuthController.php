@@ -176,10 +176,13 @@ class AuthController extends Controller
       'verification_code' => $verificationCode,
       'verification_code_expires_at' => now()->addMinutes(15),
     ]);
-    if (!$user) return $this->fail([], "Đăng ký không thành công", 500);
-    $user->notify(new EmailVerificationNotification($verificationCode));
+    try {
+      $user->notify(new EmailVerificationNotification($verificationCode));
+    } catch (\Throwable $e) {
+      Log::error('Failed to send verification email: ' . $e->getMessage());
+    }
     $token = JWTAuth::fromUser($user);
-    Log::info('New user registered', ['user_id' => $user->id, 'email' => $user->email]);
+    Log::info('New user registered', ['user_id' => $user->id, 'email' => $user->email, 'verification_code' => $verificationCode]);
     return $this->json([
       'access_token' => $token,
       'user' => $user,
@@ -263,7 +266,8 @@ class AuthController extends Controller
   #[Post('/verify-email', 'auth.verifyEmail')]
   public function verifyEmail(Request $request)
   {
-    $validator = Validator::make($request->all(), [
+    $code = $request->input('verification_code') ?? $request->input('verificationCode');
+    $validator = Validator::make(['verification_code' => $code], [
       'verification_code' => 'required|string|size:6',
     ]);
     if ($validator->fails()) return $this->fail(null, $validator->errors()->first(), 422);
@@ -271,10 +275,10 @@ class AuthController extends Controller
     $user = Auth::user();
     if (!$user) return $this->fail(null, "Người dùng không tồn tại", 404);
     if ($user->hasVerifiedEmail()) return $this->fail(null, "Email đã được xác minh trước đó", 400);
-    if (!$user->verification_code || $user->verification_code !== $request->verification_code) {
-      now()->isAfter($user->verification_code_expires_at) ?
-        $this->fail(null, "Mã xác minh đã hết hạn", 400) :
-        $this->fail(null, "Mã xác minh không chính xác", 400);
+    if (!$user->verification_code || $user->verification_code !== $code) {
+      if ($user->verification_code_expires_at && now()->isAfter($user->verification_code_expires_at)) {
+        return $this->fail(null, "Mã xác minh đã hết hạn", 400);
+      }
       return $this->fail(null, "Mã xác minh không chính xác", 400);
     }
     $user->markEmailAsVerified();
@@ -352,9 +356,13 @@ class AuthController extends Controller
     $user->verification_code = $verificationCode;
     $user->verification_code_expires_at = now()->addMinutes(15);
     $user->save();
-    $user->notify(new EmailVerificationNotification($verificationCode));
+    try {
+      $user->notify(new EmailVerificationNotification($verificationCode));
+    } catch (\Throwable $e) {
+      Log::error('Failed to resend verification email: ' . $e->getMessage());
+    }
     Cache::put($cacheKey, true, 60); // Cache for 60 seconds
-    Log::info('Resent verification email', ['user_id' => $user->id, 'email' => $user->email]);
+    Log::info('Resent verification email', ['user_id' => $user->id, 'email' => $user->email, 'verification_code' => $verificationCode]);
     return $this->json(null, "Đã gửi lại email xác minh. Vui lòng kiểm tra hộp thư đến của bạn.", 200);
   }
 
