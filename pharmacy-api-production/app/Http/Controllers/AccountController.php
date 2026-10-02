@@ -142,7 +142,7 @@ class AccountController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'phone' => 'required|string|max:15',
+            'phone' => ['required', 'string', 'max:20', 'regex:/^(0[3|5|7|8|9])[0-9]{8}$/'],
             'address_line1' => 'required|string|max:255',
             'address_line2' => 'nullable|string|max:255',
             'city' => 'required|string|max:100',
@@ -150,28 +150,30 @@ class AccountController extends Controller
             'country' => 'required|string|max:100',
             'postal_code' => 'required|string|max:20',
             'is_default' => 'nullable|boolean',
+        ], [
+            'phone.regex' => 'Số điện thoại không hợp lệ (phải bắt đầu bằng 03, 05, 07, 08, 09 và đủ 10 chữ số).',
         ]);
         if ($validator->fails()) return $this->fail($validator->errors(), 'Validation failed', 422);
         $user = $request->user();
         $addresses = $user->addresses ?? [];
         $newAddress = [
             'id' => Str::uuid()->toString(),
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'address_line1' => $request->address_line1,
-            'address_line2' => $request->address_line2 ?? '',
-            'city' => $request->city,
-            'state' => $request->state ?? '',
-            'country' => $request->country,
-            'postal_code' => $request->postal_code,
+            'name' => trim($request->name),
+            'phone' => trim($request->phone),
+            'address_line1' => trim($request->address_line1),
+            'address_line2' => trim($request->address_line2 ?? ''),
+            'city' => trim($request->city),
+            'state' => trim($request->state ?? ''),
+            'country' => trim($request->country),
+            'postal_code' => trim($request->postal_code),
             'is_default' => $request->is_default ?? false,
         ];
         foreach ($addresses as $address) {
             if (
-                ($address['address_line1'] ?? '') === $newAddress['address_line1'] &&
-                ($address['city'] ?? '') === $newAddress['city'] &&
-                ($address['country'] ?? '') === $newAddress['country'] &&
-                ($address['postal_code'] ?? '') === $newAddress['postal_code']
+                mb_strtolower(trim($address['address_line1'] ?? '')) === mb_strtolower($newAddress['address_line1']) &&
+                mb_strtolower(trim($address['city'] ?? '')) === mb_strtolower($newAddress['city']) &&
+                mb_strtolower(trim($address['country'] ?? '')) === mb_strtolower($newAddress['country']) &&
+                mb_strtolower(trim($address['postal_code'] ?? '')) === mb_strtolower($newAddress['postal_code'])
             ) {
                 return $this->fail([], 'Địa chỉ đã tồn tại', 400);
             }
@@ -258,6 +260,21 @@ class AccountController extends Controller
      */
     public function updateAddress(Request $request, $id)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => 'nullable|string|max:255',
+            'phone' => ['nullable', 'string', 'max:20', 'regex:/^(0[3|5|7|8|9])[0-9]{8}$/'],
+            'address_line1' => 'nullable|string|max:255',
+            'address_line2' => 'nullable|string|max:255',
+            'city' => 'nullable|string|max:100',
+            'state' => 'nullable|string|max:100',
+            'country' => 'nullable|string|max:100',
+            'postal_code' => 'nullable|string|max:20',
+            'is_default' => 'nullable|boolean',
+        ], [
+            'phone.regex' => 'Số điện thoại không hợp lệ (phải bắt đầu bằng 03, 05, 07, 08, 09 và đủ 10 chữ số).',
+        ]);
+        if ($validator->fails()) return $this->fail($validator->errors(), 'Validation failed', 422);
+
         $user = $request->user();
         $addresses = $user->addresses ?? [];
         $addressIndex = null;
@@ -271,6 +288,7 @@ class AccountController extends Controller
             }
         }
         if ($updatedAddress === null) return $this->fail([], 'Không tìm thấy địa chỉ', 404);
+
         $fieldsToUpdate = [
             'name',
             'phone',
@@ -282,7 +300,7 @@ class AccountController extends Controller
             'postal_code'
         ];
         foreach ($fieldsToUpdate as $field) {
-            if ($request->has($field)) $addresses[$addressIndex][$field] = $request->$field;
+            if ($request->has($field)) $addresses[$addressIndex][$field] = trim($request->$field);
         }
         // Xử lý địa chỉ mặc định
         if ($request->has('is_default') && $request->is_default) {
@@ -340,9 +358,32 @@ class AccountController extends Controller
     {
         $user = request()->user();
         $addresses = $user->addresses ?? [];
+        $deletedWasDefault = false;
+        $found = false;
+
+        foreach ($addresses as $address) {
+            if ($address['id'] === $id) {
+                $found = true;
+                if (!empty($address['is_default'])) {
+                    $deletedWasDefault = true;
+                }
+                break;
+            }
+        }
+
+        if (!$found) {
+            return $this->fail([], 'Không tìm thấy địa chỉ', 404);
+        }
+
         $addresses = array_values(array_filter($addresses, function ($address) use ($id) {
             return $address['id'] !== $id;
         }));
+
+        // Nếu xóa địa chỉ mặc định và vẫn còn địa chỉ khác -> gán địa chỉ đầu tiên làm mặc định mới
+        if ($deletedWasDefault && !empty($addresses)) {
+            $addresses[0]['is_default'] = true;
+        }
+
         $user->addresses = $addresses;
         $user->save();
         return $this->json([], 'Địa chỉ đã được xóa thành công', 200);
@@ -394,10 +435,24 @@ class AccountController extends Controller
     public function setDefaultAddress(Request $request, string $id)
     {
         $user = $request->user();
+        $addresses = $user->addresses ?? [];
+        $found = false;
+
+        foreach ($addresses as $address) {
+            if ($address['id'] === $id) {
+                $found = true;
+                break;
+            }
+        }
+
+        if (!$found) {
+            return $this->fail([], 'Không tìm thấy địa chỉ', 404);
+        }
+
         $user->addresses = array_map(function ($address) use ($id) {
             $address['is_default'] = $address['id'] === $id;
             return $address;
-        }, $user->addresses);
+        }, $addresses);
         $user->save();
 
         $defaultAddress = collect($user->addresses)->firstWhere('is_default', true);
