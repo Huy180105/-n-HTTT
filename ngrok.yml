@@ -5,8 +5,8 @@ agent:
 endpoints:
   - name: admin
     upstream:
-      url: 8081
+      url: http://127.0.0.1:8081
     url: https://upcountry-startle-unselfish.ngrok-free.dev
   - name: store
     upstream:
-      url: 8082
+      url: http://127.0.0.1:8082
